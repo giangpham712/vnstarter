@@ -5,6 +5,10 @@ class ProjectsController < ApplicationController
 
   end
 
+  def show
+    @project = Project.friendly.find(params[:id])
+  end
+
   def new
     @project = Project.new
   end
