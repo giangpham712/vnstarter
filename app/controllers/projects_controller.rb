@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!, :except => [:index]
+  skip_before_filter :verify_authenticity_token, :only => [:upload_image]
 
   def index
 
@@ -26,6 +27,23 @@ class ProjectsController < ApplicationController
 
   def edit
     @project = Project.friendly.find(params[:id])
+  end
+
+  def update
+    @project = Project.friendly.find(params[:id])
+
+    if @project.update(article_params)
+      redirect_to @article
+    else
+      render 'edit'
+    end
+  end
+
+  def upload_image
+    @upload = params[:upload]
+    puts @upload
+    puts "Upload image"
+    render json: { :project => "Hello world" }
   end
 
   private
