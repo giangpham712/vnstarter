@@ -30,6 +30,10 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise'
 
+gem 'friendly_id', '~> 5.0.0'
+
+gem 'rails-i18n', '~> 4.0.0'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
