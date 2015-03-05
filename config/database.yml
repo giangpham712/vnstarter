@@ -50,6 +50,6 @@ test:
 production:
   <<: *default
   host: aws-wadey-mysql.cejvaqnrk4at.ap-southeast-1.rds.amazonaws.com
-  database: Kickstarter_production
+  database: kickstarter_production
   username: wadey
   password: password
