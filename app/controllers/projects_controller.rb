@@ -1,6 +1,5 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_user!, :except => [:index]
-  skip_before_filter :verify_authenticity_token, :only => [:upload_image]
 
   def index
 
@@ -32,22 +31,28 @@ class ProjectsController < ApplicationController
   def update
     @project = Project.friendly.find(params[:id])
 
-    if @project.update(article_params)
-      redirect_to @article
+    if @project.update(project_params)
+      redirect_to edit_project_path(@project)
     else
       render 'edit'
     end
   end
 
   def upload_image
-    @upload = params[:upload]
-    puts @upload
-    puts "Upload image"
-    render json: { :project => "Hello world" }
+    upload = params[:upload]
+
+    file_path = Rails.root.join('public', 'uploads', upload.original_filename)
+    File.open(file_path, 'wb') do |file|
+      file.write(upload.read)
+    end
+
+    puts "File uploaded #{file_path}"
+
+    render json: { :file_path => file_path }
   end
 
   private
     def project_params
-      params.require(:project).permit(:title, :location)
+      params.require(:project).permit(:title, :location, :short_description, :funding_goal)
     end
 end

@@ -44,8 +44,10 @@
         var formData = new FormData();
         formData.append("upload", file.files[0]);
 
+        var authenticity_token = $("input[name=authenticity_token]").val();
+
         var uploadRequest = $.ajax({
-            url: "/projects/superman-returns/upload_image",
+            url: "/projects/superman-returns/upload_image" + "?authenticity_token=" + authenticity_token,
             type: "POST",
             xhr: function () {
                 var myXhr = $.ajaxSettings.xhr();
