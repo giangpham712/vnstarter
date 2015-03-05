@@ -49,6 +49,7 @@ test:
 #
 production:
   <<: *default
+  host: aws-wadey-mysql.cejvaqnrk4at.ap-southeast-1.rds.amazonaws.com
   database: Kickstarter_production
   username: wadey
-  password: phg71288
+  password: password
