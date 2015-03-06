@@ -34,6 +34,8 @@ gem 'friendly_id', '~> 5.0.0'
 
 gem 'rails-i18n', '~> 4.0.0'
 
+gem 'thin'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
