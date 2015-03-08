@@ -1,0 +1,13 @@
+<h2>Pledge project</h2>
+
+<%= form_for :pledge, url: project_pledges_path do |f| %>
+
+    <div class="field">
+      <%= f.label :pledge_amount %><br/>
+      <%= f.text_field :pledge_amount, autofocus: true %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Create" %>
+    </div>
+<% end %>

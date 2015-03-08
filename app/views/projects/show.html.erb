@@ -1,0 +1,44 @@
+<h1>
+  <%= @project.title %>
+</h1>
+<span>by <b><%= @project.user.name %></b></span>
+
+<div>
+    <p>
+      <%= image_tag @project.image.url %>
+    </p>
+</div>
+
+<h2>Posts</h2>
+<% @project.posts.each do |post| %>
+    <p>
+      <strong>Title:</strong>
+      <%= post.title %>
+    </p>
+
+    <p>
+      <strong>Body:</strong>
+      <%= post.body %>
+    </p>
+<% end %>
+
+
+<h2>Comments</h2>
+<% @project.comments.each do |comment| %>
+    <p>
+      <strong><%= comment.user.name %>:</strong>
+      <%= comment.body %>
+    </p>
+
+<% end %>
+
+<h2>Add a comment:</h2>
+<%= form_for([@project, @project.comments.build]) do |f| %>
+    <p>
+      <%= f.label :body %><br>
+      <%= f.text_area :body %>
+    </p>
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>

@@ -1,0 +1,19 @@
+defaults: &defaults
+  access_key_id: "AKIAIISNEYWIC56PR6XA"
+  secret_access_key: "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"
+
+
+development:
+  <<: *defaults
+  bucket: "kickstarter-dev"
+
+
+test:
+  <<: *defaults
+  bucket: "myapp-test"
+
+
+production:
+  access_key_id: <%=ENV["AWS_ACCESS_KEY"]%>
+  secret_access_key: <%=ENV["AWS_SECRET_KEY"]%>
+  bucket: "kickstarter-dev"

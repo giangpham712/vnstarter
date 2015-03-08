@@ -1,36 +1,63 @@
 <h2>Edit project</h2>
 
-<%= form_for :project, url: project_path(@project), method: :put do |f| %>
+<div>
+  <%= form_for :project, url: project_path(@project), method: :put do |f| %>
 
-    <div class="field">
-      <%= f.label :title %><br/>
-      <%= f.text_field :title, autofocus: true %>
-    </div>
+      <div class="field">
+        <%= f.label :title %><br/>
+        <%= f.text_field :title, autofocus: true %>
+      </div>
 
-    <div class="field">
-      <%= f.label :image %><br/>
-      <%= f.file_field :image, autofocus: true %>
-    </div>
+      <div class="field">
+        <%= f.label :video %><br/>
+        <%= f.file_field :video, autofocus: true %>
+      </div>
 
-    <div class="field">
-      <%= f.label :location %><br/>
-      <%= f.text_field :location %>
-    </div>
+      <div class="field">
+        <%= f.label :image %><br/>
+        <%= image_tag @project.image.url %>
+        <%= f.file_field :image, autofocus: true %>
+      </div>
 
-    <div class="field">
-      <%= f.label :short_description %><br/>
-      <%= f.text_area :short_description %>
-    </div>
+      <div class="field">
+        <%= f.label :location %><br/>
+        <%= f.text_field :location %>
+      </div>
 
-    <div class="field">
-      <%= f.label :funding_goal %><br/>
-      <%= f.text_field :funding_goal %>
-    </div>
+      <div class="field">
+        <%= f.label :short_description %><br/>
+        <%= f.text_area :short_description %>
+      </div>
 
-    <div class="actions">
-      <%= f.submit "Submit" %>
-    </div>
-<% end %>
+      <div class="field">
+        <%= f.label :funding_goal %><br/>
+        <%= f.text_field :funding_goal %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Submit" %>
+      </div>
+  <% end %>
+
+</div>
+
+<div>
+  <h2>Add a post:</h2>
+  <%= form_for([@project, @project.posts.build]) do |f| %>
+      <p>
+        <%= f.label :title %><br>
+        <%= f.text_field :title %>
+      </p>
+      <p>
+        <%= f.label :body %><br>
+        <%= f.text_area :body %>
+      </p>
+      <p>
+        <%= f.submit %>
+      </p>
+  <% end %>
+
+</div>
 
 <script>
     $("#project_image").change(function (e) {
@@ -42,13 +69,11 @@
         var file = document.getElementById("project_image");
 
         var formData = new FormData();
-        formData.append("upload", file.files[0]);
-
-        var authenticity_token = $("input[name=authenticity_token]").val();
+        formData.append("image", file.files[0]);
 
         var uploadRequest = $.ajax({
-            url: "/projects/superman-returns/upload_image" + "?authenticity_token=" + authenticity_token,
-            type: "POST",
+            url: "/projects/superman-returns/upload_image",
+            type: "PATCH",
             xhr: function () {
                 var myXhr = $.ajaxSettings.xhr();
                 if (myXhr.upload) {

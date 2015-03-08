@@ -1,18 +1,21 @@
 class ProjectsController < ApplicationController
-  before_action :authenticate_user!, :except => [:index]
+  before_action :authenticate_user!, :except => [:index, :show]
+  skip_before_filter :verify_authenticity_token, :only => [:upload_image]
 
   def index
 
   end
 
   def show
-    @project = Project.friendly.find(params[:id])
+    @project = Project.includes(:user).find(1)
+
   end
 
   def new
     @project = Project.new
   end
 
+  #View to create a new project
   def create
     @project = Project.new(project_params)
     @user = current_user
@@ -24,9 +27,11 @@ class ProjectsController < ApplicationController
     end
   end
 
+  #View to edit an existing project
   def edit
     @project = Project.friendly.find(params[:id])
   end
+
 
   def update
     @project = Project.friendly.find(params[:id])
@@ -38,21 +43,25 @@ class ProjectsController < ApplicationController
     end
   end
 
-  def upload_image
-    upload = params[:upload]
+  def upload_video
 
-    file_path = Rails.root.join('public', 'uploads', upload.original_filename)
-    File.open(file_path, 'wb') do |file|
-      file.write(upload.read)
+
+
+  end
+
+  def upload_image
+    @project = Project.friendly.find(params[:id])
+
+    if @project.update_attributes(:image => params[:image])
+      render json: { :success => true }
+    else
+      render json: { :success => false }
     end
 
-    puts "File uploaded #{file_path}"
-
-    render json: { :file_path => file_path }
   end
 
   private
     def project_params
-      params.require(:project).permit(:title, :location, :short_description, :funding_goal)
+      params.require(:project).permit(:title, :location, :short_description, :funding_goal, :image)
     end
 end

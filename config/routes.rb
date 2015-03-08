@@ -1,13 +1,37 @@
 Rails.application.routes.draw do
 
+  get 'pledges/create'
+
+  get 'messages/create'
+
   devise_for :users
+
+  resources :users do
+
+  end
+
+  resources :messages do
+
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   resources :projects do
+    resources :posts do
+
+    end
+
+    resources :pledges do
+
+    end
+
+    resources :comments do
+
+    end
+
     member do
-      post :upload_image
+      patch :upload_image
     end
   end
 

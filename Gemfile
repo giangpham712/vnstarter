@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use mysql as the database for Active Record
@@ -25,7 +24,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'annotate', '~> 2.6.5'
 
-# Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise'
@@ -33,6 +31,20 @@ gem 'devise'
 gem 'friendly_id', '~> 5.0.0'
 
 gem 'rails-i18n', '~> 4.0.0'
+
+gem 'activerecord-session_store'
+
+gem 'fog'
+
+gem "mini_magick"
+
+gem 'carrierwave'
+
+gem 'paperclip'
+
+gem 'aws-sdk-v1'
+
+gem 'vimeo'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

@@ -1,0 +1,13 @@
+<h2>Create message</h2>
+
+<%= form_for :message, url: messages_path do |f| %>
+
+    <div class="field">
+      <%= f.label :body %><br/>
+      <%= f.text_field :body, autofocus: true %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Create" %>
+    </div>
+<% end %>
