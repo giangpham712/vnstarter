@@ -32,6 +32,7 @@ gem 'friendly_id', '~> 5.0.0'
 
 gem 'rails-i18n', '~> 4.0.0'
 
+<<<<<<< HEAD
 gem 'activerecord-session_store'
 
 gem 'fog'
@@ -45,6 +46,9 @@ gem 'paperclip'
 gem 'aws-sdk-v1'
 
 gem 'vimeo'
+=======
+gem 'thin'
+>>>>>>> 5f5059a7ec9472e01cb24f09f09f20a89db330ee
 
 # Use Unicorn as the app server
 # gem 'unicorn'
