@@ -2,8 +2,7 @@ class Project < ActiveRecord::Base
   extend FriendlyId
 
   attr_accessor :image, :video
-  has_attached_file :image, :styles => {
-                              :small => "150x150", :medium => "350x350" }
+  has_attached_file :image
 
   friendly_id :title, :use => :slugged
 
