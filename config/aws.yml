@@ -15,4 +15,4 @@ test:
 
 production:
   <<: *defaults
-  bucket: "kickstarter-production"
+  bucket: "kickstarter-prod"
