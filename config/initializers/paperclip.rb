@@ -8,3 +8,5 @@ Paperclip::Attachment.default_options.merge!(
     s3_permissions:       :private,
     s3_protocol:          'https'
 )
+
+Paperclip.options[:content_type_mappings] = { jpeg: 'image/jpeg', jpg: 'image/jpeg' }
