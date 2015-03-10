@@ -6,6 +6,10 @@ class ProjectsController < ApplicationController
     @projects = Project.all
   end
 
+  def search
+
+  end
+
   def show
     @project = Project.includes(:user).friendly.find(params[:id])
     pledges = @project.pledges
@@ -18,6 +22,7 @@ class ProjectsController < ApplicationController
   end
 
   def new
+    @cities = City.all
     @project = Project.new
   end
 
@@ -52,14 +57,13 @@ class ProjectsController < ApplicationController
   def upload_video
 
 
-
   end
 
   def upload_image
     @project = Project.friendly.find(params[:id])
-
-    if @project.update_attributes(:image => params[:image])
-      render json: { :success => true }
+    puts params[:image]
+    if @project.update_attributes(:image => params[:project][:image])
+      render json: { :success => true, :image_url => @project.image.url }
     else
       render json: { :success => false, :errors => @project.errors }
     end
@@ -68,6 +72,6 @@ class ProjectsController < ApplicationController
 
   private
     def project_params
-      params.require(:projects).permit(:title, :location, :short_description, :funding_goal, :image)
+      params.require(:project).permit(:title, :location, :short_description, :funding_goal, :image)
     end
 end

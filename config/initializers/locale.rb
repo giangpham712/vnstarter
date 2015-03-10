@@ -1,2 +1,2 @@
-I18n.default_locale = :vi
+I18n.default_locale = :en
 

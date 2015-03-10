@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150309172303) do
+ActiveRecord::Schema.define(version: 20150310091116) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name",       limit: 255, null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "cities", force: :cascade do |t|
     t.string   "name",       limit: 255, null: false
@@ -82,8 +88,10 @@ ActiveRecord::Schema.define(version: 20150309172303) do
     t.datetime "image_updated_at"
     t.boolean  "launched",           limit: 1,   default: false
     t.integer  "funding_status",     limit: 4,   default: 1
+    t.integer  "category_id",        limit: 4
   end
 
+  add_index "projects", ["category_id"], name: "index_projects_on_category_id", using: :btree
   add_index "projects", ["creator_id"], name: "index_projects_on_creator_id", using: :btree
 
   create_table "rewards", force: :cascade do |t|

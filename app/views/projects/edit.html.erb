@@ -63,8 +63,25 @@
 </div>
 
 <script>
-    $("#project_image").change(function (e) {
-        uploadProjectImage();
+
+    $("#project_image").fileupload({
+        url: "/projects/superman-returns/upload_image",
+        type: "PATCH",
+        add: function (e, data) {
+            data.submit();
+        },
+        uploadTemplateId: null,
+        downloadTemplateId: null,
+        formData: function() {
+            return [];
+        },
+        progressall: function(e, data) {
+            var progress = parseInt(data.loaded / data.total * 100, 10);
+            console.log(progress);
+        },
+        done: function(e, data) {
+            console.log(data);
+        }
     });
 
     function uploadProjectImage() {
