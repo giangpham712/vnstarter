@@ -11,12 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150308153122) do
+ActiveRecord::Schema.define(version: 20150309172303) do
+
+  create_table "cities", force: :cascade do |t|
+    t.string   "name",       limit: 255, null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "comments", force: :cascade do |t|
-    t.text     "body",         limit: 65535
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.text     "body",         limit: 16777215
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.integer  "project_id",   limit: 4
     t.integer  "commenter_id", limit: 4
   end
@@ -24,11 +30,11 @@ ActiveRecord::Schema.define(version: 20150308153122) do
   add_index "comments", ["project_id"], name: "index_comments_on_project_id", using: :btree
 
   create_table "messages", force: :cascade do |t|
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.integer  "sender_id",   limit: 4
     t.integer  "receiver_id", limit: 4
-    t.text     "body",        limit: 65535
+    t.text     "body",        limit: 16777215
   end
 
   add_index "messages", ["receiver_id"], name: "index_messages_on_receiver_id", using: :btree
@@ -47,9 +53,9 @@ ActiveRecord::Schema.define(version: 20150308153122) do
 
   create_table "posts", force: :cascade do |t|
     t.string   "title",              limit: 255
-    t.text     "body",               limit: 65535
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.text     "body",               limit: 16777215
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.integer  "project_id",         limit: 4
     t.string   "image_file_name",    limit: 255
     t.string   "image_content_type", limit: 255
@@ -62,8 +68,8 @@ ActiveRecord::Schema.define(version: 20150308153122) do
   create_table "projects", force: :cascade do |t|
     t.string   "title",              limit: 100
     t.string   "short_description",  limit: 255
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
     t.string   "location",           limit: 255
     t.float    "funding_goal",       limit: 24
     t.integer  "duration",           limit: 4
@@ -74,21 +80,23 @@ ActiveRecord::Schema.define(version: 20150308153122) do
     t.string   "image_content_type", limit: 255
     t.integer  "image_file_size",    limit: 4
     t.datetime "image_updated_at"
+    t.boolean  "launched",           limit: 1,   default: false
+    t.integer  "funding_status",     limit: 4,   default: 1
   end
 
   add_index "projects", ["creator_id"], name: "index_projects_on_creator_id", using: :btree
 
   create_table "rewards", force: :cascade do |t|
-    t.float    "minimum_pledge_amount", limit: 24,                null: false
-    t.text     "description",           limit: 65535,             null: false
-    t.integer  "limit_quantity",        limit: 4,     default: 0
-    t.datetime "created_at",                                      null: false
-    t.datetime "updated_at",                                      null: false
+    t.float    "minimum_pledge_amount", limit: 24,                   null: false
+    t.text     "description",           limit: 16777215,             null: false
+    t.integer  "limit_quantity",        limit: 4,        default: 0
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
   end
 
   create_table "sessions", force: :cascade do |t|
-    t.string   "session_id", limit: 255,   null: false
-    t.text     "data",       limit: 65535
+    t.string   "session_id", limit: 255,      null: false
+    t.text     "data",       limit: 16777215
     t.datetime "created_at"
     t.datetime "updated_at"
   end

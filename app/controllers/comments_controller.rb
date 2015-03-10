@@ -8,9 +8,9 @@ class CommentsController < ApplicationController
     @comment.commenter_id = @user.id
 
     if @comment.save
-      redirect_to project_path(@project)
+      render json: { :success => true }
     else
-      redirect_to project_path(@project)
+      render json: { :success => false, :errors => @comment.errors }
     end
 
   end
