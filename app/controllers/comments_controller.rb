@@ -1,16 +1,16 @@
 class CommentsController < ApplicationController
 
   def create
-    @project = Project.friendly.find(params[:project_id])
-    @comment = @project.comments.build(comment_params)
+    project = Project.friendly.find(params[:project_id])
+    comment = project.comments.build(comment_params)
 
-    @user = current_user
-    @comment.commenter_id = @user.id
+    user = current_user
+    comment.commenter_id = user.id
 
-    if @comment.save
-      render json: { :success => true }
+    if comment.save
+      render json: { :success => true, :comment => comment }
     else
-      render json: { :success => false, :errors => @comment.errors }
+      render json: { :success => false, :errors => comment.errors }
     end
 
   end

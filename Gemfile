@@ -29,6 +29,8 @@ gem 'friendly_id', '~> 5.0.0'
 
 gem 'babosa'
 
+gem 'acts-as-taggable-on'
+
 gem 'rails-i18n', '~> 4.0.0'
 
 gem 'activerecord-session_store'

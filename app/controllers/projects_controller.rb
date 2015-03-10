@@ -40,6 +40,7 @@ class ProjectsController < ApplicationController
 
   #View to edit an existing projects
   def edit
+    @cities = City.all
     @project = Project.friendly.find(params[:id])
   end
 

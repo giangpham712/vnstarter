@@ -22,6 +22,7 @@ class Project < ActiveRecord::Base
   has_many :comments
   has_many :pledges
   has_many :posts
+  has_many :rewards
 
   def normalize_friendly_id(input)
     input.to_s.to_slug.normalize(transliterations: :vietnamese).to_s

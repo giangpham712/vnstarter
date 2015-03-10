@@ -24,7 +24,7 @@
 
       <div class="field">
         <%= f.label :location %><br/>
-        <%= f.text_field :location %>
+        <%= f.select :location, options_for_select(@cities.map { |city| city.name }, @project.location) %>
       </div>
 
       <div class="field">
@@ -59,7 +59,27 @@
         <%= f.submit %>
       </p>
   <% end %>
+</div>
 
+<div>
+  <h2>Add a reward:</h2>
+  <%= form_for([@project, @project.rewards.build]) do |f| %>
+      <p>
+        <%= f.label :minimum_pledge_amount %><br>
+        <%= f.text_field :minimum_pledge_amount %>
+      </p>
+      <p>
+        <%= f.label :description %><br>
+        <%= f.text_area :description %>
+      </p>
+      <p>
+        <%= f.label :limit_quantity %><br>
+        <%= f.text_field :limit_quantity %>
+      </p>
+      <p>
+        <%= f.submit %>
+      </p>
+  <% end %>
 </div>
 
 <script>

@@ -14,9 +14,14 @@ class PostsController < ApplicationController
   end
 
   def create
-    @project = Project.friendly.find(params[:project_id])
-    @post = @project.posts.create(post_params)
-    redirect_to project_path(@project)
+    project = Project.friendly.find(params[:project_id])
+    post = project.posts.build(post_params)
+
+    if post.save
+      render json: { :success => true, :post => post }
+    else
+      render json: { :success => false, :post => post.errors }
+    end
   end
 
   private

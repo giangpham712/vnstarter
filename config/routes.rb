@@ -25,6 +25,10 @@ Rails.application.routes.draw do
 
     end
 
+    resources :rewards do
+
+    end
+
     resources :pledges do
 
     end
