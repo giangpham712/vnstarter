@@ -24,6 +24,18 @@ class Project < ActiveRecord::Base
   has_many :posts
   has_many :rewards
 
+  def launched?
+    launched_at != nil
+  end
+
+  def stopped?
+    stopped_at != nil
+  end
+
+  def deleted?
+    deleted_at != nil
+  end
+
   def normalize_friendly_id(input)
     input.to_s.to_slug.normalize(transliterations: :vietnamese).to_s
   end

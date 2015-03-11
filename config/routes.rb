@@ -39,6 +39,7 @@ Rails.application.routes.draw do
 
     member do
       post :launch_project
+      post :stop_project
       post :upload_image
     end
   end

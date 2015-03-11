@@ -24,7 +24,7 @@
 
       <div class="field">
         <%= f.label "Category" %><br/>
-        <%= f.select :category_id, options_for_select(@categories.map{ |c| [c.name, c.id] }, @project.category_id) %>
+        <%= f.select :category_id, options_for_select(@categories.map { |c| [c.name, c.id] }, @project.category_id) %>
       </div>
 
       <div class="field">
@@ -51,9 +51,15 @@
       <div class="actions">
         <%= f.submit "Submit" %>
       </div>
+
+      <% if !@project.launched? %>
+        <%= f.button "Launch project" %>
+      <% end %>
   <% end %>
 
 </div>
+
+
 
 <div>
   <h2>Add a post:</h2>
@@ -62,10 +68,12 @@
         <%= f.label :title %><br>
         <%= f.text_field :title %>
       </p>
+
       <p>
         <%= f.label :body %><br>
         <%= f.text_area :body %>
       </p>
+
       <p>
         <%= f.submit %>
       </p>
@@ -79,14 +87,17 @@
         <%= f.label :minimum_pledge_amount %><br>
         <%= f.text_field :minimum_pledge_amount %>
       </p>
+
       <p>
         <%= f.label :description %><br>
         <%= f.text_area :description %>
       </p>
+
       <p>
         <%= f.label :limit_quantity %><br>
         <%= f.text_field :limit_quantity %>
       </p>
+
       <p>
         <%= f.submit %>
       </p>
@@ -103,14 +114,14 @@
         },
         uploadTemplateId: null,
         downloadTemplateId: null,
-        formData: function() {
+        formData: function () {
             return [];
         },
-        progressall: function(e, data) {
+        progressall: function (e, data) {
             var progress = parseInt(data.loaded / data.total * 100, 10);
             console.log(progress);
         },
-        done: function(e, data) {
+        done: function (e, data) {
             console.log(data);
         }
     });

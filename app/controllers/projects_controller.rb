@@ -7,6 +7,7 @@ class ProjectsController < ApplicationController
   end
 
   def search
+    search_key = params[:search_key]
 
   end
 
@@ -61,9 +62,9 @@ class ProjectsController < ApplicationController
 
     project = Project.friendly.find(params[:id])
 
-    if project.launched
-      render json: { :success => false }
-    end
+    render json: { :success => false } if project.deleted?
+    render json: { :success => false } if project.launched?
+    render json: { :success => false } if project.stopped?
 
     if project.update_attributes(:launched => true, :launched_at => Time.now.utc)
       render json: { :success => true }
@@ -77,10 +78,19 @@ class ProjectsController < ApplicationController
 
     project = Project.friendly.find(params[:id])
 
+    render json: { :success => false } if project.deleted?
+    render json: { :success => false } if !project.launched?
+    render json: { :success => false } if project.stopped?
+
+    if project.update_attributes(:stopped_at => Time.now.utc)
+      render json: { :success => true }
+    else
+      render json: { :success => false, :errors => project.errors }
+    end
+
   end
 
   def upload_video
-
 
   end
 
