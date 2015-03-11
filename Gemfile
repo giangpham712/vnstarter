@@ -21,8 +21,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'annotate', '~> 2.6.5'
 
-gem 'bcrypt', '~> 3.1.7'
-
 gem 'devise'
 
 gem 'friendly_id', '~> 5.0.0'
