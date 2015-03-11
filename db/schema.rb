@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150310164448) do
+ActiveRecord::Schema.define(version: 20150311090155) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",       limit: 255, null: false
@@ -34,6 +34,13 @@ ActiveRecord::Schema.define(version: 20150310164448) do
   end
 
   add_index "comments", ["project_id"], name: "index_comments_on_project_id", using: :btree
+
+  create_table "faqs", force: :cascade do |t|
+    t.text     "question",   limit: 65535, null: false
+    t.text     "answer",     limit: 65535, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
 
   create_table "messages", force: :cascade do |t|
     t.datetime "created_at",                   null: false
@@ -89,6 +96,9 @@ ActiveRecord::Schema.define(version: 20150310164448) do
     t.boolean  "launched",           limit: 1,   default: false
     t.integer  "funding_status",     limit: 4,   default: 1
     t.integer  "category_id",        limit: 4
+    t.datetime "launched_at"
+    t.datetime "deleted_at"
+    t.datetime "stopped_at"
   end
 
   add_index "projects", ["category_id"], name: "index_projects_on_category_id", using: :btree

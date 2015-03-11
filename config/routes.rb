@@ -38,7 +38,8 @@ Rails.application.routes.draw do
     end
 
     member do
-      patch :upload_image
+      post :launch_project
+      post :upload_image
     end
   end
 

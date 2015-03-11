@@ -17,9 +17,14 @@
       <div class="field">
         <%= f.label :image %><br/>
         <% if @project.image.exists? %>
-            <%= image_tag @project.image.url %>
+            <%= image_tag @project.image.url(:medium) %>
         <% end %>
         <%= f.file_field :image, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label "Category" %><br/>
+        <%= f.select :category_id, options_for_select(@categories.map{ |c| [c.name, c.id] }, @project.category_id) %>
       </div>
 
       <div class="field">
@@ -35,6 +40,12 @@
       <div class="field">
         <%= f.label :funding_goal %><br/>
         <%= f.text_field :funding_goal %>
+      </div>
+
+      <div class="field">
+        <%= f.label :funding_duration %><br/>
+        Number of days: <%= f.text_field :duration %>
+        End on date & time: <%= f.text_field :deadline %>
       </div>
 
       <div class="actions">
@@ -86,7 +97,7 @@
 
     $("#project_image").fileupload({
         url: "/projects/superman-returns/upload_image",
-        type: "PATCH",
+        type: "POST",
         add: function (e, data) {
             data.submit();
         },

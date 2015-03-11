@@ -5,4 +5,5 @@ angular
         'templates'
     ])
     .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+
     });

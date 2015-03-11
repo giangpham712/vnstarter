@@ -47,7 +47,7 @@ GEM
       railties (>= 3.1)
       sprockets
       tilt
-    annotate (2.6.6)
+    annotate (2.6.7)
       activerecord (>= 2.3.0)
       rake (~> 10.4.2, >= 10.4.2)
     arel (6.0.0)
@@ -74,7 +74,7 @@ GEM
     cocaine (0.5.7)
       climate_control (>= 0.0.3, < 1.0)
     columnize (0.9.0)
-    daemons (1.1.9)
+    daemons (1.2.1)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
     devise (3.4.1)
@@ -238,7 +238,7 @@ GEM
       activesupport (>= 4.2.0.beta, < 5.0)
       nokogiri (~> 1.6.0)
       rails-deprecated_sanitizer (>= 1.0.1)
-    rails-html-sanitizer (1.0.1)
+    rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
     rails-i18n (4.0.4)
       i18n (~> 0.6)

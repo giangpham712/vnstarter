@@ -23,6 +23,7 @@ class ProjectsController < ApplicationController
 
   def new
     @cities = City.all
+    @categories = Category.all
     @project = Project.new
   end
 
@@ -41,18 +42,41 @@ class ProjectsController < ApplicationController
   #View to edit an existing projects
   def edit
     @cities = City.all
+    @categories = Category.all
     @project = Project.friendly.find(params[:id])
   end
 
-
   def update
-    @project = Project.friendly.find(params[:id])
+    project = Project.friendly.find(params[:id])
+    params = project.launched ? launched_project_params : project_params
 
-    if @project.update(project_params)
-      redirect_to edit_project_path(@project)
+    if project.update(params)
+      render json: { :success => true, :project => project }
     else
-      render 'edit'
+      render json: { :success => false, :errors => project.errors }
     end
+  end
+
+  def launch_project
+
+    project = Project.friendly.find(params[:id])
+
+    if project.launched
+      render json: { :success => false }
+    end
+
+    if project.update_attributes(:launched => true, :launched_at => Time.now.utc)
+      render json: { :success => true }
+    else
+      render json: { :success => false, :errors => project.errors }
+    end
+
+  end
+
+  def stop_project
+
+    project = Project.friendly.find(params[:id])
+
   end
 
   def upload_video
@@ -61,18 +85,23 @@ class ProjectsController < ApplicationController
   end
 
   def upload_image
-    @project = Project.friendly.find(params[:id])
+    project = Project.friendly.find(params[:id])
     puts params[:image]
-    if @project.update_attributes(:image => params[:project][:image])
-      render json: { :success => true, :image_url => @project.image.url }
+    if project.update_attributes(:image => params[:project][:image])
+      render json: { :success => true, :image_url => project.image.url }
     else
-      render json: { :success => false, :errors => @project.errors }
+      render json: { :success => false, :errors => project.errors }
     end
 
   end
 
   private
     def project_params
-      params.require(:project).permit(:title, :location, :short_description, :funding_goal, :image)
+      params.require(:project).permit(:title, :location, :category_id, :short_description, :funding_goal, :duration, :dead_line, :image)
     end
+
+    def launched_project_params
+      params.require(:project).permit(:title, :location, :category_id, :short_description, :image)
+    end
+
 end
