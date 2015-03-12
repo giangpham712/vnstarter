@@ -40,6 +40,8 @@ class ProjectsController < ApplicationController
     if @project.save
       redirect_to edit_project_path(@project)
     else
+      @cities = City.all
+      @categories = Category.all
       render 'new'
     end
   end
