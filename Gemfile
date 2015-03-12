@@ -47,6 +47,8 @@ gem 'vimeo'
 
 gem 'thin'
 
+gem "font-awesome-rails"
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
