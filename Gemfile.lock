@@ -47,9 +47,9 @@ GEM
       railties (>= 3.1)
       sprockets
       tilt
-    annotate (2.6.7)
-      activerecord (>= 2.3.0)
-      rake (~> 10.4.2, >= 10.4.2)
+    annotate (2.6.8)
+      activerecord (>= 3.2, <= 4.3)
+      rake (~> 10.4)
     arel (6.0.0)
     aws-sdk-v1 (1.63.0)
       json (~> 1.4)
