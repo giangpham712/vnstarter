@@ -1,24 +1,100 @@
+
+
 <% page_title "Create your project" %>
 <h2>Create project</h2>
 
 <%= form_for :project, url: projects_path do |f| %>
 
-    <div class="field">
-      <%= f.label :title %><br/>
-      <%= f.text_field :title, autofocus: true %>
-    </div>
+<div class="field">
+  <%= f.label :title %><br/>
+  <%= f.text_field :title, autofocus: true %>
+</div>
 
-    <div class="field">
-      <%= f.label "Category" %><br/>
-      <%= f.select :category_id, options_from_collection_for_select(@categories, 'id', 'name') %>
-    </div>
+<div class="field">
+  <%= f.label "Category" %><br/>
+  <%= f.select :category_id, options_from_collection_for_select(@categories, 'id', 'name') %>
+</div>
 
-    <div class="field">
-      <%= f.label :location %><br/>
-      <%= f.select :location, options_from_collection_for_select(@cities, 'name', 'name') %>
-    </div>
+<div class="field">
+  <%= f.label :location %><br/>
+  <%= f.select :location, options_from_collection_for_select(@cities, 'name', 'name') %>
+</div>
 
-    <div class="actions">
-      <%= f.submit "Create" %>
-    </div>
+<div class="actions">
+  <%= f.submit "Create" %>
+</div>
 <% end %>
+
+
+<div class="loading-container">
+  <div class="spinner">
+    <div class="double-bounce1"></div>
+    <div class="double-bounce2"></div>
+  </div>
+</div>
+
+
+<div class="content-wrapper hide-until-loading"><div class="body-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 animated" data-animtype="flipInY"
+      data-animrepeat="0"
+      data-speed="1s"
+      data-delay="0.5s">
+      <h2 class="h2-section-title"><% page_title "Create your project" %></h2>
+
+      <div class="i-section-title">
+        <i class="icon-users-outline">
+
+        </i>
+      </div>
+
+      <div class="space-sep20"></div>
+    </div>            
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-12 col-sm-12 centered">
+      <div class="classic-form">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+            <div class="callout-box clearfix">
+              <%= form_for :project, url: projects_path do |f| %>
+              <a href="sign-up.html" class="btn btn-lg btn-primary">Khởi tạo</a>
+
+              <div class="callout-content">
+                <h2> 
+                  <div class="row">
+                    <div class='col-md-3 col-sm-3'>
+                     <%= f.label "Category" %><br/>
+                     <%= f.select :category_id, options_from_collection_for_select(@categories, 'id', 'name') %>   
+                   </div>
+                   <div class='col-md-3 col-sm-3'>
+
+                     <%= f.label :title %><br/>
+                     <%= f.text_field :title, autofocus: true %>
+                   </div> 
+                   <div class='col-md-3 col-sm-3'>
+                    <%= f.label :location %><br/>
+                    <%= f.select :location, options_from_collection_for_select(@cities, 'name', 'name') %>
+                  </div>   
+                </div>
+
+
+
+              </h2>   
+              <% end %> 
+            </div>
+
+
+          </div>
+        </div>
+      </div> 
+    </div>
+  </div>
+
+</div>
+</div>
+</div>
+    </div><!--.content-wrapper end -->

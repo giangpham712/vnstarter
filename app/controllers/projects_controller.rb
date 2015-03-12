@@ -13,6 +13,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.includes(:user).friendly.find(params[:id])
+
     pledges = @project.pledges
 
     @total_pledgers = pledges.count(:pledger_id, :distinct => true)
@@ -20,11 +21,14 @@ class ProjectsController < ApplicationController
     @total_pledge_amount = pledges.sum(:pledge_amount)
 
     render 'show'
+
   end
 
   def new
     @cities = City.all
+
     @categories = Category.all
+    
     @project = Project.new
   end
 

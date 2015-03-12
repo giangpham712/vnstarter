@@ -3,12 +3,124 @@
 <head>
   <title><%= yield(:page_title) %></title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
+
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+<div class="top_wrapper">
+    			<div class="top-bar">
+    				<div class="container">
+    					<div class="row">
+    						<div class="col-xs-2 logo">
+    							<a href="index.html">
+    								<img src="images/main_logo.png" alt="Kanzi HTML5 Template"/>
+    							</a>
+    						</div>
+    						<div class="col-sm-5">
+
+    							<div class="call-us top-bar-block">
+    								<i class="icon-phone"></i>
+    								<span>
+    									Call us at 1- 888 - 999
+    								</span>
+    							</div>
+    							<div class="mail-us top-bar-block">
+    								<i class="icon-email"></i>                            
+    								<span>
+    									E-mail: info@example.com
+    								</span>                            
+    							</div>
+
+    						</div>
+    						<div class="col-sm-5">
+
+    							<!-- Search Box -->
+    							<div class="searchbox">
+    								<form action="#" method="get">
+    									<input type="text" class="searchbox-inputtext" id="searchbox-inputtext" name="s" placeholder="Search.."/>
+    									<label class="searchbox-icon" for="searchbox-inputtext"></label>
+    									<input type="submit" class="searchbox-submit" value="Search"/>
+    								</form>
+    							</div>
+    							<!-- //Search Box// -->
+    							<div class="social-icons">
+    								<ul>
+    									<li>
+    										<a href="#" target="_blank" class="social-media-icon facebook-icon" data-original-title="facebook">facebook</a>
+    									</li>
+    									<li>
+    										<a href="#" target="_blank" class="social-media-icon twitter-icon" data-original-title="twitter">twitter</a>
+    									</li>
+    									<li>
+    										<a href="#" target="_blank" class="social-media-icon googleplus-icon" data-original-title="googleplus">googleplus</a>
+    									</li>
+    									<li>
+    										<a href="#" target="_blank" class="social-media-icon pininterest-icon" data-original-title="pininterest">pininterest</a>
+    									</li>
+    									<li>
+    										<a href="#" target="_blank" class="social-media-icon dribble-icon" data-original-title="dribble">dribble</a>
+    									</li>
+    								</ul>
+
+    							</div>
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+
+    			<!-- Header -->
+    			<header id="header">
+    				<div class="container"></div>
+    			</header>
+    			<!-- //Header// --> 
+
+         </div><!--.top wrapper end -->
+
+<div id='wrapper'>
+
 <%= yield %>
 
+</div>
+<script>
+    $(document).ready(function($) {
+            // Create a clone of the menu, right next to original.
+            $('.menu').addClass('original').clone().insertAfter('.menu').addClass('cloned').css('position','fixed').css('top','0').css('margin-top','0').css('z-index','500').removeClass('original').hide();
+
+            scrollIntervalID = setInterval(stickIt, 10);
+
+
+            function stickIt() {
+
+              var orgElementPos = $('.original').offset();
+              orgElementTop = orgElementPos.top;               
+
+              if ($(window).scrollTop() >= (orgElementTop)) {
+    // scrolled past the original position; now only show the cloned, sticky element.
+
+    // Cloned element should always have same left position and width as original element.     
+    orgElement = $('.original');
+    coordsOrgElement = orgElement.offset();
+    leftOrgElement = coordsOrgElement.left;  
+    widthOrgElement = orgElement.css('width');
+    $('.cloned').css('left',leftOrgElement+'px').css('top',0).css('width',widthOrgElement).show();
+    $('.cloned').css('background-color', '#279fbb');
+    $('.cloned').css('height', '40px');
+    $('#buyer')
+    $('.h4-body-title').css('color', 'white');
+    $('.cloned').css('padding-top', '10px');
+
+    $('.original').css('visibility','hidden');
+} else {
+    // not scrolled past the menu; only show the original menu.
+    $('.h4-body-title').css('color', 'black');
+    $('.cloned').hide();
+    $('.original').css('visibility','visible');
+}
+}
+
+});
+</script>
 </body>
 </html>
