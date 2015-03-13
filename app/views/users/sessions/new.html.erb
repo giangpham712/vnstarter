@@ -1,26 +1,72 @@
-<h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+
+<div class="content-wrapper hide-until-loading"><div class="body-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 animated" data-animtype="flipInY"
+      data-animrepeat="0"
+      data-speed="1s"
+      data-delay="0.5s">
+      <h2 class="h2-section-title">Đăng nhập</h2>
+
+      <div class="i-section-title">
+        <i class="icon-users-outline">
+
+        </i>
+      </div>
+
+      <div class="space-sep20"></div>
+    </div>            
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+  <div class="row">
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
+    <div class="col-md-6 col-sm-6 centered">
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+      <div class="classic-form">
 
-<%= render "users/shared/links" %>
+        <%= form_for(resource, as: resource_name,:html => {:class => "form-horizontal"}, url: session_path(resource_name)) do |f| %>
+        <div class="form-group">
+
+          <%= f.label :email,class:'col-sm-3 control-label' %>
+          <div class="col-sm-9">
+           <%= f.email_field :email, autofocus: true,class:'form-control' %>
+         </div>
+       </div>
+       <div class="form-group">
+        <%= f.label :password,class:'col-sm-3 control-label' %><br />
+        <div class="col-sm-9">
+          <%= f.password_field :password, autocomplete: "off",class:'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-9">
+          <div class="checkbox">
+            <label>
+              <%= f.check_box :remember_me %><%= f.label :remember_me %>
+
+            </label>
+            
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-9">
+
+         <%= f.submit "Đăng nhập",class:'btn btn-block btn-primary' %>
+       </div>
+       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+         <%= render "users/shared/links" %>
+       </div>
+     </div>
+
+     <% end %>                    
+   </div>
+ </div>
+
+</div>
+</div>
+</div>
+</div><!--.content-wrapper end -->
+
+
