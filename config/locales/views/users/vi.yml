@@ -1,0 +1,9 @@
+vi:
+  sign_in: "đăng nhập"
+  sign_up: "đăng ký"
+  name: "họ và tên"
+  email: "email"
+  password: "mật khẩu"
+  confirm_password: "nhập lại mật khẩu"
+  remember_me: "ghi nhớ đăng nhập"
+  forgot_password: "quên mật khẩu?"

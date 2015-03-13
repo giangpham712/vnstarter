@@ -1,0 +1,9 @@
+en:
+  sign_in: "log in"
+  sign_up: "sign up"
+  name: "name"
+  email: "email"
+  password: "password"
+  confirm_password: "re-enter password"
+  remember_me: "remember me"
+  forgot_password: "forgot password?"
