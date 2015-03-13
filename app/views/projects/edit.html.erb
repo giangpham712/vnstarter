@@ -1,5 +1,743 @@
 
 
+
+
+ <div class="content-wrapper hide-until-loading"><div class="body-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 animated" data-animtype="flipInY"
+                        data-animrepeat="0"
+                        data-speed="1s"
+                        data-delay="0.5s">
+                        <% page_title t(:edit_your_project) %>
+<h2 class="h2-section-title" ><%= t :edit_your_project %></h2>
+                        
+                        <div class="col-md-12 col-sm-12 centered">            
+                        </div>
+                        <div class="i-section-title">
+                            <i class="icon-users-outline">
+
+                            </i>
+                        </div>
+
+                        <div class="space-sep20"></div>
+                    </div>            
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-12 col-sm-12 centered">
+
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <div class="title-block clearfix">
+                                    <h3 class="h3-body-title">Khởi tạo dự án</h3>
+                                    <div class="title-seperator"></div>
+                                </div>
+                                <div class="tab-container" >
+
+                                    <ul class="etabs">
+
+                                        <li class="tab">
+                                            <a href="#tab1"><i class=icon-feather></i>Cơ bản</a>
+                                        </li>
+
+
+                                        <li class="tab">
+                                            <a href="#tab2"><i class=icon-drive></i>Phần thưởng</a>
+                                        </li>
+
+                                        <li class="tab">
+                                            <a href="#tab3"><i class=icon-drive></i>Câu chuyện</a>
+                                        </li>
+
+                                        <li class="tab">
+                                            <a href="#tab4"><i class=icon-map></i>Về bạn</a>
+                                        </li>
+
+                                        <li class="tab">
+                                            <a href="#tab5"><i class=icon-map></i> Tài khoản </a>
+                                        </li>
+
+                                    </ul>            
+
+                                    <div class="tabs-content">
+                                        <div id="tab1">
+                                        <%= form_for :project, url: project_path(@project), method: :put do |f| %>
+                                            <div class="title-block clearfix">
+                                                <h3 class="h3-body-title">Thêm ảnh và những thông tin cơ bản về dự án của bạn</h3>
+                                                <div class="title-seperator"></div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+
+                                                    <div class="row">
+                                                        <div class='form-element'>
+                                                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                                <%= f.label :video %>
+                                                            </div>
+
+                                                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                                                 <%= f.file_field :video, autofocus: true, class:'file-button'  %>
+                                                                <span>Ảnh chính của dự án.</span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class='form-element'>
+                                                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                                <%= f.label :title %><br/>
+                                                            </div>
+
+                                                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                                                 <%= f.text_field :title, autofocus: true,class:'form-control' %>
+                                                                <span>Tên dự án phải ngắn gọn, dễ hiểu, dễ gây ấn tượng với nhà đầu tư ngay từ cái nhìn đầu tiên</span>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class='form-element'>
+                                                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                                <%= f.label :short_description %>
+                                                            </div>
+
+                                                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                                               <%= f.text_area :short_description,class:'form-control' %>
+                                                                <span>Giới thiệu ngắn gọn về dự án, ý tưởng của bạn</span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class='form-element'>
+                                                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                            <%= f.label "Category" %>
+                                                            </div>
+
+                                                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                                               <%= f.select :category_id, options_for_select(@categories.map { |c| [c.name, c.id] }, @project.category_id) %>
+                                                               
+                                                            </div>
+                                                        </div>
+
+                                                        <div class='form-element'>
+                                                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                               <%= f.label :location %>
+                                                            </div>
+
+                                                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                                               <%= f.select :location, options_for_select(@cities.map { |city| city.name }, @project.location) %>
+                                                                <span>Hãy cung cấp địa chỉ chính xác của bạn để chúng tôi có thể xác minh dự án của bản nhanh nhất có thể</span>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class='form-element'>
+                                                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                               <%= f.label :funding_duration %>
+                                                            </div>
+
+                                                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                                                Number of days: <%= f.number_field :duration,class:'form-control'  %> <br>
+        End on date & time: <%= f.date_field :deadline,class:'form-control' %>
+                                                                <span>Thời gian được tính từ ngày khởi tạo dự án. Hãy nhập ngày bạn muốn kết thúc dự án. Lưu ý thời gian huy động vốn không quá 2 tháng.</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class='form-element'>
+                                                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                                <%= f.label :funding_goal %>
+                                                            </div>
+
+                                                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                                                <%= f.number_field :funding_goal,class:'form-control' %>
+                                                                <span>Số tiền nhỏ nhất để bạn có thể hoàn thành dự án của bạn. Vui lòng nhập số. đơn vị tính theo VNĐ</span>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+
+
+                                                </div>
+
+                                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                    <div class='form-element'>
+                                                        <p>Nội quy</p>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-12 col-md-12 project-info">
+
+
+                                                            <div class="feature animated" data-animtype="fadeInUp" data-animrepeat="0" data-animspeed="1s" data-animdelay="0.4s">
+                                                                <div class="feature-image img-overlay">
+                                                                    <img src="media/feature1.jpg" alt="Blog">
+
+                                                                    <div class="item-img-overlay">
+                                                                        <a class="portfolio-zoom fa fa-plus" href="media/blog1.jpg"
+                                                                        data-rel="prettyPhoto[portfolio]" title="Title goes here"></a>
+
+                                                                    </div>
+
+                                                                </div>
+
+                                                                <div class="feature-content">
+                                                                    <h3 class="h3-body-title blog-title">
+                                                                        <a href="#">Tên dự án</a>
+                                                                    </h3>
+                                                                    <p>
+                                                                        Mô tả về dự án.
+                                                                        <br>
+                                                                        Tên tác giả
+                                                                    </p>
+
+                                                                    <p><span class="fa fa-map-marker"></span>&nbsp;Hà nội</p>    
+                                                                    <div class="progress">
+                                                                        <div class="progress-bar animated" role="progressbar" aria-valuenow="85%" 
+                                                                        aria-valuemin="0" aria-valuemax="100"
+                                                                        data-animtype="animate-progress"
+                                                                        data-animrepeat="0">
+                                                                    </div>
+                                                                </div>
+                                                                <span class="">2.5tr/3tr&nbsp;|Còn 2 ngày</span>
+                                                            </div>
+
+                                                            <div class="feature-details">
+                                                                <i class="icon-calendar"></i>
+                                                                <span>July 10, 2013</span>
+                                                                <span class="details-seperator"></span>
+
+                                                                <a href="#"><i class="icon-comment"></i><span>4</span></a>
+
+
+                                                                <div class="feature-share">
+                                                                    <a href="#"><i class="icon-heart"></i></a>
+                                                                    <a href="#"><i class="icon-facebook"></i></a>
+                                                                </div>
+                                                            </div>        
+                                                        </div>
+
+                                                        <button type="button" style='float:right;margin-top:20px;' class="btn btn-success">Chỉnh sửa</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% end %>
+                                    <div id="tab2">
+                                      <%= form_for([@project, @project.rewards.build]) do |f| %>
+                                        <div class="title-block clearfix">
+                                            <h3 class="h3-body-title">Phần quà bạn sẽ tặng nhà đầu tư khi họ góp vốn.</h3>
+                                            <div class="title-seperator"></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+
+                                                <div class="row" id='reward-form'> 
+
+
+
+                                                    <div class='form-element'>
+                                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                            Phần thưởng 1
+                                                        </div>
+
+                                                        <div  class="col-xs-8 col-sm-8 col-md-8 col-lg-8 reward">
+
+                                                           <div class="row">
+                                                               <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
+                                                                   <%= f.label :minimum_pledge_amount %>
+                                                               </div>
+                                                               <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                                                   <%= f.text_field :minimum_pledge_amount,class:'form-control' %>
+                                                               </div>
+                                                               <br>
+                                                               <br>
+                                                               <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
+                                                                   <%= f.label :description %>
+                                                               </div>
+                                                               <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                                                   <%= f.text_area :description,class:'form-control' %>
+                                                               </div>
+                                                               <br>
+                                                               <br>
+                                                               <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
+                                                                   <%= f.label :limit_quantity %>
+                                                               </div>
+                                                               <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                                                   <%= f.text_area :limit_quantity,class:'form-control' %>
+                                                               </div>
+                                                           </div>
+
+
+                                                       </div>
+
+
+
+                                                   </div>
+
+
+
+                                               </div>
+                                               <button type="button" id='add-reward' class="btn btn-success">+Thêm 1 phần quà</button>
+
+
+                                           </div>
+
+                                           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                            <div class='form-element'>
+                                                <p>Nội quy</p>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-12 col-md-12 project-info">
+
+
+                                                    <div class="feature animated" data-animtype="fadeInUp" data-animrepeat="0" data-animspeed="1s" data-animdelay="0.4s">
+                                                        <div class="feature-image img-overlay">
+                                                            <img src="media/feature1.jpg" alt="Blog">
+
+                                                            <div class="item-img-overlay">
+                                                                <a class="portfolio-zoom fa fa-plus" href="media/blog1.jpg"
+                                                                data-rel="prettyPhoto[portfolio]" title="Title goes here"></a>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="feature-content">
+                                                            <h3 class="h3-body-title blog-title">
+                                                                <a href='#'>Vix sumo ferri an</a>
+                                                            </h3>
+                                                            <p class='preview-description'>
+                                                                Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a [...]
+                                                            </p>
+
+                                                            <p><span class="fa fa-map-marker"></span>&nbsp;Hà nội</p>    
+                                                            <div class="progress">
+                                                                <div class="progress-bar animated" role="progressbar" aria-valuenow="85%" 
+                                                                aria-valuemin="0" aria-valuemax="100"
+                                                                data-animtype="animate-progress"
+                                                                data-animrepeat="0">
+                                                            </div>
+                                                        </div>
+                                                        <span class="">2.5tr/3tr&nbsp;|Còn 2 ngày</span>
+                                                    </div>
+
+                                                    <div class="feature-details">
+                                                        <i class="icon-calendar"></i>
+                                                        <span>July 10, 2013</span>
+                                                        <span class="details-seperator"></span>
+
+                                                        <a href="#"><i class="icon-comment"></i><span>4</span></a>
+
+
+                                                        <div class="feature-share">
+                                                            <a href="#"><i class="icon-heart"></i></a>
+                                                            <a href="#"><i class="icon-facebook"></i></a>
+                                                        </div>
+                                                    </div>        
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                              <% end %>
+                            </div>
+                            <div id="tab3">
+                            <%= form_for([@project, @project.posts.build]) do |f| %>
+                                <div class="title-block clearfix">
+                                    <h3 class="h3-body-title">Hãy kể câu chuyện kinh doanh của bạn</h3>
+                                    <div class="title-seperator"></div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+
+                                        <div class="row story">
+                                            <div class='form-element'>
+                                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                    <%= f.label :title %><br>
+                                                </div>
+
+                                                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                                   <%= f.text_field :title,class:'form-control' %>
+                                                    
+                                                </div>
+                                                <br>
+                                                <br>
+                                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                    <%= f.label :body %><br>
+                                                </div>
+
+                                                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                                   <%= f.text_area :body,class:'form-control' %>
+                                                    
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                        </div>
+                                        
+                                        <%= f.submit "+ Thêm câu chuyện", class:'btn btn-info add_story' %>
+                                        <div class="remodal" id='story-modal' data-remodal-id="modal">
+                                          <h3>Thêm câu chuyện của bạn</h3>
+                                          <div class="row">
+                                              <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                  <span>
+                                                    Ảnh
+                                                </span>
+                                            </div>
+                                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                              <input type="file" name="" id='modal-file' class='file-button' value="" placeholder="Ảnh chính của dự án.">
+                                          </div>
+                                          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                              <span>
+                                                Tiêu đề
+                                            </span>
+                                        </div>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                            <input type="text" name="" id="modal-title" class="form-control" value="" required="required" pattern="" title="">
+                                            <br>
+                                        </div>
+                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                           <span>
+                                            Giới thiệu
+                                        </span>
+                                    </div>
+                                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                      <textarea name="" id='modal-des' class='form-control' placeholder="giới hạn 225 chữ"></textarea>
+                                  </div>
+
+
+
+
+
+                              </div>
+
+
+
+                              <br>
+                              <a class="remodal-cancel" href="#">Cancel</a>
+                              <a class="remodal-confirm" href="#">OK</a>
+                          </div>
+
+
+
+                      </div>
+
+                      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <div class='form-element'>
+                            <p>Nội quy</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 project-info">
+
+
+                                <div class="feature animated" data-animtype="fadeInUp" data-animrepeat="0" data-animspeed="1s" data-animdelay="0.4s">
+                                    <div class="feature-image img-overlay">
+                                        <img src="media/feature1.jpg" alt="Blog">
+
+                                        <div class="item-img-overlay">
+                                            <a class="portfolio-zoom fa fa-plus" href="media/blog1.jpg"
+                                            data-rel="prettyPhoto[portfolio]" title="Title goes here"></a>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="feature-content">
+                                        <h3 class="h3-body-title blog-title">
+                                            <a class='preview-title'>Vix sumo ferri an</a>
+                                        </h3>
+                                        <p class='preview-desc'> 
+                                            Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a [...]
+                                        </p>
+
+                                        <p><span class="fa fa-map-marker"></span>&nbsp;Hà nội</p>    
+                                        <div class="progress">
+                                            <div class="progress-bar animated" role="progressbar" aria-valuenow="85%" 
+                                            aria-valuemin="0" aria-valuemax="100"
+                                            data-animtype="animate-progress"
+                                            data-animrepeat="0">
+                                        </div>
+                                    </div>
+                                    <span class="">2.5tr/3tr&nbsp;|Còn 2 ngày</span>
+                                </div>
+
+                                <div class="feature-details">
+                                    <i class="icon-calendar"></i>
+                                    <span>July 10, 2013</span>
+                                    <span class="details-seperator"></span>
+
+                                    <a href="#"><i class="icon-comment"></i><span>4</span></a>
+
+
+                                    <div class="feature-share">
+                                        <a href="#"><i class="icon-heart"></i></a>
+                                        <a href="#"><i class="icon-facebook"></i></a>
+                                    </div>
+                                </div>        
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% end %>
+
+
+
+        <div id="tab4">
+
+            <div class="title-block clearfix">
+                <h3 class="h3-body-title">Đôi điều về bản thân bạn</h3>
+                <div class="title-seperator"></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+
+                    <div class="row">
+                        <div class='form-element'>
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                Ảnh cá nhân
+                            </div>
+
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                <input type="file" name="" class='file-button' value="" placeholder="Ảnh chính của dự án.">
+                                <span>Ảnh đại diện của bạn</span>
+                            </div>
+                        </div>
+
+                        <div class='form-element'>
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                Họ và tên
+                            </div>
+
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                <input type="text" name="" id="input" class="form-control" value="" required="required" pattern="" title="">
+                                <span>Khi bạn đã tạo dự án. Tên không thể thay đổi</span>
+                            </div>
+                        </div>
+
+                        <div class='form-element'>
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                Đôi điều về bản thân
+                            </div>
+
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                <textarea id='short-des' class="form-control ckeditor" name=""></textarea>
+                                <span>Giới thiệu ngắn gọn về con người bạn, tính cách</span>
+                            </div>
+                        </div>
+
+                        <div class='form-element'>
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                Địa chỉ facebook
+                            </div>
+
+                            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                <input type="text" name="" id="input" class="form-control" value="" required="required" pattern="" title=""  placeholder="Địa chỉ">
+                                <span>Hãy cho mọi người thấy con người thật của bạn qua mạng xã hội facebook</span>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <div class='form-element'>
+                        <p>Nội quy</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12 project-info">
+
+                            <div class="feature animated" data-animtype="fadeInUp" data-animrepeat="0" data-animspeed="1s" data-animdelay="0.4s">
+                                <div class="feature-image img-overlay">
+                                    <img src="media/feature1.jpg" alt="Blog">
+
+                                    <div class="item-img-overlay">
+                                        <a class="portfolio-zoom fa fa-plus" href="media/blog1.jpg"
+                                        data-rel="prettyPhoto[portfolio]" title="Title goes here"></a>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="feature-content">
+                                    <h3 class="h3-body-title blog-title">
+                                        <a href="#">Vix sumo ferri an</a>
+                                    </h3>
+                                    <p>
+                                        Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a [...]
+                                    </p>
+
+                                    <p><span class="fa fa-map-marker"></span>&nbsp;Hà nội</p>    
+                                    <div class="progress">
+                                        <div class="progress-bar animated" role="progressbar" aria-valuenow="85%" 
+                                        aria-valuemin="0" aria-valuemax="100"
+                                        data-animtype="animate-progress"
+                                        data-animrepeat="0">
+                                    </div>
+                                </div>
+                                <span class="">2.5tr/3tr&nbsp;|Còn 2 ngày</span>
+                            </div>
+
+                            <div class="feature-details">
+                                <i class="icon-calendar"></i>
+                                <span>July 10, 2013</span>
+                                <span class="details-seperator"></span>
+
+                                <a href="#"><i class="icon-comment"></i><span>4</span></a>
+
+
+                                <div class="feature-share">
+                                    <a href="#"><i class="icon-heart"></i></a>
+                                    <a href="#"><i class="icon-facebook"></i></a>
+                                </div>
+                            </div>        
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="tab5">
+
+
+        <div class="title-block clearfix">
+            <h3 class="h3-body-title">Đôi điều về bản thân bạn</h3>
+            <div class="title-seperator"></div>
+        </div>
+        <div class="row">
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+
+                <div class="row">
+
+
+                    <div class='form-element'>
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                            Gửi xác nhận email
+                        </div>
+
+                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                            <input type="text" name="" id="input" class="form-control" value="" required="required" pattern="" title="">
+                            <br>
+                            <span><button type="button" class="btn btn-primary">Gửi email xác nhận</button></span>
+                        </div>
+                    </div>
+
+                    <div class='form-element'>
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                            Gửi xác nhận qua số điện thoại
+                        </div>
+
+                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                            <textarea  class="form-control ckeditor" name=""></textarea>
+                            <br>
+                            <span><button type="button" class="btn btn-primary">Gửi tin nhắn xác nhận</button></span>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+
+
+
+            </div>
+
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <div class='form-element'>
+                    <p>Nội quy</p>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 project-info">
+
+
+                        <div class="feature animated" data-animtype="fadeInUp" data-animrepeat="0" data-animspeed="1s" data-animdelay="0.4s">
+                            <div class="feature-image img-overlay">
+                                <img src="media/feature1.jpg" alt="Blog">
+
+                                <div class="item-img-overlay">
+                                    <a class="portfolio-zoom fa fa-plus" href="media/blog1.jpg"
+                                    data-rel="prettyPhoto[portfolio]" title="Title goes here"></a>
+
+                                </div>
+
+                            </div>
+
+                            <div class="feature-content">
+                                <h3 class="h3-body-title blog-title">
+                                    <a href="#">Vix sumo ferri an</a>
+                                </h3>
+                                <p>
+                                    Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a [...]
+                                </p>
+
+                                <p><span class="fa fa-map-marker"></span>&nbsp;Hà nội</p>    
+                                <div class="progress">
+                                    <div class="progress-bar animated" role="progressbar" aria-valuenow="85%" 
+                                    aria-valuemin="0" aria-valuemax="100"
+                                    data-animtype="animate-progress"
+                                    data-animrepeat="0">
+                                </div>
+                            </div>
+                            <span class="">2.5tr/3tr&nbsp;|Còn 2 ngày</span>
+                        </div>
+
+                        <div class="feature-details">
+                            <i class="icon-calendar"></i>
+                            <span>July 10, 2013</span>
+                            <span class="details-seperator"></span>
+
+                            <a href="#"><i class="icon-comment"></i><span>4</span></a>
+
+
+                            <div class="feature-share">
+                                <a href="#"><i class="icon-heart"></i></a>
+                                <a href="#"><i class="icon-facebook"></i></a>
+                            </div>
+                        </div>        
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+<div class="space-sep40"></div>        
+
+</div>
+
+</div>
+</div>
+</div>
+</div><!--.content-wrapper end -->
+
+
+
+
+
 <% page_title t(:edit_your_project) %>
 <h2><%= t :edit_your_project %></h2>
 
