@@ -32,16 +32,16 @@
                   <div class="row">
                     <div class='col-md-3 col-sm-3'>
                      <%= f.label "Category" %><br/>
-                     <%= f.select :category_id, options_from_collection_for_select(@categories, 'id', 'name'),{required: 'true', autofocus: 'true', class: 'form-control'} %>   
+                     <%= f.select :category_id, options_from_collection_for_select(@categories, 'id', 'name'), { :include_blank => false }, { class: 'form-control' } %>
                    </div>
                    <div class='col-md-3 col-sm-3'>
 
                      <%= f.label :title %><br/>
-                     <%= f.text_field :title, autofocus: true,class: 'form-control' %>
+                     <%= f.text_field :title, autofocus: true, class: 'form-control' %>
                    </div> 
                    <div class='col-md-3 col-sm-3'>
                     <%= f.label :location %><br/>
-                    <%= f.select :location, options_from_collection_for_select(@cities, 'name', 'name') %>
+                    <%= f.select :location, options_from_collection_for_select(@cities, 'name', 'name'), { :include_blank => false }, { class: 'form-control' } %>
                   </div>   
                 </div>
 
