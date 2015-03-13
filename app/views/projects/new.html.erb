@@ -26,7 +26,7 @@
             <div class="callout-box clearfix">
               <%= form_for :project, url: projects_path do |f| %>
               
-              <%= f.submit "Khởi tạo",class: 'btn btn-lg btn-primary' %>
+
               <div class="callout-content">
                 <h2> 
                   <div class="row">
@@ -45,9 +45,8 @@
                   </div>   
                 </div>
 
-
-
-              </h2>   
+              </h2>
+                <%= f.submit "Khởi tạo",class: 'btn btn-lg btn-primary' %>
               <% end %> 
             </div>
 
