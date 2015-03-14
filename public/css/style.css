@@ -168,7 +168,7 @@ blockquote {
 
 /* Main Container */
 .body-wrapper {
-    padding-top: 40px;
+    padding-top: 0px;
     padding-bottom: 40px;
     position: relative;
     z-index: 0;
@@ -1840,9 +1840,7 @@ Boxed
 
 #wrapper {
     background-color: white;
-    -webkit-box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.16);
-    -moz-box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.16);
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.16);
+    
 }
 
 /****************************
@@ -1904,12 +1902,12 @@ Buttons
     display: inline-block;
     text-transform: uppercase;
     font-weight: 500;
-    font-size: 17px;
+    font-size: 13px;
     color: white !important;
     background-color: #279fbb;
     position: relative;
-    padding: 13px 28px !important;
-    height: 60px;
+    padding: 0px 11px !important;
+    height: 33px;
     line-height: 33px;
     border: none;
     -webkit-border-radius: 3px;
@@ -3397,11 +3395,11 @@ Header Element, Container for - Logo - Navigation - Search
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     position: relative;
-    height: 85px;
+    height: 72px;
 }
 
 .header .logo {
-    margin: 20px 0 0 0;
+    margin: 7px 0 0 0;
 }
 
 /*
@@ -3418,6 +3416,7 @@ Navigation
 .navigation > li {
     float: left;
     margin-right: 30px;
+    padding-top: 16px;
 }
 
 .navigation > li:last-child {
@@ -3426,12 +3425,12 @@ Navigation
 
 /* First Level Styling */
 .navigation > li > a {
-    color: #898989;
+    color: #898989 !important;
     text-transform: uppercase;
     font-family: "Raleway", sans-serif;
     font-size: 14px;
     text-decoration: none;
-    height: 80px;
+    height: 53px;
     display: inline-block;
     position: relative;
     padding-right: 12px;
@@ -3694,7 +3693,7 @@ Sticky Menu
 }
 
 .top-bar {
-    height: 39px;
+    height: 36px;
     background-color: #FBFBFB;
     line-height: 35px;
     border-bottom: 1px solid #E9E9E9;
@@ -6606,10 +6605,9 @@ Testimonial
     background-color: #f7fafa
 }
 
-#project-top-video {
-    padding-left: 200px;
-}
+
 
 .form-story {
     cursor: pointer;
 }
+.menu{padding-top: 15px;color: #969696;}
