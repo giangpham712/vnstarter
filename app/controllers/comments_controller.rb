@@ -9,6 +9,7 @@ class CommentsController < ApplicationController
 
     if comment.save
       render json: { :success => true, :comment => comment }
+      
     else
       render json: { :success => false, :errors => comment.errors }
     end
