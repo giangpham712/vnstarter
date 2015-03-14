@@ -1,3 +1,172 @@
+<% content_for :styles do %>
+<style>
+
+    .form-element ul {
+        padding-left: 0;
+    }
+
+    .form-element input[type=text] {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -ms-box-sizing: border-box;
+        -o-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 10px;
+        line-height: 18px;
+        width: 100%;
+    }
+
+    .form-element label {
+        font-size: 13px;
+        line-height: 18px;
+        font-weight: bold;
+        display: -moz-inline-box;
+        display: -moz-inline-stack;
+        -moz-box-orient: vertical;
+        display: inline-block;
+        zoom: 1;
+        padding: 10px 5px 10px 10px;
+    }
+
+    body#projects_edit label {
+        position: relative;
+    }
+
+    body#project_edit .form-element .options {
+        display: -moz-inline-box;
+        display: -moz-inline-stack;
+        -moz-box-orient: vertical;
+        display: inline-block;
+        vertical-align: middle;
+        zoom:1;*display: inline;
+        margin: 0;
+        list-style: none;
+        width: 449px
+    }
+
+    body#project_edit .form-element .options li {
+        list-style-image: none;
+        list-style-type: none;
+        margin-left: 0
+    }
+
+    body#project_edit .form-element .options input[type=text] {
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+
+    body#project_edit .form-element .options label strong {
+        font-weight: normal;
+    }
+
+    body#project_edit .form-element .options input.radio {
+        margin: 0 5px 0 0;
+        min-height: 13px;
+    }
+
+    body#project_edit .form-element .options .option {
+        margin-bottom: 3px
+    }
+
+    body#project_edit .form-element .options .option:last-child {
+        margin-bottom: 0
+    }
+
+    body#project_edit .form-element .options .option.number-of-days {
+        position: relative
+    }
+
+    body#project_edit .form-element .options .option.number-of-days .rec {
+        color: #828587;
+        font-size: 11px;
+        font-style: normal;
+        position: absolute;
+        top: 11px;
+        right: 10px
+    }
+
+    body#project_edit .form-element .options .option.number-of-days .rec:hover {
+        cursor: default
+    }
+
+    body#project_edit .form-element .options .option.number-of-days label {
+        width: 172px;
+        word-wrap: break-word
+    }
+
+    body#project_edit .form-element .options input[type=radio] {
+        display: inline-block;
+    }
+
+    body#project_edit .form-element .options .option.number-of-days label strong {
+        padding-left: 3px
+    }
+
+    body#project_edit .form-element .options .option.number-of-days input.text {
+        padding-right: 160px;
+        width: 277px;
+        background: white;
+        border: 1px solid #d9d9de;
+        color: #0f2105;
+        font-size: 14px;
+        margin: 0;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    body#project_edit .form-element .options .option.date-time label {
+        width: 172px
+    }
+
+    body#project_edit .form-element .options .option.date-time label strong {
+        padding-left: 3px
+    }
+
+    body#project_edit .form-element .options .option.date-time select {
+        padding-left: 11px;
+        margin-right: -1px
+    }
+
+    body#project_edit .form-element .options .option.date-time select.date {
+        background-position: 142px 14px;
+        width: 144px
+    }
+
+    body#project_edit .form-element .options .option.date-time select.time {
+        border-radius: 0px 3px 3px 0px
+    }
+
+    body#project_edit .form-element .options .option.date-time input.text {
+        border-right: 0;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        width: 166px
+    }
+
+    body#project_edit .form-element .options .option label {
+        background: #f2f2f3;
+        border: 1px solid #d9d9de;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+        border-right: 0;
+        color: #0f2105;
+        font-weight: normal;
+        width: auto;
+        margin-bottom: 0
+    }
+
+    body#project_edit #basic .date-time {
+        border-radius: 3px;
+        background: #f2f2f3;
+        border: 1px solid #d9d9de;
+    }
+
+    body#project_edit #basic .date-time label[for=duration_deadline] {
+        border-radius: 0;
+        border: 0;
+    }
+
+</style>
+<% end %>
 <%= form_for :project, url: project_path(@project), method: :put do |f| %>
     <div class="title-block clearfix">
       <h3 class="h3-body-title">Thêm ảnh và những thông tin cơ bản về dự án của bạn</h3>
@@ -68,9 +237,16 @@
             </div>
 
             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-              Number of days: <%= f.number_field :duration, class: 'form-control' %> <br>
-              End on date & time: <%= f.date_field :deadline, class: 'form-control' %>
-
+              <ul class="options">
+                <li class="option number-of-days">
+                  <label class="option_label" for="duration_duration"><input class="radio" id="duration_duration" name="duration" type="radio" value="duration">
+                  <strong>Number of days</strong></label><em class="rec">1−60 days, we recommend 30 or less</em><span><input class="text" id="project_duration" length="3" name="project[duration]" size="3" type="text"></span>
+                </li>
+                <li class="option disabled date-time">
+                  <label class="option_label" for="duration_deadline"><input checked="checked" class="radio" id="duration_deadline" name="duration" type="radio" value="deadline">
+                    <strong>End on date &amp; time</strong></label>
+                </li>
+              </ul>
             </div>
           </div>
           <div class='form-element'>
@@ -89,70 +265,7 @@
 
       </div>
 
-      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-        <div class='form-element'>
-          <p>Nội quy</p>
-        </div>
-        <div class="row">
-          <div class="col-sm-12 col-md-12 project-info">
-
-
-            <div class="feature animated" data-animtype="fadeInUp" data-animrepeat="0" data-animspeed="1s" data-animdelay="0.4s">
-              <div class="feature-image img-overlay">
-                <img src="" alt="Blog" />
-
-                <div class="item-img-overlay">
-                  <a class="portfolio-zoom fa fa-plus" href="media/blog1.jpg"
-                     data-rel="prettyPhoto[portfolio]" title="Title goes here"></a>
-
-                </div>
-
-              </div>
-
-              <div class="feature-content">
-                <h3 class="h3-body-title blog-title">
-                  <a href="#">Tên dự án</a>
-                </h3>
-
-                <p>
-                  Mô tả về dự án.
-                  <br>
-                  Tên tác giả
-                </p>
-
-                <p><span class="fa fa-map-marker"></span>&nbsp;Hà nội</p>
-
-                <div class="progress">
-                  <div class="progress-bar animated" role="progressbar" aria-valuenow="85%"
-                       aria-valuemin="0" aria-valuemax="100"
-                       data-animtype="animate-progress"
-                       data-animrepeat="0">
-                  </div>
-                </div>
-                <span class="">2.5tr/3tr&nbsp;|Còn 2 ngày</span>
-              </div>
-
-              <div class="feature-details">
-                <i class="icon-calendar"></i>
-                <span>July 10, 2013</span>
-                <span class="details-seperator"></span>
-
-                <a href="#"><i class="icon-comment"></i><span>4</span></a>
-
-
-                <div class="feature-share">
-                  <a href="#"><i class="icon-heart"></i></a>
-                  <a href="#"><i class="icon-facebook"></i></a>
-                </div>
-              </div>
-            </div>
-
-            <button type="button" style='float:right;margin-top:20px;' class="btn btn-success">Chỉnh
-              sửa
-            </button>
-          </div>
-        </div>
-      </div>
     </div>
 
 <% end %>
+

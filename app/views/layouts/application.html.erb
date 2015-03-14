@@ -12,22 +12,20 @@
   <link rel="stylesheet" href="/css/isotop_animation.css">
   <link rel="stylesheet" href="/css/animate.css">
 
-
-  <!-- remprod -->
-
-  <!-- end remprod -->
-
   <link href='/css/style.css' rel='stylesheet' type='text/css'>
   <link href='/css/responsive.css' rel='stylesheet' type='text/css'>
 
   <link href="/css/skins/light-blue.css" rel='stylesheet' type='text/css' id="skin-file">
 
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+  <%= yield(:styles) %>
+
   <%= csrf_meta_tags %>
 
 </head>
 
-<body>
+<body id="<%= yield(:body_id) %>">
 
 <div class="top_wrapper">
   <div class="top-bar">
@@ -116,20 +114,10 @@
 
 </div>
 
-<!-- remprod -->
-
-<!-- end remprod -->
-
-
-<!-- online -->
-
-<!-- end online -->
-
 <%= javascript_include_tag 'application' %>
 
 <script src="/js/activeaxon_menu.js" type="text/javascript"></script>
 <script src="/js/animationEnigne.js" type="text/javascript"></script>
-<script src="/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="/js/ie-fixes.js" type="text/javascript"></script>
 <script src="/js/jq.appear.js" type="text/javascript"></script>
 <script src="/js/jquery.base64.js" type="text/javascript"></script>
