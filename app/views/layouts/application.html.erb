@@ -20,6 +20,7 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
 
   <%= yield(:styles) %>
+  <%= yield(:top_scripts) %>
 
   <%= csrf_meta_tags %>
 
@@ -40,15 +41,15 @@
 
           <div class="call-us top-bar-block">
             <i class="icon-phone"></i>
-    								<span>
-    									Call us at 1- 888 - 999
-    								</span>
+            <span>
+                Call us at 1- 888 - 999
+            </span>
           </div>
           <div class="mail-us top-bar-block">
             <i class="icon-email"></i>
-    								<span>
-    									E-mail: info@example.com
-    								</span>
+            <span>
+                E-mail: info@example.com
+            </span>
           </div>
 
         </div>
@@ -138,6 +139,8 @@
 <script src="/js/kanzi.js" type="text/javascript"></script>
 <script src="/js/retina.js" type="text/javascript"></script>
 <script src="/js/smoothscroll.js" type="text/javascript"></script>
+
+<%= yield(:bottom_scripts) %>
 
 </body>
 </html>

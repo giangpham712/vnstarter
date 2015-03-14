@@ -4,12 +4,13 @@
 Global CSS classes used for all theme.
 ****************************/
 /* Global Responsive */
+
 body, html,
 button,
 input,
 select,
 textarea {
-    font-family: "Open Sans", sans-serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
     color: #666666;
     margin: 0;
     font-size: 13px;
@@ -77,7 +78,7 @@ a:hover {
 }
 
 p {
-    font-family: "Open Sans", sans-serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
     font-size: 13px;
     line-height: 20px;
 }
@@ -1095,7 +1096,7 @@ button,
 input,
 select,
 textarea {
-    font-family: "Open Sans", sans-serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
     color: #666666;
     margin: 0;
     font-size: 13px;
@@ -4766,7 +4767,7 @@ Revolution Slider Container
 }
 
 .slider-text-description {
-    font-family: "Open Sans", sans-serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
     font-size: 16px;
     line-height: 20px;
     color: #626262;
@@ -6211,13 +6212,14 @@ body .tab:first-child {
 
 .tab.active a {
     color: #279FBB !important;
+    line-height: 25px;
 }
 
 .tab a.active {
     line-height: 25px;
 }
 
-.tab a.active:after {
+.tab.active a:after {
     position: absolute;
     left: -1px;
     top: -4px;
@@ -6510,7 +6512,7 @@ Testimonial
 
 .file-button {
     padding: 30px 50px 30px 50px;
-    border: 1px dotted #279fbb;
+    border: 1px dashed #ccc;
     border-radius: 5px;
     width: 100%;
     margin-bottom: 20px;
@@ -6554,10 +6556,6 @@ Testimonial
 
 #home-start {
     background-color: #83dbef
-}
-
-.reward {
-    border-left: 1px dotted #279fbb
 }
 
 .project-info {

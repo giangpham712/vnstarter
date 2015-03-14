@@ -9,4 +9,6 @@ vi:
           short_description: "Giới thiệu sơ lược"
           category: "Lĩnh vực"
           location: "Địa điểm"
+          duration: "Thời hạn"
+          funding_goal: "Mục tiêu"
 

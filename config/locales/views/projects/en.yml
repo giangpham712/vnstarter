@@ -30,4 +30,6 @@ en:
         short_description: "Short description"
         category: "Category"
         location: "Location"
+        duration: "Funding duration"
+        funding_goal: "Funding goal"
 

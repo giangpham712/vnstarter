@@ -12,47 +12,39 @@
 
           <div class='form-element'>
             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-              Phần thưởng 1
+              <label>Phần thưởng 1</label>
             </div>
 
             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 reward">
+              <div class="add-new-reward">
+                <div class="keep-or-delete js-unless_has_backers">
+                  <a class="delete" style="" title="Delete this reward">
+                    <span class="fa fa-times"></span>
+                    Xóa
+                  </a>
+                </div>
+                <div class="minimum-amount">
+                  <label for="">Khoản góp tối thiểu</label>
+                  <input type="text"/>
+                </div>
 
-              <div class="row">
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
-                  <%= f.label :minimum_pledge_amount %>
-                </div>
-                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                  <%= f.text_field :minimum_pledge_amount, class: 'form-control' %>
-                </div>
-                <br>
-                <br>
+                <div class="description">
+                  <label for="">Mô tả</label>
+                  <textarea></textarea>
 
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
-                  <%= f.label :description %>
+                  <div></div>
                 </div>
-                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                  <%= f.text_area :description, class: 'form-control' %>
-                </div>
-                <br>
-                <br>
 
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ">
-                  <%= f.label :limit_quantity %>
-                </div>
-                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                  <%= f.text_area :limit_quantity, class: 'form-control' %>
+                <div class="limit">
+                  <label for="">Giới hạn số lượng</label>
                 </div>
               </div>
-
-
             </div>
-
 
           </div>
 
-
         </div>
-        <button type="button" id='add-reward' class="btn btn-success">+Thêm 1 phần quà</button>
+        <button type="button" id='add-reward' class="btn btn-success">Thêm phần thưởng mới</button>
 
 
       </div>
