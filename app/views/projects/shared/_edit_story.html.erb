@@ -1,0 +1,141 @@
+<%= form_for([@project, @project.posts.build]) do |f| %>
+    <div class="title-block clearfix">
+      <h3 class="h3-body-title">Hãy kể câu chuyện kinh doanh của bạn</h3>
+
+      <div class="title-seperator"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+
+        <div class="row story">
+          <div class='form-element'>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+              <%= f.label :title %><br>
+            </div>
+
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+              <%= f.text_field :title, class: 'form-control' %>
+
+            </div>
+            <br>
+            <br>
+
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+              <%= f.label :body %><br>
+            </div>
+
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+              <%= f.text_area :body, class: 'form-control' %>
+
+            </div>
+          </div>
+
+
+        </div>
+
+        <%= f.submit "+ Thêm câu chuyện", class: 'btn btn-info add_story' %>
+        <div class="remodal" id='story-modal' data-remodal-id="modal">
+          <h3>Thêm câu chuyện của bạn</h3>
+
+          <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                  <span>
+                                                    Ảnh
+                                                </span>
+            </div>
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+              <input type="file" name="" id='modal-file' class='file-button' value="" placeholder="Ảnh chính của dự án.">
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                              <span>
+                                                Tiêu đề
+                                            </span>
+            </div>
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+              <input type="text" name="" id="modal-title" class="form-control" value="" required="required" pattern="" title="">
+              <br>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                           <span>
+                                            Giới thiệu
+                                        </span>
+            </div>
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+              <textarea name="" id='modal-des' class='form-control' placeholder="giới hạn 225 chữ"></textarea>
+            </div>
+
+
+          </div>
+
+
+          <br>
+          <a class="remodal-cancel" href="#">Cancel</a>
+          <a class="remodal-confirm" href="#">OK</a>
+        </div>
+
+
+      </div>
+
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <div class='form-element'>
+          <p>Nội quy</p>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 project-info">
+
+
+            <div class="feature animated" data-animtype="fadeInUp" data-animrepeat="0" data-animspeed="1s" data-animdelay="0.4s">
+              <div class="feature-image img-overlay">
+                <img src="media/feature1.jpg" alt="Blog">
+
+                <div class="item-img-overlay">
+                  <a class="portfolio-zoom fa fa-plus" href="media/blog1.jpg"
+                     data-rel="prettyPhoto[portfolio]" title="Title goes here"></a>
+
+                </div>
+
+              </div>
+
+              <div class="feature-content">
+                <h3 class="h3-body-title blog-title">
+                  <a class='preview-title'>Vix sumo ferri an</a>
+                </h3>
+
+                <p class='preview-desc'>
+                  Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim
+                  justo, rhoncus ut, imperdiet a [...]
+                </p>
+
+                <p><span class="fa fa-map-marker"></span>&nbsp;Hà nội</p>
+
+                <div class="progress">
+                  <div class="progress-bar animated" role="progressbar" aria-valuenow="85%"
+                       aria-valuemin="0" aria-valuemax="100"
+                       data-animtype="animate-progress"
+                       data-animrepeat="0">
+                  </div>
+                </div>
+                <span class="">2.5tr/3tr&nbsp;|Còn 2 ngày</span>
+              </div>
+
+              <div class="feature-details">
+                <i class="icon-calendar"></i>
+                <span>July 10, 2013</span>
+                <span class="details-seperator"></span>
+
+                <a href="#"><i class="icon-comment"></i><span>4</span></a>
+
+
+                <div class="feature-share">
+                  <a href="#"><i class="icon-heart"></i></a>
+                  <a href="#"><i class="icon-facebook"></i></a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>

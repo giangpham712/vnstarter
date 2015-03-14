@@ -11,15 +11,6 @@ jQuery(document).ready(function($) {
     /* Show testimonial after loading */
     $('.testimonial-item').css('visibility', 'visible');
 
-
-    /* Tabs Init */
-    easyTabsZeina('.tab-container', {
-        animationSpeed: 'fast',
-        defaultTab: 'li:first-child',
-        tabs: 'ul>li'
-    });
-
-
     /* Search Box Effect Handler */
 
     //Click
@@ -263,16 +254,11 @@ jQuery(document).ready(function($) {
     $(window).resize(function() {
         centeringBullets();
 
-        $('.tab-container').trigger('easytabs:midTransition');
         $('#masonry-elements,.portfolio-items').isotope('reLayout');
         setTimeout(function() {
             $('#masonry-elements,.portfolio-items').isotope('reLayout');
         }, 500);
     });
-
-    //place holder fallback
-    $('input, textarea').placeholder();
-
 
     //process video posts
     embed_video_processing();
@@ -431,30 +417,6 @@ function hideLoading() {
     $('.loading-container').remove();
     $('.hide-until-loading').removeClass('hide-until-loading');
 }
-
-/**
- * This function used to add some features to easytabs  out of the box.
- * @param selector
- */
-function easyTabsZeina(selector, options) {
-    var $ref = $(selector);
-
-    $('.tab-container').css('visibility', 'visible');
-    options = options || {};
-    options['animationSpeed'] = options['animationSpeed'] || 'fast';
-    $ref.easytabs(options).bind('easytabs:midTransition', function() {
-        var $this = $(this), activeLink = $this.find('a.active'), offset = activeLink.offset();
-        $this.find('.section-tab-arrow').css('left', ((offset.left + (activeLink.outerWidth()) / 2) - 7) + 'px');
-    });
-
-    //trigger event on init
-    $ref.trigger('easytabs:midTransition');
-    $(window).load(function() {
-        $ref.trigger('easytabs:midTransition');
-    });
-
-}
-
 
 /* Contaact Map */
 var map;

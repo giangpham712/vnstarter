@@ -1410,15 +1410,19 @@ Tabs
 		} body .tab { display: block; background-color: #f5f5f5; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; float: left; position: relative; top: 3px; border: 1px solid #e8e8e8; border-left: 0;
 			} body .tab:first-child { border-left: 1px solid #e8e8e8;
 				} body .tab:first-child { margin-left: 0;
-					} .tab a i { margin: 0 7px; font-size: 16px; line-height: 7px;
+
+                    } .tab a i { margin: 0 7px; font-size: 16px; line-height: 7px;
 						} .tab a:hover { text-decoration: underline; color: #279fbb; text-decoration: none;
 							} .tab.active { background-color: #ffffff; color: #279fbb; border: 1px solid #e7e7e7; border-bottom: none; position: relative; top: 2px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
+                            } .tab.active a {   color: #279FBB !important;
 								} .tab a.active { line-height: 25px;
 									} .tab a.active:after { position: absolute; left: -1px; top: -4px; height: 3px; width: 100%;
-										} .tab-container { visibility: hidden;
+										} .tab-container {
 											} .tab-container .panel-container { background: #fff; border: solid #666 1px; padding: 10px; -moz-border-radius: 0 4px 4px 4px; -webkit-border-radius: 0 4px 4px 4px; font-family: "Open Sans", sans-serif;
 											} .tab-container .tabs-content { background: #ffffff; padding: 20px 20px; border: 1px solid #e7e7e7; clear: both;
 												} .tab-container .tabs-content div { color: #666666; line-height: 20px; overflow: hidden; visibility: visible !important;
+												} .tab-container .tabs-content > div { display: none;
+                                                } .tab-container .tabs-content > div.active { display: block;
 } /****************************
 Tag line
 ****************************/

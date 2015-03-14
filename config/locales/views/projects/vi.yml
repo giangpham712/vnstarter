@@ -1,4 +1,12 @@
 vi:
   edit_your_project: "Chỉnh sửa dự án của bạn"
-  
+
+  project:
+    edit:
+        basic:
+          project_image: "Ảnh đại diện"
+          project_title: "Tên dự án"
+          short_description: "Giới thiệu sơ lược"
+          category: "Lĩnh vực"
+          location: "Địa điểm"
 

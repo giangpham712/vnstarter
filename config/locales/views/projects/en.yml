@@ -22,3 +22,12 @@
 en:
   edit_your_project: "Edit your project"
 
+  project:
+    edit:
+      basic:
+        project_image: "Project image"
+        project_title: "Project title"
+        short_description: "Short description"
+        category: "Category"
+        location: "Location"
+

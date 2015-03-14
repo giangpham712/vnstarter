@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-fileupload
+//= require bootstrap
 //= require angular
 //= require angular-animate
 //= require angular-ui-router
