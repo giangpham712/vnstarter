@@ -1,0 +1,479 @@
+.attachment_upload {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 6px;
+    border: 1px dashed #d9d9de
+}
+
+.has_file .success, .attachment_upload.has_file .success {
+    display: block
+}
+
+.has_file .success, .attachment_upload.has_file .success img {
+    width: 100%;
+}
+
+.has_file .has_file_show, .attachment_upload.has_file .has_file_show {
+    display: block
+}
+
+.has_file .has_file_hide, .attachment_upload.has_file .has_file_hide {
+    display: none
+}
+
+.encoding .success, .attachment_upload.encoding .success {
+    display: none
+}
+
+.encoding .upload strong, .attachment_upload.encoding .upload strong {
+    display: none
+}
+
+.encoding .encode, .attachment_upload.encoding .encode {
+    display: block
+}
+
+.uploading input.fileupload, .attachment_upload.uploading input.fileupload {
+    display: none
+}
+
+.uploading .encode, .attachment_upload.uploading .encode {
+    display: none
+}
+
+.uploading .upload .progress, .attachment_upload.uploading .upload .progress {
+    display: block
+}
+
+.uploading .success, .attachment_upload.uploading .success {
+    display: none
+}
+
+.uploading .upload strong, .attachment_upload.uploading .upload strong {
+    display: none
+}
+
+.error, .attachment_upload .error {
+    display: none;
+    color: #fd003b;
+    background: #ffecf0;
+    padding: 10px;
+    text-align: center
+}
+
+.encode, .attachment_upload .encode {
+    display: none
+}
+
+.footer, .attachment_upload .footer {
+    display: none
+}
+
+.encode .image-placeholder, .attachment_upload .encode .image-placeholder {
+    display: inline-block;
+    background: url(/images/fileupload/encoding-placeholder.png) no-repeat;
+    width: 100px;
+    height: 80px;
+    margin-left: 10px;
+    display: none
+}
+
+.encode .message, .attachment_upload .encode .message {
+    display: inline-block;
+    text-align: left;
+    padding: 30px 35px;
+    width: 422px
+}
+
+.encode .message strong, .attachment_upload .encode .message strong {
+    border: 0;
+    color: #2bde73;
+    margin-bottom: 5px;
+    display: block;
+    text-align: center;
+    font-size: 16px
+}
+
+.encode .message P, .attachment_upload .encode .message P {
+    color: #0f2105;
+    font-size: 12px;
+    font-weight: normal;
+    margin-bottom: 0
+}
+
+.success, .attachment_upload .success {
+    display: none;
+    float: none;
+    vertical-align: top;
+    position: relative;
+    z-index: 2
+}
+
+.success h2, .attachment_upload .success h2 {
+    font-size: 18px;
+    margin-bottom: 5px
+}
+
+.success .image-clip, .attachment_upload .success .image-clip {
+    position: relative;
+    line-height: 1px
+}
+
+.success .image-clip img, .attachment_upload .success .image-clip img {
+    margin: 0 auto;
+    height: auto;
+    width: 100%
+}
+
+.success .image-clip .remove, .attachment_upload .success .image-clip .remove {
+    position: absolute;
+    top: 5px;
+    left: 5px
+}
+
+.upload, .attachment_upload .upload {
+    position: relative;
+    margin-bottom: 0;
+    z-index: 1;
+    height: auto;
+    width: 100%
+}
+
+.upload strong, .attachment_upload .upload strong {
+    display: block;
+    font-size: 13px;
+    padding: 20px;
+    line-height: 18px;
+    color: #00a0ff
+}
+
+.upload strong em, .attachment_upload .upload strong em {
+    font-style: normal;
+    text-transform: lowercase
+}
+
+.upload strong span, .attachment_upload .upload strong span {
+    display: block;
+    color: #828587;
+    font-size: 11px;
+    font-weight: normal
+}
+
+.upload:hover, .attachment_upload .upload:hover {
+    background: #e8f6ff
+}
+
+.upload input.fileupload, .attachment_upload .upload input.fileupload {
+    position: absolute;
+    font-size: 60px;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    text-indent: -9999px;
+    cursor: pointer
+}
+
+.upload .progress, .attachment_upload .upload .progress {
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    background-color: #def7e0;
+    margin-bottom: 0;
+}
+
+.upload .progress.finished, .attachment_upload .upload .progress.finished {
+    background-color: #e8f6ff
+}
+
+.upload .progress.finished .inner, .attachment_upload .upload .progress.finished .inner {
+
+}
+
+.upload .progress.finished .bar, .attachment_upload .upload .progress.finished .bar {
+    background: url(/images/fileupload/progress-processing.gif) repeat-x left center
+}
+
+.upload .progress .inner, .attachment_upload .upload .progress .inner {
+
+    -webkit-background-clip: border-box;
+    -moz-background-clip: border-box;
+    -ms-background-clip: border-box;
+    -o-background-clip: border-box;
+    background-clip: border-box;
+    overflow: hidden
+}
+
+.upload .progress .bar, .attachment_upload .upload .progress .bar {
+    background: url(/images/fileupload/progress.gif) repeat-x left center;
+    width: 0;
+    height: 100%
+}
+
+.upload .progress .bar .percentage, .attachment_upload .upload .progress .bar .percentage {
+    color: white;
+    font-weight: bold;
+    font-size: 45px;
+    line-height: 80px;
+    margin-left: 20px;
+    text-align: left
+}
+
+.upload .progress .inner .percentage, .attachment_upload .upload .progress .inner .percentage {
+    font-size: 30px;
+    line-height: 68px
+}
+
+.profile-photo .success, .attachment_upload.profile-photo .success {
+    float: left
+}
+
+.profile-photo .success img, .attachment_upload.profile-photo .success img {
+    width: 98%
+}
+
+.profile-photo .upload, .attachment_upload.profile-photo .upload {
+    width: 100%;
+    height: 78px;
+    margin: 0 auto
+}
+
+.form-element ul {
+    padding-left: 0;
+}
+
+.form-element input[type=text] {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    line-height: 18px;
+    width: 100%;
+}
+
+.form-element label {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: bold;
+    display: -moz-inline-box;
+    display: -moz-inline-stack;
+    -moz-box-orient: vertical;
+    display: inline-block;
+    zoom: 1;
+    padding: 10px 5px 10px 10px;
+}
+
+body#projects_edit label {
+    position: relative;
+}
+
+body#project_edit .form-element .options {
+    display: -moz-inline-box;
+    display: -moz-inline-stack;
+    -moz-box-orient: vertical;
+    display: inline-block;
+    vertical-align: middle;
+    zoom: 1;
+    *display: inline;
+    margin: 0;
+    list-style: none;
+    width: 449px
+}
+
+body#project_edit .form-element .options li {
+    list-style-image: none;
+    list-style-type: none;
+    margin-left: 0
+}
+
+body#project_edit .form-element .options input[type=text] {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+body#project_edit .form-element .options label strong {
+    font-weight: normal;
+}
+
+body#project_edit .form-element .options input.radio {
+    margin: 0 5px 0 0;
+    min-height: 13px;
+}
+
+body#project_edit .form-element .options .option {
+    margin-bottom: 3px
+}
+
+body#project_edit .form-element .options .option:last-child {
+    margin-bottom: 0
+}
+
+body#project_edit .form-element .options .option.number-of-days {
+    position: relative
+}
+
+body#project_edit .form-element .options .option.number-of-days .rec {
+    color: #828587;
+    font-size: 11px;
+    font-style: normal;
+    position: absolute;
+    top: 11px;
+    right: 10px
+}
+
+body#project_edit .form-element .options .option.number-of-days .rec:hover {
+    cursor: default
+}
+
+body#project_edit .form-element .options .option.number-of-days label {
+    width: 172px;
+    word-wrap: break-word
+}
+
+body#project_edit .form-element .options input[type=radio] {
+    display: inline-block;
+}
+
+body#project_edit .form-element .options .option.number-of-days label strong {
+    padding-left: 3px
+}
+
+body#project_edit .form-element .options .option.number-of-days input.text {
+    padding-right: 160px;
+    vertical-align: top;
+    width: 277px;
+    background: white;
+    border: 1px solid #d9d9de;
+    color: #0f2105;
+    font-size: 14px;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+body#project_edit .form-element .options .option.date-time label {
+    width: 172px
+}
+
+body#project_edit .form-element .options .option.date-time label strong {
+    padding-left: 3px
+}
+
+body#project_edit .form-element .options .option.date-time select {
+    padding-left: 11px;
+    margin-right: -1px
+}
+
+body#project_edit .form-element .options .option.date-time select.date {
+    background-position: 142px 14px;
+    width: 144px
+}
+
+body#project_edit .form-element .options .option.date-time select.time {
+    border-radius: 0px 3px 3px 0px
+}
+
+body#project_edit .form-element .options .option.date-time input.text {
+    border-right: 0;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    width: 166px
+}
+
+body#project_edit .form-element .options .option label {
+    background: #f2f2f3;
+    border: 1px solid #d9d9de;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-right: 0;
+    color: #0f2105;
+    font-weight: normal;
+    width: auto;
+    margin-bottom: 0
+}
+
+body#project_edit #basic .date-time {
+    border-radius: 3px;
+    background: #f2f2f3;
+    border: 1px solid #d9d9de;
+}
+
+body#project_edit #basic .date-time label[for=duration_deadline] {
+    border-radius: 0;
+    border: 0;
+}
+
+body#project_edit #rewards .add-new-reward {
+    border-radius: 3px;
+    border: 1px solid #d9d9de;
+    background: #f2f2f3;
+    position: relative;
+}
+
+body#project_edit #rewards .add-new-reward label {
+    font-size: 12px;
+    font-weight: normal;
+    width: 130px;
+    margin: 0;
+}
+
+body#project_edit #rewards .add-new-reward .keep-or-delete {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;
+    background: #f7fafa;
+    border-left: 1px solid #d9d9de;
+    width: 75px;
+    height: 38px;
+}
+
+body#project_edit #rewards .add-new-reward .keep-or-delete a {
+    display: block;
+    padding: 8px 10px;
+    line-height: 24px;
+    color: #0f2105;
+}
+
+body#project_edit #rewards .add-new-reward .minimum-amount {
+    display: inline-block;
+    vertical-align: top;
+}
+
+body#project_edit #rewards .add-new-reward .minimum-amount input {
+    width: 99px;
+    margin: -1px 0;
+    border-color: #d9d9de;
+}
+
+body#project_edit #rewards .add-new-reward .description {
+    display: inline-block;
+    vertical-align: top;
+    border-top: 1px solid #d9d9de !important;
+    border-bottom: 1px solid #d9d9de !important;
+}
+
+body#project_edit #rewards .add-new-reward .description label {
+
+    vertical-align: top;
+}
+
+body#project_edit #rewards .add-new-reward .description textarea {
+    margin: -7px 0;
+    margin-right: -1px;
+    width: 316px;
+    height: 100px;
+    padding: 10px;
+    resize: none;
+    border-color: #d9d9de;
+}

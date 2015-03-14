@@ -1,241 +1,9 @@
-<% content_for :styles do %>
-    <style>
-
-        .form-element ul {
-            padding-left: 0;
-        }
-
-        .form-element input[type=text] {
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            -ms-box-sizing: border-box;
-            -o-box-sizing: border-box;
-            box-sizing: border-box;
-            padding: 10px;
-            line-height: 18px;
-            width: 100%;
-        }
-
-        .form-element label {
-            font-size: 13px;
-            line-height: 18px;
-            font-weight: bold;
-            display: -moz-inline-box;
-            display: -moz-inline-stack;
-            -moz-box-orient: vertical;
-            display: inline-block;
-            zoom: 1;
-            padding: 10px 5px 10px 10px;
-        }
-
-        body#projects_edit label {
-            position: relative;
-        }
-
-        body#project_edit .form-element .options {
-            display: -moz-inline-box;
-            display: -moz-inline-stack;
-            -moz-box-orient: vertical;
-            display: inline-block;
-            vertical-align: middle;
-            zoom: 1;
-            *display: inline;
-            margin: 0;
-            list-style: none;
-            width: 449px
-        }
-
-        body#project_edit .form-element .options li {
-            list-style-image: none;
-            list-style-type: none;
-            margin-left: 0
-        }
-
-        body#project_edit .form-element .options input[type=text] {
-            border-top-right-radius: 3px;
-            border-bottom-right-radius: 3px;
-        }
-
-        body#project_edit .form-element .options label strong {
-            font-weight: normal;
-        }
-
-        body#project_edit .form-element .options input.radio {
-            margin: 0 5px 0 0;
-            min-height: 13px;
-        }
-
-        body#project_edit .form-element .options .option {
-            margin-bottom: 3px
-        }
-
-        body#project_edit .form-element .options .option:last-child {
-            margin-bottom: 0
-        }
-
-        body#project_edit .form-element .options .option.number-of-days {
-            position: relative
-        }
-
-        body#project_edit .form-element .options .option.number-of-days .rec {
-            color: #828587;
-            font-size: 11px;
-            font-style: normal;
-            position: absolute;
-            top: 11px;
-            right: 10px
-        }
-
-        body#project_edit .form-element .options .option.number-of-days .rec:hover {
-            cursor: default
-        }
-
-        body#project_edit .form-element .options .option.number-of-days label {
-            width: 172px;
-            word-wrap: break-word
-        }
-
-        body#project_edit .form-element .options input[type=radio] {
-            display: inline-block;
-        }
-
-        body#project_edit .form-element .options .option.number-of-days label strong {
-            padding-left: 3px
-        }
-
-        body#project_edit .form-element .options .option.number-of-days input.text {
-            padding-right: 160px;
-            width: 277px;
-            background: white;
-            border: 1px solid #d9d9de;
-            color: #0f2105;
-            font-size: 14px;
-            margin: 0;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        body#project_edit .form-element .options .option.date-time label {
-            width: 172px
-        }
-
-        body#project_edit .form-element .options .option.date-time label strong {
-            padding-left: 3px
-        }
-
-        body#project_edit .form-element .options .option.date-time select {
-            padding-left: 11px;
-            margin-right: -1px
-        }
-
-        body#project_edit .form-element .options .option.date-time select.date {
-            background-position: 142px 14px;
-            width: 144px
-        }
-
-        body#project_edit .form-element .options .option.date-time select.time {
-            border-radius: 0px 3px 3px 0px
-        }
-
-        body#project_edit .form-element .options .option.date-time input.text {
-            border-right: 0;
-            border-top-right-radius: 0px;
-            border-bottom-right-radius: 0px;
-            width: 166px
-        }
-
-        body#project_edit .form-element .options .option label {
-            background: #f2f2f3;
-            border: 1px solid #d9d9de;
-            border-top-left-radius: 3px;
-            border-bottom-left-radius: 3px;
-            border-right: 0;
-            color: #0f2105;
-            font-weight: normal;
-            width: auto;
-            margin-bottom: 0
-        }
-
-        body#project_edit #basic .date-time {
-            border-radius: 3px;
-            background: #f2f2f3;
-            border: 1px solid #d9d9de;
-        }
-
-        body#project_edit #basic .date-time label[for=duration_deadline] {
-            border-radius: 0;
-            border: 0;
-        }
-
-        body#project_edit #rewards .add-new-reward {
-            border-radius: 3px;
-            border: 1px solid #d9d9de;
-            background: #f2f2f3;
-            position: relative;
-        }
-
-        body#project_edit #rewards .add-new-reward label {
-            font-size: 12px;
-            font-weight: normal;
-            width: 130px;
-            margin: 0;
-        }
-
-        body#project_edit #rewards .add-new-reward .keep-or-delete {
-            position: absolute;
-            top: 0px;
-            right: 0px;
-            cursor: pointer;
-            background: #f7fafa;
-            border-left: 1px solid #d9d9de;
-            width: 75px;
-            height: 38px;
-        }
-
-        body#project_edit #rewards .add-new-reward .keep-or-delete a {
-            display: block;
-            padding: 8px 10px;
-            line-height: 24px;
-            color: #0f2105;
-        }
-
-        body#project_edit #rewards .add-new-reward .minimum-amount {
-            display: inline-block;
-            vertical-align: top;
-        }
-
-        body#project_edit #rewards .add-new-reward .minimum-amount input {
-            width: 99px;
-            margin: -1px 0;
-            border-color: #d9d9de;
-        }
-
-        body#project_edit #rewards .add-new-reward .description {
-            display: inline-block;
-            vertical-align: top;
-            border-top: 1px solid #d9d9de !important;
-            border-bottom: 1px solid #d9d9de !important;
-        }
-        body#project_edit #rewards .add-new-reward .description label {
-
-            vertical-align: top;
-        }
-        body#project_edit #rewards .add-new-reward .description textarea {
-            margin: -7px 0;
-            margin-right: -1px;
-            width: 316px;
-            height: 100px;
-            padding: 10px;
-            resize: none;
-            border-color: #d9d9de;
-        }
-
-    </style>
-<% end %>
 <%= form_for :project, url: project_path(@project), method: :put do |f| %>
     <div class="title-block clearfix">
       <h3 class="h3-body-title">Thêm ảnh và những thông tin cơ bản về dự án của bạn</h3>
 
       <div class="title-seperator"></div>
+
     </div>
     <div class="row">
       <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
@@ -247,7 +15,28 @@
             </div>
 
             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-              <%= f.file_field :image, autofocus: false, class: 'file-button' %>
+              <div class="attachment_upload <% if @project.image.exists? %>has_file<% end %>">
+                  <div class="success text-center">
+                    <% if @project.image.exists? %>
+                        <%= image_tag @project.image.url(:medium) %>
+                    <% end %>
+                  </div>
+                  <div class="upload">
+                    <%= f.file_field :image, autofocus: false, class: 'fileupload', 'data-upload-url' => '/projects/' + @project.slug + '/upload_image' %>
+                    <strong class="text-center">
+                      <%= t("project.edit.basic.choose_image_from_your_computer") %>
+                      <span class="has_file_hide">This is the main image associated with your project. Make it count!</span>
+                      <span><%= t("project.edit.basic.support_image_file_formats") %></span>
+                    </strong>
+                    <div class="progress">
+                      <div class="inner">
+                        <div class="bar">
+                          <div class="percentage"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
             </div>
           </div>
 
@@ -319,7 +108,7 @@
             </div>
 
             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-              <%= f.number_field :funding_goal, class: 'form-control' %>
+              <%= f.text_field :funding_goal, class: 'form-control' %>
 
             </div>
           </div>
