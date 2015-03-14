@@ -46,6 +46,8 @@
     display: none
 }
 
+
+
 .uploading .upload .progress, .attachment_upload.uploading .upload .progress {
     display: block
 }
@@ -64,6 +66,10 @@
     background: #ffecf0;
     padding: 10px;
     text-align: center
+}
+
+.attachment_upload .error .message {
+    color: #fd003b;
 }
 
 .encode, .attachment_upload .encode {
@@ -234,17 +240,24 @@
 }
 
 .profile-photo .success, .attachment_upload.profile-photo .success {
-    float: left
+    float: left;
+    width: 80px;
 }
 
 .profile-photo .success img, .attachment_upload.profile-photo .success img {
-    width: 98%
+    width: 98%;
+    border-radius: 50%;
 }
 
 .profile-photo .upload, .attachment_upload.profile-photo .upload {
-    width: 100%;
+    width: 369px;
+    float: left;
     height: 78px;
     margin: 0 auto
+}
+
+.uploading.profile-photo .upload, .uploading .attachment_upload.profile-photo .upload {
+    width: 100%;
 }
 
 .form-element ul {

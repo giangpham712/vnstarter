@@ -15,27 +15,33 @@
             </div>
 
             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-              <div class="attachment_upload <% if @project.image.exists? %>has_file<% end %>">
-                  <div class="success text-center">
-                    <% if @project.image.exists? %>
-                        <%= image_tag @project.image.url(:medium) %>
-                    <% end %>
-                  </div>
-                  <div class="upload">
-                    <%= f.file_field :image, autofocus: false, class: 'fileupload', 'data-upload-url' => '/projects/' + @project.slug + '/upload_image' %>
-                    <strong class="text-center">
-                      <%= t("project.edit.basic.choose_image_from_your_computer") %>
-                      <span class="has_file_hide">This is the main image associated with your project. Make it count!</span>
-                      <span><%= t("project.edit.basic.support_image_file_formats") %></span>
-                    </strong>
-                    <div class="progress">
-                      <div class="inner">
-                        <div class="bar">
-                          <div class="percentage"></div>
-                        </div>
+              <div class="attachment_upload
+                <% if @project.image.exists? %>has_file
+                <% end %>">
+                <div class="error">
+                  <div class="message"></div>
+                </div>
+                <div class="success text-center">
+                  <% if @project.image.exists? %>
+                      <%= image_tag @project.image.url(:medium) %>
+                  <% end %>
+                </div>
+                <div class="upload">
+                  <%= f.file_field :image, autofocus: false, class: 'fileupload', 'data-upload-url' => '/projects/' + @project.slug + '/upload_image' %>
+                  <strong class="text-center">
+                    <%= t("project.edit.basic.choose_image_from_your_computer") %>
+                    <span class="has_file_hide">This is the main image associated with your project. Make it count!</span>
+                    <span><%= t("project.edit.basic.support_image_file_formats") %></span>
+                  </strong>
+
+                  <div class="progress">
+                    <div class="inner">
+                      <div class="bar">
+                        <div class="percentage"></div>
                       </div>
                     </div>
                   </div>
+                </div>
               </div>
             </div>
           </div>

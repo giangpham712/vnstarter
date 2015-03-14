@@ -1,5 +1,16 @@
 class User < ActiveRecord::Base
 
+  has_attached_file :image, :styles => {
+                              :small => "150x150",
+                              :medium => "350x350",
+                              :large => "750x750"
+                          }
+
+  validates_attachment_content_type :image,
+                                    :content_type => /^image\/(png|gif|jpeg|jpg|bmp)/,
+                                    :size => { :less_than => 5.megabytes },
+                                    :message => "Only PNG, GIF, JPEG and BMP formats are supported"
+
   has_many :projects, :foreign_key => :creator_id
   has_many :comments, :foreign_key => :commenter_id
   has_many :sent_messages, :class_name => 'Message', :foreign_key => 'sender_id'

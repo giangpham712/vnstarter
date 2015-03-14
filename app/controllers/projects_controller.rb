@@ -51,6 +51,9 @@ class ProjectsController < ApplicationController
   def edit
     @cities = City.all
     @categories = Category.all
+
+    @user = current_user
+
     @project = Project.friendly.find(params[:id])
   end
 

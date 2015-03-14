@@ -12,9 +12,9 @@ class Project < ActiveRecord::Base
 
   validates_presence_of :title, :location, :slug
   validates_attachment_content_type :image,
-                                    :content_type => /^image\/(png|gif|jpeg|jpg)/,
-                                    :size => { :less_than => 10.megabytes },
-                                    :message => "Only PNG, GIF and JPEG formats are supported"
+                                    :content_type => /^image\/(png|gif|jpeg|jpg|bmp)/,
+                                    :size => { :less_than => 5.megabytes },
+                                    :message => "Only PNG, GIF, JPEG and BMP formats are supported"
 
   belongs_to :user, :class_name => "User", :foreign_key => :creator_id
   belongs_to :category, :class_name => "Category", :foreign_key => :category_id
