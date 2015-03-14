@@ -20,9 +20,7 @@
                 Nhà đầu tư & người có ý tưởng
             </div>
             <div class="tp-caption  revolution-subtext  sfb "  data-x="570" data-y="250" data-start="0" data-easing="easeOutBack" >
-                <a href="project-list.html" class="button btn-flat">
-                    Đầu tư ngay
-                </a>
+                <%= link_to 'Đầu tư ngay',:projects,class: 'button btn-flat' %>
                 &nbsp;
                 <%= link_to 'Tạo dự án',new_project_path,class: 'button btn-flat' %>
                 
@@ -90,45 +88,7 @@
   </div>
 </div>
 </div>
-<script>
-    $(document).ready(function($) {
-            // Create a clone of the menu, right next to original.
-            $('.menu').addClass('original').clone().insertAfter('.menu').addClass('cloned').css('position','fixed').css('top','0').css('margin-top','0').css('z-index','500').removeClass('original').hide();
 
-            scrollIntervalID = setInterval(stickIt, 10);
-
-
-            function stickIt() {
-
-              var orgElementPos = $('.original').offset();
-              orgElementTop = orgElementPos.top;               
-
-              if ($(window).scrollTop() >= (orgElementTop)) {
-    // scrolled past the original position; now only show the cloned, sticky element.
-
-    // Cloned element should always have same left position and width as original element.     
-    orgElement = $('.original');
-    coordsOrgElement = orgElement.offset();
-    leftOrgElement = coordsOrgElement.left;  
-    widthOrgElement = orgElement.css('width');
-    $('.cloned').css('left',leftOrgElement+'px').css('top',0).css('width',widthOrgElement).show();
-    $('.cloned').css('background-color', '#279fbb');
-    $('.cloned').css('height', '40px');
-    $('#buyer')
-    $('.h4-body-title').css('color', 'white');
-    $('.cloned').css('padding-top', '10px');
-
-    $('.original').css('visibility','hidden');
-} else {
-    // not scrolled past the menu; only show the original menu.
-    $('.h4-body-title').css('color', 'black');
-    $('.cloned').hide();
-    $('.original').css('visibility','visible');
-}
-}
-
-});
-</script>
 <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
 
 </div>
@@ -508,3 +468,42 @@ data-animdelay="0.4s">
 
 </div>
 </div>
+<script>
+    $(document).ready(function($) {
+            // Create a clone of the menu, right next to original.
+            $('.menu').addClass('original').clone().insertAfter('.menu').addClass('cloned').css('position','fixed').css('top','0').css('margin-top','0').css('z-index','500').removeClass('original').hide();
+
+            scrollIntervalID = setInterval(stickIt, 10);
+
+
+            function stickIt() {
+
+              var orgElementPos = $('.original').offset();
+              orgElementTop = orgElementPos.top;               
+
+              if ($(window).scrollTop() >= (orgElementTop)) {
+    // scrolled past the original position; now only show the cloned, sticky element.
+
+    // Cloned element should always have same left position and width as original element.     
+    orgElement = $('.original');
+    coordsOrgElement = orgElement.offset();
+    leftOrgElement = coordsOrgElement.left;  
+    widthOrgElement = orgElement.css('width');
+    $('.cloned').css('left',leftOrgElement+'px').css('top',0).css('width',widthOrgElement).show();
+    $('.cloned').css('background-color', '#279fbb');
+    $('.cloned').css('height', '40px');
+    $('#buyer')
+    $('.h4-body-title').css('color', 'white');
+    $('.cloned').css('padding-top', '10px');
+
+    $('.original').css('visibility','hidden');
+} else {
+    // not scrolled past the menu; only show the original menu.
+    $('.h4-body-title').css('color', 'black');
+    $('.cloned').hide();
+    $('.original').css('visibility','visible');
+}
+}
+
+});
+</script>
