@@ -5,6 +5,7 @@ class Project < ActiveRecord::Base
   has_attached_file :image, :styles => {
                         :small => "150x150",
                         :medium => "350x350",
+                        :listing => "360x270#",
                         :large => "750x750"
                           }
 

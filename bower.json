@@ -7,7 +7,8 @@
       "angular-animate": "latest",
       "bootstrap": "3.1.1",
       "font-awesome": "4.0.3",
-      "jquery": "1.9.1"
+      "jquery": "1.9.1",
+      "slick-carousel": "1.4.1"
     }
   },
   "vendor": {
