@@ -6612,3 +6612,5 @@ Testimonial
     cursor: pointer;
 }
 .menu{padding-top: 15px;color: #969696;}
+.home-button{font-size: 21px;padding: 27px 38px 27px 38px;transition:all 0.1s;}
+.home-button:hover{box-shadow: 1px 1px 1px 1px #fff;background: transparent !important;color: #fff !important;padding: 29px 38px 29px 38px}
