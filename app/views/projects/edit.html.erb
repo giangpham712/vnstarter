@@ -36,7 +36,8 @@
                 <div class="title-seperator"></div>
               </div>
               <div class="tab-container">
-
+                <%= hidden_field_tag :id, @project.id %>
+                <%= hidden_field_tag :slug, @project.slug %>
                 <ul class="etabs">
 
                   <li class="tab active" role="presentation">
@@ -88,35 +89,6 @@
       </div>
     </div>
   </div>
-</div><!--.content-wrapper end -->
+</div>
 
 <%= render "projects/shared/modal_add_story_post" %>
-
-<script>
-
-
-    window.load = function() {
-
-        $("#project_image").fileupload({
-            url: "/projects/superman-returns/upload_image",
-            type: "POST",
-            add: function (e, data) {
-                data.submit();
-            },
-            uploadTemplateId: null,
-            downloadTemplateId: null,
-            formData: function () {
-                return [];
-            },
-            progressall: function (e, data) {
-                var progress = parseInt(data.loaded / data.total * 100, 10);
-                console.log(progress);
-            },
-            done: function (e, data) {
-                console.log(data);
-            }
-        });
-
-    }
-
-</script>

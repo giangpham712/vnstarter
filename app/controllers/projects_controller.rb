@@ -51,6 +51,9 @@ class ProjectsController < ApplicationController
   def edit
     @cities = City.all
     @categories = Category.all
+
+    @user = current_user
+
     @project = Project.friendly.find(params[:id])
   end
 
@@ -105,7 +108,7 @@ class ProjectsController < ApplicationController
     project = Project.friendly.find(params[:id])
     puts params[:image]
     if project.update_attributes(:image => params[:project][:image])
-      render json: { :success => true, :image_url => project.image.url }
+      render json: { :success => true, :image_url => project.image.url(:medium) }
     else
       render json: { :success => false, :errors => project.errors }
     end

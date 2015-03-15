@@ -6,9 +6,12 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :users do
+  resources :users, except: :show do
 
   end
+
+  get 'profile', to: 'users#show'
+  post 'profile/avatar', to: 'users#upload_image'
 
   resources :messages do
 

@@ -26,6 +26,8 @@ en:
     edit:
       basic:
         project_image: "Project image"
+        choose_image_from_your_computer: "Choose an image from your computer"
+        support_image_file_formats: "Only JPEG, PNG, GIF or BMP are supported. 5MB file limit"
         project_title: "Project title"
         short_description: "Short description"
         category: "Category"
