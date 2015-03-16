@@ -170,7 +170,7 @@
     font-weight: normal
 }
 
-.upload:hover, .attachment_upload .upload:hover {
+.attachment_upload:hover {
     background: #e8f6ff
 }
 
@@ -489,4 +489,51 @@ body#project_edit #rewards .add-new-reward .description textarea {
     padding: 10px;
     resize: none;
     border-color: #d9d9de;
+}
+
+body#project_edit .tools {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+    -ms-box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+    -o-box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+    margin-bottom: -100px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.95);
+}
+
+body#project_edit .tools.visible {
+    margin-bottom: 0
+}
+
+body#project_edit .tools .container {
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px
+}
+
+body#project_edit .tools-panels,
+body#project_edit .help-panels,
+body#project_edit .sidebar-help-panels {
+    list-style: none;
+    margin-bottom: 0
+}
+
+body#project_edit .tools-panels li,
+body#project_edit .help-panels li,
+body#project_edit .sidebar-help-panels li {
+    list-style-image: none;
+    list-style-type: none;
+    margin-left: 0
+}
+
+body#project_edit .tools-panels .form-tools div  {
+    display: inline-block;
+}
+
+body#project_edit .tools-panels .form-tools div a.btn {
+    margin: 0 10px 4px 10px;
 }

@@ -5,6 +5,10 @@ Global CSS classes used for all theme.
 ****************************/
 /* Global Responsive */
 
+html {
+    overflow-y: scroll;
+}
+
 body, html,
 button,
 input,

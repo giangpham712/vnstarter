@@ -35,57 +35,76 @@
 
                 <div class="title-seperator"></div>
               </div>
-              <div class="tab-container">
+              <div class="bg-white">
                 <%= hidden_field_tag :id, @project.id %>
                 <%= hidden_field_tag :slug, @project.slug %>
-                <ul class="etabs">
 
-                  <li class="tab active" role="presentation">
-                    <a href="#basic" aria-controls="home" role="tab" data-toggle="tab"><i class=icon-feather></i>Thông tin dự án</a>
-                  </li>
+                <div class="tab-container">
+                  <ul id="edit-tabs" class="etabs">
 
-                  <li class="tab" role="presentation">
-                    <a href="#rewards" aria-controls="home" role="tab" data-toggle="tab"><i class=icon-drive></i>Phần thưởng</a>
-                  </li>
+                    <li class="tab active" role="presentation">
+                      <a href="#basic" data-edit-info="basic" aria-controls="home" role="tab" data-toggle="tab"><i class=icon-feather></i>Thông
+                        tin dự án</a>
+                    </li>
 
-                  <li class="tab" role="presentation">
-                    <a href="#story" aria-controls="home" role="tab" data-toggle="tab"><i class=icon-drive></i>Câu chuyện</a>
-                  </li>
+                    <li class="tab" role="presentation">
+                      <a href="#rewards" data-edit-info="rewards" aria-controls="home" role="tab" data-toggle="tab"><i class=icon-drive></i>Phần
+                        thưởng</a>
+                    </li>
 
-                  <li class="tab" role="presentation">
-                    <a href="#about_you" aria-controls="home" role="tab" data-toggle="tab"><i class=icon-map></i>Thông tin cá nhân</a>
-                  </li>
+                    <li class="tab" role="presentation">
+                      <a href="#story" data-edit-info="story" aria-controls="home" role="tab" data-toggle="tab"><i class=icon-drive></i>Câu
+                        chuyện</a>
+                    </li>
 
-                  <li class="tab" role="presentation">
-                    <a href="#accounts" aria-controls="home" role="tab" data-toggle="tab"><i class=icon-map></i> Tài khoản </a>
-                  </li>
+                    <li class="tab" role="presentation">
+                      <a href="#about_you" data-edit-info="profile" aria-controls="home" role="tab" data-toggle="tab"><i class=icon-map></i>Thông
+                        tin cá nhân</a>
+                    </li>
 
-                </ul>
+                    <li class="tab" role="presentation">
+                      <a href="#accounts" data-edit-info="accounts" aria-controls="home" role="tab" data-toggle="tab"><i class=icon-map></i> Tài
+                        khoản </a>
+                    </li>
 
-                <div class="tabs-content">
-                  <div id="basic" role="tabpanel" class="active">
-                    <%= render "projects/shared/edit_basic" %>
+                  </ul>
+                  <div class="tabs-content">
+
+                    <div id="basic" role="tabpanel" class="active">
+                      <%= render "projects/shared/edit_basic" %>
+                    </div>
+                    <div id="rewards" role="tabpanel">
+                      <%= render "projects/shared/edit_rewards" %>
+                    </div>
+                    <div id="story" role="tabpanel">
+                      <%= render "projects/shared/edit_story" %>
+                    </div>
+                    <div id="about_you" role="tabpanel">
+                      <%= render "projects/shared/edit_about_you" %>
+                    </div>
+                    <div id="accounts" role="tabpanel">
+                      <%= render "projects/shared/edit_accounts" %>
+                    </div>
                   </div>
-                  <div id="rewards" role="tabpanel">
-                    <%= render "projects/shared/edit_rewards" %>
-                  </div>
-                  <div id="story" role="tabpanel">
-                    <%= render "projects/shared/edit_story" %>
-                  </div>
-                  <div id="about_you" role="tabpanel">
-                    <%= render "projects/shared/edit_about_you" %>
-                  </div>
-                  <div id="accounts" role="tabpanel">
-                    <%= render "projects/shared/edit_accounts" %>
+                </div>
+
+                <div class="tools visible">
+                  <div class="container">
+                    <ol class="tools-panels pull-right no-margin">
+                      <li class="form-tools">
+                        <div class="">
+                          <a class="btn-link hidden" href="#">Hủy thay đổi</a></div>
+                        <div id="save" class="">
+                          <a class="btn btn-green" href="#">Lưu thay đổi</a>
+                        </div>
+                      </li>
+                    </ol>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="space-sep40"></div>
-
         </div>
-
       </div>
     </div>
   </div>

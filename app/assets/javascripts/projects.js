@@ -1,5 +1,22 @@
 (function($) {
-    $(document).ready(function() {
+    $(function() {
+
+        var current_tab = "basic";
+
+        $("#edit-tabs a[data-toggle=tab]").on('shown.bs.tab', function (e) {
+            var $tab = $(e.target);
+            current_tab = $tab.data('edit-info');
+        })
+
+        $("#save").click(function() {
+            switch (current_tab)
+                case "basic":
+                    break;
+                case "profile":
+                    break;
+                default:
+                    break;
+        });
 
         $(".attachment_upload").each(function(i, o) {
             var $ele = $(o).find("input.fileupload");
