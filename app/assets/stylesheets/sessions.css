@@ -1,0 +1,22 @@
+.classic-form {
+    margin-top: 20px;
+}
+
+.login-form .remember-me {
+}
+
+.login-form .remember-me label {
+    font-weight: normal;
+    vertical-align: top;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.login-form .forgot-password {
+    text-align: right;
+}
+
+.login-form .not-member a,
+.register-form .already-member a {
+    color: #279fbb;
+}

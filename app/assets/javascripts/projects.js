@@ -104,13 +104,25 @@
             });
         });
 
+        $("#add-story-post").on("hide.bs.modal", function() {
+            $("#add-story-post form")[0].reset();
+        });
+
         $("#add-story-post form").submit(function(e) {
             e.preventDefault();
             var form = this;
+
             submitFormAjax(this,
                 function(result) {
                     if (result.success) {
                         $(form).find(".errors").hide();
+
+                        var html = "<div class='post'>";
+                        html += "<div><h2>" + result.post.title + "</h2></div>";
+                        html += "<div><p>" + result.post.body + "</p></div>";
+                        html += "</div>";
+
+                        $("#story .story-posts").append(html);
                         $("#add-story-post").modal('hide');
                     } else {
                         $(form).find(".errors").show();
@@ -129,15 +141,18 @@
     });
 
     function submitFormAjax(form, done, fail) {
-
-
         var url = form.action;
         var method = form.method;
+        var formData = new FormData($(form)[0]);
 
         var request = $.ajax({
             url: url,
             type: method,
-            data: $(form).serialize()
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false
+
         });
 
         request.done(done);

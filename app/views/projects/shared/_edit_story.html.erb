@@ -1,59 +1,66 @@
 <div class="row">
   <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-    <div class='form-element'>
-      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-        <label>Video</label>
-      </div>
-      <div>
-        <div class="attachment_upload
+    <div class="row">
+      <div class='form-element'>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <label>Video</label>
+        </div>
+        <div>
+          <div class="attachment_upload
                 <% if @user.image.exists? %>has_file
                 <% end %>">
-          <div class="error">
-            <div class="message"></div>
-          </div>
-          <div class="success text-center">
+            <div class="error">
+              <div class="message"></div>
+            </div>
+            <div class="success text-center">
 
-          </div>
-          <div class="upload">
-            <%= file_field_tag :image, autofocus: false, class: 'fileupload', 'data-upload-url' => '/profile/avatar' %>
-            <strong class="text-center">
-              <%= t("project.edit.story.choose_video_from_your_computer") %>
-              <span><%= t("project.edit.story.support_video_file_formats") %></span>
-            </strong>
+            </div>
+            <div class="upload">
+              <%= file_field_tag :image, autofocus: false, class: 'fileupload', 'data-upload-url' => '/profile/avatar' %>
+              <strong class="text-center">
+                <%= t("project.edit.story.choose_video_from_your_computer") %>
+                <span><%= t("project.edit.story.support_video_file_formats") %></span>
+              </strong>
 
-            <div class="progress">
-              <div class="inner">
-                <div class="bar">
-                  <div class="percentage"></div>
+              <div class="progress">
+                <div class="inner">
+                  <div class="bar">
+                    <div class="percentage"></div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class='form-element'>
-      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-        <label>Story</label>
-      </div>
-      <div class="">
-        <div class="story-posts">
-          <% @project.posts.each do |post| %>
-              <div class="post">
-                <div>
-                    <h2><%= post.title %></h2>
-                </div>
-                <p>
-                  <%= post.body %>
-                </p>
-              </div>
-          <% end %>
+      <div class='form-element'>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <label>Story</label>
         </div>
-      </div>
-      <%= button_tag "Thêm câu chuyện", class: 'btn btn-info add_story', data: {toggle: "modal", target: "#add-story-post"} %>
-    </div>
+        <div class="">
+          <div class="story-posts">
+            <% @project.posts.each do |post| %>
+                <div class="post">
+                  <div>
+                    <h2><%= post.title %></h2>
+                  </div>
+                  <div>
+                    <% if post.image.exists? %>
+                        <img src="<%= post.image.url(:original) %>" title="<%= post.title %>"/>
+                        <br/>
+                        <br/>
+                    <% end %>
+                    <p><%= post.body %></p>
+                  </div>
+                </div>
+            <% end %>
+          </div>
+          <%= button_tag "Thêm câu chuyện", class: 'btn btn-info add_story', data: {toggle: "modal", target: "#add-story-post"} %>
+        </div>
 
+      </div>
+    </div>
 
   </div>
 </div>

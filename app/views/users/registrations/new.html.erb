@@ -8,11 +8,6 @@
              data-delay="0.5s">
           <h2 class="h2-section-title"><%= capitalize_first_word_letter(t :sign_up) %></h2>
 
-          <div class="i-section-title">
-            <i class="icon-users-outline"></i>
-          </div>
-
-          <div class="space-sep20"></div>
         </div>
       </div>
 
@@ -20,34 +15,36 @@
         <div class="col-md-5 col-sm-5 centered">
           <div class="classic-form">
 
-            <%= form_for(resource, as: resource_name, :html => {:class => "form-horizontal"}, url: registration_path(resource_name)) do |f| %>
+            <%= form_for(resource, as: resource_name, :html => {:class => "register-form form-horizontal"}, url: registration_path(resource_name)) do |f| %>
                 <div class="form-group">
-                  <div class="col-sm-12">
+                  <div class="">
                     <%= f.text_field :name, autofocus: true, class: 'form-control', placeholder: capitalize_first_word_letter(t :name) %>
                   </div>
                 </div>
                 <div class="form-group">
-                  <div class="col-sm-12">
+                  <div class="">
                     <%= f.text_field :email, class: 'form-control', placeholder: capitalize_first_word_letter(t :email) %>
                   </div>
                 </div>
                 <div class="form-group">
-                  <div class="col-sm-12">
+                  <div class="">
                     <% if @validatable %>
                     <% end %>
                     <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: capitalize_first_word_letter(t :password) %>
                   </div>
                 </div>
                 <div class="form-group">
-                  <div class="col-sm-12">
+                  <div class="">
                     <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control', placeholder: capitalize_first_word_letter(t :confirm_password) %>
                   </div>
                 </div>
                 <div class="form-group">
-                  <div class="col-sm-12">
+                  <div class="">
                     <%= f.submit capitalize(t :sign_up), class: 'btn btn-block btn-primary' %>
-                    <%= render "users/shared/links" %>
                   </div>
+                </div>
+                <div class="already-member text-center">
+                  Bạn đã là thành viên? Xin mời <%= link_to "đăng nhập", new_session_path(resource_name) %>
                 </div>
 
             <% end %>

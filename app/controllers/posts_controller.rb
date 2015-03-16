@@ -18,6 +18,7 @@ class PostsController < ApplicationController
     post = project.posts.build(post_params)
 
     if post.save
+      post.image_url = post.image.url
       render json: { :success => true, :post => post }
     else
       render json: { :success => false, :errors => post.errors.full_messages }
@@ -26,7 +27,7 @@ class PostsController < ApplicationController
 
   private
     def post_params
-      params.require(:post).permit(:title, :body)
+      params.require(:post).permit(:title, :body, :image)
     end
 
 end

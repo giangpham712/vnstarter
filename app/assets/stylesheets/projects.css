@@ -5,6 +5,7 @@
 
 #edit-tabs {
     text-align: center;
+    margin-top: 20px;
 }
 
 #project_edit .tab {
@@ -335,138 +336,7 @@ body#projects_edit label {
 }
 
 body#project_edit .form-element .options {
-    display: -moz-inline-box;
-    display: -moz-inline-stack;
-    -moz-box-orient: vertical;
-    display: inline-block;
-    vertical-align: middle;
-    zoom: 1;
-    *display: inline;
-    margin: 0;
-    list-style: none;
-    width: 449px
-}
 
-body#project_edit .form-element .options li {
-    list-style-image: none;
-    list-style-type: none;
-    margin-left: 0
-}
-
-body#project_edit .form-element .options input[type=text] {
-    border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;
-}
-
-body#project_edit .form-element .options label strong {
-    font-weight: normal;
-}
-
-body#project_edit .form-element .options input.radio {
-    margin: 0 5px 0 0;
-    min-height: 13px;
-}
-
-body#project_edit .form-element .options .option {
-    margin-bottom: 3px
-}
-
-body#project_edit .form-element .options .option:last-child {
-    margin-bottom: 0
-}
-
-body#project_edit .form-element .options .option.number-of-days {
-    position: relative
-}
-
-body#project_edit .form-element .options .option.number-of-days .rec {
-    color: #828587;
-    font-size: 11px;
-    font-style: normal;
-    position: absolute;
-    top: 11px;
-    right: 10px
-}
-
-body#project_edit .form-element .options .option.number-of-days .rec:hover {
-    cursor: default
-}
-
-body#project_edit .form-element .options .option.number-of-days label {
-    width: 172px;
-    word-wrap: break-word
-}
-
-body#project_edit .form-element .options input[type=radio] {
-    display: inline-block;
-}
-
-body#project_edit .form-element .options .option.number-of-days label strong {
-    padding-left: 3px
-}
-
-body#project_edit .form-element .options .option.number-of-days input.text {
-    padding-right: 160px;
-    vertical-align: top;
-    width: 277px;
-    background: white;
-    border: 1px solid #d9d9de;
-    color: #0f2105;
-    font-size: 14px;
-    margin: 0;
-    -webkit-font-smoothing: antialiased;
-}
-
-body#project_edit .form-element .options .option.date-time label {
-    width: 172px
-}
-
-body#project_edit .form-element .options .option.date-time label strong {
-    padding-left: 3px
-}
-
-body#project_edit .form-element .options .option.date-time select {
-    padding-left: 11px;
-    margin-right: -1px
-}
-
-body#project_edit .form-element .options .option.date-time select.date {
-    background-position: 142px 14px;
-    width: 144px
-}
-
-body#project_edit .form-element .options .option.date-time select.time {
-    border-radius: 0px 3px 3px 0px
-}
-
-body#project_edit .form-element .options .option.date-time input.text {
-    border-right: 0;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
-    width: 166px
-}
-
-body#project_edit .form-element .options .option label {
-    background: #f2f2f3;
-    border: 1px solid #d9d9de;
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
-    border-right: 0;
-    color: #0f2105;
-    font-weight: normal;
-    width: auto;
-    margin-bottom: 0
-}
-
-body#project_edit #basic .date-time {
-    border-radius: 3px;
-    background: #f2f2f3;
-    border: 1px solid #d9d9de;
-}
-
-body#project_edit #basic .date-time label[for=duration_deadline] {
-    border-radius: 0;
-    border: 0;
 }
 
 body#project_edit #rewards .add-new-reward {
@@ -696,8 +566,8 @@ div.modal_dialog_body label {
 
 #project_edit #story .story-posts .post {
     background: #ffffff;
-    border: 1px solid #d9d9de;
-    padding: 10px;
+    border: 1px dashed #d9d9de;
+    padding: 20px;
     margin-bottom: 10px;
 }
 
