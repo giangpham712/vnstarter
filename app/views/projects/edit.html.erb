@@ -4,111 +4,100 @@
 <div class="content-wrapper hide-until-loading">
   <div class="body-wrapper">
     <div class="container">
+
       <div class="row">
-        <div class="col-md-12 col-sm-12 animated" data-animtype="flipInY"
-             data-animrepeat="0"
-             data-speed="1s"
-             data-delay="0.5s">
+        <div class="col-md-12 col-sm-12">
+          <div>
+            <%= hidden_field_tag :id, @project.id %>
+            <%= hidden_field_tag :slug, @project.slug %>
 
+            <div class="tab-container">
+              <ul id="edit-tabs" class="etabs clearfix">
 
+                <li class="tab active" role="presentation">
+                  <a href="#basic" data-edit-info="basic" aria-controls="home" role="tab" data-toggle="tab"><i class=icon-feather></i>Thông
+                    tin dự án</a>
+                </li>
 
-        </div>
+                <li class="tab" role="presentation">
+                  <a href="#rewards" data-edit-info="rewards" aria-controls="home" role="tab" data-toggle="tab"><i class=icon-drive></i>Phần
+                    thưởng</a>
+                </li>
 
-        <div class="col-md-12 col-sm-12 centered">
+                <li class="tab" role="presentation">
+                  <a href="#story" data-edit-info="story" aria-controls="home" role="tab" data-toggle="tab"><i class=icon-drive></i>Câu
+                    chuyện</a>
+                </li>
 
-          <div class="row">
+                <li class="tab" role="presentation">
+                  <a href="#about_you" data-edit-info="profile" aria-controls="home" role="tab" data-toggle="tab"><i class=icon-map></i>Thông
+                    tin cá nhân</a>
+                </li>
 
-            <div class="col-md-12 col-sm-12">
+                <li class="tab" role="presentation">
+                  <a href="#accounts" data-edit-info="accounts" aria-controls="home" role="tab" data-toggle="tab"><i class=icon-map></i>
+                    Tài
+                    khoản </a>
+                </li>
 
-              <div>
-                <%= hidden_field_tag :id, @project.id %>
-                <%= hidden_field_tag :slug, @project.slug %>
+              </ul>
 
-                <div class="tab-container">
-                  <ul id="edit-tabs" class="etabs clearfix">
+              <div class="tabs-content">
 
-                    <li class="tab active" role="presentation">
-                      <a href="#basic" data-edit-info="basic" aria-controls="home" role="tab" data-toggle="tab"><i class=icon-feather></i>Thông
-                        tin dự án</a>
-                    </li>
+                <div id="basic" role="tabpanel" class="active">
+                  <div class="tab-guide">
+                    <h1>Bắt đầu xây dựng dự án của bạn</h1>
 
-                    <li class="tab" role="presentation">
-                      <a href="#rewards" data-edit-info="rewards" aria-controls="home" role="tab" data-toggle="tab"><i class=icon-drive></i>Phần
-                        thưởng</a>
-                    </li>
-
-                    <li class="tab" role="presentation">
-                      <a href="#story" data-edit-info="story" aria-controls="home" role="tab" data-toggle="tab"><i class=icon-drive></i>Câu
-                        chuyện</a>
-                    </li>
-
-                    <li class="tab" role="presentation">
-                      <a href="#about_you" data-edit-info="profile" aria-controls="home" role="tab" data-toggle="tab"><i class=icon-map></i>Thông
-                        tin cá nhân</a>
-                    </li>
-
-                    <li class="tab" role="presentation">
-                      <a href="#accounts" data-edit-info="accounts" aria-controls="home" role="tab" data-toggle="tab"><i class=icon-map></i>
-                        Tài
-                        khoản </a>
-                    </li>
-
-                  </ul>
-
-                  <div class="tabs-content">
-
-                    <div id="basic" role="tabpanel" class="active">
-                      <div class="tab-guide">
-                        <h1>Bắt đầu xây dựng dự án của bạn</h1>
-                        <h2>Chọn ảnh đại diện, mục tiêu và những thông tin quan trọng khác</h2>
-                      </div>
-
-                      <%= render "projects/shared/edit_basic" %>
-                    </div>
-                    <div id="rewards" role="tabpanel">
-                      <div class="tab-guide">
-                        <h1>Bạn thể hiện sự biết ơn với những người góp vốn như thế nào?</h1>
-                        <h2></h2>
-                      </div>
-
-                      <%= render "projects/shared/edit_rewards" %>
-                    </div>
-                    <div id="story" role="tabpanel">
-                      <div class="tab-guide">
-                        <h1>What are you creating?</h1>
-                        <h2>Every project must create something to share with others.<br/>
-                          Use this space to tell the story behind your project.</h2>
-                      </div>
-                      <%= render "projects/shared/edit_story" %>
-                    </div>
-                    <div id="about_you" role="tabpanel">
-                      <%= render "projects/shared/edit_about_you" %>
-                    </div>
-                    <div id="accounts" role="tabpanel">
-                      <%= render "projects/shared/edit_accounts" %>
-                    </div>
+                    <h2>Chọn ảnh đại diện, mục tiêu và những thông tin quan trọng khác</h2>
                   </div>
+
+                  <%= render "projects/shared/edit_basic" %>
                 </div>
+                <div id="rewards" role="tabpanel">
+                  <div class="tab-guide">
+                    <h1>Bạn thể hiện sự biết ơn với những người góp vốn như thế nào?</h1>
 
-                <div class="tools visible" id="toolbar">
-                  <div class="container">
-                    <ol class="tools-panels pull-right no-margin">
-                      <li class="form-tools">
-                        <div id="discard-changes" class="">
-                          <a class="btn-link" href="javascript:void(0);">Hủy thay đổi</a></div>
-                        <div id="save" class="">
-                          <a class="btn btn-green" href="javascript:void(0);">Lưu thay đổi</a>
-                        </div>
-                      </li>
-                    </ol>
+                    <h2></h2>
                   </div>
+
+                  <%= render "projects/shared/edit_rewards" %>
+                </div>
+                <div id="story" role="tabpanel">
+                  <div class="tab-guide">
+                    <h1>What are you creating?</h1>
+
+                    <h2>Every project must create something to share with others.<br/>
+                      Use this space to tell the story behind your project.</h2>
+                  </div>
+                  <%= render "projects/shared/edit_story" %>
+                </div>
+                <div id="about_you" role="tabpanel">
+                  <%= render "projects/shared/edit_about_you" %>
+                </div>
+                <div id="accounts" role="tabpanel">
+                  <%= render "projects/shared/edit_accounts" %>
                 </div>
               </div>
             </div>
 
+            <div class="tools visible" id="toolbar">
+              <div class="container">
+                <ol class="tools-panels pull-right no-margin">
+                  <li class="form-tools">
+                    <div id="discard-changes" class="">
+                      <a class="btn-link" href="javascript:void(0);">Hủy thay đổi</a></div>
+                    <div id="save" class="">
+                      <a class="btn btn-green" href="javascript:void(0);">Lưu thay đổi</a>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+            </div>
           </div>
         </div>
+
       </div>
+
     </div>
   </div>
 </div>

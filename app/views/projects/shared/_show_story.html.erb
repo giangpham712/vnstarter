@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+    <div class="row">
+      <div class="story-posts">
+        <% @project.posts.each do |post| %>
+            <div class='post'>
+              <h2><%= post.title %></h2>
+              <% if post.image.exists? %>
+                  <img src="<%= post.image.url(:original) %>" title="<%= post.title %>"/>
+                  <br/>
+                  <br/>
+              <% end %>
+              <p>
+                <%= post.body %>
+              </p>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-4 col-md-4 mt60 pd30">
+    <h2 class='mb30 bold'>Rewards</h2>
+  </div>
+</div>
