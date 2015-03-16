@@ -283,6 +283,10 @@ div.sticky-nav dl.sub-nav dd.active a {
         width: 83.33333%;
     }
 }
+@media only screen and (max-width: 320px){
+    .container,.col-md-4,.col-md-8{width: 100%}
+
+}
 .menu{border-bottom: 1px solid #ddd}
 .border-bottom{border-bottom: 1px solid #ddd}
 /* Show project */
@@ -321,6 +325,7 @@ div.sticky-nav dl.sub-nav dd.active a {
     padding: 0px 20px 0px 20px !important;
     overflow: hidden;
     height: 40px;
+    margin-top: -9px;
 }
 #back-this-project{
     font-size: 16px;
@@ -336,6 +341,7 @@ div.sticky-nav dl.sub-nav dd.active a {
     line-height: 2.8;
     height: 50px;
     text-align: center;
+    margin-top: 30px;
 }
 .text{
     border: 0;
@@ -353,14 +359,17 @@ div.sticky-nav dl.sub-nav dd.active a {
     margin-top: 20px !important;
 }
 .project-tab{
-color: #0f2105;
-padding-bottom: 30px !important;
-padding-top: 30px !important;
-border: none !important;
-font-weight: bold;
+    color: #0f2105;
+    padding-bottom: 30px !important;
+    padding-top: 30px !important;
+    border-radius: 0 !important;
+    border-left:none !important;
+    border-right:none !important;
+    border-top:none !important;
+    font-weight: bold;
 }
-.project-tab:active > a{
-    border-bottom: 3px solid #2bde73;
+.project-tab:active{
+    background-color: #F7FAFA;
 }
 .tag{
     vertical-align: middle;
@@ -382,4 +391,38 @@ font-weight: bold;
 }
 .mb30{
     margin-bottom: 30px !important;
+}
+.mt30{margin-top: 30px !important}
+#project-top-video{
+    padding-left: 0 !important;
+}
+.border-left-non{border-left:transparent !important;}
+#tab-wrapper{border-bottom: 1px solid #ddd}
+.nav-tabs {
+   border-bottom: none;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+    border-bottom:3px solid #279fbb;
+}
+.number-backer, .number-day {
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 18px;
+    color: black
+}
+#project-deadline{
+    padding-left: 0px ;
+    margin-top: 48px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid #ddd;
+    color: #828587;
+}
+.cicle{
+    border-radius: 50%;
+}
+#project-right{
+
 }

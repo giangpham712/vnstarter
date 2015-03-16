@@ -3402,7 +3402,7 @@ Header Element, Container for - Logo - Navigation - Search
 }
 
 .header .logo {
-    margin: 14px 0 0 -55px;
+    margin: 14px 0 0 0;
 }
 
 /*
@@ -6566,7 +6566,7 @@ Testimonial
 .number-backer, .number-day {
     font-weight: bold;
     font-size: 48px;
-    line-height: 50px;
+    line-height: 35px;
     color: black
 }
 
@@ -6574,6 +6574,7 @@ Testimonial
     font-weight: bold;
     font-size: 48px;
     color: black;
+    line-height: 35px;
 }
 
 .backer {
