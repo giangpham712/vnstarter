@@ -62,11 +62,11 @@
 }
 
 .jumbotron .slide div.text {
-position: relative;
-z-index: 4;
-display: table-cell;
-vertical-align: middle;
-width: 100%;
+    position: relative;
+    z-index: 4;
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
 }
 
 .jumbotron.slider .slick-dots {
@@ -120,7 +120,7 @@ width: 100%;
     transition: all 200ms ease-in-out;
 }
 a {
-    color: #fc4045;
+    color: #279fbb;
 }
 .border-button:hover{background: #f96c04}
 a {
@@ -283,4 +283,103 @@ div.sticky-nav dl.sub-nav dd.active a {
         width: 83.33333%;
     }
 }
-.menu{border-bottom: 1px dotted #000}
+.menu{border-bottom: 1px solid #ddd}
+.border-bottom{border-bottom: 1px solid #ddd}
+/* Show project */
+.ss-icon, .ss-icon.ss-kickstarter, .ss-icon:before, .ss-icon.ss-kickstarter:before, .ss-icon.right:after, .ss-icon.ss-kickstarter.right:after {
+    font-family: "SSKickstarter";
+    font-style: normal;
+    font-weight: 400;
+    text-decoration: none;
+    text-rendering: optimizeLegibility;
+    white-space: nowrap;
+    -moz-font-feature-settings: "liga=1";
+    -moz-font-feature-settings: "liga";
+    -ms-font-feature-settings: "liga" 1;
+    -o-font-feature-settings: "liga";
+    font-feature-settings: "liga";
+    -webkit-font-smoothing: antialiased;
+    font-size: 14px;
+}
+.grey-dark {
+    font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #828587;
+}
+#project-top-bottom-info{
+    margin-top: 30px;
+    padding: 7px 10px 7px 10px;
+}
+
+#project-share-button{
+    background: transparent;
+    text-transform: none; 
+    border-radius: 4px;
+    background-color: transparent;
+    border: solid 2px #828587;
+    color: #828587;
+    font-weight: bolder;
+    padding: 0px 20px 0px 20px !important;
+    overflow: hidden;
+    height: 40px;
+}
+#back-this-project{
+    font-size: 16px;
+    line-height: 3.7;
+    padding: 5px 30px !important;
+    background-color: #279fbb;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 2.8;
+    height: 50px;
+    text-align: center;
+}
+.text{
+    border: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    font-size: 17px;
+    
+}
+#about-pj{
+    font-size: 22px;
+    line-height: 30px !important;
+    margin-bottom: 30px !important;
+    margin-top: 20px !important;
+}
+.project-tab{
+color: #0f2105;
+padding-bottom: 30px !important;
+padding-top: 30px !important;
+border: none !important;
+font-weight: bold;
+}
+.project-tab:active > a{
+    border-bottom: 3px solid #2bde73;
+}
+.tag{
+    vertical-align: middle;
+
+}
+.mt60{
+    margin-top: 60px !important;
+}
+.mb30{
+    margin-bottom: 30px !important;
+}
+.pd30{
+    padding: 30px !important;
+
+}
+.rewards{background-color: #F7FAFA; border: 1px solid #F7FAFA}
+.bold{
+    font-weight: bold !important;
+}
+.mb30{
+    margin-bottom: 30px !important;
+}
