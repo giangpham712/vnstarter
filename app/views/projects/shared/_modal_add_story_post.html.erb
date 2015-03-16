@@ -1,34 +1,41 @@
 <div class="modal fade" id='add-story-post' data-remodal-id="modal">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title">Thêm câu chuyện của bạn</h3>
-      </div>
-      <div class="modal-body">
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-          <span>Ảnh</span>
-        </div>
-        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-          <input type="file" name="" id='modal-file' class='file-button' value="" placeholder="Ảnh chính của dự án.">
-        </div>
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-          <span>Tiêu đề</span>
-        </div>
-        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-          <input type="text" name="" id="modal-title" class="form-control" value="" required="required" pattern="" title="">
-          <br>
-        </div>
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-          <span>Nội dung</span>
-        </div>
-        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-          <textarea name="" id='modal-des' class='form-control' placeholder="giới hạn 225 chữ"></textarea>
-        </div>
-        <div class="clearfix"></div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn-sm btn-primary">Ok</button>
-      </div>
+      <%= form_for [@project, @project.posts.build], method: :put do |f| %>
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h3 class="modal-title">Thêm câu chuyện của bạn</h3>
+          </div>
+          <div class="modal-body clearfix">
+
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+              <span>Ảnh</span>
+            </div>
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+              <input type="file" name="" id='modal-file' class='file-button' value="" placeholder="Ảnh chính của dự án.">
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+              <span>Tiêu đề</span>
+            </div>
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+              <%= f.text_field :title, class: 'form-control', :rows => "4" %>
+              <br>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+              <span>Nội dung</span>
+            </div>
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+              <%= f.text_area :body, class: 'form-control', :rows => "4" %>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+            <button type="submit" class="btn btn-primary">Thêm</button>
+          </div>
+      <% end %>
     </div>
   </div>
 </div>

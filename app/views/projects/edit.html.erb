@@ -10,37 +10,22 @@
              data-speed="1s"
              data-delay="0.5s">
 
-          <h2 class="h2-section-title"><%= t :edit_your_project %></h2>
 
-          <div class="col-md-12 col-sm-12 centered">
-          </div>
-          <div class="i-section-title">
-            <i class="icon-users-outline">
 
-            </i>
-          </div>
-
-          <div class="space-sep20"></div>
         </div>
-      </div>
-
-      <div class="row">
 
         <div class="col-md-12 col-sm-12 centered">
 
           <div class="row">
-            <div class="col-md-12 col-sm-12">
-              <div class="title-block clearfix">
-                <h3 class="h3-body-title">Khởi tạo dự án</h3>
 
-                <div class="title-seperator"></div>
-              </div>
-              <div class="bg-white">
+            <div class="col-md-12 col-sm-12">
+
+              <div>
                 <%= hidden_field_tag :id, @project.id %>
                 <%= hidden_field_tag :slug, @project.slug %>
 
                 <div class="tab-container">
-                  <ul id="edit-tabs" class="etabs">
+                  <ul id="edit-tabs" class="etabs clearfix">
 
                     <li class="tab active" role="presentation">
                       <a href="#basic" data-edit-info="basic" aria-controls="home" role="tab" data-toggle="tab"><i class=icon-feather></i>Thông
@@ -63,20 +48,37 @@
                     </li>
 
                     <li class="tab" role="presentation">
-                      <a href="#accounts" data-edit-info="accounts" aria-controls="home" role="tab" data-toggle="tab"><i class=icon-map></i> Tài
+                      <a href="#accounts" data-edit-info="accounts" aria-controls="home" role="tab" data-toggle="tab"><i class=icon-map></i>
+                        Tài
                         khoản </a>
                     </li>
 
                   </ul>
+
                   <div class="tabs-content">
 
                     <div id="basic" role="tabpanel" class="active">
+                      <div class="tab-guide">
+                        <h1>Bắt đầu xây dựng dự án của bạn</h1>
+                        <h2>Chọn ảnh đại diện, mục tiêu và những thông tin quan trọng khác</h2>
+                      </div>
+
                       <%= render "projects/shared/edit_basic" %>
                     </div>
                     <div id="rewards" role="tabpanel">
+                      <div class="tab-guide">
+                        <h1>Bắt đầu xây dựng dự án của bạn</h1>
+                        <h2>Chọn ảnh đại diện, mục tiêu và những thông tin quan trọng khác</h2>
+                      </div>
+
                       <%= render "projects/shared/edit_rewards" %>
                     </div>
                     <div id="story" role="tabpanel">
+                      <div class="tab-guide">
+                        <h1>What are you creating?</h1>
+                        <h2>Every project must create something to share with others.<br/>
+                          Use this space to tell the story behind your project.</h2>
+                      </div>
                       <%= render "projects/shared/edit_story" %>
                     </div>
                     <div id="about_you" role="tabpanel">
@@ -92,10 +94,10 @@
                   <div class="container">
                     <ol class="tools-panels pull-right no-margin">
                       <li class="form-tools">
-                        <div class="">
-                          <a class="btn-link hidden" href="#">Hủy thay đổi</a></div>
+                        <div id="discard-changes" class="">
+                          <a class="btn-link" href="javascript:void(0);">Hủy thay đổi</a></div>
                         <div id="save" class="">
-                          <a class="btn btn-green" href="#">Lưu thay đổi</a>
+                          <a class="btn btn-green" href="javascript:void(0);">Lưu thay đổi</a>
                         </div>
                       </li>
                     </ol>
@@ -103,11 +105,23 @@
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+<div class="modal_dialog spinning" id="saving-layer" style="display: none;">
+  <div class="modal_dialog_outer">
+    <div class="modal_dialog_sizer">
+      <div class="modal_dialog_inner">
+        <div class="modal_dialog_content"></div>
+      </div>
+      <span class="modal_dialog_ie_hack"></span>
+    </div>
+  </div>
+</div>
+
 
 <%= render "projects/shared/modal_add_story_post" %>

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def show
-    @user = current_user
+
   end
 
   def upload_image
@@ -14,5 +14,24 @@ class UsersController < ApplicationController
     end
 
   end
+
+  def my_profile
+    @user = current_user
+  end
+
+  def update_profile
+    user = current_user
+    if user.update(update_profile_params)
+      render json: { :success => true, :user => user }
+    else
+      render json: { :success => false, :user => user.errors }
+    end
+
+  end
+
+  private
+    def update_profile_params
+      params.require(:user).permit(:name, :biology, :location, :website)
+    end
 
 end
