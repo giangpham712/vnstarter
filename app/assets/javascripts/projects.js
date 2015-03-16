@@ -6,6 +6,15 @@
         $("#edit-tabs a[data-toggle=tab]").on('shown.bs.tab', function (e) {
             var $tab = $(e.target);
             current_tab = $tab.attr("href");
+            switch(current_tab) {
+                case "#basic":
+                case "#about_you":
+                    $("#toolbar").show();
+                    break;
+                default:
+                    $("#toolbar").hide();
+                    break;
+            }
         })
 
         $("#save").click(function() {
@@ -13,9 +22,20 @@
             switch (current_tab) {
                 case "#basic":
                 case "#about_you":
-                    submitFormAjax($(current_tab + " form")[0]);
+                    $("#saving-layer").show();
+                    submitFormAjax($(current_tab + " form")[0],
+                        function(result) {
+                            console.log(result);
+                            $("#saving-layer").hide();
+                        },
+                        function(result) {
+                            console.log(result);
+                            $("#saving-layer").hide();
+                        }
+                    );
                     break;
                 default:
+
                     break;
             }
         });
@@ -86,17 +106,31 @@
 
         $("#add-story-post form").submit(function(e) {
             e.preventDefault();
-            console.log("Add story", this);
+            var form = this;
+            submitFormAjax(this,
+                function(result) {
+                    if (result.success) {
+                        $(form).find(".errors").hide();
+                        $("#add-story-post").modal('hide');
+                    } else {
+                        $(form).find(".errors").show();
+                        var $errors_list = $(form).find(".errors ul");
+                        $errors_list.html("");
+                        $.each(result.errors, function(i, e) {
+                            $("<li>" + e + "</li>").appendTo($errors_list);
+                        });
+                    }
+                },
+                function(result) {
+                    console.log(result);
+                }
+            )
         });
     });
 
-    function submitFormAjax(form) {
+    function submitFormAjax(form, done, fail) {
 
-        if (form == undefined) {
-            alert("Form not found");
-            return false;
-        }
-        $("#saving-layer").show();
+
         var url = form.action;
         var method = form.method;
 
@@ -106,21 +140,11 @@
             data: $(form).serialize()
         });
 
-        request.done(function(result) {
-            console.log(result);
-            $("#saving-layer").hide();
-        });
-
-        request.fail(function(result) {
-            console.log(result);
-            $("#saving-layer").hide();
-        });
+        request.done(done);
+        request.fail(fail);
 
 
     }
 
-    function addStory() {
-
-    }
 
 })(jQuery);

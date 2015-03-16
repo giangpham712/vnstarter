@@ -20,7 +20,7 @@ class PostsController < ApplicationController
     if post.save
       render json: { :success => true, :post => post }
     else
-      render json: { :success => false, :post => post.errors }
+      render json: { :success => false, :errors => post.errors.full_messages }
     end
   end
 

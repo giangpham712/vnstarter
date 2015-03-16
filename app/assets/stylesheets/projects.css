@@ -527,7 +527,7 @@ body#project_edit #rewards .add-new-reward .description label {
 body#project_edit #rewards .add-new-reward .description textarea {
     margin: -7px 0;
     margin-right: -1px;
-    width: 316px;
+    width: 376px;
     height: 100px;
     padding: 10px;
     resize: none;
@@ -688,4 +688,19 @@ div.modal_dialog_content .container-flex {
 
 div.modal_dialog_body label {
     margin-top: 0px
+}
+
+#project_edit #story .story-posts {
+    padding: 5px 0 20px 0;
+}
+
+#project_edit #story .story-posts .post {
+    background: #ffffff;
+    border: 1px solid #d9d9de;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#add-story-post .errors {
+    text-align: left;
 }

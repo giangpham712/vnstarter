@@ -1,7 +1,7 @@
 <div class="modal fade" id='add-story-post' data-remodal-id="modal">
   <div class="modal-dialog">
     <div class="modal-content">
-      <%= form_for [@project, @project.posts.build], method: :put do |f| %>
+      <%= form_for [@project, @project.posts.build], :html => { :multipart => true }, method: :post do |f| %>
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
@@ -9,7 +9,10 @@
             <h3 class="modal-title">Thêm câu chuyện của bạn</h3>
           </div>
           <div class="modal-body clearfix">
-
+            <div class="errors alert alert-danger alert-dismissible" style="display: none;" role="alert">
+                Có lỗi xảy ra khi lưu:
+                <ul></ul>
+            </div>
             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
               <span>Ảnh</span>
             </div>

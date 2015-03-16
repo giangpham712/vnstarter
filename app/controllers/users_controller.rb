@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     if user.update(update_profile_params)
       render json: { :success => true, :user => user }
     else
-      render json: { :success => false, :user => user.errors }
+      render json: { :success => false, :user => user.errors.values }
     end
 
   end
