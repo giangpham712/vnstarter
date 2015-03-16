@@ -108,6 +108,22 @@
             $("#add-story-post form")[0].reset();
         });
 
+        $("#add-reward form").submit(function(e) {
+            e.preventDefault();
+            var form = this;
+
+            submitFormAjax(form, function(result) {
+                if (result.success) {
+                    console.log(result);
+                } else {
+                    console.log(result);
+                }
+
+            }, function(result) {
+
+            });
+        });
+
         $("#add-story-post form").submit(function(e) {
             e.preventDefault();
             var form = this;

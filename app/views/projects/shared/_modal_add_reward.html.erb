@@ -1,0 +1,38 @@
+<div class="modal fade" id='add-reward' data-remodal-id="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <%= form_for [@project, @project.rewards.build], method: :post do |f| %>
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h3 class="modal-title">Thêm phần thưởng</h3>
+          </div>
+          <div class="modal-body clearfix">
+            <div class="errors alert alert-danger alert-dismissible" style="display: none;" role="alert">
+              Có lỗi xảy ra khi lưu:
+              <ul></ul>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+              <span>Khoản góp yêu cầu</span>
+            </div>
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+              <%= f.text_field :minimum_pledge_amount, class: 'form-control', :rows => "4" %>
+              <br>
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+              <span>Mổ tả</span>
+            </div>
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+              <%= f.text_area :description, class: 'form-control', :rows => "4" %>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+            <button type="submit" class="btn btn-primary">Thêm</button>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

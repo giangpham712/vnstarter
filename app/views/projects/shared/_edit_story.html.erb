@@ -38,24 +38,22 @@
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
           <label>Story</label>
         </div>
-        <div class="">
-          <div class="story-posts">
-            <% @project.posts.each do |post| %>
-                <div class="post">
-                  <div>
-                    <h2><%= post.title %></h2>
-                  </div>
-                  <div>
-                    <% if post.image.exists? %>
-                        <img src="<%= post.image.url(:original) %>" title="<%= post.title %>"/>
-                        <br/>
-                        <br/>
-                    <% end %>
-                    <p><%= post.body %></p>
-                  </div>
+        <div class="story-posts">
+          <% @project.posts.each do |post| %>
+              <div class="post">
+                <div>
+                  <h2><%= post.title %></h2>
                 </div>
-            <% end %>
-          </div>
+                <div>
+                  <% if post.image.exists? %>
+                      <img src="<%= post.image.url(:original) %>" title="<%= post.title %>"/>
+                      <br/>
+                      <br/>
+                  <% end %>
+                  <p><%= post.body %></p>
+                </div>
+              </div>
+          <% end %>
           <%= button_tag "Thêm câu chuyện", class: 'btn btn-info add_story', data: {toggle: "modal", target: "#add-story-post"} %>
         </div>
 

@@ -31,16 +31,17 @@
           </ul>
 
           <ul class="navigation pull-right">
-            <li>
-              <a href="/users/sign_up">Đăng ký</a>
-            </li>
-            <li>
-              <a href="/users/sign_in">Đăng nhập</a>
-            </li>
+            <% if (!user_signed_in?) %>
+                <li>
+                  <a href="/users/sign_up">Đăng ký</a>
+                </li>
+                <li>
+                  <a href="/users/sign_in">Đăng nhập</a>
+                </li>
+            <% else %>
 
-            <li>
+            <% end %>
 
-            </li>
           </ul>
 
         </nav>
