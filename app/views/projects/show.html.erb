@@ -182,15 +182,19 @@ data-delay="0.5s">
                       <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
                         <h2 class='mt60 bold'>About this projects</h2>
                         <div class='pd30'>
-                        <% @project.posts.each do |post| %>
-                        <div class='post'>
-                          <h5><%= post.title %></h5>
+                          <% @project.posts.each do |post| %>
+                          <div class='post'>
+                            <h5><%= post.title %></h5>
+                            <% if post.image.exists? %>
+                            <img src="<%= post.image.url(:original) %>" title="<%= post.title %>"/>
+                            <br/>
                             
-                          <p>
-                            <%= post.body %>
-                          </p>
-                        </div>
-                        <% end %>
+                            <% end %>
+                            <p>
+                              <%= post.body %>
+                            </p>
+                          </div>
+                          <% end %>
                         </div>
                       </div>
                       <div class="col-xs-4 col-md-4 mt60 pd30">
