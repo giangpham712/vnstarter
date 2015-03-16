@@ -13,4 +13,7 @@ vi:
           location: "Địa điểm"
           duration: "Thời hạn"
           funding_goal: "Mục tiêu"
+        story:
+          choose_video_from_your_computer: "Chọn file video từ máy tính của bạn"
+          support_video_file_formats: "Hố trợ định dạng MP4. Kích thước tối đa 20MB"
 

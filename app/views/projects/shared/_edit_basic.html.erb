@@ -4,11 +4,11 @@
 
         <div class="row">
           <div class='form-element'>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
               <%= f.label t('project.edit.basic.project_image') %>
             </div>
 
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
               <div class="attachment_upload
                 <% if @project.image.exists? %>has_file
                 <% end %>">
@@ -41,73 +41,66 @@
           </div>
 
           <div class='form-element'>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
               <%= f.label t('project.edit.basic.project_title') %><br/>
             </div>
 
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
               <%= f.text_field :title, class: 'form-control' %>
 
             </div>
           </div>
 
           <div class='form-element'>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
               <%= f.label t('project.edit.basic.short_description') %>
             </div>
 
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
               <%= f.text_area :short_description, class: 'form-control', :rows => "4" %>
 
             </div>
           </div>
 
           <div class='form-element'>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
               <%= f.label t('project.edit.basic.category') %>
             </div>
 
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
               <%= f.select :category_id, options_for_select(@categories.map { |c| [c.name, c.id] }, @project.category_id), {:include_blank => false}, {class: 'form-control'} %>
 
             </div>
           </div>
 
           <div class='form-element'>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
               <%= f.label t('project.edit.basic.location') %>
             </div>
 
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
               <%= f.select :location, options_for_select(@cities.map { |city| city.name }, @project.location), {:include_blank => false}, {class: 'form-control'} %>
 
             </div>
           </div>
 
           <div class='form-element'>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
               <%= f.label t('project.edit.basic.duration') %>
             </div>
 
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
               <ul class="options">
-                <li class="option number-of-days">
-                  <label class="option_label" for="duration_duration"><input class="radio" id="duration_duration" name="duration" type="radio" value="duration">
-                    <strong>Number of days</strong></label><em class="rec">1−60 days, we recommend 30 or less</em><span><input class="text" id="project_duration" length="3" name="project[duration]" size="3" type="text"></span>
-                </li>
-                <li class="option disabled date-time">
-                  <label class="option_label" for="duration_deadline"><input checked="checked" class="radio" id="duration_deadline" name="duration" type="radio" value="deadline">
-                    <strong>End on date &amp; time</strong></label>
-                </li>
+
               </ul>
             </div>
           </div>
           <div class='form-element'>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
               <%= f.label t('project.edit.basic.funding_goal') %>
             </div>
 
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
               <%= f.text_field :funding_goal, class: 'form-control' %>
 
             </div>

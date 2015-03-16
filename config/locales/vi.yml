@@ -20,4 +20,11 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 vi:
-
+  activerecord:
+    attributes:
+      post:
+        title: "Tiêu đề"
+        body: "Nội dung"
+    errors:
+      messages:
+        blank: "là bắt buộc"
