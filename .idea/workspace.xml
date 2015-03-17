@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31fa37c0-7785-44b6-9d12-f7360ecd0370" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/projects.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/projects.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/views/discover/vi.yml" afterPath="$PROJECT_DIR$/config/locales/views/discover/vi.yml" />
     </list>
     <ignored path="kickstarter.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,16 +34,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="projects.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/projects.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="11304" max-vertical-offset="11900">
-              <caret line="679" column="13" selection-start-line="679" selection-start-column="13" selection-end-line="679" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="new.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/pledges/new.html.erb">
           <provider selected="true" editor-type-id="text-editor">
@@ -55,11 +44,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="projects.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="projects.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/projects.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.2020726" vertical-offset="1597" max-vertical-offset="3808">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1597" max-vertical-offset="3808">
               <caret line="203" column="0" selection-start-line="203" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="en.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/locales/views/discover/en.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="119">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="vi.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/locales/views/discover/vi.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.028716216" vertical-offset="0" max-vertical-offset="592">
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -127,16 +136,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vi.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/locales/views/discover/vi.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="204">
-              <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="GeneratorOptions">
@@ -193,12 +192,12 @@
         <option value="$PROJECT_DIR$/app/controllers/pledges_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/pledge.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/pledges.css" />
-        <option value="$PROJECT_DIR$/config/locales/views/discover/vi.yml" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/projects.css" />
         <option value="$PROJECT_DIR$/app/views/pledges/new.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/pledges.js" />
         <option value="$PROJECT_DIR$/app/views/shared/_menu.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/projects.js" />
+        <option value="$PROJECT_DIR$/config/locales/views/discover/vi.yml" />
       </list>
     </option>
   </component>
@@ -1247,22 +1246,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/locales/views/discover/en.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="592">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/locales/views/discover/vi.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="204">
-          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/pledges.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="589">
@@ -1339,8 +1322,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/projects.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.2020726" vertical-offset="1597" max-vertical-offset="3808">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1597" max-vertical-offset="3808">
           <caret line="203" column="0" selection-start-line="203" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/locales/views/discover/en.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="592">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/locales/views/discover/vi.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.028716216" vertical-offset="0" max-vertical-offset="592">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
