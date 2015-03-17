@@ -202,7 +202,7 @@
   data-animdelay="0.2s"
   >
   <h4 class="h4-body-title">
-    <i class="fa-suitcase"></i>
+    <i class="icon-truck"></i>
     Du lịch
   </h4>
   <div class="content-box-text">
@@ -229,7 +229,7 @@
   data-animdelay="0.2s"
   >
   <h4 class="h4-body-title">
-   <i class="fa fa-gamepad"></i>
+   <i class="icon-ipod-mini-music-streamline"></i>
    Trò chơi
  </h4>
  <div class="content-box-text">
@@ -370,24 +370,22 @@
 </div>
 </div>
 </div>
-
-<div class='container best-project '>
+<div class="space-sep20"></div>
+<div class='container best-project no-border '>
 <div class="space-sep20"></div>
   <div class="row">
-    <div class="col-md-12 col-sm-12 animated" data-animtype="fadeInUp"
-    data-animrepeat="0"
-    data-speed="1s"
-    data-delay="0.4s">
-    <h2 class="h2-section-title mt30">Dự án nổi bật</h2>
-                                
-  </div>
+    <div class="title-block clearfix">
+                            <h3 class="h3-body-title">Dự án nổi bật</h3>
+                            <div class="title-seperator"></div>
+                        </div>
+                       
 </div>
-<div class="space-sep20"></div>
+
 <div class="space-sep20"></div>
 <div class="row" id="top-projects">
 
   <% @projects.each do |project| %>
-  <div class="col-md-3 col-sm-3">
+  <div class="col-md-4 col-sm-4 projects">
     <div class="feature project animated" data-animtype="fadeInUp" data-animrepeat="0" data-animspeed="1s" data-animdelay="0.4s">
       <div class="feature-image img-overlay">
         <% if project.image.exists? %>

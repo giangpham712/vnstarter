@@ -6637,3 +6637,4 @@ Testimonial
     height: 31px !important;
     transition:all 0.3s;
 }
+.no-border{border: none; }

@@ -1,6 +1,6 @@
 class DiscoverController < ApplicationController
 	def index
-		@projects=Project.take(4)
+		@projects=Project.take(3)
 	end
 	def show
 		@projects=Project.all
