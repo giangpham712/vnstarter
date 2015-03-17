@@ -2625,7 +2625,7 @@ Content Box
 }
 
 .content-box.content-style4 .btn {
-    margin-top: 10px;
+    margin-top: 14px;
     margin-bottom: 0;
 }
 
@@ -6633,8 +6633,10 @@ Testimonial
     border-radius: 6px !important; 
     border: 2px solid #279fbb !important;
     color: #279fbb !important;
-    margin-top: 10px;
+    margin-top: 15px;
     height: 31px !important;
     transition:all 0.3s;
 }
 .no-border{border: none; }
+.no-shadow{box-shadow: none;}
+.bg-transparent{background: transparent;}

@@ -251,6 +251,8 @@ div.sticky-nav dl.sub-nav dd.active a {
 
 #top-projects .project {
     background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
 }
 
 #top-projects .project .project-info {
