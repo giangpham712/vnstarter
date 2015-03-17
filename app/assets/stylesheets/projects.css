@@ -574,3 +574,18 @@ div.modal_dialog_body label {
 #add-story-post .errors {
     text-align: left;
 }
+
+#project_show .project-head {
+
+}
+
+#project_show .project-nav {
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: #d9d9de;
+}
+
+#project_show .project-content {
+    padding: 40px 0;
+
+}
