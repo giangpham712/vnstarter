@@ -1907,7 +1907,7 @@ Buttons
     text-transform: uppercase;
     font-weight: 500;
     font-size: 13px;
-    color: white !important;
+    color: white ;
     background-color: #279fbb;
     position: relative;
     padding: 0px 11px !important;

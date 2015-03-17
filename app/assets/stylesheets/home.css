@@ -426,3 +426,17 @@ div.sticky-nav dl.sub-nav dd.active a {
 .post{
     margin-bottom: 25px;
 }
+.center{
+    text-align: center !important;
+}
+.btn-discover{
+    background: transparent !important;
+    border-radius: 6px !important; 
+    border: 2px solid #279fbb !important;
+    color: #279fbb !important;
+    margin-top: 10px;
+    height: 31px !important;
+}
+.content-box{
+    margin-bottom: 40px !important;
+}
