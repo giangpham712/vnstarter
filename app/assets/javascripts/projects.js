@@ -1,12 +1,12 @@
-(function($) {
-    $(function() {
+(function ($) {
+    $(function () {
 
         var current_tab = "#basic";
 
         $("#edit-tabs a[data-toggle=tab]").on('shown.bs.tab', function (e) {
             var $tab = $(e.target);
             current_tab = $tab.attr("href");
-            switch(current_tab) {
+            switch (current_tab) {
                 case "#basic":
                 case "#about_you":
                     $("#toolbar").show();
@@ -17,18 +17,18 @@
             }
         })
 
-        $("#save").click(function() {
+        $("#save").click(function () {
 
             switch (current_tab) {
                 case "#basic":
                 case "#about_you":
                     $("#saving-layer").show();
                     submitFormAjax($(current_tab + " form")[0],
-                        function(result) {
+                        function (result) {
                             console.log(result);
                             $("#saving-layer").hide();
                         },
-                        function(result) {
+                        function (result) {
                             console.log(result);
                             $("#saving-layer").hide();
                         }
@@ -40,7 +40,7 @@
             }
         });
 
-        $("#discard-changes").click(function() {
+        $("#discard-changes").click(function () {
             switch (current_tab) {
                 case "#basic":
                 case "#about_you":
@@ -51,7 +51,7 @@
             }
         });
 
-        $(".attachment_upload").each(function(i, o) {
+        $(".attachment_upload").each(function (i, o) {
             var $ele = $(o).find("input.fileupload");
             var upload_url = $ele.data("upload-url");
 
@@ -104,57 +104,69 @@
             });
         });
 
-        $("#add-story-post").on("hide.bs.modal", function() {
+        $("#add-story-post").on("hide.bs.modal", function () {
             $("#add-story-post form")[0].reset();
         });
 
-        $("#add-reward form").submit(function(e) {
+        $("#add-reward form").submit(function (e) {
             e.preventDefault();
             var form = this;
-
-            submitFormAjax(form, function(result) {
-                if (result.success) {
-                    console.log(result);
-                } else {
-                    console.log(result);
-                }
-
-            }, function(result) {
-
-            });
+            addReward(form);
         });
 
-        $("#add-story-post form").submit(function(e) {
+        $("#add-story-post form").submit(function (e) {
             e.preventDefault();
             var form = this;
+            addStoryPost(form);
+        });
 
-            submitFormAjax(this,
-                function(result) {
-                    if (result.success) {
-                        $(form).find(".errors").hide();
-
-                        var html = "<div class='post'>";
-                        html += "<div><h2>" + result.post.title + "</h2></div>";
-                        html += "<div><p>" + result.post.body + "</p></div>";
-                        html += "</div>";
-
-                        $("#story .story-posts").append(html);
-                        $("#add-story-post").modal('hide');
-                    } else {
-                        $(form).find(".errors").show();
-                        var $errors_list = $(form).find(".errors ul");
-                        $errors_list.html("");
-                        $.each(result.errors, function(i, e) {
-                            $("<li>" + e + "</li>").appendTo($errors_list);
-                        });
-                    }
-                },
-                function(result) {
-                    console.log(result);
-                }
-            )
+        $("#pledge-money").click(function (e) {
+            var amount = $(e.target).data("amount");
+            var project_slug = $("#slug").val();
+            window.location.href = "/projects/" + project_slug + "/pledges/new?amount=" + amount;
         });
     });
+
+    function addReward(form) {
+        submitFormAjax(form, function (result) {
+            if (result.success) {
+                console.log(result);
+            } else {
+                console.log(result);
+            }
+
+        }, function (result) {
+
+        });
+    }
+
+    function addStoryPost(form) {
+        submitFormAjax(this,
+            function (result) {
+                if (result.success) {
+                    $(form).find(".errors").hide();
+
+                    var html = "<div class='post'>";
+                    html += "<div><h2>" + result.post.title + "</h2></div>";
+                    html += "<div><p>" + result.post.body + "</p></div>";
+                    html += "</div>";
+
+                    $("#story .story-posts").append(html);
+                    $("#add-story-post").modal('hide');
+                } else {
+                    $(form).find(".errors").show();
+                    var $errors_list = $(form).find(".errors ul");
+                    $errors_list.html("");
+                    $.each(result.errors, function (i, e) {
+                        $("<li>" + e + "</li>").appendTo($errors_list);
+                    });
+                }
+            },
+            function (result) {
+                console.log(result);
+            }
+        )
+    }
 
     function submitFormAjax(form, done, fail) {
         var url = form.action;
@@ -176,6 +188,5 @@
 
 
     }
-
 
 })(jQuery);

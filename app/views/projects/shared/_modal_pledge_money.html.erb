@@ -3,28 +3,29 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Chọn số tiền bạn muốn quyên góp</h4>
+        <h4 class="modal-title">Góp tiền cho "<%= @project.title %>"</h4>
       </div>
       <div class="modal-body">
 
-        Chọn số tiền bạn muốn đóng góp :
+        Chọn số tiền bạn muốn đóng góp:
 
-        <button type="button" style='padding: 0 11px;' class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-          Mức đóng góp
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" role="menu">
-          <li><a class='back' data-value='500000'>500,000</a></li>
-          <li><a class='back' data-value='1000000'>1,000,000</a></li>
-          <li><a class='back' data-value='5000000'>5,000,000</a></li>
-          <li><a class='back' data-value='10000000'>10,000,000</a></li>
-          <li><a class='back' data-value='20000000'>20,000,000</a></li>
-        </ul>
-
-
+        <div class="btn-group" role="group" aria-label="...">
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+              Mức đóng góp
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" id="pledge-money">
+              <li><a href="javascript:void(0)" data-amount="100000"><%= number_to_currency(100000, precision: 0) %></a></li>
+              <li><a href="javascript:void(0)" data-amount="200000"><%= number_to_currency(200000, precision: 0) %></a></li>
+              <li><a href="javascript:void(0)" data-amount="500000"><%= number_to_currency(500000, precision: 0) %></a></li>
+              <li><a href="javascript:void(0)" data-amount="1000000"><%= number_to_currency(1000000, precision: 0) %></a></li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Thoát</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
 
       </div>
     </div>

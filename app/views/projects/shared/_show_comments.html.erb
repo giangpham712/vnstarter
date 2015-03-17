@@ -1,41 +1,35 @@
-<div class="container">
-
-  <br>
-  <br>
-
-  <div class="blog-span-bottom">
-    <ol class="comments-list">
-      <% @project.comments.each do |comment| %>
-          <li class="comment">
-            <div class="comment-content">
-              <div class="comment-author-avatar">
-                <img src="/media/comment.jpg" alt="John Doe" class="img-responsive"/>
-              </div>
-
-              <div class="comment-details">
-                <div class="comment-author-name">
-                  <span><%= comment.user.name %></span>
-                  <span class="comment-date"><%= comment.created_at %></span>
-
-                </div>
-                <div class="comment-body">
-                  <%= comment.body %>                          </div>
-              </div>
+<div class="blog-span-bottom">
+  <ol class="comments-list">
+    <% @project.comments.each do |comment| %>
+        <li class="comment">
+          <div class="comment-content">
+            <div class="comment-author-avatar">
+              <img src="/media/comment.jpg" alt="John Doe" class="img-responsive"/>
             </div>
 
-          </li>
-      <% end %>
-    </ol>
+            <div class="comment-details">
+              <div class="comment-author-name">
+                <span><%= comment.user.name %></span>
+                <span class="comment-date"><%= comment.created_at %></span>
 
-    <h3>Bình luận</h3>
-    <%= form_for([@project, @project.comments.build]) do |f| %>
-        <p>
-          <%= f.text_area :body, class: 'form-control' %>
-        </p>
+              </div>
+              <div class="comment-body">
+                <%= comment.body %>                          </div>
+            </div>
+          </div>
 
-        <p>
-          <%= f.submit 'Gửi bình luận', type: 'button', id: 'add-comment' %>
-        </p>
+        </li>
     <% end %>
-  </div>
+  </ol>
+
+  <h3>Bình luận</h3>
+  <%= form_for([@project, @project.comments.build]) do |f| %>
+      <p>
+        <%= f.text_area :body, class: 'form-control' %>
+      </p>
+
+      <p>
+        <%= f.submit 'Gửi bình luận', type: 'button', id: 'add-comment' %>
+      </p>
+  <% end %>
 </div>
