@@ -2,8 +2,8 @@
 
     $(document).ready(function () {
 
-        $("#pledge-confirmation").on("", function() {
-
+        $("#pledge-confirmation").on("shown.bs.tab", function() {
+            window.location.href = "/"
         });
 
         $('#project_pledge form').submit(function (e) {
