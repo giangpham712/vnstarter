@@ -677,6 +677,7 @@ div.modal_dialog_body label {
     margin-right: 40px;
     margin-bottom: 0px;
     padding: 30px 10px;
+    width: 250px;
 }
 
 #project_pledge .project-content .main .rewards .reward strong {
