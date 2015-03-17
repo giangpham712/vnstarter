@@ -155,6 +155,14 @@ function addReward(form) {
 
     }, function (result) {
 
+<<<<<<< HEAD
+=======
+        $("#pledge-money li").click(function (e) {
+            var amount = $(e.target).data("amount");
+            var project_slug = $("#slug").val();
+            window.location.href = "/projects/" + project_slug + "/pledges/new?amount=" + amount;
+        });
+>>>>>>> d79b3dc4c2c996cf36eb39010f5443d797d7914b
     });
 }
 
@@ -188,6 +196,7 @@ function addStoryPost(form) {
         )
 }
 
+<<<<<<< HEAD
 function submitFormAjax(form, done, fail) {
     var url = form.action;
     var method = form.method;
@@ -205,8 +214,31 @@ function submitFormAjax(form, done, fail) {
 
     request.done(done);
     request.fail(fail);
-
-
-}
+=======
 
 })(jQuery);
+
+
+function submitFormAjax(form, done, fail) {
+    var url = form.action;
+    var method = form.method;
+    var formData = new FormData($(form)[0]);
+>>>>>>> d79b3dc4c2c996cf36eb39010f5443d797d7914b
+
+    var request = $.ajax({
+        url: url,
+        type: method,
+        data: formData,
+        cache: false,
+        contentType: false,
+        processData: false
+
+<<<<<<< HEAD
+}
+=======
+    });
+>>>>>>> d79b3dc4c2c996cf36eb39010f5443d797d7914b
+
+    request.done(done);
+    request.fail(fail);
+}
