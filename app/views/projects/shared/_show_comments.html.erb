@@ -24,6 +24,7 @@
 
   <h3>Bình luận</h3>
   <%= form_for([@project, @project.comments.build]) do |f| %>
+  <input type="hidden" name="user" id='user-name' value="<%= @project.user.name %>">
       <p>
         <%= f.text_area :body, class: 'form-control' %>
       </p>
