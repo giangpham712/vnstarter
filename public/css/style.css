@@ -1004,7 +1004,7 @@ textarea .white-text .feature-details a:hover {
     text-align: center;
     line-height: 40px;
     font-size: 25px;
-    color: #fff;
+    color: #fff !important;
     display: none;
     filter: alpha(opacity=70);
 }
@@ -1907,7 +1907,7 @@ Buttons
     text-transform: uppercase;
     font-weight: 500;
     font-size: 13px;
-    color: white ;
+    color: white !important;
     background-color: #279fbb;
     position: relative;
     padding: 0px 11px !important;
@@ -6628,3 +6628,12 @@ Testimonial
 }
 .home-button{font-size: 21px;padding: 27px 38px 27px 38px;transition:all 0.1s;}
 .home-button:hover{box-shadow: 1px 1px 1px 1px #fff;background: transparent !important;color: #fff !important;padding: 29px 38px 29px 38px}
+.btn-discover{
+    background: transparent !important;
+    border-radius: 6px !important; 
+    border: 2px solid #279fbb !important;
+    color: #279fbb !important;
+    margin-top: 10px;
+    height: 31px !important;
+    transition:all 0.3s;
+}
