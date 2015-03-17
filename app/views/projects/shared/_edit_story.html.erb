@@ -46,7 +46,7 @@
                 </div>
                 <div>
                   <% if post.image.exists? %>
-                      <img src="<%= post.image.url(:original) %>" title="<%= post.title %>"/>
+                      <img src="<%= post.image.url(:medium) %>" title="<%= post.title %>"/>
                       <br/>
                       <br/>
                   <% end %>
@@ -54,9 +54,9 @@
                 </div>
               </div>
           <% end %>
-          <%= button_tag "Thêm câu chuyện", class: 'btn btn-info add_story', data: {toggle: "modal", target: "#add-story-post"} %>
-        </div>
 
+        </div>
+        <%= button_tag "Thêm câu chuyện", class: 'btn btn-info add_story', data: {toggle: "modal", target: "#add-story-post"} %>
       </div>
     </div>
 
