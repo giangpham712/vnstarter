@@ -29,7 +29,7 @@
                     <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: capitalize_first_word_letter(t :password) %>
                   </div>
                 </div>
-                <% if flash[:alert] %>
+                <% if !flash[:alert].blank? %>
                 <div class="row">
                   <ul class="errors">
                     <%= content_tag(:li, flash[:alert], :id => "flash_alert", :class => 'text-danger') if flash[:alert] %>

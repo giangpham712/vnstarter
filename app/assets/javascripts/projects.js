@@ -167,7 +167,7 @@
 
 
     function addStoryPost(form) {
-        submitFormAjax(this,
+        submitFormAjax(form,
             function (result) {
                 if (result.success) {
                     $(form).find(".errors").hide();

@@ -25,7 +25,7 @@ vi:
       user:
         invalid: "Thông tin đăng nhập không hợp lệ"
         not_found_in_database: "Thông tin đăng nhập không hợp lệ"
-
+        unauthenticated: ""
   activerecord:
     attributes:
       post:
@@ -41,7 +41,7 @@ vi:
         user:
           attributes:
             password:
-              too_short: "cần dài ít nhất %{count} ký tự"
+              too_short: "phải chứa ít nhất %{count} ký tự"
             email:
               taken: "đã được sử dụng"
 

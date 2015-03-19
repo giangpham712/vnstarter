@@ -3100,14 +3100,14 @@ Footer
     margin: 0 0 20px 0;
     text-transform: uppercase;
     color: #000;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Sans Pro', sans-serif;
     font-weight: bold;
 }
 
 .footer .footer-col .footer-content {
     color: #d4d4d4;
     line-height: 20px;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Sans Pro', sans-serif;
     padding-bottom: 0px;
 }
 
@@ -4762,7 +4762,7 @@ Revolution Slider Container
 }
 
 .slider-text-title {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Sans Pro', sans-serif;
     text-transform: uppercase;
     font-size: 40px;
     color: #1a242f;

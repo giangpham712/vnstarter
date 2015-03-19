@@ -616,6 +616,15 @@ div.modal_dialog_body label {
 
 }
 
+#project_show #show-tabs li a {
+    border-radius: 0px;
+}
+
+#project_show #show-tabs li:not(.active) a:hover {
+    background-color: #fff;
+    border-width: 0px;
+}
+
 #project_show .story-posts {
     padding: 5px 0 20px 0;
 }

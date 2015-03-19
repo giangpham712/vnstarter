@@ -6,7 +6,7 @@
  */
 
 #home h1, #home h2, #home h3, #home h4, #home h5, #home h6 {
-    font-family: "Source Sans Pro", Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    font-family: "Sans Pro", Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
     font-weight: 500;
     font-style: normal;
     color: #222;
@@ -115,7 +115,7 @@
     border-radius: 100px;
     border: 2px solid #fff;
     color: #fff;
-    font-family: "Source Sans Pro", Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    font-family: "Sans Pro", Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 500;
     font-size: 1.125rem;
@@ -140,7 +140,7 @@ a {
 .border-button.primary {
     border: 2px solid #279fbb;
     color: #f96c04;
-    font-family: "Source Sans Pro", Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    font-family: "Sans Pro", Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 500;
     font-size: 1.125rem;
@@ -261,7 +261,7 @@ div.sticky-nav dl.sub-nav dd.active a {
 }
 
 #top-projects .project .project-title {
-    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 1.3rem;
     font-weight: 600;
     text-transform: none;
@@ -388,7 +388,7 @@ div.sticky-nav dl.sub-nav dd.active a {
     }
 
     .grey-dark {
-        font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-family: "Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
         color: #828587;
     }
 
