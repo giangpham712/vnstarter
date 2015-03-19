@@ -1,0 +1,14 @@
+form .errors {
+    padding: 20px 5px;
+}
+
+form .field_with_errors input.form-control {
+    border: 1px solid #a94442;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+
+#sign_in form .errors {
+    padding: 10px 5px;
+    list-style-type: none;
+}

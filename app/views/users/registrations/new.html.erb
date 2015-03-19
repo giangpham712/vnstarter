@@ -1,3 +1,4 @@
+<% body_id "sign_up" %>
 <div class="content-wrapper hide-until-loading">
   <div class="body-wrapper">
     <div class="container">
@@ -16,6 +17,17 @@
           <div class="classic-form">
 
             <%= form_for(resource, as: resource_name, :html => {:class => "register-form form-horizontal"}, url: registration_path(resource_name)) do |f| %>
+
+                <% if resource.errors.any? %>
+                    <div>
+                      <ul class="errors">
+                        <% resource.errors.full_messages.each do |msg| %>
+                            <li class="text-danger"><%= msg %></li>
+                        <% end %>
+                      </ul>
+                    </div>
+                <% end %>
+
                 <div class="form-group">
                   <div class="">
                     <%= f.text_field :name, autofocus: true, class: 'form-control', placeholder: capitalize_first_word_letter(t :name) %>

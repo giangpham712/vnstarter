@@ -47,6 +47,8 @@ gem 'vimeo'
 
 gem 'thin'
 
+gem 'dynamic_form'
+
 gem "font-awesome-rails"
 
 # Use Unicorn as the app server

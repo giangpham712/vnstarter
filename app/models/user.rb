@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
                               :large => "750x750"
                           }
 
+  validates_presence_of :name
   validates_attachment_content_type :image,
                                     :content_type => /^image\/(png|gif|jpeg|jpg|bmp)/,
                                     :size => { :less_than => 5.megabytes },
