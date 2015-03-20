@@ -132,21 +132,28 @@
 
         $('#new_comment').submit(function (e) {
 
+            var form = this;
+
+            var user_name = $(".user-navigation").find("input[name=user_name]").val();
+            var user_image_url = $(".user-navigation").find("input[name=user_image_url]").val();
+
             $.ajax({
                 url: $(this).attr('action'),
                 type: 'POST',
-                data: $(this).serialize(),
+                data: $(form).serialize(),
                 success: function (data) {
                     var html = "<li class='comment'>";
                     html += "<div class='comment-content'>";
                     html += "<div class='comment-author-avatar'>";
-                    html += "<img src='/media/comment.jpg' alt='' class='img-responsive'/>";
+                    html += "<img src='" + user_image_url + "' alt='' class='circle avatar-small'/>";
                     html += "</div>";
                     html += "<div class='comment-details'>";
-                    html += "<div class='comment-author-name>" + $('#user-name').val() + "<span></span><span class='comment-date'>" + data.comment.created_at + "</span></div>";
+                    html += "<div class='comment-author-name'><span>" + user_name + "</span><span class='comment-date'>" + data.comment.created_at + "</span></div>";
                     html += "<div class='comment-body'>" + data.comment.body + "</div></div></div></li>";
 
-                    $('.comments-list').append($(html));
+                    $('.comments').append($(html));
+
+                    form.reset();
                 }
             });
             e.preventDefault();

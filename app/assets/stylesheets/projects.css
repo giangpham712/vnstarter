@@ -650,6 +650,15 @@ div.modal_dialog_body label {
     width: 100%;
 }
 
+#project_show .comments .comment {
+    height: 80px;
+}
+
+#project_show .comments .comment img {
+    width: 60px;
+    height: 60px;
+}
+
 #project_pledge .project-content .main {
     border: 1px solid #d9d9de;
     border-radius: 5px;

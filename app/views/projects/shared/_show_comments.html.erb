@@ -1,10 +1,10 @@
 <div class="blog-span-bottom">
-  <ol class="comments-list">
+  <ul class="comments">
     <% @project.comments.each do |comment| %>
         <li class="comment">
           <div class="comment-content">
             <div class="comment-author-avatar">
-              <%= image_tag (comment.user.image.exists? ? comment.user.image.url : "no-image-user.png"), class: "circle avatar-small", height: "80" %>
+              <%= image_tag (comment.user.image.url), class: "circle avatar-small", height: "80" %>
             </div>
 
             <div class="comment-details">
@@ -14,17 +14,17 @@
 
               </div>
               <div class="comment-body">
-                <%= comment.body %>                          </div>
+                <%= comment.body %>
+              </div>
             </div>
           </div>
 
         </li>
     <% end %>
-  </ol>
+  </ul>
 
   <h3>Bình luận</h3>
   <%= form_for([@project, @project.comments.build]) do |f| %>
-  <input type="hidden" name="user" id='user-name' value="<%= @project.user.name %>">
       <p>
         <%= f.text_area :body, class: 'form-control' %>
       </p>

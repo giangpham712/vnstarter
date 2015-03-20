@@ -70,7 +70,7 @@
                   </p>
                 </div>
                 <div class="col-right col-md-4">
-                  <%= image_tag (@project.user.image.exists? ? @project.user.image.url : "no-image-user.png"), class: "circle avatar-small", height: "80" %>
+                  <%= image_tag @project.user.image.url, class: "circle avatar-small", height: "80" %>
                 </div>
               </div>
             </div>
@@ -103,7 +103,7 @@
                 <div role="tabpanel" class="tab-pane active" id="home">
                   <%= render "projects/shared/show_story" %>
                 </div>
-                <div role="tabpanel" class="tab-pane comments" id="comments">
+                <div role="tabpanel" class="tab-pane" id="comments">
                   <%= render "projects/shared/show_comments" %>
                 </div>
               </div>
