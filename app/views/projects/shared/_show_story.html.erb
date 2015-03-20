@@ -1,5 +1,6 @@
-<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-  <div class="row">
+<div class="row">
+  <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+
     <div class="story-posts">
       <% @project.posts.each do |post| %>
           <div class='post'>
@@ -11,6 +12,22 @@
             <% end %>
             <p>
               <%= post.body %>
+            </p>
+          </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+    <h3>Phần thưởng</h3>
+
+    <div class="rewards">
+      <% @project.rewards.each do |reward| %>
+          <div class="reward">
+            <h5>Góp <%= number_to_currency(reward.minimum_pledge_amount, precision: 0) %> hoặc nhiều hơn</h5>
+            <br/>
+            <p>
+                <%= reward.description %>
             </p>
           </div>
       <% end %>

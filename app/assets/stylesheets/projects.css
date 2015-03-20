@@ -626,6 +626,19 @@ div.modal_dialog_body label {
     border-radius: 0px;
 }
 
+#project_show #show-tabs {
+    border-bottom: none;
+}
+
+#project_show #show-tabs > li.active > a,
+#project_show #show-tabs > li.active > a:hover,
+#project_show #show-tabs > li.active > a:focus {
+    color: #555;
+    cursor: default;
+    background-color: #fff;
+    border-bottom: 3px solid #279fbb;
+}
+
 #project_show #show-tabs li:not(.active) a:hover {
     background-color: #fff;
     border-width: 0px;
@@ -654,6 +667,18 @@ div.modal_dialog_body label {
 
 #project_show .story-posts .post img {
     width: 100%;
+}
+
+#project_show .rewards .reward {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #f7fafa;
+    border-radius: 5px;
+}
+
+#project_show .rewards .reward h5 {
+    font-weight: bold;
+    font-family: Helvetica, Arial, Sans-Serif;
 }
 
 #project_show .comments .comment {
@@ -716,4 +741,8 @@ div.modal_dialog_body label {
 #project_pledge .project-content .main .rewards .reward:hover,
 #project_pledge .project-content .main .rewards .reward.selected {
     background: #f5f5f5;
+}
+
+.circle {
+    border-radius: 50%;
 }
