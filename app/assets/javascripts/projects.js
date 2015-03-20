@@ -120,7 +120,7 @@
             addStoryPost(form);
         });
 
-        $("#pledge-money").click(function (e) {
+        $("#pledge-money li").click(function (e) {
             var amount = $(e.target).data("amount");
             var project_slug = $("#slug").val();
             window.location.href = "/projects/" + project_slug + "/pledges/new?amount=" + amount;
