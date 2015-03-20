@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
     comment.commenter_id = user.id
 
     if comment.save
+      
       render json: { :success => true, :comment => comment }
       
     else

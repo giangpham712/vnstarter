@@ -138,6 +138,7 @@
                 data: $(this).serialize(),
                 success: function (data) {
                     $('.comments-list').append('<li class="comment"><div class="comment-content"><div class="comment-author-avatar"><img src="/media/comment.jpg" alt="John Doe" class="img-responsive"/></div><div class="comment-details"><div class="comment-author-name">' + $('#user-name').val() + ' <span></span><span class="comment-date">' + data.comment.created_at + '</span></div><div class="comment-body">' + data.comment.body + '</div></div></div></li>');
+                    console.log(data);
                 }
             });
             e.preventDefault();
