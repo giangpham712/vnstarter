@@ -17,6 +17,6 @@
 //= require angular
 //= require angular-animate
 //= require angular-ui-router
-//= require angular-rails-templates
+//= require accountingjs/accounting
 //= require_tree .
 

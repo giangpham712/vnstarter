@@ -4,14 +4,15 @@
     <div class="rewards">
       <% @project.rewards.each_with_index do |post, index| %>
           <div class='form-element'>
-            <div class="post">
+            <div class="reward">
               <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                 Phần thưởng <%= (index + 1) %>
               </div>
               <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <h3>Góp <strong><%= number_to_currency(post.minimum_pledge_amount, precision: 0) %></strong> hoặc nhiều
-                  hơn</h3>
-
+                <h3>
+                  Góp <strong><%= number_to_currency(post.minimum_pledge_amount, precision: 0) %></strong> hoặc nhiều
+                  hơn
+                </h3>
                 <p><%= post.description %></p>
               </div>
             </div>

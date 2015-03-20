@@ -575,8 +575,14 @@ div.modal_dialog_body label {
     width: 100%;
 }
 
+#add-reward .errors,
 #add-story-post .errors {
     text-align: left;
+}
+
+#add-reward .errors ul,
+#add-story-post .errors ul {
+    padding: 10px 20px 0;
 }
 
 #project_pledge .project-head h6,
