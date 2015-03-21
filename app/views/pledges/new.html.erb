@@ -2,9 +2,9 @@
 <% body_id "project_pledge" %>
 <div class="content-wrapper hide-until-loading">
   <div class="body-wrapper">
-    <div class="project-head animated" data-animtype="flipInY" data-animrepeat="0" data-speed="1s" data-delay="0.5s">
+    <div class="content-head">
       <%= hidden_field_tag :slug, @project.slug %>
-      <h1 class="text-center"><%= @project.title %></h1>
+      <h2><%= @project.title %></h2>
       <h6 class="text-center">
         thực hiện bởi <a href="javascript:void(0);"><b><%= @project.user.name %></b></a>
       </h6>

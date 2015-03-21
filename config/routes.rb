@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get 'profile', to: 'users#my_profile'
   put 'profile', to: 'users#update_profile'
 
+  get 'profile/projects', to: 'projects#my_projects'
+
   resources :messages do
 
   end

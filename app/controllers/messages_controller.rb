@@ -4,6 +4,10 @@ class MessagesController < ApplicationController
     @message = Message.new
   end
 
+  def index
+    
+  end
+
   def show
 
   end

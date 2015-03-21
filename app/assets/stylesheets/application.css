@@ -20,6 +20,10 @@ ul, ol {
     list-style-type: none;
 }
 
+#header {
+    height: 68px;
+}
+
 .navigation {
     padding: 0 0 0 0;
     margin: 0;
@@ -28,6 +32,7 @@ ul, ol {
 
 .navigation > li {
     float: left;
+    height: 68px;
 }
 
 .navigation > li:last-child {
@@ -40,10 +45,11 @@ ul, ol {
     text-transform: uppercase;
     font-family: "Raleway", sans-serif;
     font-size: 14px;
+    line-height: 26px;
     text-decoration: none;
     display: inline-block;
     position: relative;
-    padding: 22px 15px;
+    padding: 20px 15px;
     -webkit-perspective: 1000px;
     -moz-perspective: 1000px;
     -ms-perspective: 1000px;
@@ -150,16 +156,19 @@ ul, ol {
     padding-right: 18px;
     padding-left: 18px;
     cursor: pointer;
-    border-left: 1px solid #d9d9de;
-    border-right: 1px solid #d9d9de;
 }
 
-.user-menu > li > a:hover {
+.user-menu > li.has-user > a:hover {
     background-color: #f7fafa;
 }
 
-.user-menu > li > a.active:hover {
+.user-menu > li.has-user > a.active:hover {
     background-color: #fff;
+}
+
+.user-menu > li.has-user > a {
+    border-left: solid 1px #d9d9de;
+    border-right: solid 1px #d9d9de;
 }
 
 .user-menu > li > a img {
@@ -207,5 +216,17 @@ ul, ol {
 .user-menu .user-dropdown .user-options ul.options li {
     font-size: 14px;
     margin: 10px 0;
-    color:
 }
+
+.content-head {
+    padding: 20px 0;
+}
+
+.content-head h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 35px;
+    margin-bottom: 10px;
+}
+

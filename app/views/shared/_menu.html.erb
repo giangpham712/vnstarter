@@ -31,7 +31,7 @@
                   <a href="/users/sign_in">Đăng nhập</a>
                 </li>
             <% else %>
-                <li>
+                <li class="has-user">
                   <%= hidden_field_tag :user_name, current_user.name %>
                   <%= hidden_field_tag :user_image_url, current_user.image.url %>
                   <a>
@@ -47,10 +47,10 @@
                         <label>Kanzi của tôi</label>
                         <ul class="options">
                           <li><a href="">Tin nhắn</a></li>
-                          <li><a href="">Thông tin cá nhân</a></li>
+                          <li><%= link_to "Thông tin cá nhân", profile_path %></li>
                           <li><a href="">Dự án đã góp vốn</a></li>
-                          <li><a href="">Dự án đã tạo</a></li>
-                          <li><a href="/users/sign_out">Đăng xuất</a></li>
+                          <li><%= link_to "Dự án đã tạo", profile_projects_path %></li>
+                          <li><%= link_to "Đăng xuất", destroy_user_session_path %></li>
                         </ul>
                       </div>
                       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">

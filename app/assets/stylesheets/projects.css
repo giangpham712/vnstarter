@@ -585,16 +585,6 @@ div.modal_dialog_body label {
     padding: 10px 20px 0;
 }
 
-#project_pledge .project-head,
-#project_show .project-head {
-    padding-top: 20px;
-}
-
-#project_pledge .project-head h6,
-#project_show .project-head h6 {
-    font-family: Helvetica, Arial, Sans-Serif;
-}
-
 #project_show .project-overview .video-container {
 
     padding-right: 20px;
@@ -696,7 +686,9 @@ div.modal_dialog_body label {
 }
 
 #project_pledge .project-content .main {
-    border: 1px solid #d9d9de;
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     padding: 20px;
 }
@@ -746,6 +738,46 @@ div.modal_dialog_body label {
 #project_pledge .project-content .main .rewards .reward:hover,
 #project_pledge .project-content .main .rewards .reward.selected {
     background: #f5f5f5;
+}
+
+#my_projects .projects {
+    padding: 10px 0;
+}
+
+#my_projects .projects .project {
+    border: 1px solid #d9d9de;
+    border-radius: 5px;
+}
+
+#my_projects .projects .project > div {
+    display: inline-block;
+}
+
+#my_projects .projects .project img {
+    width: 160px;
+
+}
+
+#my_projects .projects .project label {
+    font-size: 16px;
+    color: #000;
+    margin-left: 20px;
+    margin-bottom: 0;
+}
+
+#my_projects .projects .project a,
+#my_projects .projects .project label {
+    line-height: 25px;
+    margin-right: 20px;
+}
+
+#my_projects .projects .project a {
+    color: #279FBB;
+}
+
+#my_projects .projects .project .title,
+#my_projects .projects .project .edit {
+    padding: 45px 0;
 }
 
 .circle {

@@ -1,0 +1,36 @@
+<% page_title "Dự án đã tạo" %>
+<% body_id "my_projects" %>
+<div class="content-wrapper hide-until-loading">
+  <div class="body-wrapper">
+    <div class="content-head">
+      <h2 class="text-center">Dự án đã tạo</h2>
+      <h6 class="text-center">
+        Nơi bạn quản lý những dự án do mình khởi tạo
+      </h6>
+    </div>
+    <div class="content-main">
+      <div class="container">
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+          <div class="row">
+            <ul class="projects">
+              <% @projects.each do |project| %>
+                  <li class="project">
+                    <div class="image">
+                      <%= image_tag project.image.url %>
+                    </div>
+                    <div class="title">
+                      <%= label_tag project.title %>
+                    </div>
+                    <div class="edit pull-right">
+                      <%= link_to "Chỉnh sửa", edit_project_path(project) %>
+                    </div>
+                  </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

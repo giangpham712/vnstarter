@@ -7,6 +7,10 @@ class ProjectsController < ApplicationController
 
   end
 
+  def my_projects
+    @projects = Project.where(user: current_user)
+  end
+
   def search
     search_key = params[:search_key]
 
@@ -14,7 +18,6 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.includes(:user).friendly.find(params[:id])
-
     pledges = @project.pledges
 
     @total_pledgers = pledges.count(:pledger_id, :distinct => true)
@@ -52,9 +55,12 @@ class ProjectsController < ApplicationController
     @cities = City.all
     @categories = Category.all
 
-    @user = current_user
-
     @project = Project.friendly.find(params[:id])
+
+    if (@project.creator_id != current_user.id)
+      redirect_to root_path
+    end
+
   end
 
   def update

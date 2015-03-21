@@ -2,7 +2,7 @@ class Project < ActiveRecord::Base
   extend FriendlyId
 
   attr_accessor :image, :video
-  has_attached_file :image, :styles => {
+  has_attached_file :image, :default_url => "/images/no-image-project.png", :styles => {
                         :small => "150x150",
                         :medium => "350x350",
                         :listing => "360x270#",
