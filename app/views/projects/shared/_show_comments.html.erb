@@ -4,16 +4,16 @@
         <li class="comment">
           <div class="comment-content">
             <div class="comment-author-avatar">
-<<<<<<< HEAD
+
             <% if comment.user.image.exists? %>
               <img src="<%= comment.user.image.url(:large) %>" title="<%= comment.body %>" alt="John Doe" class="img-responsive"/>
             <% else %>
-              <img src="/images/no-image-user.png" title="<%= comment.body %>" alt="John Doe" class="img-responsive"/>
+             <%= image_tag (comment.user.image.url), class: "circle avatar-small", height: "80" %>
             <% end %>
               
-=======
-              <%= image_tag (comment.user.image.url), class: "circle avatar-small", height: "80" %>
->>>>>>> 8782e60f789b54ad47b769fd27dd77ed7e543a9b
+
+              
+
             </div>
 
             <div class="comment-details">
