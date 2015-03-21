@@ -120,6 +120,7 @@
             addStoryPost(form);
         });
 
+
         $("#send-message form").submit(function (e) {
             e.preventDefault();
             var form = this;
@@ -143,11 +144,14 @@
             var user_name = $(".user-menu").find("input[name=user_name]").val();
             var user_image_url = $(".user-menu").find("input[name=user_image_url]").val();
 
+
             $.ajax({
                 url: $(this).attr('action'),
                 type: 'POST',
                 data: $(form).serialize(),
                 success: function (data) {
+
+
                     var html = "<li class='comment'>";
                     html += "<div class='comment-content'>";
                     html += "<div class='comment-author-avatar'>";
@@ -160,6 +164,7 @@
                     $('.comments').append($(html));
 
                     form.reset();
+
                 }
             });
             e.preventDefault();
@@ -213,6 +218,39 @@
             });
 
         });
+    }
+
+    function addStoryPost(form) {
+        submitFormAjax(form,
+            function (result) {
+                if (result.success) {
+                    $(form).find(".errors").hide();
+
+                    var html = "<div class='post'>";
+                    html += "<div><h2>" + result.post.title + "</h2></div>";
+                    html += "<div><p>" + result.post.body + "</p></div>";
+                    html += "</div>";
+
+                    $("#story .story-posts").append(html);
+                    $("#add-story-post").modal('hide');
+                } else {
+                    $(form).find(".errors").show();
+                    var $errors_list = $(form).find(".errors ul");
+                    $errors_list.html("");
+                    $.each(result.errors, function (i, e) {
+                        $("<li>" + e + "</li>").appendTo($errors_list);
+                    });
+                }
+
+            }, function (result) {
+
+                $("#pledge-money li").click(function (e) {
+                    var amount = $(e.target).data("amount");
+                    var project_slug = $("#slug").val();
+                    window.location.href = "/projects/" + project_slug + "/pledges/new?amount=" + amount;
+                });
+
+            });
     }
 
     function addStoryPost(form) {

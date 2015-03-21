@@ -585,6 +585,11 @@ div.modal_dialog_body label {
     padding: 10px 20px 0;
 }
 
+#project_pledge .project-head,
+#project_show .project-head {
+    padding-top: 20px;
+}
+
 #project_pledge .project-head h6,
 #project_show .project-head h6 {
     font-family: Helvetica, Arial, Sans-Serif;
