@@ -15,3 +15,197 @@
  *= require_tree .
  *= require_self
  */
+
+ul, ol {
+    list-style-type: none;
+}
+
+.navigation {
+    padding: 0 0 0 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.navigation > li {
+    float: left;
+}
+
+.navigation > li:last-child {
+    margin-right: 0;
+}
+
+/* First Level Styling */
+.navigation > li > a {
+    color: #898989;
+    text-transform: uppercase;
+    font-family: "Raleway", sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    padding: 22px 15px;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    -ms-perspective: 1000px;
+    perspective: 1000px;
+}
+
+.navigation > li:hover > a,
+.navigation > li > a:hover,
+.navigation > li > .activelink {
+    color: #279fbb;
+}
+
+.navigation > li > a > span.label-nav {
+    float: left;
+    line-height: 20px;
+    display: block;
+    width: 100%;
+    clear: both;
+    margin: 25px 0 0 0;
+}
+
+.navigation > li > a > span.label-nav-sub {
+    float: left;
+    line-height: 20px;
+    width: 100%;
+    clear: both;
+    font-size: 12px;
+    color: #bcbcbc;
+    display: inline-block;
+    position: relative;
+    -webkit-transition: -webkit-transform 0.3s;
+    -moz-transition: -moz-transform 0.3s;
+    transition: transform 0.3s;
+    -webkit-transform-origin: 50% 0;
+    -moz-transform-origin: 50% 0;
+    -ms-transform-origin: 50% 0;
+    -o-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    -ms-perspective: 1000px;
+    perspective: 1000px;
+    text-transform: capitalize;
+}
+
+.navigation > li > a > span.label-nav-sub::before {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: attr(data-hover);
+    -webkit-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    -webkit-transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    -ms-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+    -webkit-transform-origin: 50% 0;
+    -moz-transform-origin: 50% 0;
+    -ms-transform-origin: 50% 0;
+    -o-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    opacity: 0;
+}
+
+.navigation > li:hover > a > span.label-nav-sub,
+.navigation > li:hover > a > span.label-nav-sub {
+    -webkit-transform: rotateX(90deg) translateY(-22px);
+    -moz-transform: rotateX(90deg) translateY(-22px);
+    -ms-transform: rotateX(90deg) translateY(-22px);
+    -o-transform: rotateX(90deg) translateY(-22px);
+    transform: rotateX(90deg) translateY(-22px);
+    -ms-transform: none;
+}
+
+.ie10 .navigation > li:hover > a > span.label-nav-sub,
+.ie10 .navigation > li:hover > a > span.label-nav-sub {
+    transform: none;
+}
+
+.navigation > li:hover > a > span.label-nav-sub::before, .navigation > li:hover > a > span.label-nav-sub::before {
+    color: #279fbb;
+    opacity: 1;
+    opacity: 0 \9;
+}
+
+.navigation > li > .activelink span.label-nav-sub {
+    color: #585858;
+}
+
+/* set all LI to relative */
+.navigation li {
+    position: relative;
+}
+
+.user-menu > li > a {
+    padding-right: 18px;
+    padding-left: 18px;
+    cursor: pointer;
+    border-left: 1px solid #d9d9de;
+    border-right: 1px solid #d9d9de;
+}
+
+.user-menu > li > a:hover {
+    background-color: #f7fafa;
+}
+
+.user-menu > li > a.active:hover {
+    background-color: #fff;
+}
+
+.user-menu > li > a img {
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+}
+
+.user-menu > li > a i {
+    font-size: 16px;
+}
+
+.user-menu .user-dropdown {
+    width: 500px;
+    background-color: white;
+    border-color: #d9d9de;
+    border-style: solid;
+    border-width: 1px;
+    position: absolute;
+    right: 0;
+    box-shadow: -2px 2px 2px rgba(0,0,0,0.05);
+    z-index: 1000;
+    display: none;
+}
+
+.user-menu .user-dropdown .user-options {
+    padding: 20px;
+}
+
+.user-menu .user-dropdown .welcome {
+    padding: 15px;
+    color: #000;
+}
+
+.user-menu .user-dropdown .user-options ul {
+    padding: 0;
+    margin: 0;
+}
+
+.user-menu .user-dropdown .user-options label {
+    font-size: 14px;
+    color: #000;
+}
+
+.user-menu .user-dropdown .user-options ul.options li {
+    font-size: 14px;
+    margin: 10px 0;
+    color:
+}

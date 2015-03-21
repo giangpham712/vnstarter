@@ -20,3 +20,14 @@
 //= require accountingjs/accounting
 //= require_tree .
 
+
+(function($) {
+
+    $(function() {
+       $(".user-menu a").click(function(){
+        $(this).toggleClass("active");
+        $(".user-menu .user-dropdown").toggle();
+       });
+    });
+
+})(jQuery);

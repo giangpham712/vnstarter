@@ -10,13 +10,8 @@
       </div>
 
       <div class="col-md-10">
-
-        <div class="mobile-menu-button">
-          <i class="fa fa-list-ul"></i>
-        </div>
-
-        <nav>
-          <ul class="navigation">
+        <nav class="pull-left">
+          <ul class="main-menu navigation">
             <li>
               <a href="/projects/new">Tạo dự án</a>
             </li>
@@ -24,8 +19,10 @@
               <a href="/discover">Góp vốn</a>
             </li>
           </ul>
+        </nav>
 
-          <ul class="navigation pull-right">
+        <nav class="pull-right">
+          <ul class="user-menu navigation">
             <% if (!user_signed_in?) %>
                 <li>
                   <a href="/users/sign_up">Đăng ký</a>
@@ -34,30 +31,41 @@
                   <a href="/users/sign_in">Đăng nhập</a>
                 </li>
             <% else %>
+                <li>
+                  <%= hidden_field_tag :user_name, current_user.name %>
+                  <%= hidden_field_tag :user_image_url, current_user.image.url %>
+                  <a>
+                    <%= image_tag current_user.image.url(:small), class: "circle" %>
+                    <span><i class="fa fa-sort-desc"></i></span>
+                  </a>
+                  <div class="user-dropdown">
+                    <div class="user-options clearfix">
+                      <p class="welcome">
+                        Xin chào <b><%= current_user.name%></b>
+                      </p>
+                      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <label>Kanzi của tôi</label>
+                        <ul class="options">
+                          <li><a href="">Tin nhắn</a></li>
+                          <li><a href="">Thông tin cá nhân</a></li>
+                          <li><a href="">Dự án đã góp vốn</a></li>
+                          <li><a href="">Dự án đã tạo</a></li>
+                          <li><a href="/users/sign_out">Đăng xuất</a></li>
+                        </ul>
+                      </div>
+                      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <label>Dự án đã tạo</label>
+                      </div>
+                    </div>
+                    <div class="user-footer">
 
-            <% end %>
-          </ul>
-
-          <ul class="user-navigation">
-            <% if (@current_user) %>
-                <%= hidden_field_tag :user_name, @current_user.name %>
-                <%= hidden_field_tag :user_image_url, @current_user.image.url %>
+                    </div>
+                  </div>
+                </li>
             <% end %>
           </ul>
         </nav>
-
-        <ul class="mobile-nav">
-          <li class="responsive-searchbox">
-            <form action="#" method="get">
-              <input type="text" class="searchbox-inputtext" id="searchbox-inputtext-mobile" name="s"/>
-              <button class="icon-search"></button>
-            </form>
-          </li>
-        </ul>
       </div>
-
     </div>
-
-
   </div>
 </header>

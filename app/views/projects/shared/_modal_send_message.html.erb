@@ -1,0 +1,30 @@
+<div class="modal fade" id='send-message' data-remodal-id="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <%= form_for :message, url: messages_path do |f| %>
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h3 class="modal-title">Gửi tin nhắn cho <%= @project.user.name %></h3>
+          </div>
+          <div class="modal-body clearfix">
+            <div class="errors alert alert-danger alert-dismissible" style="display: none;" role="alert">
+              Có lỗi xảy ra khi lưu:
+              <ul></ul>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <label>Nội dung</label>
+              <%= f.hidden_field :receiver_id, :value => @project.user.id %>
+              <%= f.text_area :body, class: 'form-control', :rows => "5" %>
+              <br>
+            </div>
+            </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+            <button type="submit" class="btn btn-primary">Gửi</button>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>

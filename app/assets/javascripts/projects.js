@@ -120,6 +120,12 @@
             addStoryPost(form);
         });
 
+        $("#send-message form").submit(function (e) {
+            e.preventDefault();
+            var form = this;
+            sendMessage(form);
+        });
+
         $("#pledge-money li").click(function (e) {
             var amount = $(e.target).data("amount");
             var project_slug = $("#slug").val();
@@ -134,8 +140,8 @@
 
             var form = this;
 
-            var user_name = $(".user-navigation").find("input[name=user_name]").val();
-            var user_image_url = $(".user-navigation").find("input[name=user_image_url]").val();
+            var user_name = $(".user-menu").find("input[name=user_name]").val();
+            var user_image_url = $(".user-menu").find("input[name=user_image_url]").val();
 
             $.ajax({
                 url: $(this).attr('action'),
@@ -176,7 +182,8 @@
                     symbol: "đồng",
                     format: "%v %s",
                     thousand: ".",
-                    precision: 0 });
+                    precision: 0
+                });
 
                 var html = "<div class='form-element'><div class='reward'>";
                 html += "<div class='col-xs-4 col-sm-4 col-md-4 col-lg-4'>" + "Phần thưởng " + (counter + 1) + "</div>";
@@ -208,7 +215,6 @@
         });
     }
 
-
     function addStoryPost(form) {
         submitFormAjax(form,
             function (result) {
@@ -235,6 +241,14 @@
                 console.log(result);
             }
         )
+    }
+
+    function sendMessage(form) {
+        submitFormAjax(form, function (result) {
+
+        }, function (result) {
+
+        });
     }
 
 })(jQuery);
