@@ -37,6 +37,13 @@
 
             <% end %>
           </ul>
+
+          <ul class="user-navigation">
+            <% if (@current_user) %>
+                <%= hidden_field_tag :user_name, @current_user.name %>
+                <%= hidden_field_tag :user_image_url, @current_user.image.url %>
+            <% end %>
+          </ul>
         </nav>
 
         <ul class="mobile-nav">

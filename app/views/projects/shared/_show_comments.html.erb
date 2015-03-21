@@ -1,15 +1,19 @@
 <div class="blog-span-bottom">
-  <ol class="comments-list">
+  <ul class="comments">
     <% @project.comments.each do |comment| %>
         <li class="comment">
           <div class="comment-content">
             <div class="comment-author-avatar">
+<<<<<<< HEAD
             <% if comment.user.image.exists? %>
               <img src="<%= comment.user.image.url(:large) %>" title="<%= comment.body %>" alt="John Doe" class="img-responsive"/>
             <% else %>
               <img src="/images/no-image-user.png" title="<%= comment.body %>" alt="John Doe" class="img-responsive"/>
             <% end %>
               
+=======
+              <%= image_tag (comment.user.image.url), class: "circle avatar-small", height: "80" %>
+>>>>>>> 8782e60f789b54ad47b769fd27dd77ed7e543a9b
             </div>
 
             <div class="comment-details">
@@ -19,17 +23,17 @@
 
               </div>
               <div class="comment-body">
-                <%= comment.body %>                          </div>
+                <%= comment.body %>
+              </div>
             </div>
           </div>
 
         </li>
     <% end %>
-  </ol>
+  </ul>
 
   <h3>Bình luận</h3>
   <%= form_for([@project, @project.comments.build]) do |f| %>
-  <input type="hidden" name="user" id='user-name' value="<%= @project.user.name %>">
       <p>
         <%= f.text_area :body, class: 'form-control' %>
       </p>

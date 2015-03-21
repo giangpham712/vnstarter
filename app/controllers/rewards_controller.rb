@@ -11,7 +11,7 @@ class RewardsController < ApplicationController
     if reward.save
       render json: { :success => true, :reward => reward }
     else
-      render json: { :success => false, :errors => reward.errors }
+      render json: { :success => false, :errors => reward.errors.full_messages }
     end
 
   end

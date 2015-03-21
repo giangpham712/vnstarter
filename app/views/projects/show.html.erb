@@ -45,7 +45,9 @@
               <a class="btn btn-lg btn-blue" data-toggle="modal" href='#view-story'>Câu chuyện</a>
               <a class="btn btn-lg btn-primary" data-toggle="modal" href='#pledge-money'>Đóng góp</a>
             </div>
-            <div class="" id='project-deadline'>
+            <br/>
+            <br/>
+            <div>
               <p>Dự án được khởi động ngày 07/03/2015 và kết thúc ngày 31/3/2015</p>
             </div>
           </div>
@@ -70,7 +72,7 @@
                   </p>
                 </div>
                 <div class="col-right col-md-4">
-                  <%= image_tag (@project.user.image.exists? ? @project.user.image.url : "no-image-user.png"), class: "circle avatar-small", height: "80" %>
+                  <%= image_tag @project.user.image.url, class: "circle avatar-small", height: "80" %>
                 </div>
               </div>
             </div>
@@ -89,7 +91,7 @@
           </li>
           <li role="presentation">
             <a href="#comments" aria-controls="comment" class='project-tab' role="tab" data-toggle="tab">
-              Bình luận</a>
+              Bình luận (<%= @project.comments.count %>)</a>
           </li>
         </ul>
       </div>
@@ -103,7 +105,7 @@
                 <div role="tabpanel" class="tab-pane active" id="home">
                   <%= render "projects/shared/show_story" %>
                 </div>
-                <div role="tabpanel" class="tab-pane comments" id="comments">
+                <div role="tabpanel" class="tab-pane" id="comments">
                   <%= render "projects/shared/show_comments" %>
                 </div>
               </div>

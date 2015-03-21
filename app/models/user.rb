@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  has_attached_file :image, :styles => {
+  has_attached_file :image, :default_url => "/images/no-image-user.png", :styles => {
                               :small => "150x150",
                               :medium => "350x350",
                               :large => "750x750"
