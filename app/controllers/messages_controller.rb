@@ -13,14 +13,13 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(message_params)
-    @user = current_user
-    @message.sender_id = @user.id
+    message = Message.new(message_params)
+    message.sender_id = current_user.id
 
-    if @project.save
-      redirect_to message_path(@message)
+    if message.save
+      render json: {:success => true, :message => message}
     else
-      render 'new'
+      render json: {:success => false, :errors => message.errors.full_messages}
     end
 
   end

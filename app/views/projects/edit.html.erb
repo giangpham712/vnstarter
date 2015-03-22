@@ -7,14 +7,26 @@
 
       <div class="row">
         <div class="col-md-12 col-sm-12">
-          <div>
+          <div class="text-center">
             <%= hidden_field_tag :id, @project.id %>
             <%= hidden_field_tag :slug, @project.slug %>
+
+            <% if @project.launched? %>
+                <div class="status alert alert-success alert-dismissible">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <strong>Dự án đã được khởi động huy động vốn</strong>
+                </div>
+            <% else %>
+                <div class="status alert alert-info alert-dismissible">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <strong>Dự án đang trong quá trình khởi tạo</strong>
+                </div>
+            <% end %>
 
             <div class="tab-container">
               <ul id="edit-tabs" class="etabs clearfix">
 
-                <li class="tab active" role="presentation">
+                <li class="tab first active" role="presentation">
                   <a href="#basic" data-edit-info="basic" aria-controls="home" role="tab" data-toggle="tab">
                     Thông tin dự án
                   </a>
@@ -38,11 +50,21 @@
                   </a>
                 </li>
 
-                <li class="tab" role="presentation">
+                <li class="tab last" role="presentation">
                   <a href="#accounts" data-edit-info="accounts" aria-controls="home" role="tab" data-toggle="tab">
                     Tài khoản
                   </a>
                 </li>
+
+                <% if !@project.launched? && !@project.stopped? && !@project.deleted? %>
+                <li class="tab launch" role="presentation">
+                  <a href="javascript:void(0);">
+                    Khởi động dự án
+                  </a>
+                </li>
+                <% end %>
+              </ul>
+              <ul>
 
               </ul>
 

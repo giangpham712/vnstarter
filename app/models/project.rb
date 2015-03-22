@@ -39,6 +39,10 @@ class Project < ActiveRecord::Base
     deleted_at != nil
   end
 
+  def initiating?
+    !launched? && !stopped? && !deleted?
+  end
+
   def normalize_friendly_id(input)
     input.to_s.to_slug.normalize(transliterations: :vietnamese).to_s
   end

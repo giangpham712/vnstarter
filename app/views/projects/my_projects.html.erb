@@ -16,7 +16,7 @@
               <% @projects.each do |project| %>
                   <li class="project">
                     <div class="image">
-                      <%= image_tag project.image.url %>
+                      <%= image_tag project.image.url(:listing) %>
                     </div>
                     <div class="title">
                       <%= label_tag project.title %>

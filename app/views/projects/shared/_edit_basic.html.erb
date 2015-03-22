@@ -17,7 +17,7 @@
                 </div>
                 <div class="success text-center">
                   <% if @project.image.exists? %>
-                      <%= image_tag @project.image.url(:medium) %>
+                      <%= image_tag @project.image.url(:large) %>
                   <% end %>
                 </div>
                 <div class="upload">
@@ -84,7 +84,7 @@
             </div>
           </div>
 
-          <div class='form-element'>
+          <div class='form-element hidden'>
             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
               <%= f.label t('project.edit.basic.duration') %>
             </div>
@@ -101,7 +101,11 @@
             </div>
 
             <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-              <%= f.text_field :funding_goal, class: 'form-control' %>
+              <% if @project.initiating? %>
+                  <%= f.text_field :funding_goal, class: 'form-control currency' %>
+              <% else %>
+                  <%= f.text_field :funding_goal, value: number_to_currency(@project.funding_goal, precision: 0), class: 'form-control readonly currency', readonly: true %>
+              <% end %>
 
             </div>
           </div>

@@ -1,3 +1,8 @@
+#project_edit .status {
+    margin-top: 20px;
+
+}
+
 #project_edit .tab {
     display: inline-block;
     float: none;
@@ -10,6 +15,29 @@
 
 #project_edit .tab {
     border-left: 1px solid #e8e8e8;
+    margin-left: -5px;
+}
+
+#project_edit .tab.first {
+    border-radius: 10px 0 0 10px;
+}
+
+#project_edit .tab.last {
+    border-radius: 0 10px 10px 0;
+}
+
+#project_edit .tab.launch {
+    margin-left: 5px;
+    border-radius: 10px;
+    background-color: #279FBB;
+}
+
+#project_edit .tab.launch:hover {
+    background-color: #4C8E9D;
+}
+
+#project_edit .tab.launch a {
+    color: #fff;
 }
 
 #project_edit .tab.active {
@@ -24,6 +52,7 @@
 #project_edit .tabs-content {
     border: 0px;
     margin-top: 20px;
+    margin-bottom: 20px;
     position: relative;
     padding-left: 0;
     padding-right: 0;
@@ -575,16 +604,6 @@ div.modal_dialog_body label {
     width: 100%;
 }
 
-#add-reward .errors,
-#add-story-post .errors {
-    text-align: left;
-}
-
-#add-reward .errors ul,
-#add-story-post .errors ul {
-    padding: 10px 20px 0;
-}
-
 #project_show .project-overview .video-container {
 
     padding-right: 20px;
@@ -685,6 +704,10 @@ div.modal_dialog_body label {
     height: 60px;
 }
 
+#send-message .alert {
+    display: none;
+}
+
 #project_pledge .project-content .main {
     -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
@@ -747,6 +770,7 @@ div.modal_dialog_body label {
 #my_projects .projects .project {
     border: 1px solid #d9d9de;
     border-radius: 5px;
+    margin-bottom: 20px;
 }
 
 #my_projects .projects .project > div {
@@ -755,7 +779,7 @@ div.modal_dialog_body label {
 
 #my_projects .projects .project img {
     width: 160px;
-
+    border-radius: 5px 0 0 5px;
 }
 
 #my_projects .projects .project label {
@@ -778,6 +802,15 @@ div.modal_dialog_body label {
 #my_projects .projects .project .title,
 #my_projects .projects .project .edit {
     padding: 45px 0;
+}
+
+.modal .alert.errors {
+    text-align: left;
+}
+
+.modal .alert.errors ul {
+    list-style-type: disc;
+    padding: 10px 20px 0;
 }
 
 .circle {

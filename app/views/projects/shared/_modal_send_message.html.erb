@@ -9,9 +9,12 @@
             <h3 class="modal-title">Gửi tin nhắn cho <%= @project.user.name %></h3>
           </div>
           <div class="modal-body clearfix">
-            <div class="errors alert alert-danger alert-dismissible" style="display: none;" role="alert">
-              Có lỗi xảy ra khi lưu:
+            <div class="errors alert alert-danger alert-dismissible" role="alert">
+              Có lỗi xảy ra khi gửi tin nhắn:
               <ul></ul>
+            </div>
+            <div class="alert alert-success">
+              Tin nhắn của bạn đã được gửi tới <%= @project.user.name %>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
               <label>Nội dung</label>
@@ -19,10 +22,10 @@
               <%= f.text_area :body, class: 'form-control', :rows => "5" %>
               <br>
             </div>
-            </div>
+          </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
-            <button type="submit" class="btn btn-primary">Gửi</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+            <button type="submit" class="btn btn-primary">Gửi tin nhắn</button>
           </div>
       <% end %>
     </div>

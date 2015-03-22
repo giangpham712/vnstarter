@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => [:upload_image]
 
   def index
-    @projects = Project.all
+    @projects = Project.where(launched_at: nil, deleted_at: nil, stopped_at: nil)
 
   end
 
@@ -18,13 +18,18 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.includes(:user).friendly.find(params[:id])
-    pledges = @project.pledges
 
-    @total_pledgers = pledges.count(:pledger_id, :distinct => true)
+    if !@project.launched? || @project.stopped? || @project.deleted?
+      redirect_to root_path
 
-    @total_pledge_amount = pledges.sum(:pledge_amount)
+    else
+      pledges = @project.pledges
 
-    render 'show'
+      @total_pledgers = pledges.count(:pledger_id, :distinct => true)
+      @total_pledge_amount = pledges.sum(:pledge_amount)
+
+      render 'show'
+    end
 
   end
 
@@ -32,17 +37,18 @@ class ProjectsController < ApplicationController
     @cities = City.all
 
     @categories = Category.all
-    
+
     @project = Project.new
   end
 
   #View to create a new projects
   def create
-    @project = Project.new(project_params)
+    project = Project.new(project_params)
     user = current_user
-    @project.creator_id = user.id
-    if @project.save
-      redirect_to edit_project_path(@project)
+    project.creator_id = user.id
+    project.funding_goal = 0
+    if project.save
+      redirect_to edit_project_path(pproject)
     else
       @cities = City.all
       @categories = Category.all
@@ -68,9 +74,9 @@ class ProjectsController < ApplicationController
     params = project.launched ? launched_project_params : project_params
 
     if project.update(params)
-      render json: { :success => true, :project => project }
+      render json: {:success => true, :project => project}
     else
-      render json: { :success => false, :errors => project.errors }
+      render json: {:success => false, :errors => project.errors}
     end
   end
 
@@ -78,14 +84,14 @@ class ProjectsController < ApplicationController
 
     project = Project.friendly.find(params[:id])
 
-    render json: { :success => false } if project.deleted?
-    render json: { :success => false } if project.launched?
-    render json: { :success => false } if project.stopped?
+    render json: {:success => false} if project.deleted?
+    render json: {:success => false} if project.launched?
+    render json: {:success => false} if project.stopped?
 
     if project.update_attributes(:launched => true, :launched_at => Time.now.utc)
-      render json: { :success => true }
+      render json: {:success => true}
     else
-      render json: { :success => false, :errors => project.errors }
+      render json: {:success => false, :errors => project.errors}
     end
 
   end
@@ -94,14 +100,14 @@ class ProjectsController < ApplicationController
 
     project = Project.friendly.find(params[:id])
 
-    render json: { :success => false } if project.deleted?
-    render json: { :success => false } if !project.launched?
-    render json: { :success => false } if project.stopped?
+    render json: {:success => false} if project.deleted?
+    render json: {:success => false} if !project.launched?
+    render json: {:success => false} if project.stopped?
 
     if project.update_attributes(:stopped_at => Time.now.utc)
-      render json: { :success => true }
+      render json: {:success => true}
     else
-      render json: { :success => false, :errors => project.errors }
+      render json: {:success => false, :errors => project.errors}
     end
 
   end
@@ -114,20 +120,20 @@ class ProjectsController < ApplicationController
     project = Project.friendly.find(params[:id])
     puts params[:image]
     if project.update_attributes(:image => params[:project][:image])
-      render json: { :success => true, :image_url => project.image.url(:medium) }
+      render json: {:success => true, :image_url => project.image.url(:medium)}
     else
-      render json: { :success => false, :errors => project.errors }
+      render json: {:success => false, :errors => project.errors}
     end
 
   end
 
   private
-    def project_params
-      params.require(:project).permit(:title, :location, :category_id, :short_description, :funding_goal, :duration, :dead_line, :image)
-    end
+  def project_params
+    params.require(:project).permit(:title, :location, :category_id, :short_description, :funding_goal, :duration, :dead_line, :image)
+  end
 
-    def launched_project_params
-      params.require(:project).permit(:title, :location, :category_id, :short_description, :image)
-    end
+  def launched_project_params
+    params.require(:project).permit(:title, :location, :category_id, :short_description, :image)
+  end
 
 end

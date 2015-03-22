@@ -10,12 +10,12 @@ Rails.application.routes.draw do
 
   end
 
+  get 'profile/projects', to: 'projects#my_projects'
+
   post 'profile/avatar', to: 'users#upload_image'
 
   get 'profile', to: 'users#my_profile'
   put 'profile', to: 'users#update_profile'
-
-  get 'profile/projects', to: 'projects#my_projects'
 
   resources :messages do
 
@@ -47,8 +47,6 @@ Rails.application.routes.draw do
     resources :comments do
 
     end
-
-
 
     member do
       post :launch_project

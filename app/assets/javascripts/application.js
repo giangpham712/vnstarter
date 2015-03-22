@@ -20,7 +20,6 @@
 //= require accountingjs/accounting
 //= require_tree .
 
-
 (function($) {
 
     $(function() {

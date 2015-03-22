@@ -23,8 +23,8 @@ vi:
   devise:
     failure:
       user:
-        invalid: "Thông tin đăng nhập không hợp lệ"
-        not_found_in_database: "Thông tin đăng nhập không hợp lệ"
+        invalid: "Thông tin đăng nhập không hợp lệ"
+        not_found_in_database: "Thông tin đăng nhập không hợp lệ"
         unauthenticated: ""
   activerecord:
     attributes:
@@ -33,10 +33,12 @@ vi:
         body: "Nội dung"
       user:
         name: "Tên"
-        password: "Mật khẩu"
+        password: "Mật khẩu"
       reward:
-        minimum_pledge_amount: "Khoản góp yêu cầu"
-        description: "Mô tả"
+        minimum_pledge_amount: "Khoản góp yêu cầu"
+        description: "Mô tả"
+      message:
+        body: "Nội dung"
     errors:
       messages:
         blank: "là thông tin bắt buộc"
@@ -44,12 +46,12 @@ vi:
         user:
           attributes:
             password:
-              too_short: "phải chứa ít nhất %{count} ký tự"
+              too_short: "phải chứa ít nhất %{count} ký tự"
             email:
-              taken: "đã được sử dụng"
+              taken: "đã được sử dụng"
         reward:
           attributes:
             minimum_pledge_amount:
-              not_a_number: "phải lớn hơn hoặc bằng 1.000 đồng"
-              greater_than: "phải lớn hơn hoặc bằng 1.000 đồng"
+              not_a_number: "phải nhiều hơn hoặc bằng 1.000 đồng"
+              greater_than: "phải nhiều hơn hoặc bằng 1.000 đồng"
 

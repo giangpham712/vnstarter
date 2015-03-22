@@ -18,7 +18,6 @@
         })
 
         $("#save").click(function () {
-
             switch (current_tab) {
                 case "#basic":
                 case "#about_you":
@@ -49,6 +48,24 @@
                 default:
                     break;
             }
+        });
+
+        $("#project_edit .launch").click(function () {
+
+            var project_slug = $("#slug").val();
+
+            var request = $.ajax({
+                url: "/projects/" + project_slug + "/launch_project",
+                type: "POST"
+            });
+
+            request.done(function (result) {
+                console.log(result);
+            });
+
+            request.fail(function (result) {
+                console.log(result);
+            });
         });
 
         $(".attachment_upload").each(function (i, o) {
@@ -104,8 +121,9 @@
             });
         });
 
-        $("#add-story-post").on("hide.bs.modal", function () {
-            $("#add-story-post form")[0].reset();
+        $(".modal").on("hide.bs.modal", function () {
+            $(this).find("form")[0].reset();
+            $(this).find(".alert").hide();
         });
 
         $("#add-reward form").submit(function (e) {
@@ -177,6 +195,7 @@
     }
 
     function addReward(form) {
+
         submitFormAjax(form, function (result) {
             if (result.success) {
                 $(form).find(".errors").hide();
@@ -284,6 +303,18 @@
     function sendMessage(form) {
         submitFormAjax(form, function (result) {
 
+            if (result.success) {
+                form.reset();
+                $(form).find(".alert-success").show();
+            } else {
+                $(form).find(".errors").show();
+                var $errors_list = $(form).find(".errors ul");
+                $errors_list.html("");
+                $.each(result.errors, function (i, e) {
+                    $("<li>" + e + "</li>").appendTo($errors_list);
+                });
+            }
+
         }, function (result) {
 
         });
@@ -296,6 +327,8 @@ function submitFormAjax(form, done, fail) {
     var url = form.action;
     var method = form.method;
     var formData = new FormData($(form)[0]);
+
+    $(form).find(".alert").hide();
 
     var request = $.ajax({
         url: url,
