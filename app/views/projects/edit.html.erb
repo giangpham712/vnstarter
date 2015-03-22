@@ -13,13 +13,15 @@
 
             <% if @project.launched? %>
                 <div class="status alert alert-success alert-dismissible">
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <strong>Dự án đã được khởi động</strong>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                  <strong>Dự án đã được khởi động</strong>
                 </div>
             <% else %>
                 <div class="status alert alert-info alert-dismissible">
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <strong>Dự án đang trong quá trình khởi tạo</strong>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                  <strong>Dự án đang trong quá trình khởi tạo</strong>
                 </div>
             <% end %>
 
@@ -57,11 +59,11 @@
                 </li>
 
                 <% if !@project.launched? && !@project.stopped? && !@project.deleted? %>
-                <li class="tab launch" role="presentation">
-                  <a href="javascript:void(0);">
-                    Khởi động dự án
-                  </a>
-                </li>
+                    <li class="tab launch" role="presentation">
+                      <a href="javascript:void(0);">
+                        Khởi động dự án
+                      </a>
+                    </li>
                 <% end %>
               </ul>
               <ul>
