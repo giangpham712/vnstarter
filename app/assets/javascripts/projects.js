@@ -53,14 +53,18 @@
         $("#project_edit .launch").click(function () {
 
             var project_slug = $("#slug").val();
-
+            $("#saving-layer").show();
             var request = $.ajax({
                 url: "/projects/" + project_slug + "/launch_project",
                 type: "POST"
             });
 
             request.done(function (result) {
-                console.log(result);
+                if (result.success) {
+                    window.location.reload();
+                } else {
+
+                }
             });
 
             request.fail(function (result) {
