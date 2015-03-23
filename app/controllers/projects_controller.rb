@@ -7,6 +7,10 @@ class ProjectsController < ApplicationController
 
   end
 
+  def about
+    
+  end
+
   def my_projects
     @projects = Project.where(user: current_user)
   end

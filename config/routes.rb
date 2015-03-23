@@ -30,6 +30,10 @@ Rails.application.routes.draw do
 
   resources :projects do
 
+    collection do 
+      get :about
+    end
+
     get :search
 
     resources :posts do
