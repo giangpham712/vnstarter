@@ -126,7 +126,7 @@
         });
 
         $(".modal").on("hide.bs.modal", function () {
-            $(this).find("form")[0].reset();
+            $(this).find("form").trigger('reset')
             $(this).find(".alert").hide();
         });
 
