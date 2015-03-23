@@ -48,7 +48,7 @@ class ProjectsController < ApplicationController
     project.creator_id = user.id
     project.funding_goal = 0
     if project.save
-      redirect_to edit_project_path(pproject)
+      redirect_to edit_project_path(project)
     else
       @cities = City.all
       @categories = Category.all
