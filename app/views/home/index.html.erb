@@ -1,4 +1,4 @@
-<% page_title "Kanzi" %>
+<% page_title "Vnstarter" %>
 <% body_id "home" %>
 <div class="body-wrapper">
 
@@ -12,49 +12,42 @@
 
               <h2>Mang ước mơ của bạn ra thế giới</h2>
               <h4>Raise money for over 1.5 million charities including Red Cross, UNICEF, SU2C, and more</h4>
-              <a href="/projects/about" class="border-button primary on-dark">Tìm hiểu</a>
+              <a href="/projects/about" class="border-button primary on-dark">Về chúng tôi</a>
             </div>
           </div>
         </div>
       </div>
     </div>
-<!--
+
     <div class="sticky-nav">
       <dl class="sub-nav">
-        <dd data-magellan-arrival="explore" class=""><a href="#explore">Dự án nổi bật</a></dd>
-        <dd data-magellan-arrival="ideas" class=""><a href="#ideas">Những nhà đầu tư hàng đầu</a></dd>
-        <dd data-magellan-arrival="why" class=""><a href="#why">Vì sao nên tham gia Kanzi</a></dd>
+        <dd data-magellan-arrival="top-projects" class="smoothScroll"><a href="#top-projects" class="smoothScroll" >Dự án nổi bật</a></dd>
+        <dd data-magellan-arrival="ideas" class="smoothScroll"><a href="#ideas" class="smoothScroll" >Những nhà đầu tư hàng đầu</a></dd>
+        <dd data-magellan-arrival="why" class="smoothScroll"><a href="#why" class="smoothScroll" >Vì sao nên tham gia Vnstarter</a></dd>
       </dl>
     </div>
--->
-    <div id="top-projects">
-      <div class="container">
 
-        <div class="row">
-          <div class="col-md-12 col-sm-12 animated" data-animtype="fadeInUp"
-               data-animrepeat="0"
-               data-speed="1s"
-               data-delay="0.4s">
-            <h2>Những dự án nổi bật</h2>
-          </div>
-        </div>
-        <div class="space-sep20"></div>
+    <div >
+      <div class="container" id="top-projects">
+
+        
+        <div class="space-sep40"></div>
         <div class="row">
 
           <% @projects.each do |project| %>
-              <div class="col-md-3 col-sm-3">
-                <div class="feature project animated" data-animtype="fadeInUp" data-animrepeat="0" data-animspeed="1s" data-animdelay="0.4s">
+              <div class="col-md-3 col-sm-3 ">
+                <div class="feature project animated project-block" data-animtype="fadeInUp" data-animrepeat="0" data-animspeed="1s" data-animdelay="0.4s">
+                 <%= link_to(project) do %>
                   <div class="feature-image img-overlay">
                     <%= image_tag project.image.url(:listing) %>
 
-                    <div class="item-img-overlay">
-                      <a class="portfolio-zoom fa fa-plus" href="media/blog1.jpg"
-                         data-rel="prettyPhoto[portfolio]" title="Title goes here"></a>
+                    
+                     
 
-                    </div>
+                    
 
                   </div>
-
+                  <% end %>
                   <div class="feature-content">
                     <div class="project-info">
                       <%= link_to(project) do %>
@@ -87,11 +80,220 @@
           <% end %>
         </div>
 
+
+
       </div>
     </div>
 
     
   </div>
+
+
+                    <div class="container" >
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 animated" data-animtype="fadeInUp"
+                                 data-animrepeat="0"
+                                 data-speed="1s"
+                                 data-delay="0.4s">
+                                <h2 class="h2-section-title"> Tại sao chọn Vnstarter ? </h2>
+
+                                <div class="i-section-title">
+                                    <i class="icon-drive">
+                                    </i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 right-text" id="why">
+                                <ul class="icon-content-list-container">
+
+                                    <li class="icon-content-single">
+
+                                        <div class="content-box  style5  animated "
+                                             data-animtype="fadeIn"
+                                             data-animrepeat="0"
+                                             data-animspeed="1s"
+                                             data-animdelay="0.2s"
+                                             >
+                                            <h4 class="h4-body-title">
+                                                <strong>Responsive </strong> Design            
+
+                                                <i class="icon-ipad"></i>
+                                            </h4>
+                                            <div class="content-box-text">
+                                                <p> 
+                                                    Cras sem erat, aliquet in egestas cursus, ullamcorper vitae 
+                                                    ligula. Nunc commodo lacinia eros ac condimentum
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="icon-content-single">
+
+                                        <div class="content-box  style5  animated "
+                                             data-animtype="fadeIn"
+                                             data-animrepeat="0"
+                                             data-animspeed="1s"
+                                             data-animdelay="0.2s"
+                                             >
+                                            <h4 class="h4-body-title">
+                                                <strong>Very </strong> Flexible            
+
+                                                <i class="icon-settings"></i>
+                                            </h4>
+                                            <div class="content-box-text">
+                                                <p> 
+                                                    Cras sem erat, aliquet in egestas cursus, ullamcorper vitae 
+                                                    ligula. Nunc commodo lacinia eros ac condimentum
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="icon-content-single">
+
+                                        <div class="content-box  style5  animated "
+                                             data-animtype="fadeIn"
+                                             data-animrepeat="0"
+                                             data-animspeed="1s"
+                                             data-animdelay="0.2s"
+                                             >
+                                            <h4 class="h4-body-title">
+                                                <strong>Unlimited </strong> Skins            
+
+                                                <i class="icon-painting-roll-streamline"></i>
+                                            </h4>
+                                            <div class="content-box-text">
+                                                <p> 
+                                                    Cras sem erat, aliquet in egestas cursus, ullamcorper vitae 
+                                                    ligula. Nunc commodo lacinia eros ac condimentum
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="icon-content-single">
+
+                                        <div class="content-box  style5  animated "
+                                             data-animtype="fadeIn"
+                                             data-animrepeat="0"
+                                             data-animspeed="1s"
+                                             data-animdelay="0.2s"
+                                             >
+                                            <h4 class="h4-body-title">
+                                                <strong>Well </strong> Documented            
+
+                                                <i class="icon-file-settings"></i>
+                                            </h4>
+                                            <div class="content-box-text">
+                                                <p> 
+                                                    Cras sem erat, aliquet in egestas cursus, ullamcorper vitae 
+                                                    ligula. Nunc commodo lacinia eros ac condimentum
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <ul class="icon-content-list-container">
+
+                                    <li class="icon-content-single">
+
+                                        <div class="content-box  style5  animated "
+                                             data-animtype="fadeIn"
+                                             data-animrepeat="0"
+                                             data-animspeed="1s"
+                                             data-animdelay="0.2s"
+                                             >
+                                            <h4 class="h4-body-title">
+                                                <strong>Retina </strong> Ready            
+
+                                                <i class="icon-eye"></i>
+                                            </h4>
+                                            <div class="content-box-text">
+                                                <p> 
+                                                    Cras sem erat, aliquet in egestas cursus, ullamcorper vitae 
+                                                    ligula. Nunc commodo lacinia eros ac condimentum
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="icon-content-single">
+
+                                        <div class="content-box  style5  animated "
+                                             data-animtype="fadeIn"
+                                             data-animrepeat="0"
+                                             data-animspeed="1s"
+                                             data-animdelay="0.2s"
+                                             >
+                                            <h4 class="h4-body-title">
+                                                <strong>Multi </strong> Purpose            
+
+                                                <i class="icon-world"></i>
+                                            </h4>
+                                            <div class="content-box-text">
+                                                <p> 
+                                                    Cras sem erat, aliquet in egestas cursus, ullamcorper vitae 
+                                                    ligula. Nunc commodo lacinia eros ac condimentum
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="icon-content-single">
+
+                                        <div class="content-box  style5  animated "
+                                             data-animtype="fadeIn"
+                                             data-animrepeat="0"
+                                             data-animspeed="1s"
+                                             data-animdelay="0.2s"
+                                             >
+                                            <h4 class="h4-body-title">
+                                                <strong>Animation </strong> Ready            
+
+                                                <i class="fa fa-film"></i>
+                                            </h4>
+                                            <div class="content-box-text">
+                                                <p> 
+                                                    Cras sem erat, aliquet in egestas cursus, ullamcorper vitae 
+                                                    ligula. Nunc commodo lacinia eros ac condimentum
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="icon-content-single">
+
+                                        <div class="content-box  style5  animated "
+                                             data-animtype="fadeIn"
+                                             data-animrepeat="0"
+                                             data-animspeed="1s"
+                                             data-animdelay="0.2s"
+                                             >
+                                            <h4 class="h4-body-title">
+                                                <strong>Latest </strong> Technology            
+
+                                                <i class="icon-lab"></i>
+                                            </h4>
+                                            <div class="content-box-text">
+                                                <p> 
+                                                    Cras sem erat, aliquet in egestas cursus, ullamcorper vitae 
+                                                    ligula. Nunc commodo lacinia eros ac condimentum
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                     <div class="space-sep40"></div>
 </div>
 <%= content_for :bottom_scripts do %>
 
