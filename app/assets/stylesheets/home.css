@@ -110,7 +110,7 @@
     -webkit-appearance: none;
     -webkit-border-radius: 0;
     display: inline-block;
-    padding: .625rem 1.25rem .6875rem;
+    padding: .725rem 1.35rem .7875rem;
     background-color: transparent;
     border-radius: 100px;
     border: 2px solid #fff;
@@ -118,7 +118,7 @@
     font-family: "Sans Pro", Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 500;
-    font-size: 1.125rem;
+    font-size: 1.925rem;
     -webkit-transition: all 200ms ease-in-out;
     -moz-transition: all 200ms ease-in-out;
     transition: all 200ms ease-in-out;
@@ -143,7 +143,7 @@ a {
     font-family: "Sans Pro", Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 500;
-    font-size: 1.125rem;
+    font-size: 1.365rem;
 }
 
 .slick-dots {
@@ -328,4 +328,7 @@ div.sticky-nav dl.sub-nav dd.active a {
 .tag {
     vertical-align: middle;
 
+}
+.content-box-text p{
+    line-height: 32px;
 }
