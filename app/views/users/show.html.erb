@@ -1,0 +1,45 @@
+<%= page_title @user.name %>
+<%= body_id "profile_show" %>
+
+<div class="content-wrapper hide-until-loading">
+  <div class="body-wrapper">
+    <div>
+      <div class="profile-overview">
+        <div class="container">
+
+          <div class="col-md-3">
+            <div id="profile_avatar">
+              <%= image_tag @user.image.url(:medium) %>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div id="profile_bio">
+              <h2><%= @user.name %></h2>
+
+              <p>
+                <span>Đã góp vốn cho 0 dự án</span>
+                <span class="separator">·</span>
+                <span><%= @user.location %></span>
+                <span class="separator">·</span>
+                <span>Là thành viên từ <%= l(@user.created_at, :format => '%B, %Y') %></span>
+              </p>
+
+              <p>
+                <%= @user.biology %>
+              </p>
+
+              <p>
+                <% if current_user == @user %>
+                <%= link_to "Sửa thông tin cá nhân", "/settings/profile" %>
+                    <% end %>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+
+      </div>
+    </div>
+  </div>
+</div>

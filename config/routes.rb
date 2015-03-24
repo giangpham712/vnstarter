@@ -15,7 +15,8 @@ Rails.application.routes.draw do
 
   post 'profile/avatar', to: 'users#upload_image'
 
-  get 'profile', to: 'users#my_profile'
+  get 'profile', to: 'users#show'
+  get 'profile/:id', to: 'users#show'
   put 'profile', to: 'users#update_profile'
 
   resources :messages do

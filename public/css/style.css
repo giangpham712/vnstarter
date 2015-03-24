@@ -785,67 +785,6 @@ textarea .white-text .feature-details a:hover {
     box-sizing: border-box;
 }
 
-.separator {
-    background: transparent;
-    background-image: url(../images/sidebar_shadow_body.html);
-    background-repeat: repeat-y;
-    padding: 0 0 0 30px;
-    position: absolute;
-    width: 50px;
-    left: -35px;
-    top: 14px;
-    bottom: 0px;
-    z-index: 0;
-}
-
-.separator:after {
-    position: absolute;
-    top: -41px;
-    left: 0;
-    background-image: url(../images/sidebar_shadow_top.html);
-    background-repeat: no-repeat;
-    width: 24px;
-    height: 41px;
-    content: "";
-}
-
-.separator:before {
-    position: absolute;
-    bottom: -55px;
-    left: 0;
-    background-image: url(../images/sidebar_shadow_bottom.html);
-    background-repeat: no-repeat;
-    background-position: 0 -69px;
-    width: 24px;
-    height: 55px;
-    content: "";
-}
-
-.separator.separator-right {
-    background: transparent;
-    background-image: url(../images/sep_shadow_body2.html);
-    background-repeat: repeat-y;
-    padding: 0 0 0 30px;
-    position: absolute;
-    width: 0px;
-    left: auto;
-    right: -35px;
-}
-
-.separator.separator-right:after {
-    left: auto;
-    right: 6px;
-    background-image: url(../images/sep_shadow_top2.html);
-    background-repeat: no-repeat;
-}
-
-.separator.separator-right:before {
-    left: auto;
-    right: 6px;
-    background-image: url(../images/sep_shadow_bottom2.html);
-    background-repeat: no-repeat;
-}
-
 /* Sidebar block */
 .sidebar-block {
     position: relative;

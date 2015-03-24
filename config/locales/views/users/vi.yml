@@ -12,6 +12,13 @@ vi:
     not_a_member: "Bạn chưa là thành viên?"
     please: "Xin mời"
 
+  devise:
+      failure:
+        user:
+          invalid: "Thông tin đăng nhập không hợp lệ"
+          not_found_in_database: "Thông tin đăng nhập không hợp lệ"
+          unauthenticated: ""
+
   activerecord:
     attributes:
       user:

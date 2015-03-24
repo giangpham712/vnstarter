@@ -1,5 +1,7 @@
 vi:
-  edit_your_project: "Chỉnh sửa dự án của bạn"
+  text:
+    create_project: "Tạo dự án"
+    edit_your_project: "Chỉnh sửa dự án của bạn"
 
   project:
     edit:
