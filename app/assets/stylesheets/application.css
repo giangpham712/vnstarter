@@ -178,7 +178,8 @@ ul, ol {
 }
 
 .user-menu > li > a i {
-    font-size: 16px;
+    font-size: 14px;
+    color: #000;
 }
 
 .user-menu .user-dropdown {

@@ -20,13 +20,23 @@
 //= require accountingjs/accounting
 //= require_tree .
 
-(function($) {
+(function ($) {
 
-    $(function() {
-       $(".user-menu a").click(function(){
-        $(this).toggleClass("active");
-        $(".user-menu .user-dropdown").toggle();
-       });
+    $(function () {
+        $(".user-menu > li > a").click(function () {
+            $(this).toggleClass("active");
+            $(".user-menu .user-dropdown").toggle();
+        });
+
+        $(document).mouseup(function(e) {
+
+            var user_menu = $(".user-menu");
+            if (!user_menu.is(e.target) && user_menu.has(e.target).length === 0)
+            {
+                $(".user-menu > li > a").removeClass("active")
+                $(".user-menu .user-dropdown").hide();
+            }
+        });
     });
 
 })(jQuery);
