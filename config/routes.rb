@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
   get 'pledges/create'
-
   get 'messages/create'
 
-  devise_for :users
+  devise_for :users do
+
+  end
 
   resources :users, except: :show do
 

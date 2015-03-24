@@ -1,10 +1,11 @@
+<% page_title capitalize_first_letter('text.sign_in') %>
 <% body_id "sign_in" %>
 <div class="content-wrapper hide-until-loading">
   <div class="body-wrapper">
     <div class="content-head">
-        <h2>
-          <%= capitalize_first_word_letter(t :sign_in) %>
-        </h2>
+      <h2>
+        <%= capitalize_first_letter('text.sign_in') %>
+      </h2>
     </div>
     <div class="content-main">
       <div class="container">
@@ -12,16 +13,14 @@
           <div class="col-md-5 col-sm-5 centered">
             <div class="classic-form">
               <%= form_for(resource, as: resource_name, :html => {:class => "login-form form-horizontal"}, url: session_path(resource_name)) do |f| %>
-
-
                   <div class="form-group">
                     <div class="">
-                      <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: capitalize_first_word_letter(t :email) %>
+                      <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: capitalize_first_letter('text.email') %>
                     </div>
                   </div>
                   <div class="form-group">
                     <div class="">
-                      <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: capitalize_first_word_letter(t :password) %>
+                      <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: capitalize_first_letter('text.password') %>
                     </div>
                   </div>
                   <% if !flash[:alert].blank? %>
@@ -34,30 +33,28 @@
                   <div class="form-group">
                     <div class="col-sm-6 remember-me">
                       <%= f.check_box :remember_me %>
-                      <%= f.label capitalize_first_word_letter(t :remember_me), for: 'user_remember_me' %>
+                      <%= f.label t('text.remember_me'), for: 'user_remember_me' %>
 
                     </div>
                     <div class="col-sm-6 forgot-password">
-                      <%= link_to "Quên mật khẩu?", new_password_path(resource_name) %>
+                      <%= link_to t('text.forgot_password'), new_password_path(resource_name) %>
                     </div>
                   </div>
                   <div class="form-group">
                     <div class="">
-                      <%= f.submit capitalize(t :sign_in), class: 'btn btn-block btn-primary' %>
+                      <%= f.submit t('text.sign_in'), class: 'btn btn-block btn-primary' %>
                     </div>
                   </div>
                   <div class="not-member text-center">
-                    Bạn chưa là thành viên? Xin mời <%= link_to "đăng ký", new_registration_path(resource_name) %>
+                    <%= t('text.not_a_member') %> <%= t('text.please') %> <%= link_to "đăng ký", new_registration_path(resource_name) %>
                   </div>
-
               <% end %>
             </div>
           </div>
-
         </div>
       </div>
     </div>
   </div>
-</div><!--.content-wrapper end -->
+</div>
 
 

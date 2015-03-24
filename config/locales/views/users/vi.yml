@@ -1,9 +1,28 @@
 vi:
-  sign_in: "đăng nhập"
-  sign_up: "đăng ký"
-  name: "họ và tên"
-  email: "email"
-  password: "mật khẩu"
-  confirm_password: "nhập lại mật khẩu"
-  remember_me: "ghi nhớ đăng nhập"
-  forgot_password: "quên mật khẩu?"
+  text:
+    sign_in: "đăng nhập"
+    sign_up: "đăng ký"
+    name: "họ và tên"
+    email: "email"
+    password: "mật khẩu"
+    confirm_password: "nhập lại mật khẩu"
+    remember_me: "Ghi nhớ đăng nhập"
+    forgot_password: "Quên mật khẩu?"
+    already_a_member: "Bạn đã là thành viên?"
+    not_a_member: "Bạn chưa là thành viên?"
+    please: "Xin mời"
+
+  activerecord:
+    attributes:
+      user:
+        name: "Họ và tên"
+        password: "Mật khẩu"
+        email: "Email"
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              too_short: "phải chứa ít nhất %{count} ký tự"
+            email:
+              taken: "đã được sử dụng"

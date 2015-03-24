@@ -1,0 +1,11 @@
+vi:
+  activerecord:
+    attributes:
+      post:
+        title: "Tiêu đề"
+        body: "Nội dung"
+    errors:
+      models:
+        post:
+
+

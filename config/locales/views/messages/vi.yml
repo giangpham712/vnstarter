@@ -1,0 +1,9 @@
+vi:
+  activerecord:
+    attributes:
+      message:
+        body: "Nội dung"
+    errors:
+      models:
+        message:
+
