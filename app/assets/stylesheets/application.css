@@ -229,4 +229,14 @@ ul, ol {
     line-height: 35px;
     margin-bottom: 10px;
 }
+.main-menu > li{
+    border-left: 1px dotted #fff;
+    border-right: 1px dotted #fff;
+    transition:all 0.5s;
+}
+.main-menu > li:hover{
+    border-left: 1px dotted #ddd;
+    border-right: 1px dotted #ddd;
+    background-color: #f7fafa;
+}
 

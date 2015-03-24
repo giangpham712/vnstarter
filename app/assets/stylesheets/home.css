@@ -258,6 +258,7 @@ div.sticky-nav dl.sub-nav dd.active a {
 #top-projects .project:hover {
     
     box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.1);
+    width: ;
 }
 #top-projects .project .project-info {
     height: 150px;
@@ -336,11 +337,7 @@ div.sticky-nav dl.sub-nav dd.active a {
 .content-box-text p{
     line-height: 32px;
 }
-.main-menu > li:hover{
-    border-left: 1px dotted #ddd;
-    border-right: 1px dotted #ddd;
-    background-color: #f7fafa;
-}
+
 .sub-nav > dd:hover{
     background-color: #f7fafa;
     
@@ -349,6 +346,12 @@ div.sticky-nav dl.sub-nav dd.active a {
     background-color: #00c0ef;
    
 }
+.content-box{
+    text-align: justify;
+}
+#why-left{padding-left: 200px}
+#why-right{padding-right: 200px}
+
 
 
 
