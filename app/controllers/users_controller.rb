@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
 
-
-
   def show
     if (params[:id])
       @user = User.find(params[:id])
@@ -9,6 +7,10 @@ class UsersController < ApplicationController
       @user = current_user
     end
 
+  end
+
+  def edit
+    user = current_user
   end
 
   def upload_image

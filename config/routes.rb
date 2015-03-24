@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   post 'profile/avatar', to: 'users#upload_image'
 
   get 'profile', to: 'users#show'
+  get 'profile/edit', to: 'users#edit'
   get 'profile/:id', to: 'users#show'
   put 'profile', to: 'users#update_profile'
 
