@@ -253,8 +253,12 @@ div.sticky-nav dl.sub-nav dd.active a {
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    transition:all 0.5s;
 }
-
+#top-projects .project:hover {
+    
+    box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.1);
+}
 #top-projects .project .project-info {
     height: 150px;
     padding: 0;
@@ -345,4 +349,6 @@ div.sticky-nav dl.sub-nav dd.active a {
     background-color: #00c0ef;
    
 }
-.active{background-color: #00c0ef;}
+
+
+
