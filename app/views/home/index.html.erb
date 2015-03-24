@@ -1,4 +1,4 @@
-<% page_title "Kanzi" %>
+<% page_title "Vnstarter" %>
 <% body_id "home" %>
 <div class="body-wrapper">
 
@@ -18,27 +18,20 @@
         </div>
       </div>
     </div>
-<!--
+
     <div class="sticky-nav">
       <dl class="sub-nav">
-        <dd data-magellan-arrival="explore" class=""><a href="#explore">Dự án nổi bật</a></dd>
-        <dd data-magellan-arrival="ideas" class=""><a href="#ideas">Những nhà đầu tư hàng đầu</a></dd>
-        <dd data-magellan-arrival="why" class=""><a href="#why">Vì sao nên tham gia Kanzi</a></dd>
+        <dd data-magellan-arrival="top-projects" class="smoothScroll"><a href="#top-projects" class="smoothScroll" >Dự án nổi bật</a></dd>
+        <dd data-magellan-arrival="ideas" class="smoothScroll"><a href="#ideas" class="smoothScroll" >Những nhà đầu tư hàng đầu</a></dd>
+        <dd data-magellan-arrival="why" class="smoothScroll"><a href="#why" class="smoothScroll" >Vì sao nên tham gia Vnstarter</a></dd>
       </dl>
     </div>
--->
+
     <div >
       <div class="container" id="top-projects">
 
-        <div class="row">
-          <div class="col-md-12 col-sm-12 animated" data-animtype="fadeInUp"
-               data-animrepeat="0"
-               data-speed="1s"
-               data-delay="0.4s">
-            <h2>Những dự án nổi bật</h2>
-          </div>
-        </div>
-        <div class="space-sep20"></div>
+        
+        <div class="space-sep40"></div>
         <div class="row">
 
           <% @projects.each do |project| %>
@@ -97,13 +90,13 @@
   </div>
 
 
-                    <div class="container">
+                    <div class="container" >
                         <div class="row">
                             <div class="col-md-12 col-sm-12 animated" data-animtype="fadeInUp"
                                  data-animrepeat="0"
                                  data-speed="1s"
                                  data-delay="0.4s">
-                                <h2 class="h2-section-title">What We Offer</h2>
+                                <h2 class="h2-section-title"> Tại sao chọn Vnstarter ? </h2>
 
                                 <div class="i-section-title">
                                     <i class="icon-drive">
@@ -112,7 +105,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6 col-sm-6 right-text">
+                            <div class="col-md-6 col-sm-6 right-text" id="why">
                                 <ul class="icon-content-list-container">
 
                                     <li class="icon-content-single">

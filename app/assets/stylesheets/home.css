@@ -332,3 +332,17 @@ div.sticky-nav dl.sub-nav dd.active a {
 .content-box-text p{
     line-height: 32px;
 }
+.main-menu > li:hover{
+    border-left: 1px dotted #ddd;
+    border-right: 1px dotted #ddd;
+    background-color: #f7fafa;
+}
+.sub-nav > dd:hover{
+    background-color: #f7fafa;
+    
+}
+.sub-nav > dd:active{
+    background-color: #00c0ef;
+   
+}
+.active{background-color: #00c0ef;}
