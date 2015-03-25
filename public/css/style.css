@@ -1841,15 +1841,13 @@ Breadcrumb
 /****************************
 Buttons
 ****************************/
-.btn, input[type="submit"], input[type="button"], button.btn, .btn-primary {
+.btn, input[type="submit"], input[type="button"], button.btn {
     display: inline-block;
     text-transform: uppercase;
     font-weight: 500;
     font-size: 13px;
-    color: white !important;
-    background-color: #279fbb;
     position: relative;
-    padding: 0px 11px !important;
+    padding: 0px 11px;
     height: 33px;
     line-height: 33px;
     border: none;
@@ -1862,11 +1860,15 @@ Buttons
     transition: background 0.2s, opacity 0.2s;
 }
 
+.btn-primary {
+    background-color: #279fbb;
+    color: white;
+}
+
 .btn:hover, input[type="submit"]:hover, input[type="button"]:hover, button.btn:hover, .btn-primary:hover {
     text-decoration: none !important;
-    color: white !important;
     opacity: 0.78;
-    background-color: #279fbb;
+
 }
 
 .btn:active, input[type="submit"]:active, input[type="button"]:active, button.btn:active, .btn-primary:active {
@@ -1967,6 +1969,7 @@ button.btn.btn-default:hover, button.btn.btn-default:active, button.btn.btn-defa
 .btn.btn-green {
     background-color: #4aa215;
     border-color: #3d791a;
+    color: #fff;
 }
 
 .btn.btn-green:hover, .btn.btn-green:active, .btn.btn-green:focus {
@@ -2327,7 +2330,7 @@ textarea.form-control {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    border: 1px solid #EEE;
+    border: 1px solid #d9d9de;
     outline: 0;
 }
 
@@ -2338,7 +2341,7 @@ textarea:focus,
 input[type=text].form-control:focus,
 input[type=email].form-control:focus,
 textarea.form-control:focus {
-    border-color: #ccc;
+    border-color: #00a0ff;
     outline: none;
     -webkit-transition: border-color 0.5s linear;
     -moz-transition: border-color 0.5s linear;
@@ -2347,7 +2350,7 @@ textarea.form-control:focus {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
-    background-color: #fafafa;
+    background-color: #fff;
 }
 
 .form-wrapper input[type=text],

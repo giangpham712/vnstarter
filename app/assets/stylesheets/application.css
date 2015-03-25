@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require bootstrap
+ *= require bootstrap3-datetimepicker
  *= require font-awesome
  *= require_tree .
  *= require_self
@@ -241,3 +242,42 @@ ul, ol {
     background-color: #f7fafa;
 }
 
+.bootstrap-datetimepicker-widget table td {
+    height: 30px;
+    line-height: 30px;
+}
+
+.bootstrap-datetimepicker-widget table td span {
+    height: 30px;
+    line-height: 30px;
+}
+
+.bootstrap-datetimepicker-widget table td.day {
+    height: 30px;
+    line-height: 30px;
+    width: 40px;
+}
+
+.bootstrap-datetimepicker-widget table td.active {
+    background-color: #279fbb;
+}
+
+.bootstrap-datetimepicker-widget .btn {
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    height: auto;
+}

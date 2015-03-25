@@ -360,29 +360,88 @@
     padding: 10px 5px 10px 10px;
 }
 
-body#projects_edit label {
+#projects_edit label {
     position: relative;
 }
 
-body#project_edit .form-element .options {
-
+#project_edit .form-element .options {
+    display: table;
+    border-spacing: 0 5px;
+    width: 100%;
 }
 
-body#project_edit #rewards .add-new-reward {
+#project_edit .form-element .options li {
+    margin-bottom: 5px;
+    border: 1px solid #d9d9de;
+    background: #fff;
+    display: table-row;
+    height: 40px;
+}
+
+#project_edit .form-element .options .option > span {
+    display: table-cell ;
+    background-color: #f2f2f3;
+    border: 1px solid #d9d9de;
+}
+
+#project_edit .form-element .options label {
+    font-weight: normal;
+    padding: 0px;
+    margin-left: 10px;
+}
+
+#project_edit .form-element .options .option > span.select  {
+    width: 160px;
+    padding: 0 10px;
+    border-right: 0;
+    border-radius: 5px 0 0 5px;
+}
+
+#project_edit .form-element .options .option > span.value  {
+    border-radius: 0 5px 5px 0;
+    border-left: 0;
+}
+
+#project_edit .form-element .options input[type=text].form-control {
+    display: inline-block;
+    border-width: 1px;
+    border-radius: 0 5px 5px 0;
+    height: 40px;
+    margin: -1px -1px -1px 1px;
+    visibility: hidden;
+    background-color: #fff;
+}
+
+#project_edit .form-element .options .selected input[type=text].form-control {
+    visibility: visible;
+}
+
+#project_edit .datetimepicker {
+    border: 1px solid #d9d9de;
+    margin: -1px -1px -1px 1px;
+    border-radius: 0 5px 5px 0;
+    display: none;
+}
+
+#project_edit .form-element .options .selected .datetimepicker {
+    display: block;
+}
+
+#project_edit #rewards .add-new-reward {
     border-radius: 3px;
     border: 1px solid #d9d9de;
     background: #f2f2f3;
     position: relative;
 }
 
-body#project_edit #rewards .add-new-reward label {
+#project_edit #rewards .add-new-reward label {
     font-size: 12px;
     font-weight: normal;
     width: 130px;
     margin: 0;
 }
 
-body#project_edit #rewards .add-new-reward .keep-or-delete {
+#project_edit #rewards .add-new-reward .keep-or-delete {
     position: absolute;
     top: 0px;
     right: 0px;
@@ -393,37 +452,37 @@ body#project_edit #rewards .add-new-reward .keep-or-delete {
     height: 38px;
 }
 
-body#project_edit #rewards .add-new-reward .keep-or-delete a {
+#project_edit #rewards .add-new-reward .keep-or-delete a {
     display: block;
     padding: 8px 10px;
     line-height: 24px;
     color: #0f2105;
 }
 
-body#project_edit #rewards .add-new-reward .minimum-amount {
+#project_edit #rewards .add-new-reward .minimum-amount {
     display: inline-block;
     vertical-align: top;
 }
 
-body#project_edit #rewards .add-new-reward .minimum-amount input {
+#project_edit #rewards .add-new-reward .minimum-amount input {
     width: 99px;
     margin: -1px 0;
     border-color: #d9d9de;
 }
 
-body#project_edit #rewards .add-new-reward .description {
+#project_edit #rewards .add-new-reward .description {
     display: inline-block;
     vertical-align: top;
     border-top: 1px solid #d9d9de !important;
     border-bottom: 1px solid #d9d9de !important;
 }
 
-body#project_edit #rewards .add-new-reward .description label {
+#project_edit #rewards .add-new-reward .description label {
 
     vertical-align: top;
 }
 
-body#project_edit #rewards .add-new-reward .description textarea {
+#project_edit #rewards .add-new-reward .description textarea {
     margin: -7px 0;
     margin-right: -1px;
     width: 376px;
@@ -433,7 +492,7 @@ body#project_edit #rewards .add-new-reward .description textarea {
     border-color: #d9d9de;
 }
 
-body#project_edit .tools {
+#project_edit .tools {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -447,36 +506,36 @@ body#project_edit .tools {
     background-color: rgba(255,255,255,0.95);
 }
 
-body#project_edit .tools.visible {
+#project_edit .tools.visible {
     margin-bottom: 0
 }
 
-body#project_edit .tools .container {
+#project_edit .tools .container {
     position: relative;
     padding-top: 20px;
     padding-bottom: 20px
 }
 
-body#project_edit .tools-panels,
-body#project_edit .help-panels,
-body#project_edit .sidebar-help-panels {
+#project_edit .tools-panels,
+#project_edit .help-panels,
+#project_edit .sidebar-help-panels {
     list-style: none;
     margin-bottom: 0
 }
 
-body#project_edit .tools-panels li,
-body#project_edit .help-panels li,
-body#project_edit .sidebar-help-panels li {
+#project_edit .tools-panels li,
+#project_edit .help-panels li,
+#project_edit .sidebar-help-panels li {
     list-style-image: none;
     list-style-type: none;
     margin-left: 0
 }
 
-body#project_edit .tools-panels .form-tools div  {
+#project_edit .tools-panels .form-tools div  {
     display: inline-block;
 }
 
-body#project_edit .tools-panels .form-tools div a.btn {
+#project_edit .tools-panels .form-tools div a.btn {
     margin: 0 10px 4px 10px;
 }
 

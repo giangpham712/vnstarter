@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require jquery-fileupload/basic
 //= require bootstrap
+//= require moment/min/moment-with-locales
+//= require bootstrap3-datetimepicker
 //= require angular
 //= require angular-animate
 //= require angular-ui-router

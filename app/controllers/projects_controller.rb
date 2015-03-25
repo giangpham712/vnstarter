@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :authenticate_user!, :except => [:index, :show]
+  before_action :authenticate_user!, :except => [:index, :show, :new]
   skip_before_filter :verify_authenticity_token, :only => [:upload_image]
 
   def index
@@ -8,7 +8,7 @@ class ProjectsController < ApplicationController
   end
 
   def about
-    
+
   end
 
   def my_projects
@@ -133,7 +133,7 @@ class ProjectsController < ApplicationController
 
   private
   def project_params
-    params.require(:project).permit(:title, :location, :category_id, :short_description, :funding_goal, :duration, :dead_line, :image)
+    params.require(:project).permit(:title, :location, :category_id, :short_description, :funding_goal, :duration, :deadline, :image)
   end
 
   def launched_project_params

@@ -72,6 +72,15 @@
             });
         });
 
+        $("#project_edit .options .option").each(function(i, o) {
+            $(o).find("input").click(function() {
+                $("#project_edit .options .option").removeClass("selected");
+                $("#project_edit .options input[type=text]").val("");
+
+                $(o).addClass("selected");
+            });
+        });
+
         $(".attachment_upload").each(function (i, o) {
             var $ele = $(o).find("input.fileupload");
             var upload_url = $ele.data("upload-url");
@@ -125,6 +134,18 @@
             });
         });
 
+        $(".datetimepicker").each(function(i, o) {
+            $(o).datetimepicker({
+                inline: true,
+                locale: 'vi'
+            });
+
+            $(o).on("dp.change", function(e) {
+                var $target = $($(this).data("target"));
+                $target.val(e.date.format("DD/MM/YYYY HH:mm"));
+            });
+        });
+
         $(".modal").on("hide.bs.modal", function () {
             $(this).find("form").trigger('reset')
             $(this).find(".alert").hide();
@@ -141,7 +162,6 @@
             var form = this;
             addStoryPost(form);
         });
-
 
         $("#send-message form").submit(function (e) {
             e.preventDefault();
@@ -160,20 +180,16 @@
         });
 
         $('#new_comment').submit(function (e) {
-
             var form = this;
 
             var user_name = $(".user-menu").find("input[name=user_name]").val();
             var user_image_url = $(".user-menu").find("input[name=user_image_url]").val();
-
 
             $.ajax({
                 url: $(this).attr('action'),
                 type: 'POST',
                 data: $(form).serialize(),
                 success: function (data) {
-
-
                     var html = "<li class='comment'>";
                     html += "<div class='comment-content'>";
                     html += "<div class='comment-author-avatar'>";
