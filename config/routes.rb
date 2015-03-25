@@ -29,13 +29,15 @@ Rails.application.routes.draw do
 
   resources :discover do
 
+    collection do 
+      get :about
+    end
+
   end
 
   resources :projects do
 
-    collection do 
-      get :about
-    end
+    
 
     get :search
 
