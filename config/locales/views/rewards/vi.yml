@@ -1,2 +1,14 @@
 vi:
+  activerecord:
+    attributes:
+      reward:
+        minimum_pledge_amount: "Khoản góp yêu cầu"
+        description: "Mô tả"
+    errors:
+      models:
+        reward:
+          attributes:
+            minimum_pledge_amount:
+              not_a_number: "phải nhiều hơn hoặc bằng 1.000 đồng"
+              greater_than: "phải nhiều hơn hoặc bằng 1.000 đồng"
 

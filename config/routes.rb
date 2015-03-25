@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
   get 'pledges/create'
-
   get 'messages/create'
 
-  devise_for :users
+  devise_for :users do
+
+  end
 
   resources :users, except: :show do
 
@@ -14,7 +15,9 @@ Rails.application.routes.draw do
 
   post 'profile/avatar', to: 'users#upload_image'
 
-  get 'profile', to: 'users#my_profile'
+  get 'profile', to: 'users#show'
+  get 'profile/edit', to: 'users#edit'
+  get 'profile/:id', to: 'users#show'
   put 'profile', to: 'users#update_profile'
 
   resources :messages do

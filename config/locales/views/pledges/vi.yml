@@ -1,0 +1,9 @@
+vi:
+  activerecord:
+    attributes:
+      pledge:
+        minimum_pledge_amount: "Khoản góp yêu cầu"
+    errors:
+      models:
+        pledge:
+

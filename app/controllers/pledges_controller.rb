@@ -1,5 +1,7 @@
 class PledgesController < ApplicationController
 
+  before_action :authenticate_user!
+
   def new
     @project = Project.friendly.find(params[:project_id])
     @pledge = @project.pledges.new

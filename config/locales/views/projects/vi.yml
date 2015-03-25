@@ -1,5 +1,7 @@
 vi:
-  edit_your_project: "Chỉnh sửa dự án của bạn"
+  text:
+    create_project: "Tạo dự án"
+    edit_your_project: "Chỉnh sửa dự án của bạn"
 
   project:
     edit:
@@ -16,4 +18,11 @@ vi:
         story:
           choose_video_from_your_computer: "Chọn file video từ máy tính của bạn"
           support_video_file_formats: "Hố trợ định dạng MP4. Kích thước tối đa 20MB"
+
+  activerecord:
+    attributes:
+      project:
+    errors:
+      models:
+        project:
 

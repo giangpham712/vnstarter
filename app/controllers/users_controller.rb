@@ -1,9 +1,16 @@
 class UsersController < ApplicationController
 
-
-
   def show
+    if (params[:id])
+      @user = User.find(params[:id])
+    else
+      @user = current_user
+    end
 
+  end
+
+  def edit
+    user = current_user
   end
 
   def upload_image
@@ -15,12 +22,6 @@ class UsersController < ApplicationController
       render json: { :success => false, :errors => user.errors }
     end
 
-  end
-
-  
-
-  def my_profile
-    @user = current_user
   end
 
   def update_profile
