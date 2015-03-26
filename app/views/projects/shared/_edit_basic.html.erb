@@ -95,7 +95,7 @@
                     <li class="option <%= "selected" if @project.duration_type == "duration" %>">
                   <span class="select">
                     <%= f.radio_button :duration_type, "duration", id: "duration_duration" %>
-                    <label for="duration_duration">Tổng số ngày</label>
+                    <label for="duration_duration">Tổng thời gian (ngày)</label>
                   </span>
                   <span class="value">
                     <%= f.text_field :duration, class: 'form-control' %>
@@ -112,6 +112,10 @@
                   </span>
                     </li>
                   </ul>
+              <% else %>
+                  <strong>
+                    Kết thúc vào <b><%= @project.deadline.strftime("%H:%M ngày %d-%m-%Y") %></b>. Tổng thời gian gây vốn là <b><%= @project.duration %></b> ngày
+                  </strong>
               <% end %>
             </div>
           </div>
@@ -124,7 +128,7 @@
               <% if @project.initiating? %>
                   <%= f.text_field :funding_goal, class: 'form-control currency' %>
               <% else %>
-                  <%= f.text_field :funding_goal, value: number_to_currency(@project.funding_goal, precision: 0), class: 'form-control readonly currency', readonly: true %>
+                  <strong><%= number_to_currency(@project.funding_goal, precision: 0) %></strong>
               <% end %>
 
             </div>

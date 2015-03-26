@@ -67,12 +67,16 @@ class ProjectsController < ApplicationController
 
     @project = Project.friendly.find(params[:id])
 
-    if @project.deadline == nil
-      @project.deadline = Time.zone.now
-      @project.duration_type = "duration"
-    else
-      @project.duration = 0
-      @project.duration_type = "deadline"
+    if @project.initiating?
+
+      if @project.deadline == nil
+        @project.deadline = Time.zone.now
+        @project.duration_type = "duration"
+      else
+        @project.duration = 0
+        @project.duration_type = "deadline"
+      end
+
     end
 
     if (@project.creator_id != current_user.id)
@@ -95,7 +99,7 @@ class ProjectsController < ApplicationController
         params[:duration] = 0
     end
 
-    params[:funding_goal] = params[:funding_goal].tr('.','')
+    params[:funding_goal] = params[:funding_goal].tr('.', '')
 
     if project.update(params)
       render json: {:success => true, :project => project}
@@ -112,7 +116,23 @@ class ProjectsController < ApplicationController
     render json: {:success => false} if project.launched?
     render json: {:success => false} if project.stopped?
 
-    if project.update_attributes(:launched => true, :launched_at => Time.now.utc)
+    launched_at = Time.now
+    deadline = nil
+    duration = nil
+
+    if project.deadline == nil
+      duration = project.duration
+      deadline = launched_at + duration.days
+    else
+      deadline = project.deadline
+      duration = (deadline - launched_at).to_i
+    end
+
+    if project.update_attributes(
+        :launched => true,
+        :launched_at => Time.now.utc,
+        :deadline => deadline,
+        :duration => duration)
       render json: {:success => true}
     else
       render json: {:success => false, :errors => project.errors}
@@ -152,12 +172,12 @@ class ProjectsController < ApplicationController
   end
 
   private
-    def project_params
-      params.require(:project).permit(:title, :location, :category_id, :short_description, :funding_goal, :duration_type, :duration, :deadline, :image)
-    end
+  def project_params
+    params.require(:project).permit(:title, :location, :category_id, :short_description, :funding_goal, :duration_type, :duration, :deadline, :image)
+  end
 
-    def launched_project_params
-      params.require(:project).permit(:title, :location, :category_id, :short_description, :image)
-    end
+  def launched_project_params
+    params.require(:project).permit(:title, :location, :category_id, :short_description, :image)
+  end
 
 end
