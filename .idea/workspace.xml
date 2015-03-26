@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31fa37c0-7785-44b6-9d12-f7360ecd0370" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.yml" afterPath="$PROJECT_DIR$/config/database.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/discover.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/discover.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/discover_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/discover_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/home.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/home.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/home_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/home_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/discover/index.html.erb" afterPath="$PROJECT_DIR$/app/views/discover/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home/index.html.erb" afterPath="$PROJECT_DIR$/app/views/home/index.html.erb" />
     </list>
     <ignored path="kickstarter.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -90,21 +85,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/discover/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8079096" vertical-offset="6616" max-vertical-offset="8211">
-              <caret line="406" column="97" selection-start-line="406" selection-start-column="70" selection-end-line="406" selection-end-column="97" />
+            <state vertical-scroll-proportion="-2.5384614" vertical-offset="104" max-vertical-offset="8075">
+              <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="discover.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="discover.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/discover.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="208" max-vertical-offset="765">
-              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.783715" vertical-offset="916" max-vertical-offset="1343">
+              <caret line="72" column="14" selection-start-line="72" selection-start-column="14" selection-end-line="72" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -200,8 +195,8 @@
         <option value="$PROJECT_DIR$/app/controllers/home_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/discover_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/home.css" />
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/discover.css" />
         <option value="$PROJECT_DIR$/app/views/discover/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/stylesheets/discover.css" />
       </list>
     </option>
   </component>
@@ -1226,18 +1221,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/discover.css">
+    <entry file="file://$PROJECT_DIR$/app/views/discover/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="208" max-vertical-offset="765">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state vertical-scroll-proportion="-2.5384614" vertical-offset="104" max-vertical-offset="8075">
+          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/discover/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/discover.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8079096" vertical-offset="6616" max-vertical-offset="8211">
-          <caret line="406" column="97" selection-start-line="406" selection-start-column="70" selection-end-line="406" selection-end-column="97" />
+        <state vertical-scroll-proportion="0.783715" vertical-offset="916" max-vertical-offset="1343">
+          <caret line="72" column="14" selection-start-line="72" selection-start-column="14" selection-end-line="72" selection-end-column="14" />
           <folding />
         </state>
       </provider>
