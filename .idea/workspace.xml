@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31fa37c0-7785-44b6-9d12-f7360ecd0370" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/discover.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/discover.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/discover/index.html.erb" afterPath="$PROJECT_DIR$/app/views/discover/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/projects/shared/_show_comments.html.erb" afterPath="$PROJECT_DIR$/app/views/projects/shared/_show_comments.html.erb" />
     </list>
     <ignored path="kickstarter.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,16 +44,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="project.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/project.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1088">
-              <caret line="29" column="20" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/projects/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
@@ -88,14 +77,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/discover/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.68079096" vertical-offset="558" max-vertical-offset="2346">
+            <state vertical-scroll-proportion="-9.269231" vertical-offset="558" max-vertical-offset="2346">
               <caret line="381" column="23" selection-start-line="381" selection-start-column="23" selection-end-line="381" selection-end-column="23" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_show_comments.html.erb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/projects/shared/_show_comments.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.53678477" vertical-offset="347" max-vertical-offset="714">
+              <caret line="32" column="63" selection-start-line="32" selection-start-column="63" selection-end-line="32" selection-end-column="63" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -151,7 +150,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/views/projects/shared/_edit_about_you.html.erb" />
         <option value="$PROJECT_DIR$/app/views/projects/shared/_edit_accounts.html.erb" />
         <option value="$PROJECT_DIR$/app/views/projects/my_projects.html.erb" />
         <option value="$PROJECT_DIR$/app/views/discover/show.html.erb" />
@@ -202,6 +200,7 @@
         <option value="$PROJECT_DIR$/app/views/home/index.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/discover.css" />
         <option value="$PROJECT_DIR$/app/views/discover/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/projects/shared/_show_comments.html.erb" />
       </list>
     </option>
   </component>
@@ -829,14 +828,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/locales/views/pledges/en.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="656">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/locales/views/posts/vi.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18140244" vertical-offset="0" max-vertical-offset="656">
@@ -1239,11 +1230,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/discover/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.68079096" vertical-offset="558" max-vertical-offset="2346">
+        <state vertical-scroll-proportion="-9.269231" vertical-offset="558" max-vertical-offset="2346">
           <caret line="381" column="23" selection-start-line="381" selection-start-column="23" selection-end-line="381" selection-end-column="23" />
           <folding>
             <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/projects/shared/_show_comments.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.53678477" vertical-offset="347" max-vertical-offset="714">
+          <caret line="32" column="63" selection-start-line="32" selection-start-column="63" selection-end-line="32" selection-end-column="63" />
+          <folding />
         </state>
       </provider>
     </entry>
