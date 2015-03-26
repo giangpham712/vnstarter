@@ -136,15 +136,31 @@
         });
 
         $(".datetimepicker").each(function(i, o) {
-            $(o).datetimepicker({
+
+            var $target = $($(this).data("target"));
+            var defaultDate = $target.val();
+
+            var picker = $(o).datetimepicker({
                 inline: true,
-                locale: 'vi'
+                locale: "vi",
+                format: "DD-MM-YYYY HH:mm"
             });
 
-            $(o).on("dp.change", function(e) {
-                var $target = $($(this).data("target"));
+            picker.data("DateTimePicker").date(defaultDate);
+
+            picker.on("dp.change", function(e) {
                 $target.val(e.date.format("DD-MM-YYYY HH:mm"));
             });
+
+        });
+
+        $(".currency").autoNumeric('init', {
+            aSep: ".",
+            aDec: ",",
+            mDec: 0,
+            lZero: "deny",
+            pSign: "s",
+            aSign: " đồng"
         });
 
         $(".modal").on("hide.bs.modal", function () {

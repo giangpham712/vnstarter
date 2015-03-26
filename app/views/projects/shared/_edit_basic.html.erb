@@ -90,8 +90,9 @@
             </div>
 
             <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-              <ul class="options">
-                <li class="option <%= "selected" if @project.duration_type == "duration" %>">
+              <% if @project.initiating? %>
+                  <ul class="options">
+                    <li class="option <%= "selected" if @project.duration_type == "duration" %>">
                   <span class="select">
                     <%= f.radio_button :duration_type, "duration", id: "duration_duration" %>
                     <label for="duration_duration">Tổng số ngày</label>
@@ -99,18 +100,19 @@
                   <span class="value">
                     <%= f.text_field :duration, class: 'form-control' %>
                   </span>
-                </li>
-                <li class="option <%= "selected" if @project.duration_type == "deadline" %>">
+                    </li>
+                    <li class="option <%= "selected" if @project.duration_type == "deadline" %>">
                   <span class="select">
                     <%= f.radio_button :duration_type, "deadline", id: "duration_deadline" %>
                     <label for="duration_deadline">Ngày kết thúc</label>
                   </span>
                   <span class="value">
-                    <%= f.text_field :deadline, class: 'form-control', id: 'deadline' %>
+                    <%= f.text_field :deadline, class: 'form-control', value: @project.deadline.strftime("%d-%m-%Y %H:%M"), id: 'deadline' %>
                     <div class="datetimepicker" data-target="#deadline"></div>
                   </span>
-                </li>
-              </ul>
+                    </li>
+                  </ul>
+              <% end %>
             </div>
           </div>
           <div class='form-element'>

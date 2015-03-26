@@ -20,6 +20,7 @@
 //= require angular-animate
 //= require angular-ui-router
 //= require accountingjs/accounting
+//= require autoNumeric
 //= require_tree .
 
 (function ($) {

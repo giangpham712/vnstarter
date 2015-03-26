@@ -67,7 +67,13 @@ class ProjectsController < ApplicationController
 
     @project = Project.friendly.find(params[:id])
 
-    @project.duration_type = "duration"
+    if @project.deadline == nil
+      @project.deadline = Time.zone.now
+      @project.duration_type = "duration"
+    else
+      @project.duration = 0
+      @project.duration_type = "deadline"
+    end
 
     if (@project.creator_id != current_user.id)
       redirect_to root_path
@@ -78,6 +84,18 @@ class ProjectsController < ApplicationController
   def update
     project = Project.friendly.find(params[:id])
     params = project.launched ? launched_project_params : project_params
+
+    case params[:duration_type]
+      when "duration"
+        params[:deadline] = nil
+      when "deadline"
+        params[:duration] = 0
+      else
+        params[:deadline] = nil
+        params[:duration] = 0
+    end
+
+    params[:funding_goal] = params[:funding_goal].tr('.','')
 
     if project.update(params)
       render json: {:success => true, :project => project}
@@ -134,12 +152,12 @@ class ProjectsController < ApplicationController
   end
 
   private
-  def project_params
-    params.require(:project).permit(:title, :location, :category_id, :short_description, :funding_goal, :duration_type, :duration, :deadline, :image)
-  end
+    def project_params
+      params.require(:project).permit(:title, :location, :category_id, :short_description, :funding_goal, :duration_type, :duration, :deadline, :image)
+    end
 
-  def launched_project_params
-    params.require(:project).permit(:title, :location, :category_id, :short_description, :image)
-  end
+    def launched_project_params
+      params.require(:project).permit(:title, :location, :category_id, :short_description, :image)
+    end
 
 end
