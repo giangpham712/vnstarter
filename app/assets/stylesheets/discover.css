@@ -39,15 +39,10 @@
 
 }
 
-.discover-left-info {
-    text-align: left;
-    padding-left: 50px !important;
-}
-
 .project-of-the-day {
-    margin-bottom: 40px;
     font-size: 20px;
     font-weight: bold;
+    margin: 20px;
 }
 
 .bg-blue {
@@ -71,4 +66,8 @@
 
 #discover .categories .category {
     padding: 20px 0;
+}
+
+#discover .categories .category .content-box-text {
+    padding-top: 20px;
 }
