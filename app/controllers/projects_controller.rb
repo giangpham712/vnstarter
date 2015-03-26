@@ -67,6 +67,8 @@ class ProjectsController < ApplicationController
 
     @project = Project.friendly.find(params[:id])
 
+    @project.duration_type = "duration"
+
     if (@project.creator_id != current_user.id)
       redirect_to root_path
     end
@@ -133,7 +135,7 @@ class ProjectsController < ApplicationController
 
   private
   def project_params
-    params.require(:project).permit(:title, :location, :category_id, :short_description, :funding_goal, :duration, :deadline, :image)
+    params.require(:project).permit(:title, :location, :category_id, :short_description, :funding_goal, :duration_type, :duration, :deadline, :image)
   end
 
   def launched_project_params

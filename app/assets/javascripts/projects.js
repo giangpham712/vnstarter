@@ -75,9 +75,10 @@
         $("#project_edit .options .option").each(function(i, o) {
             $(o).find("input").click(function() {
                 $("#project_edit .options .option").removeClass("selected");
-                $("#project_edit .options input[type=text]").val("");
+                $("#project_edit .options input[type=text]").prop('disabled', true);
 
                 $(o).addClass("selected");
+                $(o).find("input[type=text]").prop('disabled', false);
             });
         });
 
@@ -142,7 +143,7 @@
 
             $(o).on("dp.change", function(e) {
                 var $target = $($(this).data("target"));
-                $target.val(e.date.format("DD/MM/YYYY HH:mm"));
+                $target.val(e.date.format("DD-MM-YYYY HH:mm"));
             });
         });
 

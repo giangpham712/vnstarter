@@ -91,18 +91,18 @@
 
             <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
               <ul class="options">
-                <li class="option selected">
+                <li class="option <%= "selected" if @project.duration_type == "duration" %>">
                   <span class="select">
-                    <input type="radio" checked id="duration_duration" name="duration"/>
+                    <%= f.radio_button :duration_type, "duration", id: "duration_duration" %>
                     <label for="duration_duration">Tổng số ngày</label>
                   </span>
                   <span class="value">
                     <%= f.text_field :duration, class: 'form-control' %>
                   </span>
                 </li>
-                <li class="option">
+                <li class="option <%= "selected" if @project.duration_type == "deadline" %>">
                   <span class="select">
-                    <input type="radio" id="duration_deadline" name="duration"/>
+                    <%= f.radio_button :duration_type, "deadline", id: "duration_deadline" %>
                     <label for="duration_deadline">Ngày kết thúc</label>
                   </span>
                   <span class="value">
