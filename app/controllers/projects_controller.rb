@@ -89,17 +89,21 @@ class ProjectsController < ApplicationController
     project = Project.friendly.find(params[:id])
     params = project.launched ? launched_project_params : project_params
 
-    case params[:duration_type]
-      when "duration"
-        params[:deadline] = nil
-      when "deadline"
-        params[:duration] = 0
-      else
-        params[:deadline] = nil
-        params[:duration] = 0
-    end
+    if project.initiating?
 
-    params[:funding_goal] = params[:funding_goal].tr('.', '')
+      case params[:duration_type]
+        when "duration"
+          params[:deadline] = nil
+        when "deadline"
+          params[:duration] = 0
+        else
+          params[:deadline] = nil
+          params[:duration] = 0
+      end
+
+      params[:funding_goal] = params[:funding_goal].tr('.', '')
+
+    end
 
     if project.update(params)
       render json: {:success => true, :project => project}
@@ -125,7 +129,7 @@ class ProjectsController < ApplicationController
       deadline = launched_at + duration.days
     else
       deadline = project.deadline
-      duration = (deadline - launched_at).to_i
+      duration = (deadline - launched_at).to_i / 1.day
     end
 
     if project.update_attributes(

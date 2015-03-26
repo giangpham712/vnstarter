@@ -35,7 +35,7 @@
                 </span>
             </div>
             <div class="side-top">
-              <span class='number-day'> 21  </span>
+              <span class='number-day'> <%= (@project.deadline - @project.launched_at).to_i / 1.day %>  </span>
               <br>
               <br>
               <span class='backer'> ngày còn lại </span>
@@ -56,7 +56,7 @@
 
             <div>
               <p>
-                Dự án được khởi động lúc <%= @project.launched_at.strftime("%I:%M ngày %d/%m/%Y") %>
+                Dự án được khởi động lúc <%= @project.launched_at.strftime("%I:%M ngày %d/%m/%Y") %>
               </p>
             </div>
           </div>

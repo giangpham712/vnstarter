@@ -13,12 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-fileupload/basic
-//= require bootstrap
+//= require jquery.scrollTo/jquery.scrollTo
+//= require jquery.localScroll/jquery.localScroll
 //= require moment/min/moment-with-locales
+//= require bootstrap
 //= require bootstrap3-datetimepicker
-//= require angular
-//= require angular-animate
-//= require angular-ui-router
 //= require accountingjs/accounting
 //= require autoNumeric
 //= require_tree .
@@ -40,6 +39,8 @@
                 $(".user-menu .user-dropdown").hide();
             }
         });
+
+        $.localScroll({filter:'.smoothScroll'});
     });
 
 })(jQuery);

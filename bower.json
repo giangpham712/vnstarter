@@ -10,6 +10,8 @@
       "bootstrap3-datetimepicker": "latest",
       "font-awesome": "4.0.3",
       "jquery": "1.9.1",
+      "jquery.scrollTo": "2.1.0",
+      "jquery.localScroll": "1.4.0",
       "slick-carousel": "1.4.1",
       "accountingjs": "latest",
       "autoNumeric": "latest"

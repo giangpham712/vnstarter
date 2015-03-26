@@ -27,6 +27,10 @@ class Project < ActiveRecord::Base
   has_many :posts
   has_many :rewards
 
+  def remaining_days
+    (deadline - launched_at).to_i
+  end
+
   def launched?
     launched_at != nil
   end
