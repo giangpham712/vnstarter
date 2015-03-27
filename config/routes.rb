@@ -24,12 +24,8 @@ Rails.application.routes.draw do
 
   end
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-
-  resources :discover do
-
-  end
+  get 'discover', to: 'discover#index'
+    get 'discover/categories/:id', to: 'discover#category_projects'
 
   resources :projects do
 

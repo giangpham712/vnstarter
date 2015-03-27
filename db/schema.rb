@@ -11,13 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150317075332) do
+ActiveRecord::Schema.define(version: 20150327135029) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",       limit: 255, null: false
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.integer  "parent_id",  limit: 4
+    t.string   "slug",       limit: 255
+    t.string   "icon_class", limit: 255
   end
 
   add_index "categories", ["parent_id"], name: "index_categories_on_parent_id", using: :btree
