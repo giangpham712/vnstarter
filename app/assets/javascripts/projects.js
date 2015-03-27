@@ -180,17 +180,7 @@
             addStoryPost(form);
         });
 
-        $("#story .story-posts > .post .delete").on("click", function (e) {
-
-            var sure = confirm("Bạn có chắc chắn muốn xóa câu chuyện này?");
-
-            if (!sure) {
-                return false;
-            }
-
-            deleteStoryPost($(this).parent());
-
-        });
+        $("#story .story-posts > .post .delete").click(deleteStoryPost);
 
         $("#send-message form").submit(function (e) {
             e.preventDefault();
@@ -288,7 +278,15 @@
         });
     }
 
-    function deleteStoryPost($post) {
+    function deleteStoryPost(e) {
+
+        var sure = confirm("Bạn có chắc chắn muốn xóa câu chuyện này?");
+
+        if (!sure) {
+            return false;
+        }
+
+        var $post = $(this).parent();
         var project_slug = $("#slug").val();
         var post_id = $post.data("post-id");
 
@@ -318,14 +316,18 @@
                     $(form).find(".errors").hide();
 
                     var html = "<div class='post' data-post-id='" + result.post.id + "'>";
-                    html += "<a class='btn btn-primary pull-right edit'><i class='fa fa-pencil'></i></a>";
+                    html += "<a class='btn btn-primary pull-right edit hidden'><i class='fa fa-pencil'></i></a>";
                     html += "<a class='btn btn-danger pull-right delete'><i class='fa fa-times'></i></a>";
                     html += "<h3>" + result.post.title + "</h3>";
                     html += "<div class='image-container'><img src ='" + result.image_url + "' title='" + result.post.title + "' /></div>";
                     html += "<p>" + result.post.body + "</p>";
                     html += "</div>";
 
-                    $("#story .story-posts").append(html);
+                    var $post = $(html);
+
+                    $post.appendTo($("#story .story-posts"));
+                    $post.find(".delete").click(deleteStoryPost);
+
                     $("#add-story-post").modal('hide');
                 } else {
                     $(form).find(".errors").show();
