@@ -2,7 +2,7 @@
 
     $(function() {
 
-        $(".slider").slick({
+        $(".slider-vertical").slick({
             vertical: true,
             arrows: false
         });
