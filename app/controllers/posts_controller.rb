@@ -18,8 +18,17 @@ class PostsController < ApplicationController
     post = project.posts.build(post_params)
 
     if post.save
-      post.image_url = post.image.url
-      render json: { :success => true, :post => post }
+      render json: { :success => true, :post => post, :image_url => post.image.url(:medium) }
+    else
+      render json: { :success => false, :errors => post.errors.full_messages }
+    end
+  end
+
+  def destroy
+    post = Post.find(params[:id])
+
+    if post.destroy
+      render json: { :success => true }
     else
       render json: { :success => false, :errors => post.errors.full_messages }
     end

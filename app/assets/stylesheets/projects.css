@@ -71,6 +71,16 @@
     width: 100%;
 }
 
+
+
+.modal img.loader {
+    visibility: hidden;
+}
+
+.modal.processing img.loader {
+    visibility: visible;
+}
+
 .attachment_upload {
     width: 100%;
     -webkit-box-sizing: border-box;
@@ -662,10 +672,33 @@ div.modal_dialog_body label {
     border: 1px dashed #d9d9de;
     padding: 20px;
     margin-bottom: 10px;
+
+}
+
+#project_edit #story .story-posts .post.deleting {
+    opacity: 0.5;
+}
+
+#project_edit #story .story-posts .post h3 {
+    font-weight: bold;
+}
+
+#project_edit #story .story-posts .post .btn {
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+#project_edit #story .story-posts .post .btn i {
+    margin: 0;
+    color: #fff;
+}
+
+#project_edit #story .story-posts .image-container {
+    text-align: center;
 }
 
 #project_edit #story .story-posts .post img {
-    width: 100%;
+    width: 400px;
 }
 
 #project_show .project-overview .video-container,
@@ -735,10 +768,12 @@ div.modal_dialog_body label {
     background: #ffffff;
     padding-bottom: 10px;
     border-bottom: 1px dashed #ccc;
+    margin-bottom: 20px;
 }
 
 #project_show .story-posts .post h2 {
     padding-bottom: 15px;
+
 }
 
 #project_show .story-posts .post p {
@@ -748,8 +783,12 @@ div.modal_dialog_body label {
     text-align: justify;
 }
 
+#project_show .story-posts .post .image-container {
+    margin-bottom: 20px;
+}
+
 #project_show .story-posts .post img {
-    width: 100%;
+    width: 400px;
 }
 
 #project_show .rewards .reward {

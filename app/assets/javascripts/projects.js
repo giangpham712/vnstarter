@@ -72,8 +72,8 @@
             });
         });
 
-        $("#project_edit .options .option").each(function(i, o) {
-            $(o).find("input").click(function() {
+        $("#project_edit .options .option").each(function (i, o) {
+            $(o).find("input").click(function () {
                 $("#project_edit .options .option").removeClass("selected");
                 $("#project_edit .options input[type=text]").prop('disabled', true);
 
@@ -135,7 +135,7 @@
             });
         });
 
-        $(".datetimepicker").each(function(i, o) {
+        $(".datetimepicker").each(function (i, o) {
 
             var $target = $($(this).data("target"));
             var defaultDate = $target.val();
@@ -148,7 +148,7 @@
 
             picker.data("DateTimePicker").date(defaultDate);
 
-            picker.on("dp.change", function(e) {
+            picker.on("dp.change", function (e) {
                 $target.val(e.date.format("DD-MM-YYYY HH:mm"));
             });
 
@@ -178,6 +178,18 @@
             e.preventDefault();
             var form = this;
             addStoryPost(form);
+        });
+
+        $("#story .story-posts > .post .delete").on("click", function (e) {
+
+            var sure = confirm("Bạn có chắc chắn muốn xóa câu chuyện này?");
+
+            if (!sure) {
+                return false;
+            }
+
+            deleteStoryPost($(this).parent());
+
         });
 
         $("#send-message form").submit(function (e) {
@@ -276,48 +288,41 @@
         });
     }
 
-    function addStoryPost(form) {
-        submitFormAjax(form,
-            function (result) {
-                if (result.success) {
-                    $(form).find(".errors").hide();
+    function deleteStoryPost($post) {
+        var project_slug = $("#slug").val();
+        var post_id = $post.data("post-id");
 
-                    var html = "<div class='post'>";
-                    html += "<div><h2>" + result.post.title + "</h2></div>";
-                    html += "<div><p>" + result.post.body + "</p></div>";
-                    html += "</div>";
+        $post.addClass("deleting");
 
-                    $("#story .story-posts").append(html);
-                    $("#add-story-post").modal('hide');
-                } else {
-                    $(form).find(".errors").show();
-                    var $errors_list = $(form).find(".errors ul");
-                    $errors_list.html("");
-                    $.each(result.errors, function (i, e) {
-                        $("<li>" + e + "</li>").appendTo($errors_list);
-                    });
-                }
+        var request = $.ajax({
+            url: "/projects/" + project_slug + "/posts/" + post_id,
+            type: "DELETE"
+        });
 
-            }, function (result) {
-
-                $("#pledge-money li").click(function (e) {
-                    var amount = $(e.target).data("amount");
-                    var project_slug = $("#slug").val();
-                    window.location.href = "/projects/" + project_slug + "/pledges/new?amount=" + amount;
-                });
-
-            });
+        request.done(function (result) {
+            if (result.success) {
+                $post.remove();
+            } else {
+                $post.removeClass("deleting");
+            }
+        });
     }
 
     function addStoryPost(form) {
+
+        $("#add-story-post").addClass("processing");
+        $("#add-story-post button").prop("disabled", true);
         submitFormAjax(form,
             function (result) {
                 if (result.success) {
                     $(form).find(".errors").hide();
 
-                    var html = "<div class='post'>";
-                    html += "<div><h2>" + result.post.title + "</h2></div>";
-                    html += "<div><p>" + result.post.body + "</p></div>";
+                    var html = "<div class='post' data-post-id='" + result.post.id + "'>";
+                    html += "<a class='btn btn-primary pull-right edit'><i class='fa fa-pencil'></i></a>";
+                    html += "<a class='btn btn-danger pull-right delete'><i class='fa fa-times'></i></a>";
+                    html += "<h3>" + result.post.title + "</h3>";
+                    html += "<div class='image-container'><img src ='" + result.image_url + "' title='" + result.post.title + "' /></div>";
+                    html += "<p>" + result.post.body + "</p>";
                     html += "</div>";
 
                     $("#story .story-posts").append(html);
@@ -330,6 +335,8 @@
                         $("<li>" + e + "</li>").appendTo($errors_list);
                     });
                 }
+                $("#add-story-post").removeClass("processing");
+                $("#add-story-post button").prop("disabled", false);
             },
             function (result) {
                 console.log(result);

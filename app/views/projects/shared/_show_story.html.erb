@@ -6,9 +6,9 @@
           <div class='post'>
             <h2><%= post.title %></h2>
             <% if post.image.exists? %>
-                <img src="<%= post.image.url(:large) %>" title="<%= post.title %>"/>
-                <br/>
-                <br/>
+                <div class="image-container text-center">
+                  <img src="<%= post.image.url(:large) %>" title="<%= post.title %>"/>
+                </div>
             <% end %>
             <p>
               <%= post.body %>
@@ -26,8 +26,9 @@
           <div class="reward">
             <h5>Góp <%= number_to_currency(reward.minimum_pledge_amount, precision: 0) %> hoặc nhiều hơn</h5>
             <br/>
+
             <p>
-                <%= reward.description %>
+              <%= reward.description %>
             </p>
           </div>
       <% end %>
