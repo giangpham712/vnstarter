@@ -31,6 +31,10 @@ class Project < ActiveRecord::Base
     (deadline - launched_at).to_i
   end
 
+  def has_video?
+    return false
+  end
+
   def launched?
     launched_at != nil
   end
