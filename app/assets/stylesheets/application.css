@@ -281,3 +281,68 @@ ul, ol {
     background-image: none;
     height: auto;
 }
+
+h2.section-title {
+  margin-bottom: 40px;
+}
+
+.project-card-list > h2 {
+
+}
+
+.project-card-list .project {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    transition:all 0.5s;
+}
+
+.project-card-list .project:hover {
+
+    box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.1);
+
+}
+
+.project-card-list .project .feature-content {
+    padding: 22px 15px 75px 15px;
+}
+
+.project-card-list .project .project-info {
+    height: 150px;
+    padding: 0;
+}
+
+.project-card-list .project .project-status {
+    position: absolute;
+    padding: 0 10px;
+    padding-top: 70px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #fff 26%);
+    border-radius: 0 0 6px 6px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.project-card-list .project .project-stats {
+    margin-bottom: 0;
+    margin-top: 5px;
+    padding: 0;
+    padding-bottom: 5px;
+}
+
+.project-card-list .project .project-stats-value {
+    color: #0f2105;
+    font-weight: bold;
+}
+
+.project-card-list .project .project-stats-label {
+
+}
+
+.project-card-list .project .project-title {
+    font-family: "Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-transform: none;
+    color: #292929;
+}

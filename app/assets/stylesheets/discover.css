@@ -27,24 +27,6 @@
     border: none !important;
 }
 
-.best-project {
-    border: 1px dotted #ddd;
-    background-color: #fff;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-}
-
-.left-image-container {
-    height: 400px;
-    overflow: hidden;
-
-}
-
-.project-of-the-day {
-    font-size: 20px;
-    font-weight: bold;
-    margin: 20px;
-}
-
 .bg-blue {
     background: #279fbb;
     color: white;
@@ -70,4 +52,47 @@
 
 #discover .categories .category .content-box-text {
     padding-top: 20px;
+}
+
+#discover #categories,
+#discover #staff_picked_projects,
+#discover #featured_projects {
+    padding: 40px 0;
+}
+
+#discover #staff_picked_projects {
+    background: #f7fafa;
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: #d9d9de;
+}
+
+.slider-container .slider-nav {
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: #d9d9de;
+    list-style: none;
+    padding-left: 0;
+}
+
+.slider-container .slider-nav li {
+    border-left: 3px solid transparent;
+    line-height: 30px;
+    margin-left: -1px;
+    padding-left: 20px;
+}
+
+.slider-container .slider-nav li.selected {
+    border-left: 3px solid #279fbb;
+}
+
+.slider-container .slider-nav li a {
+    border-bottom: 1px solid transparent;
+    padding-bottom: 1px;
+    font-size: 14px;
+}
+
+.slider-container .slider-nav li.selected a {
+    border-color: #279fbb;
+    color: #279fbb;
 }
