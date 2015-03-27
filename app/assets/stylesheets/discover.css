@@ -50,8 +50,17 @@
     padding: 20px 0;
 }
 
+#discover .categories .category .content-box {
+    margin: 0 40px;
+}
+
 #discover .categories .category .content-box-text {
-    padding-top: 20px;
+    padding-top: 10px;
+    width: 100%;
+}
+
+#discover .categories .category .content-box-text p {
+    height: 40px;
 }
 
 #discover #categories,

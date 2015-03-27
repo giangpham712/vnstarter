@@ -12,33 +12,28 @@
           <div class="row">
             <div class="categories">
               <% @categories.each do |category| %>
-                <div class="col-md-3 col-sm-3 category">
-                <div class="content-box content-style4 medium animated"
-                     data-animtype="fadeIn"
-                     data-animrepeat="0"
-                     data-animspeed="1s"
-                     data-animdelay="0.2s">
-                  <a href="/discover/show">
-                    <h4 class="h4-body-title">
-                      <i class="<%= category.icon_class %>"></i>
-                          <%= category.name %>
-                    </h4>
-                  </a>
-                  <div class="content-box-text">
-                    Hiện có 345 dự án về nghệ thuật với tỉ lệ vốn đạt 70%, có 123 dự án được
-
-                    <div>
-                      <a href="/discover/show" class=" btn btn-sm btn-discover">
-                        <span>Xem thêm</span>
-                      </a>
+                  <div class="col-md-3 col-sm-3 category">
+                    <div class="content-box content-style4 medium animated"
+                         data-animtype="fadeIn"
+                         data-animrepeat="0"
+                         data-animspeed="1s"
+                         data-animdelay="0.2s">
+                      <%= link_to discover_category_path(category) do %>
+                          <h4 class="h4-body-title">
+                            <i class="<%= category.icon_class %>"></i>
+                            <%= category.name %>
+                          </h4>
+                      <% end %>
+                      <div class="content-box-text">
+                        <p>Có 0 dự án về <%= category.name %></p>
+                        <div>
+                          <%= link_to discover_category_path(category), class: "btn btn-sm btn-discover" do %>
+                              <span>Xem chi tiết</span>
+                          <% end %>
+                        </div>
+                      </div>
                     </div>
-
-
                   </div>
-
-                </div>
-
-              </div>
               <% end %>
             </div>
           </div>

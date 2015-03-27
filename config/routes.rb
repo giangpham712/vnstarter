@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   end
 
   get 'discover', to: 'discover#index'
-    get 'discover/categories/:id', to: 'discover#category_projects'
+  get 'discover/categories/:id', to: 'discover#category_projects', as: 'discover_category'
 
   resources :projects do
 
