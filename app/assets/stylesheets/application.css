@@ -350,3 +350,16 @@ h2.section-title {
     text-transform: none;
     color: #292929;
 }
+
+/* Utilities classes */
+
+.display-table {
+    display: table;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.display-table-cell {
+    display: table-cell;
+    vertical-align: middle;
+}

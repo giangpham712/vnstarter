@@ -11,7 +11,7 @@ class ProjectsController < ApplicationController
 
   end
 
-  def my_projects
+  def my
     @projects = Project.where(user: current_user)
   end
 

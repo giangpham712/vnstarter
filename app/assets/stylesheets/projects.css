@@ -873,45 +873,45 @@ div.modal_dialog_body label {
     background: #f5f5f5;
 }
 
-#my_projects .projects {
+#projects_my .projects {
     padding: 10px 0;
 }
 
-#my_projects .projects .project {
+#projects_my .projects .project {
     border: 1px solid #d9d9de;
     border-radius: 5px;
     margin-bottom: 20px;
 }
 
-#my_projects .projects .project > div {
-    display: inline-block;
+#projects_my .projects .project .image {
+    width: 200px;
 }
 
-#my_projects .projects .project img {
+#projects_my .projects .project .links {
+    width: 33%;
+}
+#projects_my .projects .project .title {
+    width: 66%;
+}
+
+#projects_my .projects .project img {
     width: 160px;
     border-radius: 5px 0 0 5px;
 }
 
-#my_projects .projects .project label {
+#projects_my .projects .project label {
     font-size: 16px;
     color: #000;
-    margin-left: 20px;
-    margin-bottom: 0;
 }
 
-#my_projects .projects .project a,
-#my_projects .projects .project label {
+#projects_my .projects .project a,
+#projects_my .projects .project label {
     line-height: 25px;
     margin-right: 20px;
 }
 
-#my_projects .projects .project a {
+#projects_my .projects .project a {
     color: #279FBB;
-}
-
-#my_projects .projects .project .title,
-#my_projects .projects .project .edit {
-    padding: 45px 0;
 }
 
 .modal .alert.errors {

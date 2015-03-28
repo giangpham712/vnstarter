@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   end
 
-  get 'profile/projects', to: 'projects#my_projects'
+  get 'profile/projects', to: 'projects#my'
 
   post 'profile/avatar', to: 'users#upload_image'
 
@@ -51,6 +51,7 @@ Rails.application.routes.draw do
     end
 
     member do
+      get :manage, to: 'projects#manage', as: 'manage'
       post :launch_project
       post :stop_project
       post :upload_image
