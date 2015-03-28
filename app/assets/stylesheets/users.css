@@ -48,3 +48,9 @@ form .field_with_errors input.form-control {
     font-size: 14px;
     color: #279fbb;
 }
+
+@media (max-width: 992px) {
+    #profile_show #profile_bio p {
+        font-size: 14px;
+    }
+}
