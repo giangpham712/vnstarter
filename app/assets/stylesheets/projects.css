@@ -764,6 +764,10 @@ div.modal_dialog_body label {
     font-size: 13px;
 }
 
+#project_show h3.description {
+
+}
+
 #project_show .creator h5 {
     font-weight: bold;
     color: #000;
@@ -802,6 +806,10 @@ div.modal_dialog_body label {
 
     #project_show .side-top p {
         font-size: 12px;
+    }
+
+    #project_show h3.description {
+        font-size: 20px;
     }
 
     #project_show .creator h5 {
