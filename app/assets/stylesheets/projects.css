@@ -71,8 +71,6 @@
     width: 100%;
 }
 
-
-
 .modal img.loader {
     visibility: hidden;
 }
@@ -128,8 +126,6 @@
 .uploading .encode, .attachment_upload.uploading .encode {
     display: none
 }
-
-
 
 .uploading .upload .progress, .attachment_upload.uploading .upload .progress {
     display: block
@@ -343,6 +339,12 @@
     width: 100%;
 }
 
+@media (max-width: 992px) {
+    .profile-photo .upload, .attachment_upload.profile-photo .upload {
+        width: 260px;
+    }
+}
+
 .form-element ul {
     padding-left: 0;
 }
@@ -373,6 +375,18 @@
 .form-element strong {
     font-weight: normal;
     font-size: 14px;
+}
+
+@media (max-width: 992px) {
+
+    .form-control {
+        font-size: 12px;
+    }
+
+    .form-element strong,
+    .form-element label {
+        font-size: 12px;
+    }
 }
 
 #projects_edit label {
@@ -819,6 +833,10 @@ div.modal_dialog_body label {
 #project_show #show-tabs li:not(.active) a:hover {
     background-color: #fff;
     border-width: 0px;
+}
+
+#project_show .project-content {
+    min-height: 400px;
 }
 
 #project_show .story-posts {
