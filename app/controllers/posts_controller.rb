@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    project = Project.friendly.find(params[:project_id])
+    project = Project.find(params[:project_id])
     post = project.posts.build(post_params)
 
     if post.save

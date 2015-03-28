@@ -3,6 +3,7 @@
 <div class="content-wrapper hide-until-loading">
   <div class="body-wrapper">
     <div class="content-head">
+      <%= hidden_field_tag :project_id, @project.id %>
       <%= hidden_field_tag :slug, @project.slug %>
       <h2 class="text-center"><%= @project.title %></h2>
       <h6 class="text-center">

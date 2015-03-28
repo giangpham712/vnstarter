@@ -52,10 +52,10 @@
 
         $("#project_edit .launch").click(function () {
 
-            var project_slug = $("#slug").val();
+            var project_id = $("#project_id").val();
             $("#saving-layer").show();
             var request = $.ajax({
-                url: "/projects/" + project_slug + "/launch_project",
+                url: "/projects/" + project_id + "/launch_project",
                 type: "POST"
             });
 
@@ -192,8 +192,8 @@
 
         $("#pledge-money li").click(function (e) {
             var amount = $(e.target).data("amount");
-            var project_slug = $("#slug").val();
-            window.location.href = "/projects/" + project_slug + "/pledges/new?amount=" + amount;
+            var project_id = $("#project_id").val();
+            window.location.href = "/projects/" + project_id + "/pledges/new?amount=" + amount;
         });
 
         $("#add-comment").click(function (event) {
@@ -277,8 +277,8 @@
 
             $("#pledge-money li").click(function (e) {
                 var amount = $(e.target).data("amount");
-                var project_slug = $("#slug").val();
-                window.location.href = "/projects/" + project_slug + "/pledges/new?amount=" + amount;
+                var project_id = $("#project_id").val();
+                window.location.href = "/projects/" + project_id + "/pledges/new?amount=" + amount;
             });
 
         });
@@ -293,13 +293,13 @@
         }
 
         var $reward = $(this).parent().parent();
-        var project_slug = $("#slug").val();
+        var project_id = $("#project_id").val();
         var reward_id = $reward.data("reward-id");
 
         $reward.addClass("deleting");
 
         var request = $.ajax({
-            url: "/projects/" + project_slug + "/rewards/" + reward_id,
+            url: "/projects/" + project_id + "/rewards/" + reward_id,
             type: "DELETE"
         });
 
@@ -321,13 +321,13 @@
         }
 
         var $post = $(this).parent();
-        var project_slug = $("#slug").val();
+        var project_id = $("#project_id").val();
         var post_id = $post.data("post-id");
 
         $post.addClass("deleting");
 
         var request = $.ajax({
-            url: "/projects/" + project_slug + "/posts/" + post_id,
+            url: "/projects/" + project_id + "/posts/" + post_id,
             type: "DELETE"
         });
 

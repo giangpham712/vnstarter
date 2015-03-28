@@ -8,7 +8,7 @@
     float: none;
 }
 
-#edit-tabs {
+#project_edit #edit_tabs {
     text-align: center;
     margin-top: 20px;
 }
@@ -34,6 +34,14 @@
 
 #project_edit .tab.launch:hover {
     background-color: #4C8E9D;
+}
+
+@media (max-width: 992px) {
+
+    #project_edit .tab a {
+        padding: 15px 10px;
+    }
+
 }
 
 #project_edit .tab.launch a {
@@ -961,7 +969,7 @@ div.modal_dialog_body label {
 }
 
 #projects_my .projects .project .image {
-    width: 200px;
+    width: 180px;
 }
 
 #projects_my .projects .project .links {

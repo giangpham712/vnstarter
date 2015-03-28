@@ -65,7 +65,7 @@ class ProjectsController < ApplicationController
     @cities = City.all
     @categories = Category.all
 
-    @project = Project.friendly.find(params[:id])
+    @project = Project.find(params[:id])
 
     if @project.initiating?
 
@@ -86,7 +86,7 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    project = Project.friendly.find(params[:id])
+    project = Project.find(params[:id])
     params = project.launched ? launched_project_params : project_params
 
     if project.initiating?
@@ -114,7 +114,7 @@ class ProjectsController < ApplicationController
 
   def launch_project
 
-    project = Project.friendly.find(params[:id])
+    project = Project.find(params[:id])
 
     render json: {:success => false} if project.deleted?
     render json: {:success => false} if project.launched?
@@ -146,7 +146,7 @@ class ProjectsController < ApplicationController
 
   def stop_project
 
-    project = Project.friendly.find(params[:id])
+    project = Project.find(params[:id])
 
     render json: {:success => false} if project.deleted?
     render json: {:success => false} if !project.launched?
@@ -165,7 +165,7 @@ class ProjectsController < ApplicationController
   end
 
   def upload_image
-    project = Project.friendly.find(params[:id])
+    project = Project.find(params[:id])
     puts params[:image]
     if project.update_attributes(:image => params[:project][:image])
       render json: {:success => true, :image_url => project.image.url(:medium)}

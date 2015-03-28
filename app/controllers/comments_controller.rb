@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 
   def create
-    project = Project.friendly.find(params[:project_id])
+    project = Project.find(params[:project_id])
     comment = project.comments.build(comment_params)
 
     user = current_user

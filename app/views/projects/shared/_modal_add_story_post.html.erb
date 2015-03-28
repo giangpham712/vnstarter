@@ -1,7 +1,7 @@
 <div class="modal fade" id='add-story-post' data-remodal-id="modal">
   <div class="modal-dialog">
     <div class="modal-content">
-      <%= form_for [@project, @project.posts.build], :html => { :multipart => true }, method: :post do |f| %>
+      <%= form_for [@project, @project.posts.build], url: project_posts_path(@project.id) , :html => { :multipart => true }, method: :post do |f| %>
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>

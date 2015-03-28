@@ -24,7 +24,7 @@
   </ul>
 
   <h3>Bình luận</h3>
-  <%= form_for([@project, @project.comments.build]) do |f| %>
+  <%= form_for([@project, @project.comments.build], url: project_comments_path(@project.id)) do |f| %>
       <p>
         <%= f.text_area :body, class: 'form-control' %>
       </p>

@@ -10,7 +10,7 @@
         </div>
 
         <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-          <input type="text" name="" id="input" class="form-control" value="" required="required" pattern="" title="">
+          <%= text_field_tag '', current_user.email, readonly: true, class: "form-control" %>
           <br>
           <span><button type="button" class="btn btn-primary">Gửi email xác nhận</button></span>
         </div>
