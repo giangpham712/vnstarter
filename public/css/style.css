@@ -40,7 +40,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-6size: 26px;
+    font-size: 26px;
     line-height: 35px;
 }
 
@@ -6193,26 +6193,7 @@ Testimonial
     padding: 5px 30px 5px 30px;
 }
 
-.number-backer, .number-day {
-    font-weight: bold;
-    font-size: 48px;
-    line-height: 35px;
-    color: black
-}
 
-.number-money {
-    font-weight: bold;
-    font-size: 48px;
-    color: black;
-    line-height: 35px;
-}
-
-.backer {
-    font-weight: bold;
-    color: black;
-    font-size: 14px;
-    line-height: 20px;
-}
 
 .back {
     cursor: pointer;
@@ -6227,11 +6208,6 @@ Testimonial
     line-height: 30px;
     text-align: left !important;
     color: #000 !important;
-}
-
-.side-top {
-    padding: 20px 0 20px 0;
-    line-height: 10px;
 }
 
 .alert {

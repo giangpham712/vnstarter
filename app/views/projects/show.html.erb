@@ -29,23 +29,22 @@
           </div>
           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class="side-top">
-              <span class='number-backer'><%= @total_pledgers %></span><br><br>
-              <span class='backer'>người tham gia góp vốn</span>
+              <h1><%= @total_pledgers %></h1>
+
+              <h3 class='backer'>người tham gia góp vốn</h3>
             </div>
 
             <div class="side-top">
-              <span class='number-money'><%= number_to_currency(@total_pledge_amount, precision: 0) %></span>
-              <br>
-              <br>
-                <span class='backer'>
-                  trên mục tiêu <%= number_to_currency(@project.funding_goal, precision: 0) %> đã được góp
-                </span>
+              <h1><%= number_to_currency(@total_pledge_amount, precision: 0) %></h1>
+
+              <h3>
+                trên mục tiêu <%= number_to_currency(@project.funding_goal, precision: 0) %> đã được góp
+              </h3>
             </div>
             <div class="side-top">
-              <span class='number-day'> <%= (@project.deadline - @project.launched_at).to_i / 1.day %>  </span>
-              <br>
-              <br>
-              <span class='backer'> ngày còn lại </span>
+              <h1> <%= (@project.deadline - @project.launched_at).to_i / 1.day %>  </h1>
+
+              <h3> ngày còn lại </h3>
             </div>
 
             <div class="buttons" role="group" aria-label="...">
@@ -58,8 +57,6 @@
 
               <% end %>
             </div>
-            <br/>
-            <br/>
 
             <div>
               <p>

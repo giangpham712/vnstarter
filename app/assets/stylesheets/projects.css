@@ -705,7 +705,6 @@ div.modal_dialog_body label {
 
 #project_show .project-overview .video-container,
 #project_show .project-overview .image-container {
-    width: 750px;
     padding-right: 20px;
 }
 
@@ -715,6 +714,43 @@ div.modal_dialog_body label {
 
 #project_show .project-overview .buttons .btn + .btn {
     margin-left: 10px;
+}
+
+#project_show .side-top {
+    padding: 20px 0 20px 0;
+    line-height: 10px;
+}
+
+#project_show .side-top h1 {
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 35px;
+    color: black;
+}
+
+#project_show .side-top h3 {
+    font-weight: bold;
+    color: black;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+@media (max-width: 992px) {
+
+    #project_show .side-top {
+        padding: 10px 0 10px 0;
+        line-height: 10px;
+    }
+
+    #project_show .side-top h1 {
+        font-size: 36px;
+        line-height: 24px;
+    }
+
+    #project_show .side-top h3 {
+        font-size: 12px;
+        line-height: 14px;
+    }
 }
 
 #project_show .creator h5 {

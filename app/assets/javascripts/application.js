@@ -30,6 +30,10 @@
             $(".user-menu .user-dropdown").toggle();
         });
 
+        $('.mobile-menu-button').click(function() {
+            $('.mobile-nav').toggle();
+        });
+
         $(document).mouseup(function(e) {
 
             var user_menu = $(".user-menu");

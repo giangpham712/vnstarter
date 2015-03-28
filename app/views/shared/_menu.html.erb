@@ -3,13 +3,15 @@
 
     <div class="row header">
 
-      <div class="col-xs-2 logo">
+      <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2 logo">
         <a href="/">
           <img src="/images/main_logo.png" alt="Logo"/>
         </a>
       </div>
 
-      <div class="col-md-10">
+      <div class="col-xs-9 col-sm-9 col-md-10 col-lg-10">
+
+        <!-- Left hand side navigation -->
         <nav class="pull-left">
           <ul class="main-menu navigation">
             <li>
@@ -21,6 +23,7 @@
           </ul>
         </nav>
 
+        <!-- Right hand side navigation -->
         <nav class="pull-right">
           <ul class="user-menu navigation">
             <% if (!user_signed_in?) %>
@@ -38,19 +41,21 @@
                     <%= image_tag current_user.image.url(:small), class: "circle" %>
                     <span><i class="fa fa-sort-desc"></i></span>
                   </a>
+
                   <div class="user-dropdown">
                     <div class="user-options clearfix">
                       <p class="welcome">
-                        Xin chào <b><%= current_user.name%></b>
+                        Xin chào <b><%= current_user.name %></b>
                       </p>
+
                       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                         <label>Kanzi của tôi</label>
                         <ul class="options">
-                        <!--
-                          <li><a href="">Tin nhắn</a></li>
+                          <!--
+                            <li><a href="">Tin nhắn</a></li>
 
-                          <li><a href="">Dự án đã góp vốn</a></li>
-                          -->
+                            <li><a href="">Dự án đã góp vốn</a></li>
+                            -->
 
                           <li><%= link_to "Thông tin cá nhân", profile_path %></li>
                           <li><%= link_to "Dự án đã tạo", profile_projects_path %></li>
@@ -69,6 +74,7 @@
             <% end %>
           </ul>
         </nav>
+
       </div>
     </div>
   </div>
