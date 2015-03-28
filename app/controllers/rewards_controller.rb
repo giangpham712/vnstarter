@@ -16,6 +16,16 @@ class RewardsController < ApplicationController
 
   end
 
+  def destroy
+    reward = Reward.find(params[:id])
+
+    if reward.destroy
+      render json: { :success => true }
+    else
+      render json: { :success => false, :errors => reward.errors.full_messages }
+    end
+  end
+
   private
     def reward_params
       params.require(:reward).permit(:minimum_pledge_amount, :description, :limit_quantity)

@@ -683,11 +683,13 @@ div.modal_dialog_body label {
     font-weight: bold;
 }
 
+#project_edit #rewards .rewards .reward .btn,
 #project_edit #story .story-posts .post .btn {
     border-radius: 50%;
     margin-left: 5px;
 }
 
+#project_edit #rewards .rewards .reward .btn i,
 #project_edit #story .story-posts .post .btn i {
     margin: 0;
     color: #fff;

@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31fa37c0-7785-44b6-9d12-f7360ecd0370" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/projects/shared/_edit_rewards.html.erb" afterPath="$PROJECT_DIR$/app/views/projects/shared/_edit_rewards.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/projects.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/projects.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/projects.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/projects.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/rewards_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/rewards_controller.rb" />
     </list>
     <ignored path="kickstarter.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,18 +50,28 @@
       <file leaf-file-name="projects.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/projects.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.28611898" vertical-offset="5305" max-vertical-offset="6766">
-              <caret line="318" column="77" selection-start-line="318" selection-start-column="77" selection-end-line="318" selection-end-column="77" />
+            <state vertical-scroll-proportion="0.4305949" vertical-offset="4064" max-vertical-offset="7344">
+              <caret line="248" column="34" selection-start-line="248" selection-start-column="34" selection-end-line="248" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <file leaf-file-name="rewards_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/rewards_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="2023">
-              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="663">
+              <caret line="24" column="57" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_edit_rewards.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/projects/shared/_edit_rewards.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="578">
+              <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -67,18 +80,8 @@
       <file leaf-file-name="_edit_story.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/projects/shared/_edit_story.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.5384617" vertical-offset="544" max-vertical-offset="1241">
-              <caret line="42" column="64" selection-start-line="42" selection-start-column="64" selection-end-line="42" selection-end-column="64" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="posts_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/posts_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="263" max-vertical-offset="816">
-              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+            <state vertical-scroll-proportion="-7.1923075" vertical-offset="544" max-vertical-offset="1241">
+              <caret line="43" column="91" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="91" />
               <folding />
             </state>
           </provider>
@@ -97,8 +100,8 @@
       <file leaf-file-name="projects.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/projects.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="11275" max-vertical-offset="15827">
-              <caret line="678" column="16" selection-start-line="678" selection-start-column="16" selection-end-line="678" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="11530" max-vertical-offset="15861">
+              <caret line="685" column="45" selection-start-line="685" selection-start-column="45" selection-end-line="685" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -109,26 +112,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="731">
               <caret line="8" column="55" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_edit_rewards.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/projects/shared/_edit_rewards.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.9230769" vertical-offset="51" max-vertical-offset="561">
-              <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_modal_add_story_post.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/projects/shared/_modal_add_story_post.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="850">
-              <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -145,7 +128,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/config/locales/views/pledges/en.yml" />
         <option value="$PROJECT_DIR$/config/locales/views/pledges/vi.yml" />
         <option value="$PROJECT_DIR$/app/views/users/registrations/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/users/sessions/new.html.erb" />
@@ -191,10 +173,11 @@
         <option value="$PROJECT_DIR$/app/views/projects/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/projects/shared/_modal_add_story_post.html.erb" />
         <option value="$PROJECT_DIR$/app/views/projects/shared/_show_story.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/projects/shared/_edit_rewards.html.erb" />
         <option value="$PROJECT_DIR$/app/views/projects/shared/_edit_story.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/posts_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/projects.css" />
+        <option value="$PROJECT_DIR$/app/views/projects/shared/_edit_rewards.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/rewards_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/projects.js" />
       </list>
     </option>
@@ -711,14 +694,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/locales/vi.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="656">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/projects/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.2692308" vertical-offset="187" max-vertical-offset="918">
@@ -1054,14 +1029,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/projects/shared/_show_story.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="731">
-          <caret line="8" column="55" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/projects/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.0" vertical-offset="116" max-vertical-offset="2482">
@@ -1078,22 +1045,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/posts_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="263" max-vertical-offset="816">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/projects/shared/_edit_story.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617" vertical-offset="544" max-vertical-offset="1241">
-          <caret line="42" column="64" selection-start-line="42" selection-start-column="64" selection-end-line="42" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="2023">
@@ -1104,24 +1055,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/projects.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="11275" max-vertical-offset="15827">
-          <caret line="678" column="16" selection-start-line="678" selection-start-column="16" selection-end-line="678" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="11530" max-vertical-offset="15861">
+          <caret line="685" column="45" selection-start-line="685" selection-start-column="45" selection-end-line="685" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/projects/shared/_edit_story.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.1923075" vertical-offset="544" max-vertical-offset="1241">
+          <caret line="43" column="91" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/projects/shared/_show_story.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="731">
+          <caret line="8" column="55" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/posts_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8142077" vertical-offset="263" max-vertical-offset="816">
+          <caret line="33" column="7" selection-start-line="27" selection-start-column="4" selection-end-line="33" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/projects/shared/_edit_rewards.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9230769" vertical-offset="51" max-vertical-offset="561">
-          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="578">
+          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/rewards_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="663">
+          <caret line="24" column="57" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/projects.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28611898" vertical-offset="5305" max-vertical-offset="6766">
-          <caret line="318" column="77" selection-start-line="318" selection-start-column="77" selection-end-line="318" selection-end-column="77" />
+        <state vertical-scroll-proportion="0.4305949" vertical-offset="4064" max-vertical-offset="7344">
+          <caret line="248" column="34" selection-start-line="248" selection-start-column="34" selection-end-line="248" selection-end-column="34" />
           <folding />
         </state>
       </provider>

@@ -180,7 +180,9 @@
             addStoryPost(form);
         });
 
-        $("#story .story-posts > .post .delete").click(deleteStoryPost);
+        $("#story .story-posts .post .delete").click(deleteStoryPost);
+
+        $("#rewards .rewards .reward .delete").click(deleteReward);
 
         $("#send-message form").submit(function (e) {
             e.preventDefault();
@@ -248,14 +250,18 @@
                     precision: 0
                 });
 
-                var html = "<div class='form-element'><div class='reward'>";
+                var html = "<div class='form-element'><div class='reward' data-reward-id='" + result.reward.id + "'>";
                 html += "<div class='col-xs-4 col-sm-4 col-md-4 col-lg-4'>" + "Phần thưởng " + (counter + 1) + "</div>";
                 html += "<div class='col-xs-8 col-sm-8 col-md-8 col-lg-8'>";
-                html += "<h3>Góp <strong>" + amount + "</strong> hoặc nhiều hơn</h3>";
+                html += "<a class='btn btn-danger pull-right delete'><i class='fa fa-times'></i></a>";
+                html += "<h3>Góp <b>" + amount + "</b> hoặc nhiều hơn</h3>";
                 html += "<p>" + result.reward.description + "</p>";
                 html += "</div></div></div>";
 
-                $("#rewards .rewards").append(html);
+                var $reward = $(html);
+
+                $reward.appendTo($("#rewards .rewards"));
+                $reward.find(".delete").click(deleteReward);
                 $("#add-reward").modal('hide');
 
             } else {
@@ -275,6 +281,34 @@
                 window.location.href = "/projects/" + project_slug + "/pledges/new?amount=" + amount;
             });
 
+        });
+    }
+
+    function deleteReward(e) {
+
+        var sure = confirm("Bạn có chắc chắn muốn xóa phần thưởng này?");
+
+        if (!sure) {
+            return false;
+        }
+
+        var $reward = $(this).parent().parent();
+        var project_slug = $("#slug").val();
+        var reward_id = $reward.data("reward-id");
+
+        $reward.addClass("deleting");
+
+        var request = $.ajax({
+            url: "/projects/" + project_slug + "/rewards/" + reward_id,
+            type: "DELETE"
+        });
+
+        request.done(function (result) {
+            if (result.success) {
+                $reward.parent().remove();
+            } else {
+                $reward.removeClass("deleting");
+            }
         });
     }
 
