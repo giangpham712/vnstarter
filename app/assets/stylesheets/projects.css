@@ -738,23 +738,8 @@ div.modal_dialog_body label {
     margin-bottom: 0;
 }
 
-@media (max-width: 992px) {
-
-    #project_show .side-top {
-        padding: 5px 0 10px 0;
-        line-height: 10px;
-        margin-bottom: 10px;
-    }
-
-    #project_show .side-top h1 {
-        font-size: 36px;
-        line-height: 24px;
-    }
-
-    #project_show .side-top h3 {
-        font-size: 12px;
-        line-height: 14px;
-    }
+#project_show .side-top p {
+    font-size: 13px;
 }
 
 #project_show .creator h5 {
@@ -774,6 +759,40 @@ div.modal_dialog_body label {
     border-style: solid;
     border-color: #d9d9de;
 }
+
+@media (max-width: 992px) {
+
+    #project_show .side-top {
+        padding: 5px 0 10px 0;
+        line-height: 10px;
+        margin-bottom: 10px;
+    }
+
+    #project_show .side-top h1 {
+        font-size: 36px;
+        line-height: 24px;
+    }
+
+    #project_show .side-top h3 {
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    #project_show .side-top p {
+        font-size: 12px;
+    }
+
+    #project_show .creator h5 {
+        font-size: 14px;
+        margin-right: -20px;
+    }
+
+    #project_show .creator a {
+        font-size: 12px;
+    }
+}
+
+
 
 #project_show .project-content {
     padding: 40px 0;
