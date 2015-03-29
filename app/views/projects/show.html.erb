@@ -53,7 +53,7 @@
                 <a class="btn btn-lg btn-blue" data-toggle="modal" href='#view-story'>Câu chuyện</a>
                 -->
               <% if !(current_user && @project.creator_id == current_user.id) %>
-                  <button class="btn btn-lg btn-primary" data-toggle="modal" href='#pledge-money'>Đóng góp</button>
+                  <button class="btn btn-lg btn-primary btn-discover" data-toggle="modal" href='#pledge-money'>Đóng góp</button>
               <% else %>
 
               <% end %>

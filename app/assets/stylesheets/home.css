@@ -5,7 +5,7 @@
 
  */
 
-.jumbotron {
+ .jumbotron {
     position: relative;
     width: 100%;
     background-position: center center;
@@ -305,13 +305,35 @@ div.sticky-nav dl.sub-nav dd.active a {
 }
 .sub-nav > dd:active{
     background-color: #00c0ef;
-   
+
 }
 .content-box{
     text-align: justify;
 }
 #why-left{padding-left: 200px}
 #why-right{padding-right: 200px}
+#home-why{
+    text-align: center;
+}
+#home-why .btn-discover{
+    height: 42px !important;
+}
+#why-intro{
+    font-weight: 200;
+    color: #999;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    padding: 0 50px 0 50px;
+    width: 680px;
+}
+.why-top{
+    text-align: center;
+}
+#why .content-box.style5.small .content-box-text{
+    margin-left: 0; 
+    text-align: justify;
+}
+
 
 
 

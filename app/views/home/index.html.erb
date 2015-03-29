@@ -27,14 +27,14 @@
         <dd data-magellan-arrival="ideas" class="smoothScroll"><a href="#ideas" class="smoothScroll" >Những nhà đầu tư hàng đầu</a></dd>
         -->
         <dd data-magellan-arrival="why" class="smoothScroll">
-          <a href="/home/about" class="smoothScroll">Vì sao tham gia Vnstarter</a></dd>
+          <a href="/home/about" class="smoothScroll">Vì sao chọn Vnstarter</a></dd>
       </dl>
     </div>
 
-    <div id="featured_projects" class="alt-bg">
+    <div id="featured_projects">
       <div class="container">
         <div class="project-card-list">
-          <h2 class="section-title">Dự án nổi bật</h2>
+          <h2 class="section-title"></h2>
 
           <div class="row">
             <% @projects.each do |project| %>
@@ -61,37 +61,14 @@
                         <p><span class="fa fa-map-marker"></span>&nbsp;<%= project.location %></p>
 
                         <div class="progress">
-                          <div class="progress-bar animated" role="progressbar" aria-valuenow="<%= project.pledges.sum(:pledge_amount) / project.funding_goal * 100 %>%"
+                          <div class="progress-bar animated" role="progressbar" aria-valuenow="<%= project.pledges.sum(:pledge_amount)*100 %>%"
                                aria-valuemin="0" aria-valuemax="100"
                                data-animtype="animate-progress"
                                data-animrepeat="0">
                           </div>
                         </div>
                         <ul class="project-stats">
-                            <li>
-                              <div class="project-stats-value">
-                                <%= number_to_percentage(project.pledges.sum(:pledge_amount) / project.funding_goal * 100) %>
-                              </div>
-                              <div class="project-stats-label">
-                                mục tiêu
-                              </div>
-                            </li>
-                            <li>
-                              <div class="project-stats-value">
-                                <%= number_to_currency(100000, precision: 0) %>
-                              </div>
-                              <div class="project-stats-label">
-                                được góp
-                              </div>
-                            </li>
-                          <li>
-                            <div class="project-stats-value">
-                              <%= (project.deadline - project.launched_at).to_i / 1.day %> ngày
-                            </div>
-                            <div class="project-stats-label">
-                              còn lại
-                            </div>
-                          </li>
+
                         </ul>
                       </div>
                     </div>
@@ -102,7 +79,125 @@
         </div>
       </div>
     </div>
-
-    <div id="" style="height: 500px"></div>
   </div>
+  
+
+<!-- why -->
+<div class="container" id='why'>
+  
+
+<div class="row">
+                            <div class="col-md-12 col-sm-12 animated why-top"  data-animtype="fadeInUp"
+                                 data-animrepeat="0"
+                                 data-speed="1s"
+                                 data-delay="0.4s">
+                                <h2 class="h2-section-title">VNSTARTER</h2>
+                                <p id='why-intro' class='container'>VNSTARTER là sân chơi kinh doanh đầu tiên tại Việt Nam, góp phần đưa ước mơ của những người trẻ tuổi có cơ hội được tiếp cận cộng đồng, nhà đầu tư</p>
+                            </div>
+                        </div>
+                        <div class="space-sep40"></div>
+                         <div class="row">
+                            <div class="col-md-3 col-sm-3"> 
+                                
+                            </div>
+                            <div class="col-md-3 col-sm-3"> 
+                                <div class="content-box style5 small  animated"
+                                     data-animtype="fadeIn"
+                                     data-animrepeat="0"
+                                     data-animspeed="1s"
+                                     data-animdelay="0.2s"
+                                     >
+                                    <h4 class="h4-body-title">
+                                        
+                                        <strong> Sự tin tưởng </strong> 
+                                    </h4>
+                                    <div class="content-box-text">
+                                       Được xây dựng và đảm bảo của hơn 50 CEO nổi tiếng tại Việt Nam
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3"> 
+                                <div class="content-box style5 small  animated"
+                                     data-animtype="fadeIn"
+                                     data-animrepeat="0"
+                                     data-animspeed="1s"
+                                     data-animdelay="0.2s"
+                                     >
+                                    <h4 class="h4-body-title">
+                                        
+                                        <strong> Tính cộng đồng </strong> 
+                                    </h4>
+                                    <div class="content-box-text">
+                                       Mang dự án của bạn ra thế giới, mỗi dự án của bạn sẽ có 1 trang riêng trên VNSTARTER
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3"> 
+                                
+                            </div>
+
+
+                        </div>
+                        <div class="space-sep40"></div>
+
+                        <div class="row">
+                            <div class="col-md-3 col-sm-3"> 
+                                
+                            </div>
+                            <div class="col-md-3 col-sm-3"> 
+                                <div class="content-box style5 small  animated"
+                                     data-animtype="fadeIn"
+                                     data-animrepeat="0"
+                                     data-animspeed="1s"
+                                     data-animdelay="0.2s"
+                                     >
+                                    <h4 class="h4-body-title">
+                                       
+                                        <strong> Tính tiện dụng</strong> 
+                                    </h4>
+                                    <div class="content-box-text">
+                                        Đội ngũ kỹ thuật viên luôn tối ưu hóa website cũng như các phần mềm di động dể mọi người có thể đẽ dàng sử dụng nhất
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3"> 
+                                <div class="content-box style5 small  animated"
+                                     data-animtype="fadeIn"
+                                     data-animrepeat="0"
+                                     data-animspeed="1s"
+                                     data-animdelay="0.2s"
+                                     >
+                                    <h4 class="h4-body-title">
+                                       
+                                        <strong> Tính khả thi </strong> 
+                                    </h4> 
+                                    <div class="content-box-text">
+                                        Cộng đồng mạnh mẽ, dự án của bạn sẽ được huy động vốn nhanh nhất có thể. VNSTARTER sẽ chỉ cần 3% số tiền dự án của bạn làm kinh phí hoạt động
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3"> 
+                                
+                            </div>
+
+
+                        </div> 
+                          <div class="space-sep40"></div>
+                        <div class="container" id='home-why'>
+                          <a href="/discover" class='btn btn-lg btn-discover'>Bắt đầu ngay</a>
+                        </div>
+                        </div>
+
+                      <!-- why content -->
+
+
 </div>
+ <div class="space-sep40"></div> <div class="space-sep40"></div> <div class="space-sep40"></div><div class="space-sep40"></div>
