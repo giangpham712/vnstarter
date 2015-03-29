@@ -1858,9 +1858,9 @@ button:focus {
 }
 
 button.btn-sm, .btn-sm {
-    padding: 0 15px !important;
+    padding: 0 15px;
     height: 31px;
-    line-height: 31px;
+    line-height: 28px;
 }
 
 button.btn-lg, .btn-lg {
@@ -6046,12 +6046,12 @@ Testimonial
 }
 
 .btn-discover {
-    background: transparent !important;
-    border-radius: 6px !important;
-    border: 2px solid #279fbb !important;
-    color: #279fbb !important;
+    background: transparent;
+    border-radius: 6px;
+    border: 2px solid #279fbb;
+    color: #279fbb;
     margin-top: 15px;
-    height: 31px !important;
+    height: 31px;
     transition: all 0.3s;
 }
 
