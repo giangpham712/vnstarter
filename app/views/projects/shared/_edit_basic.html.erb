@@ -21,7 +21,7 @@
                   <% end %>
                 </div>
                 <div class="upload">
-                  <%= f.file_field :image, autofocus: false, class: 'fileupload', 'data-upload-url' => '/projects/' + @project.slug + '/upload_image' %>
+                  <%= f.file_field :image, autofocus: false, class: 'fileupload', 'data-upload-url' => '/projects/' + @project.id + '/upload_image' %>
                   <strong class="text-center">
                     <%= t("project.edit.basic.choose_image_from_your_computer") %>
                     <span class="has_file_hide">This is the main image associated with your project. Make it count!</span>
