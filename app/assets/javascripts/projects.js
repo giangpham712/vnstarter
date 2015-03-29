@@ -160,7 +160,9 @@
             mDec: 0,
             lZero: "deny",
             pSign: "s",
-            aSign: " đồng"
+            aSign: " đồng",
+            vMin: "1000000",
+            vMax: "1000000000"
         });
 
         $(".modal").on("hide.bs.modal", function () {

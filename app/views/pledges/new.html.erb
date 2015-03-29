@@ -27,7 +27,7 @@
 
                       <span class="pledge_amount"><%= number_to_currency(@pledge.pledge_amount, precision: 0) %></span>
                     </p>
-                    <% if (!@project.rewards.empty?) %>
+                    <% if (!@project.rewards.where("minimum_pledge_amount <= ? ", @pledge.pledge_amount).empty?) %>
                         <p>
                           Với mức đóng góp này, bạn có thể lựa chọn một trong những phần thưởng dưới đây:
                         </p>
@@ -44,7 +44,7 @@
                                   </span>
                             </label>
                           </a>
-                          <% @project.rewards.each do |reward| %>
+                          <% @project.rewards.where("minimum_pledge_amount <= ? ", @pledge.pledge_amount).each do |reward| %>
                               <a href="javascript:void(0);" class="reward">
                                 <label for="reward-<%= reward.id %>">
                                   <input type="radio" id="reward-<%= reward.id %>" value="<%= reward.id %>" name="[pledge]reward_id">

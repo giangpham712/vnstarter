@@ -135,14 +135,37 @@
                           <p><span class="fa fa-map-marker"></span>&nbsp;<%= project.location %></p>
 
                           <div class="progress">
-                            <div class="progress-bar animated" role="progressbar" aria-valuenow="<%= project.pledges.sum(:pledge_amount)*100 %>%"
+                            <div class="progress-bar animated" role="progressbar" aria-valuenow="<%= project.pledges.sum(:pledge_amount) / project.funding_goal * 100 %>%"
                                  aria-valuemin="0" aria-valuemax="100"
                                  data-animtype="animate-progress"
                                  data-animrepeat="0">
                             </div>
                           </div>
                           <ul class="project-stats">
-
+                            <li>
+                              <div class="project-stats-value">
+                                <%= number_to_percentage(project.pledges.sum(:pledge_amount) / project.funding_goal * 100) %>
+                              </div>
+                              <div class="project-stats-label">
+                                mục tiêu
+                              </div>
+                            </li>
+                            <li>
+                              <div class="project-stats-value">
+                                <%= number_to_currency(100000, precision: 0) %>
+                              </div>
+                              <div class="project-stats-label">
+                                được góp
+                              </div>
+                            </li>
+                            <li>
+                              <div class="project-stats-value">
+                                <%= (project.deadline - project.launched_at).to_i / 1.day %> ngày
+                              </div>
+                              <div class="project-stats-label">
+                                còn lại
+                              </div>
+                            </li>
                           </ul>
                         </div>
                       </div>

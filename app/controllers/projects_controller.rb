@@ -43,6 +43,9 @@ class ProjectsController < ApplicationController
     @categories = Category.all
 
     @project = Project.new
+    @project.funding_goal = 1000000
+    @project.duration = 10
+
   end
 
   #View to create a new projects

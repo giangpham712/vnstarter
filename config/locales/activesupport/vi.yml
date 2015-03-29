@@ -67,9 +67,9 @@ vi:
     percentage:
       format:
         # These five are to override number.format and are optional
-        # separator:
-        delimiter: ""
-        precision: 0
+        separator: ","
+        delimiter: "."
+        precision: 1
         # significant: false
         # strip_insignificant_zeros: false
         format: "%n%"
@@ -78,8 +78,8 @@ vi:
     precision:
       format:
         # These five are to override number.format and are optional
-        # separator:
-        delimiter: ""
+        separator: ","
+        delimiter: "."
         precision: 0
         # significant: false
         # strip_insignificant_zeros: false
