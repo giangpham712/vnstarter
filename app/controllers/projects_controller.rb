@@ -43,8 +43,7 @@ class ProjectsController < ApplicationController
     @categories = Category.all
 
     @project = Project.new
-    @project.funding_goal = 1000000
-    @project.duration = 10
+
 
   end
 
@@ -53,7 +52,9 @@ class ProjectsController < ApplicationController
     project = Project.new(project_params)
     user = current_user
     project.creator_id = user.id
-    project.funding_goal = 0
+    @project.funding_goal = 1000000
+    @project.duration = 10
+
     if project.save
       redirect_to edit_project_path(project.id)
     else

@@ -154,6 +154,20 @@
 
         });
 
+        $(".limit-characters").each(function(i, e) {
+            var $input = $(e).find("textarea");
+            var $label = $(e).find("p");
+
+            var max_characters = $input.prop("maxlength");
+
+            $input.keyup(function() {
+                var character_count = $input.val().length;
+                $label.text((max_characters - character_count) + "/" + max_characters);
+            })
+
+            $input.trigger("keyup");
+        });
+
         $(".currency").autoNumeric('init', {
             aSep: ".",
             aDec: ",",

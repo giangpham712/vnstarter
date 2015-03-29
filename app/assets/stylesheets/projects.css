@@ -385,6 +385,20 @@
     font-size: 14px;
 }
 
+.form-element .limit-characters {
+
+}
+
+.form-element .limit-characters p {
+    position: absolute;
+    margin-bottom: 5px;
+    right: 30px;
+    bottom: 0;
+    font-size: 12px;
+    font-weight: bold;
+    color: #828587;
+}
+
 @media (max-width: 992px) {
 
     .form-control {
