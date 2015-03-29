@@ -237,8 +237,32 @@ div.sticky-nav dl.sub-nav dd.active a {
     padding: 40px 0;
 }
 
-#top-pledgers {
+#why {
     padding: 40px 0;
+
+}
+
+#why h1 {
+    margin-bottom: 40px;
+}
+
+#why p {
+    font-size: 14px;
+}
+
+#why .reason {
+    margin: 0 10px;
+}
+
+#why .reason h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+
+}
+
+#why .reason p {
+    font-size: 14px;
+    color: #727e83;
 }
 
 @media only screen and (min-width: 64.063em) {
@@ -310,31 +334,4 @@ div.sticky-nav dl.sub-nav dd.active a {
 .content-box{
     text-align: justify;
 }
-#why-left{padding-left: 200px}
-#why-right{padding-right: 200px}
-#home-why{
-    text-align: center;
-}
-#home-why .btn-discover{
-    height: 42px !important;
-}
-#why-intro{
-    font-weight: 200;
-    color: #999;
-    font-size: 1.125rem;
-    line-height: 1.7;
-    padding: 0 50px 0 50px;
-    width: 680px;
-}
-.why-top{
-    text-align: center;
-}
-#why .content-box.style5.small .content-box-text{
-    margin-left: 0; 
-    text-align: justify;
-}
-
-
-
-
 
