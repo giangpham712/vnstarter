@@ -287,13 +287,11 @@ h2.section-title {
 .project-card-list .project {
     background-color: #fff;
     border-radius: 5px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+
     transition:all 0.5s;
 }
 
 .project-card-list .project:hover {
-
-    box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.1);
 
 }
 
@@ -346,6 +344,10 @@ h2.section-title {
 }
 
 /* Utilities classes */
+
+.alt-bg {
+    background: #f7fafa;
+}
 
 .display-table {
     display: table;
