@@ -375,6 +375,15 @@ h2.section-title {
     }
 }
 
+.body-wrapper a.btn,
+.body-wrapper a.btn:hover {
+    color: #fff;
+}
+
+footer {
+    padding: 40px 0;
+}
+
 /* Utilities classes */
 
 .alt-bg {

@@ -1860,13 +1860,13 @@ button:focus {
 button.btn-sm, .btn-sm {
     padding: 0 15px !important;
     height: 31px;
-    line-height: 28px;
+    line-height: 31px;
 }
 
 button.btn-lg, .btn-lg {
     padding: 0 35px !important;
     height: 43px;
-    line-height: 40px;
+    line-height: 43px;
 }
 
 button.btn.btn-outlined, .btn.btn-outlined {
