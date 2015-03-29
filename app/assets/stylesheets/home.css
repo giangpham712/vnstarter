@@ -209,36 +209,43 @@ div.sticky-nav {
     background: rgba(255, 255, 255, .9)
 }
 
-div.sticky-nav dl.sub-nav {
+div.sticky-nav ul.sub-nav {
     margin: 0 auto !important;
-    padding: 25px;
+    padding: 20px;
     text-align: center
 }
 
-div.sticky-nav dl.sub-nav dd {
+div.sticky-nav ul.sub-nav li {
     margin: 0 2.5rem;
     float: none;
     display: inline-block
 }
 
-div.sticky-nav dl.sub-nav dd a {
+div.sticky-nav ul.sub-nav li a {
     text-transform: uppercase;
-    font-family: "Open Sans Condensed", "Arial Narrow", sans-serif;
+    padding: 7px 15px;
     color: #515151;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
 }
 
-div.sticky-nav dl.sub-nav dd.active a {
-    color: #fff
+div.sticky-nav ul.sub-nav li.active a {
+    border-radius: 3px;
+    background: #279fbb;
+    cursor: default;
+    color: #fff;
+}
+
+body#home {
+    position: relative;
 }
 
 #featured_projects {
-    padding: 40px 0;
+    padding: 80px 0 40px 0;
 }
 
 #why {
-    padding: 40px 0;
+    padding: 80px 0 40px 0;
 
 }
 

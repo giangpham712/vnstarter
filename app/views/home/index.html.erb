@@ -1,8 +1,8 @@
 <% page_title "Vnstarter" %>
 <% body_id "home" %>
+<% body_attributes "data-spy=scroll data-target=#home_nav" %>
 <div class="body-wrapper">
-
-  <div class="content-wrapper">
+  <div id="slider" class="content-wrapper">
     <div class="jumbotron slider">
 
       <div class="slide cool-gradient lazy slick-slide" style="width: 1903px; position: relative; left: -1903px; top: 0px; z-index: 800; opacity: 0; display: table; overflow: hidden; background-image: url(https://cdn.crowdrise.com/library/foundation/img/jumbotron/girl-water.jpg);background-size:100%;" index="1" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
@@ -19,12 +19,15 @@
     </div>
 
     <div class="sticky-nav">
-      <dl class="sub-nav">
-        <dd data-magellan-arrival="top-projects" class="">
-          <a href="#featured_projects" class="smoothScroll">Dự án nổi bật</a></dd>
-        <dd data-magellan-arrival="why" class="smoothScroll">
-          <a href="/home/about" class="smoothScroll">Vì sao chọn Vnstarter</a></dd>
-      </dl>
+      <nav id="home_nav">
+        <ul class="sub-nav nav">
+          <li class="hidden"><a href="#slider"></a></li>
+          <li>
+            <a href="#featured_projects" class="smoothScroll">Dự án nổi bật</a></li>
+          <li>
+            <a href="#why" class="smoothScroll">Vì sao chọn Vnstarter</a></li>
+        </ul>
+      </nav>
     </div>
 
     <div id="featured_projects" class="alt-bg">

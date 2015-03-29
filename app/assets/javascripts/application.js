@@ -44,7 +44,7 @@
             }
         });
 
-        $.localScroll({filter:'.smoothScroll'});
+        $.localScroll({filter:'.smoothScroll', hash: true});
     });
 
 })(jQuery);

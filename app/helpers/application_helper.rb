@@ -7,6 +7,10 @@ module ApplicationHelper
     content_for :body_id, body_id.to_s
   end
 
+  def body_attributes(body_attributes)
+    content_for :body_attributes, body_attributes.to_s
+  end
+
   def capitalize_first_letter(key)
     t(key).mb_chars.capitalize.to_s
   end
