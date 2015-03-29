@@ -57,8 +57,10 @@
             </div>
 
             <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-              <%= f.text_area :short_description, class: 'form-control', :rows => "4" %>
-
+              <div class="limit-characters">
+                <%= f.text_area :short_description, class: 'form-control', :maxlength => "225", :rows => "4" %>
+                <p></p>
+              </div>
             </div>
           </div>
 

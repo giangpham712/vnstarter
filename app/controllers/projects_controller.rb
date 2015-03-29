@@ -54,7 +54,7 @@ class ProjectsController < ApplicationController
     project.creator_id = user.id
     @project.funding_goal = 1000000
     @project.duration = 10
-    
+
     if project.save
       redirect_to edit_project_path(project.id)
     else
