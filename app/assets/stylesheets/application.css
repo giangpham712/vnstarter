@@ -323,7 +323,12 @@ h2.section-title {
     margin-bottom: 0;
     margin-top: 5px;
     padding: 0;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
+}
+
+.project-card-list .project .project-stats li {
+    display: inline-block;
+    margin-right: 20px;
 }
 
 .project-card-list .project .project-stats-value {
@@ -341,6 +346,28 @@ h2.section-title {
     font-weight: 600;
     text-transform: none;
     color: #292929;
+}
+
+@media (max-width: 992px) {
+
+    .project-card-list .project .feature-content {
+        padding: 10px;
+    }
+
+    .project-card-list .project .project-info p,
+    .project-card-list .project .project-status p {
+        font-size: 12px;
+    }
+
+    .project-card-list .project .project-status {
+        position: static;
+        padding: 50px 0;
+        font-size: 12px;
+    }
+
+    .project-card-list .project .project-stats li {
+        margin-right: 8px;
+    }
 }
 
 /* Utilities classes */
