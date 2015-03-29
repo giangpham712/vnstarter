@@ -7,8 +7,8 @@
       <div class="row">
         <div class="col-md-12 col-sm-12">
           <div>
-            <%= hidden_field_tag :id, @project.id %>
-            <%= hidden_field_tag :slug, @project.slug %>
+            <%= hidden_field_tag :project_id, @project.id %>
+            <%= hidden_field_tag :project_slug, @project.slug %>
 
             <% if @project.launched? %>
                 <div class="status alert alert-success alert-dismissible">
