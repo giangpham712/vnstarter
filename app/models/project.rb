@@ -18,7 +18,7 @@ class Project < ActiveRecord::Base
                                     :size => { :less_than => 5.megabytes },
                                     :message => "Only PNG, GIF, JPEG and BMP formats are supported"
 
-  validates_length_of :short_description, maximum: 255
+  validates_length_of :short_description, maximum: 225
 
   belongs_to :user, :class_name => "User", :foreign_key => :creator_id
   belongs_to :category, :class_name => "Category", :foreign_key => :category_id

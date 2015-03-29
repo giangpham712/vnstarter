@@ -26,10 +26,15 @@
                         function (result) {
                             console.log(result);
                             $("#saving-layer").hide();
+                            if (result.success)
+                                displaySuccessMessage();
+                            else
+                                displayErrorMessage(result.errors);
                         },
                         function (result) {
                             console.log(result);
                             $("#saving-layer").hide();
+                            displayErrorMessage();
                         }
                     );
                     break;
@@ -298,6 +303,32 @@
             });
 
         });
+
+
+    }
+
+    function displaySuccessMessage(message) {
+        var $message = $("#message_container .alert-success");
+        $message.show();
+        setTimeout(function() {
+            $message.hide();
+        }, 5000);
+        $("#go_top").trigger('click');
+    }
+
+    function displayErrorMessage(errors) {
+        var $message = $("#message_container .alert-danger");
+        if (errors) {
+            $message.find("ul").html("");
+            $.each(errors, function(i, e) {
+                $message.find("ul").append($("<li>" + e + "</li>"));
+            });
+        }
+        $message.show();
+        setTimeout(function() {
+            $message.hide();
+        }, 5000);
+        $("#go_top").trigger('click');
     }
 
     function deleteReward(e) {

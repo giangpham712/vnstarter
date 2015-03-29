@@ -18,7 +18,6 @@ $(document).ready(function () {
 
     scrollIntervalID = setInterval(stickIt, 10);
 
-
     function stickIt() {
 
         if ($(".original").length > 0) {

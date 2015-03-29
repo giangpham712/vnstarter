@@ -28,6 +28,7 @@ ul, ol {
 
 textarea {
     resize: none;
+    text-align: justify;
 }
 
 .navigation {

@@ -52,8 +52,8 @@ class ProjectsController < ApplicationController
     project = Project.new(project_params)
     user = current_user
     project.creator_id = user.id
-    @project.funding_goal = 1000000
-    @project.duration = 10
+    project.funding_goal = 1000000
+    project.duration = 10
 
     if project.save
       redirect_to edit_project_path(project.id)
@@ -112,7 +112,7 @@ class ProjectsController < ApplicationController
     if project.update(params)
       render json: {:success => true, :project => project}
     else
-      render json: {:success => false, :errors => project.errors}
+      render json: {:success => false, :errors => project.errors.full_messages}
     end
   end
 

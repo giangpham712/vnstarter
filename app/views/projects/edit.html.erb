@@ -10,19 +10,14 @@
             <%= hidden_field_tag :project_id, @project.id %>
             <%= hidden_field_tag :project_slug, @project.slug %>
 
-            <% if @project.launched? %>
-                <div class="status alert alert-success alert-dismissible">
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span></button>
-                  <strong>Dự án đã được khởi động</strong>
-                </div>
-            <% else %>
-                <div class="status alert alert-info alert-dismissible">
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span></button>
-                  <strong>Dự án đang trong quá trình khởi tạo</strong>
-                </div>
-            <% end %>
+            <div id="message_container">
+              <div class="alert alert-success" style="display: none">
+                Thay đổi được lưu thành công
+              </div>
+              <div class="alert alert-danger" style="display: none">
+                <ul class=""></ul>
+              </div>
+            </div>
 
             <div class="tab-container">
               <ul id="edit_tabs" class="etabs clearfix">
@@ -109,9 +104,16 @@
 
             <div class="tools visible" id="toolbar">
               <div class="container">
+                <a href="#header" class="smoothScroll" id="go_top"></a>
+
+                <p class="message alert alert-success centered alert-dismissible" style="display: none">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                  Thay đổi được lưu thành công
+                </p>
                 <ol class="tools-panels pull-right no-margin">
                   <li class="form-tools">
-                    <div id="discard-changes" class="">
+                    <div id="discard-changes" class="hidden">
                       <a class="btn-link" href="javascript:void(0);">Hủy thay đổi</a></div>
                     <div id="save" class="">
                       <a class="btn btn-green" href="javascript:void(0);">Lưu thay đổi</a>

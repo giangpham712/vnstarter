@@ -409,10 +409,24 @@
     .form-element label {
         font-size: 12px;
     }
+
+    .form-element .limit-characters p {
+        position: absolute;
+        margin-bottom: 5px;
+        right: 30px;
+        bottom: 0;
+        font-size: 11px;
+        font-weight: bold;
+        color: #828587;
+    }
 }
 
-#projects_edit label {
-    position: relative;
+#project_edit #message_container {
+    padding: 20px 0 0 0;
+}
+
+#project_edit #message_container .alert-danger ul {
+
 }
 
 #project_edit .form-element .options {
@@ -547,6 +561,7 @@
     position: fixed;
     bottom: 0;
     left: 0;
+    height: 80px;
     -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
     -moz-box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
     -ms-box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
@@ -554,7 +569,8 @@
     box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
     margin-bottom: -100px;
     width: 100%;
-    background-color: rgba(255,255,255,0.95);
+    background-color: rgba(255, 255, 255, .75);
+    z-index: 1000;
 }
 
 #project_edit .tools.visible {
@@ -567,16 +583,21 @@
     padding-bottom: 20px
 }
 
-#project_edit .tools-panels,
-#project_edit .help-panels,
-#project_edit .sidebar-help-panels {
-    list-style: none;
-    margin-bottom: 0
+#project_edit .tools .message {
+    width: 500px;
+    text-align: center;
+    margin-bottom: 0;
 }
 
-#project_edit .tools-panels li,
-#project_edit .help-panels li,
-#project_edit .sidebar-help-panels li {
+#project_edit .tools-panels {
+    list-style: none;
+    margin-bottom: 0;
+    position: absolute;
+    right: 0;
+    top: 24px;
+}
+
+#project_edit .tools-panels li {
     list-style-image: none;
     list-style-type: none;
     margin-left: 0

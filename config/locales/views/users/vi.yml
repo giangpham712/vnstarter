@@ -30,6 +30,6 @@ vi:
         user:
           attributes:
             password:
-              too_short: "phải chứa ít nhất %{count} ký tự"
+              too_short: "phải dài ít nhất %{count} ký tự"
             email:
               taken: "đã được sử dụng"
