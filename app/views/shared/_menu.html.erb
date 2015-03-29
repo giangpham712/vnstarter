@@ -45,11 +45,13 @@
                   <div class="user-dropdown">
                     <div class="user-options clearfix">
                       <p class="welcome">
-                        Xin chào <b><%= current_user.name %></b>
+                        Xin chào <b><%= link_to current_user.name, profile_path %></b>
                       </p>
 
                       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                        <label>Kanzi của tôi</label>
+                      <!--
+                        <a href="/"><label>Vnstarter của tôi</label></a>
+                        -->
                         <ul class="options">
                           <!--
                             <li><a href="">Tin nhắn</a></li>
@@ -62,9 +64,11 @@
                           <li><%= link_to "Đăng xuất", destroy_user_session_path %></li>
                         </ul>
                       </div>
+                      <!--
                       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                         <label>Dự án đã tạo</label>
                       </div>
+                      -->
                     </div>
                     <div class="user-footer">
 
