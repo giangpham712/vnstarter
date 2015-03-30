@@ -2,12 +2,14 @@
 <% body_id "project_pledge" %>
 <div class="content-wrapper hide-until-loading">
   <div class="body-wrapper">
-    <div class="content-head">
-      <%= hidden_field_tag :slug, @project.slug %>
-      <h2><%= @project.title %></h2>
-      <h6 class="text-center">
-        thực hiện bởi <a href="javascript:void(0);"><b><%= @project.user.name %></b></a>
-      </h6>
+    <div class="content-head text-center">
+      <div class="container">
+        <%= hidden_field_tag :slug, @project.slug %>
+        <h2><%= @project.title %></h2>
+        <h6>
+          thực hiện bởi <a href="javascript:void(0);"><b><%= @project.user.name %></b></a>
+        </h6>
+      </div>
     </div>
     <div class="project-content">
       <div class="container">
@@ -92,7 +94,7 @@
       </div>
       <div class="modal-footer">
         <a id='back-to-project' href='/' class="btn btn-primary">Trở lại trang chủ</a>
-        <a id='back-to-project' href='<%=project_path(@project)%>' class="btn btn-primary">Trở lại trang dự án</a>
+        <a id='back-to-project' href='<%= project_path(@project) %>' class="btn btn-primary">Trở lại trang dự án</a>
       </div>
     </div>
   </div>

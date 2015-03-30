@@ -21,183 +21,124 @@ ul, ol {
     list-style-type: none;
 }
 
-#header {
-    height: 68px;
-    border-bottom: 1px solid #ddd;
-}
-
 textarea {
     resize: none;
     text-align: justify;
 }
 
-.navigation {
-    padding: 0 0 0 0;
-    margin: 0;
-    list-style-type: none;
+#header {
+    min-height: 80px;
+    background-color: #252C34;
+    box-shadow: 0 3px 3px -3px rgba(0,0,0,0.2);
 }
 
-.navigation > li {
-    float: left;
-    height: 68px;
-    margin-right: 15px;
+#header .logo {
+    height: 74px;
 }
 
-.navigation > li:last-child {
-    margin-right: 0;
+#header .logo h1 {
+    margin: 10px 0;
 }
 
-/* First Level Styling */
-.navigation > li > a {
-    color: #898989;
-    text-transform: uppercase;
-    font-size: 14px;
-    line-height: 26px;
-    text-decoration: none;
-    display: inline-block;
-    position: relative;
-    padding: 20px 10px;
-    -webkit-perspective: 1000px;
-    -moz-perspective: 1000px;
-    -ms-perspective: 1000px;
-    perspective: 1000px;
+/*** Default Menu Style ***/
+.menu > ul {
+    margin:0;
+    padding:0;
+    list-style:none;
 }
 
-.navigation > li:hover > a,
-.navigation > li > a:hover {
-    color: #279fbb;
-    background-color: #f7fafa;
+.menu > ul > li {
+    position:relative
 }
 
-.navigation > li > a > span.label-nav {
-    float: left;
-    line-height: 20px;
+.menu > ul > li {
+    float:left;
+}
+
+.menu > ul > li:hover > ul {
+    display:block;
+}
+
+.menu > ul > li > a {
     display: block;
-    width: 100%;
-    clear: both;
-    margin: 25px 0 0 0;
+    position: relative;
+    padding: 30px 18px 30px 18px;
 }
 
-.navigation > li > a > span.label-nav-sub {
+.menu > ul > li {
     float: left;
-    line-height: 20px;
-    width: 100%;
-    clear: both;
-    font-size: 12px;
-    color: #bcbcbc;
-    display: inline-block;
-    position: relative;
-    -webkit-transition: -webkit-transform 0.3s;
-    -moz-transition: -moz-transform 0.3s;
-    transition: transform 0.3s;
-    -webkit-transform-origin: 50% 0;
-    -moz-transform-origin: 50% 0;
-    -ms-transform-origin: 50% 0;
-    -o-transform-origin: 50% 0;
-    transform-origin: 50% 0;
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    -ms-transform-style: preserve-3d;
-    -o-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-perspective: 1000px;
-    -moz-perspective: 1000px;
-    -ms-perspective: 1000px;
-    perspective: 1000px;
-    text-transform: capitalize;
 }
 
-.navigation > li > a > span.label-nav-sub::before {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    content: attr(data-hover);
-    -webkit-transition: opacity 0.3s;
-    -moz-transition: opacity 0.3s;
-    transition: opacity 0.3s;
-    -webkit-transform: rotateX(-90deg);
-    -moz-transform: rotateX(-90deg);
-    -ms-transform: rotateX(-90deg);
-    transform: rotateX(-90deg);
-    -webkit-transform-origin: 50% 0;
-    -moz-transform-origin: 50% 0;
-    -ms-transform-origin: 50% 0;
-    -o-transform-origin: 50% 0;
-    transform-origin: 50% 0;
-    opacity: 0;
+.menu > ul > li > a {
+
 }
 
-.navigation > li:hover > a > span.label-nav-sub,
-.navigation > li:hover > a > span.label-nav-sub {
-    -webkit-transform: rotateX(90deg) translateY(-22px);
-    -moz-transform: rotateX(90deg) translateY(-22px);
-    -ms-transform: rotateX(90deg) translateY(-22px);
-    -o-transform: rotateX(90deg) translateY(-22px);
-    transform: rotateX(90deg) translateY(-22px);
-    -ms-transform: none;
+.menu > ul a {
+    text-decoration:none;
+}
+.menu > ul > li > a {
+    color:#fff;
+    font-family: 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    overflow:hidden;
+    border-bottom:3px solid transparent;
 }
 
-.ie10 .navigation > li:hover > a > span.label-nav-sub,
-.ie10 .navigation > li:hover > a > span.label-nav-sub {
-    transform: none;
+.menu > ul > li >a:hover {
+    color:#fff;
 }
 
-.navigation > li:hover > a > span.label-nav-sub::before, .navigation > li:hover > a > span.label-nav-sub::before {
-    color: #279fbb;
-    opacity: 1;
-    opacity: 0 \9;
+.menu > ul > li > a:hover {
+    color:#fff;
 }
 
-.navigation > li > .activelink span.label-nav-sub {
-    color: #585858;
-}
-
-/* set all LI to relative */
-.navigation li {
-    position: relative;
+.menu > ul > li > a:hover,
+.menu > ul > li:hover > a {
+    background-color:#323B44;
+    border-bottom: 3px solid #2eaef0;
 }
 
 .user-menu > li.has-user > a {
     color: #279fbb;
+    border-right: 1px solid #252C34;
 }
 
-.user-menu > li.has-user > a:hover {
-    background-color: #f7fafa;
+.user-menu > li.has-user > a.active {
+    border-bottom-color: #252C34;
+    background: #252C34;
 }
 
 .user-menu > li.has-user > a.active:hover {
-    background-color: #fff;
+    background: #252C34;
 }
 
 .user-menu > li.has-user > a {
-    border-left: solid 1px #d9d9de;
-    border-right: solid 1px #d9d9de;
+    padding-top: 24px;
+    padding-bottom: 24px;
 }
 
 .user-menu > li > a img {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     margin-right: 5px;
 }
 
 .user-menu > li > a i {
     font-size: 14px;
-    color: #000;
+    color: #fff;
 }
 
 .user-menu .user-dropdown {
     width: 500px;
-    background-color: white;
-    border-color: #d9d9de;
-    border-style: solid;
-    border-width: 1px;
+    background-color: #252C34;
     position: absolute;
     right: 0;
     box-shadow: -2px 2px 2px rgba(0,0,0,0.05);
     z-index: 1000;
     display: none;
+    border-bottom: 3px solid #2eaef0;
 }
 
 .user-menu .user-dropdown .user-options {
@@ -206,7 +147,7 @@ textarea {
 
 .user-menu .user-dropdown .welcome {
     padding: 15px;
-    color: #000;
+    color: #fff;
 }
 
 .user-menu .user-dropdown .user-options ul {
@@ -216,7 +157,7 @@ textarea {
 
 .user-menu .user-dropdown .user-options label {
     font-size: 14px;
-    color: #000;
+    color: #fff;
 }
 
 .user-menu .user-dropdown .user-options ul.options li {
@@ -225,20 +166,14 @@ textarea {
 }
 
 .content-head {
-    padding: 20px 0;
+    padding: 40px 0 20px 0;
 }
 
 .content-head h2 {
     font-weight: 700;
-    text-align: center;
     font-size: 32px;
     line-height: 35px;
     margin-bottom: 10px;
-}
-.main-menu > li{
-    border-left: 1px dotted #fff;
-    border-right: 1px dotted #fff;
-    transition: all 0.5s;
 }
 
 .bootstrap-datetimepicker-widget table td {

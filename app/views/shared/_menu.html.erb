@@ -1,19 +1,21 @@
-<header id="header" class='menu'>
+<header id="header">
   <div class="container">
 
     <div class="row header">
 
       <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2 logo">
-        <a href="/">
-          <img src="/images/main_logo.png" alt="Logo"/>
-        </a>
+        <h1>
+          <a href="/">
+            <img src="/images/logo.png" alt="VnStarter" width="125">
+          </a>
+        </h1>
       </div>
 
       <div class="col-xs-9 col-sm-9 col-md-10 col-lg-10">
 
         <!-- Left hand side navigation -->
-        <nav class="pull-left">
-          <ul class="main-menu navigation">
+        <nav class="menu pull-left">
+          <ul>
             <li>
               <a href="/projects/new">Huy động vốn</a>
             </li>
@@ -24,7 +26,7 @@
         </nav>
 
         <!-- Right hand side navigation -->
-        <nav class="pull-right">
+        <nav class="menu pull-right">
           <ul class="user-menu navigation">
             <% if (!user_signed_in?) %>
                 <li>
@@ -39,7 +41,9 @@
                   <%= hidden_field_tag :user_image_url, current_user.image.url %>
                   <a>
                     <%= image_tag current_user.image.url(:small), class: "circle" %>
-                    <span><i class="fa fa-sort-desc"></i></span>
+                    <span class="sf-sub-indicator">
+                           <i class="fa fa-angle-down "></i>
+                    </span>
                   </a>
 
                   <div class="user-dropdown">

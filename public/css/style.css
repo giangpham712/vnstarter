@@ -33,14 +33,13 @@ textarea {
 
 /* H1&H3 for page titles */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Sans Pro', sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
     margin: 0 0 20px 0;
     font-weight: 500;
     color: #4b4b4b;
 }
 
 h1 {
-    font-6size: 26px;
     line-height: 35px;
 }
 
@@ -3287,10 +3286,6 @@ Header Element, Container for - Logo - Navigation - Search
     box-sizing: border-box;
     position: relative;
     height: 66px;
-}
-
-.header .logo {
-    margin: 14px 0 0 0;
 }
 
 .mobile-menu-button {

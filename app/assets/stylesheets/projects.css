@@ -760,6 +760,10 @@ div.modal_dialog_body label {
     width: 400px;
 }
 
+#project_show .project-overview {
+    padding-top: 20px;
+}
+
 #project_show .project-overview .video-container,
 #project_show .project-overview .image-container {
     padding-right: 20px;
@@ -857,11 +861,8 @@ div.modal_dialog_body label {
     }
 }
 
-
-
 #project_show .project-content {
     padding: 40px 0;
-
 }
 
 #project_show #show-tabs li a {

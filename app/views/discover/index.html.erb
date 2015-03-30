@@ -2,12 +2,12 @@
 <% body_id "discover" %>
 <div class="content-wrapper hide-until-loading discover-page">
   <div class="body-wrapper">
-    <div class="content-head">
-      <h2>Hãy chọn dự án mà bạn quan tâm</h2>
+    <div class="content-head text-center">
+      <div class="container"><h2>Hãy chọn lĩnh vực mà bạn quan tâm</h2></div>
     </div>
 
     <div class="content-main">
-      <div id="categories">
+      <div id="categories" class="alt-bg">
         <div class="container">
           <div class="row">
             <div class="categories">
@@ -41,13 +41,13 @@
         </div>
       </div>
 
-      <div id="staff_picked_projects" class="alt-bg">
+      <div id="staff_picked_projects">
         <div class="container">
 
           <div class="slider-container">
             <div class="row">
               <div class="col-md-10 col-sm-10">
-                <div class="slider slider-vertical">
+                <div class="slider-vertical">
                   <div class="project slide">
 
                     <h2 class="section-title">Dự án của tháng: <%= @projects.first.category.name %></h2>
@@ -105,7 +105,7 @@
         </div>
       </div>
 
-      <div id="featured_projects">
+      <div id="featured_projects" class="alt-bg">
         <div class="container">
           <div class="project-card-list">
             <h2 class="section-title">Dự án nổi bật</h2>

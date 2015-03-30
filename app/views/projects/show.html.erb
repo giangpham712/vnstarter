@@ -2,15 +2,17 @@
 <% body_id "project_show" %>
 <div class="content-wrapper hide-until-loading">
   <div class="body-wrapper">
-    <div class="content-head">
+    <div class="content-head text-center">
+      <div class="container">
       <%= hidden_field_tag :project_id, @project.id %>
       <%= hidden_field_tag :slug, @project.slug %>
-      <h2 class="text-center"><%= @project.title %></h2>
-      <h6 class="text-center">
+      <h2><%= @project.title %></h2>
+      <h6>
         thực hiện bởi <a href="javascript:void(0);"><b><%= @project.user.name %></b></a>
       </h6>
+      </div>
     </div>
-    <div class="project-overview">
+    <div class="project-overview alg-bg">
       <div class="container">
         <div>
           <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
