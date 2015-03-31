@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-xs-9 col-sm-9 col-md-8 col-lg-8">
     <div class="row">
-      <div class='form-element'>
+      <div class='form-element hidden'>
         <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
           <label>Video</label>
         </div>
@@ -14,7 +14,7 @@
 
             </div>
             <div class="upload">
-              <%= file_field_tag :image, autofocus: false, class: 'fileupload', 'data-upload-url' => '/profile/avatar' %>
+              <%= file_field_tag :image, autofocus: false, class: 'fileupload', 'data-upload-url' => '/projects/' + @project.id.to_s + '/upload_video' %>
               <strong class="text-center">
                 <%= t("project.edit.story.choose_video_from_your_computer") %>
                 <span><%= t("project.edit.story.support_video_file_formats") %></span>

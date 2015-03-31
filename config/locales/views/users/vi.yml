@@ -24,6 +24,7 @@ vi:
       user:
         name: "Họ và tên"
         password: "Mật khẩu"
+        password_confirmation: "Mật khẩu"
         email: "Email"
     errors:
       models:

@@ -40,13 +40,13 @@
                   </a>
                 </li>
 
-                <li class="tab" role="presentation">
+                <li class="tab last" role="presentation">
                   <a href="#about_you" data-edit-info="profile" aria-controls="home" role="tab" data-toggle="tab">
                     Thông tin cá nhân
                   </a>
                 </li>
 
-                <li class="tab last" role="presentation">
+                <li class="tab hidden" role="presentation">
                   <a href="#accounts" data-edit-info="accounts" aria-controls="home" role="tab" data-toggle="tab">
                     Tài khoản
                   </a>
@@ -88,12 +88,17 @@
                   <div class="tab-guide">
                     <h1>What are you creating?</h1>
 
-                    <h2>Every project must create something to share with others.<br/>
-                      Use this space to tell the story behind your project.</h2>
+                    <h2>Mỗi dự án đều Every project must create something to share with others.<br/>
+                      Hãy kể cho mọi người câu chuyện đằng sau dự án của bạn</h2>
                   </div>
                   <%= render "projects/shared/edit_story" %>
                 </div>
                 <div id="about_you" role="tabpanel">
+                  <div class="tab-guide">
+                    <h1>Hãy chia sẻ đôi điều về bản thân bạn</h1>
+
+                    <h2>Hãy kể cho mọi người biết bạn là ai!</h2>
+                  </div>
                   <%= render "projects/shared/edit_about_you" %>
                 </div>
                 <div id="accounts" role="tabpanel">

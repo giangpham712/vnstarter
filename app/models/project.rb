@@ -2,6 +2,12 @@ class Project < ActiveRecord::Base
   extend FriendlyId
 
   attr_accessor :image, :video, :duration_type
+
+  before_validation(on: [:create, :update]) do
+    self.title = self.title.strip if attribute_present?("title")
+    self.short_description = self.short_description.strip if attribute_present?("short_description")
+  end
+
   has_attached_file :image, :default_url => "/images/no-image-project.png",
                     :styles => {
                         :tiny => "240x180#",

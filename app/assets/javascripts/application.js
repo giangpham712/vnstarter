@@ -42,7 +42,6 @@
 
         $.localScroll({
             filter:'.smoothScroll',
-            hash: true,
             offset: {
                 top: -74
             }

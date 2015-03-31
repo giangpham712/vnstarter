@@ -22,7 +22,7 @@ vi:
   activerecord:
     attributes:
       project:
-        project_title: "Tên dự án"
+        title: "Tên dự án"
         short_description: "Giới thiệu sơ lược"
     errors:
       models:

@@ -1,7 +1,7 @@
 #sign_in form .errors,
 #sign_up form .errors {
     padding: 10px 5px;
-    list-style-type: none;
+    list-style-type: disc;
 }
 
 form .field_with_errors input.form-control {

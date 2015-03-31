@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
                                     :size => { :less_than => 5.megabytes },
                                     :message => "Only PNG, GIF, JPEG and BMP formats are supported"
 
+  validates_length_of :biology, maximum: 225
+
   has_many :projects, :foreign_key => :creator_id
   has_many :comments, :foreign_key => :commenter_id
   has_many :sent_messages, :class_name => 'Message', :foreign_key => 'sender_id'

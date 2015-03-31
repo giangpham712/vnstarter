@@ -421,6 +421,11 @@
     }
 }
 
+#project_new .alert > ul > li,
+#project_edit .alert > ul > li {
+    font-size: 16px;
+}
+
 #project_edit #message_container {
     padding: 20px 0 0 0;
 }

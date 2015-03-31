@@ -2,6 +2,8 @@ class ProjectsController < ApplicationController
   before_action :authenticate_user!, :except => [:index, :show, :new]
   skip_before_filter :verify_authenticity_token, :only => [:upload_image]
 
+
+
   def index
     @projects = Project.where(launched_at: nil, deleted_at: nil, stopped_at: nil)
 
@@ -42,8 +44,7 @@ class ProjectsController < ApplicationController
 
     @categories = Category.all
 
-    @project = Project.new
-
+    @project = Project.new()
 
   end
 
@@ -60,6 +61,9 @@ class ProjectsController < ApplicationController
     else
       @cities = City.all
       @categories = Category.all
+      @project = project
+      @project.category_id = params[:project][:category_id]
+      @project.location = params[:project][:location]
       render 'new'
     end
   end
