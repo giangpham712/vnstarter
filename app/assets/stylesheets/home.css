@@ -279,7 +279,7 @@ body#home {
 }
 
 #why p {
-    font-size: 16px;
+    font-size: 15px;
     color: #fff;
     font-family: "Open Sans";
 }
@@ -296,7 +296,7 @@ body#home {
 }
 
 #why .reason p {
-    font-size: 16px;
+    font-size: 15px;
     color: #fff;
     font-weight: 400;
     font-family: "Open Sans";
@@ -310,29 +310,10 @@ body#home {
     #why {
         background: none;
     }
-}
 
-@media only screen and (min-width: 64.063em) {
-    .large-10 {
-        width: 83.33333%;
+    #why p {
+        font-size: 14px;
     }
-
-    @media only screen and (min-width: 64.063em) {
-        .large-10 {
-            width: 83.33333%;
-        }
-    }
-    @media only screen and (max-width: 320px) {
-        .container, .col-md-4, .col-md-8 {
-            width: 100%
-        }
-
-    }
-
-    .border-bottom {
-        border-bottom: 1px solid #ddd
-    }
-
 }
 
 .text {

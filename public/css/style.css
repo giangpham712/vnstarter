@@ -9,19 +9,6 @@ html {
     overflow-y: scroll;
 }
 
-body, html,
-button,
-input,
-select,
-textarea {
-    font-family: 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
-    color: #666666;
-    margin: 0;
-    font-size: 13px;
-    line-height: 20px;
-    background-color: white;
-}
-
 /** * Address `font-family` inconsistency between `textarea` and other form * elements. */
 html,
 button,
@@ -965,31 +952,6 @@ time {
 .row-fluid.row-no-margin .span11 {
     margin-left: 0;
     width: 91.66667%;
-}
-
-/*
-Header UI Element
-*/
-body, html,
-button,
-input,
-select,
-textarea {
-    font-family: 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
-    color: #666666;
-    margin: 0;
-    font-size: 13px;
-    line-height: 20px;
-    background-color: white;
-}
-
-/** * Address `font-family` inconsistency between `textarea` and other form * elements. */
-html,
-button,
-input,
-select,
-textarea {
-    font-family: sans-serif;
 }
 
 /****************************
@@ -3332,64 +3294,6 @@ Sticky Menu
 
 .header-no-shadow.header:after {
     background-image: none;
-}
-
-.top-bar {
-    height: 36px;
-    background-color: #FBFBFB;
-    line-height: 35px;
-    border-bottom: 1px solid #E9E9E9;
-}
-
-.call-us, .top-bar-block {
-    color: #969696;
-    float: left;
-    margin-right: 10px;
-    padding-right: 10px;
-}
-
-.call-us i, .top-bar-block i {
-    font-size: 22px;
-    line-height: 35px;
-    float: left;
-}
-
-.call-us span, .top-bar-block span {
-    padding-left: 10px;
-    font-size: 11px;
-}
-
-.top-bar-block:last-child {
-    border-right: 0;
-}
-
-.top-bar .social-icons {
-    overflow: hidden;
-    float: right;
-    width: auto;
-}
-
-.top-bar .social-icons > ul {
-    margin: 0;
-    background-color: transparent;
-    float: right;
-}
-
-.top-bar .social-icons .social-media-icon {
-    background-color: transparent;
-    height: 35px;
-    border: none;
-    margin: 0;
-    background-position: 0 -43px;
-}
-
-.top-bar .social-icons .social-media-icon:hover {
-    border: none;
-    background-position: 0 -3px;
-}
-
-.top-bar .social-icons li {
-    float: right;
 }
 
 /****************************

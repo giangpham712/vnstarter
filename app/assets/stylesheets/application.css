@@ -17,6 +17,19 @@
  *= require_self
  */
 
+body, html,
+button,
+input,
+select,
+textarea {
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
+    color: #666666;
+    margin: 0;
+    font-size: 13px;
+    line-height: 20px;
+    background-color: white;
+}
+
 ul, ol {
     list-style-type: none;
 }
@@ -31,6 +44,57 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 0 20px 0;
     font-weight: 500;
     color: #4b4b4b;
+}
+
+.top-bar {
+    min-height: 30px;
+    background: #272727;
+    border-bottom: 1px solid #414f5a;
+    padding: 7px 0;
+    line-height: 38px;
+}
+
+.top-bar .phone-email {
+    padding: 3px 0;
+}
+
+.top-bar .phone-email a {
+    margin-right: 20px;
+    color: #fff;
+}
+
+.top-bar .phone-email i {
+    margin-right: 7px;
+}
+
+.top-bar .social, footer .social {
+    margin-right: 4px;
+    line-height: 44px;
+    margin-bottom: 0;
+}
+
+.top-bar .social li, footer .social li {
+    background-color: transparent;
+    border: 2px solid #fafafa;
+    border-radius: 100% 100% 100% 100%;
+    display: inline-block;
+    height: 35px;
+    margin-right: 5px;
+    width: 35px;
+    line-height: 30px;
+    text-align: center;
+    background: transparent;
+    -webkit-transition: background .5s ease-in-out;
+    -moz-transition: background .5s ease-in-out;
+    -o-transition: background .5s ease-in-out;
+    -ms-transition: background .5s ease-in-out;
+    transition: background .5s ease-in-out;
+    padding: 1px;
+    cursor: pointer;
+}
+
+.top-bar .social li a, footer .social li a {
+    color: #fff;
 }
 
 #header {
