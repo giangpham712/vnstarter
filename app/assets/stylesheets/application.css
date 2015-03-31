@@ -46,7 +46,21 @@ h1, h2, h3, h4, h5, h6 {
     color: #4b4b4b;
 }
 
-.top-bar {
+#header .main-bar {
+    min-height: 80px;
+    background-color: #252C34;
+    box-shadow: 0 3px 3px -3px rgba(0,0,0,0.2);
+}
+
+#header .main-bar .logo {
+    height: 74px;
+}
+
+#header .main-bar .logo h1 {
+    margin: 10px 0;
+}
+
+#header .top-bar {
     min-height: 30px;
     background: #272727;
     border-bottom: 1px solid #414f5a;
@@ -54,26 +68,26 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 38px;
 }
 
-.top-bar .phone-email {
+#header .top-bar .phone-email {
     padding: 3px 0;
 }
 
-.top-bar .phone-email a {
+#header .top-bar .phone-email a {
     margin-right: 20px;
     color: #fff;
 }
 
-.top-bar .phone-email i {
+#header .top-bar .phone-email i {
     margin-right: 7px;
 }
 
-.top-bar .social, footer .social {
+#header .top-bar .social, footer .social {
     margin-right: 4px;
     line-height: 44px;
     margin-bottom: 0;
 }
 
-.top-bar .social li, footer .social li {
+#header .top-bar .social li, footer .social li {
     background-color: transparent;
     border: 2px solid #fafafa;
     border-radius: 100% 100% 100% 100%;
@@ -93,22 +107,8 @@ h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
 }
 
-.top-bar .social li a, footer .social li a {
+#header .top-bar .social li a, footer .social li a {
     color: #fff;
-}
-
-#header {
-    min-height: 80px;
-    background-color: #252C34;
-    box-shadow: 0 3px 3px -3px rgba(0,0,0,0.2);
-}
-
-#header .logo {
-    height: 74px;
-}
-
-#header .logo h1 {
-    margin: 10px 0;
 }
 
 /*** Default Menu Style ***/

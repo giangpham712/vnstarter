@@ -1,97 +1,96 @@
-<div class="top-bar">
-  <div class="slidedown collapse in" aria-expanded="true">
-    <div class="container">
-      <div class="phone-email pull-left">
-        <a><i class="fa fa-phone"></i> Call Us : +880 111-111-111</a>
-        <a href="support@fifothemes.com"><i class="fa fa-envelope"></i> Email : support@fifothemes.com<script cf-hash="f9e31" type="text/javascript">
-            /* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("cf-hash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}}}catch(u){}}();/* ]]> */</script></a>
-      </div>
-      <div class="follow-us pull-right">
-        <ul class="social pull-left">
-          <li class="facebook"><a style="cursor: pointer;"><i class="fa fa-facebook"></i></a></li>
-          <li class="twitter"><a style="cursor: pointer;"><i class="fa fa-twitter"></i></a></li>
-          <li class="dribbble"><a style="cursor: pointer;"><i class="fa fa-dribbble"></i></a></li>
-          <li class="linkedin"><a style="cursor: pointer;"><i class="fa fa-linkedin"></i></a></li>
-          <li class="rss"><a style="cursor: pointer;"><i class="fa fa-rss"></i></a></li>
-        </ul>
+<header id="header">
+  <div class="top-bar">
+    <div class="slidedown collapse in" aria-expanded="true">
+      <div class="container">
+        <div class="phone-email pull-left">
+          <a><i class="fa fa-phone"></i> Liên hệ chúng tôi : +84 (0) 98 339 0696</a>
+          <a href="support@fifothemes.com"><i class="fa fa-envelope"></i> Email : info@vnstarter.vn
+
+          </a>
+        </div>
+        <div class="follow-us pull-right">
+          <ul class="social pull-left">
+            <li class="facebook"><a style="cursor: pointer;"><i class="fa fa-facebook"></i></a></li>
+            <li class="linkedin"><a style="cursor: pointer;"><i class="fa fa-linkedin"></i></a></li>
+            <li class="rss"><a style="cursor: pointer;"><i class="fa fa-rss"></i></a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<header id="header">
-  <div class="container">
+  <div class="main-bar">
+    <div class="container">
+      <div class="row header">
+        <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2 logo">
+          <h1>
+            <a href="/">
+              <img src="/images/logo.png" alt="VnStarter" width="125">
+            </a>
+          </h1>
+        </div>
 
-    <div class="row header">
+        <div class="col-xs-9 col-sm-9 col-md-10 col-lg-10">
 
-      <div class="col-xs-3 col-sm-3 col-md-2 col-lg-2 logo">
-        <h1>
-          <a href="/">
-            <img src="/images/logo.png" alt="VnStarter" width="125">
-          </a>
-        </h1>
-      </div>
+          <!-- Left hand side navigation -->
+          <nav class="menu pull-left">
+            <ul>
+              <li>
+                <a href="/projects/new">Huy động vốn</a>
+              </li>
+              <li>
+                <a href="/discover">Góp vốn</a>
+              </li>
+            </ul>
+          </nav>
 
-      <div class="col-xs-9 col-sm-9 col-md-10 col-lg-10">
-
-        <!-- Left hand side navigation -->
-        <nav class="menu pull-left">
-          <ul>
-            <li>
-              <a href="/projects/new">Huy động vốn</a>
-            </li>
-            <li>
-              <a href="/discover">Góp vốn</a>
-            </li>
-          </ul>
-        </nav>
-
-        <!-- Right hand side navigation -->
-        <nav class="menu pull-right">
-          <ul class="user-menu navigation">
-            <% if (!user_signed_in?) %>
-                <li>
-                  <a href="/users/sign_up">Đăng ký</a>
-                </li>
-                <li>
-                  <a href="/users/sign_in">Đăng nhập</a>
-                </li>
-            <% else %>
-                <li class="has-user">
-                  <%= hidden_field_tag :user_name, current_user.name %>
-                  <%= hidden_field_tag :user_image_url, current_user.image.url %>
-                  <a>
-                    <%= image_tag current_user.image.url(:small), class: "circle" %>
-                    <span class="sf-sub-indicator">
+          <!-- Right hand side navigation -->
+          <nav class="menu pull-right">
+            <ul class="user-menu navigation">
+              <% if (!user_signed_in?) %>
+                  <li>
+                    <a href="/users/sign_up">Đăng ký</a>
+                  </li>
+                  <li>
+                    <a href="/users/sign_in">Đăng nhập</a>
+                  </li>
+              <% else %>
+                  <li class="has-user">
+                    <%= hidden_field_tag :user_name, current_user.name %>
+                    <%= hidden_field_tag :user_image_url, current_user.image.url %>
+                    <a>
+                      <%= image_tag current_user.image.url(:small), class: "circle" %>
+                      <span class="sf-sub-indicator">
                            <i class="fa fa-angle-down "></i>
                     </span>
-                  </a>
+                    </a>
 
-                  <div class="user-dropdown">
-                    <div class="user-options clearfix">
-                      <p class="welcome">
-                        Xin chào <b><%= link_to current_user.name, profile_path %></b>
-                      </p>
+                    <div class="user-dropdown">
+                      <div class="user-options clearfix">
+                        <p class="welcome">
+                          Xin chào <b><%= link_to current_user.name, profile_path %></b>
+                        </p>
 
-                      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 
-                        <a href="javascript:void(0);"><label>Vnstarter của tôi</label></a>
+                          <a href="javascript:void(0);"><label>Vnstarter của tôi</label></a>
 
-                        <ul class="options">
-                          <li><%= link_to "Thông tin cá nhân", profile_path %></li>
-                          <li><%= link_to "Dự án đã tạo", profile_projects_path %></li>
-                          <li><%= link_to "Đăng xuất", destroy_user_session_path %></li>
-                        </ul>
+                          <ul class="options">
+                            <li><%= link_to "Thông tin cá nhân", profile_path %></li>
+                            <li><%= link_to "Dự án đã tạo", profile_projects_path %></li>
+                            <li><%= link_to "Đăng xuất", destroy_user_session_path %></li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="user-footer">
+
                       </div>
                     </div>
-                    <div class="user-footer">
+                  </li>
+              <% end %>
+            </ul>
+          </nav>
 
-                    </div>
-                  </div>
-                </li>
-            <% end %>
-          </ul>
-        </nav>
-
+        </div>
       </div>
     </div>
   </div>
