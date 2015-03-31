@@ -344,27 +344,13 @@ body#home {
     font-family: Lato;
 }
 
-@media only screen and (min-width: 64.063em) {
-    .column.large-centered, .columns.large-centered {
-        margin-left: auto;
-        margin-right: auto;
-        float: none;
-    }
-}
-
 @media (max-width: 992px) {
     #why .reason h4 {
         font-size: 18px;
     }
 
-}
-
-@media only screen and (min-width: 64.063em) {
-    .column, .columns {
-        position: relative;
-        padding-left: .625rem;
-        padding-right: .625rem;
-        float: left;
+    #why {
+        background: none;
     }
 }
 
