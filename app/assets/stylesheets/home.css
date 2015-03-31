@@ -69,11 +69,10 @@
 }
 
 .slide div.caption h2 {
-    padding: 8px 8px;
+    padding: 16px 10px 10px 10px;
     font-size: 40px;
     text-transform: uppercase;
     color: #fff;
-    font-family: 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
     font-weight: 600;
     background: #4e5b6c;
 }
@@ -266,6 +265,7 @@ div.sticky-nav ul.sub-nav li {
 
 div.sticky-nav ul.sub-nav li a {
     text-transform: uppercase;
+    font-family: Lato;
     padding: 7px 15px;
     color: #515151;
     font-size: 14px;
@@ -295,7 +295,9 @@ body#home {
 }
 
 #why {
-    padding: 40px 0;
+    background-position: 50% 14px;
+    color: #fff;
+    background: url(/images/img-blur-lead.jpg) 50% 0 no-repeat fixed;
 }
 
 @media (max-width: 992px) {
@@ -308,12 +310,20 @@ body#home {
     }
 }
 
+#why .bg-overlay {
+    padding: 40px 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
 #why h1 {
     margin-bottom: 40px;
+    color: #fff;
 }
 
 #why p {
-    font-size: 14px;
+    font-size: 16px;
+    color: #fff;
+    font-family: Lato;
 }
 
 #why .reason {
@@ -321,14 +331,17 @@ body#home {
 }
 
 #why .reason h4 {
-    font-size: 18px;
+    font-size: 24px;
     margin-bottom: 10px;
-
+    color: #fff;
+    font-weight: 400;
 }
 
 #why .reason p {
-    font-size: 14px;
-    color: #727e83;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 400;
+    font-family: Lato;
 }
 
 @media only screen and (min-width: 64.063em) {
@@ -337,6 +350,13 @@ body#home {
         margin-right: auto;
         float: none;
     }
+}
+
+@media (max-width: 992px) {
+    #why .reason h4 {
+        font-size: 18px;
+    }
+
 }
 
 @media only screen and (min-width: 64.063em) {

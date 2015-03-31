@@ -167,38 +167,6 @@
     display: none
 }
 
-.encode .image-placeholder, .attachment_upload .encode .image-placeholder {
-    display: inline-block;
-    background: url(/images/fileupload/encoding-placeholder.png) no-repeat;
-    width: 100px;
-    height: 80px;
-    margin-left: 10px;
-    display: none
-}
-
-.encode .message, .attachment_upload .encode .message {
-    display: inline-block;
-    text-align: left;
-    padding: 30px 35px;
-    width: 422px
-}
-
-.encode .message strong, .attachment_upload .encode .message strong {
-    border: 0;
-    color: #2bde73;
-    margin-bottom: 5px;
-    display: block;
-    text-align: center;
-    font-size: 16px
-}
-
-.encode .message P, .attachment_upload .encode .message P {
-    color: #0f2105;
-    font-size: 12px;
-    font-weight: normal;
-    margin-bottom: 0
-}
-
 .success, .attachment_upload .success {
     display: none;
     float: none;

@@ -31,14 +31,6 @@ textarea {
     font-family: sans-serif;
 }
 
-/* H1&H3 for page titles */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
-    margin: 0 0 20px 0;
-    font-weight: 500;
-    color: #4b4b4b;
-}
-
 h1 {
     line-height: 35px;
 }
@@ -1805,7 +1797,7 @@ Buttons
 }
 
 .btn-primary {
-    background-color: #279fbb;
+    background-color: #2eaef0;
     color: white;
 }
 
@@ -1863,9 +1855,9 @@ button.btn-sm, .btn-sm {
 }
 
 button.btn-lg, .btn-lg {
-    padding: 0 35px !important;
-    height: 43px;
-    line-height: 43px;
+    padding: 0 30px;
+    height: 49px;
+    line-height: 49px;
 }
 
 button.btn.btn-outlined, .btn.btn-outlined {
