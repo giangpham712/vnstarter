@@ -90,11 +90,13 @@
 @media (max-width: 992px) {
 
     .slide div.caption {
+        top: 40px;
         left: 20px;
     }
 
     .slide div.caption h2 {
-        font-size: 32px;
+        font-size: 28px;
+        padding: 12px 8px 8px 8px;
     }
 
     .slide div.caption h4 {
@@ -265,7 +267,7 @@ div.sticky-nav ul.sub-nav li {
 
 div.sticky-nav ul.sub-nav li a {
     text-transform: uppercase;
-    font-family: Lato;
+    font-family: "Open Sans";
     padding: 7px 15px;
     color: #515151;
     font-size: 14px;
@@ -323,7 +325,7 @@ body#home {
 #why p {
     font-size: 16px;
     color: #fff;
-    font-family: Lato;
+    font-family: "Open Sans";
 }
 
 #why .reason {
@@ -341,7 +343,7 @@ body#home {
     font-size: 16px;
     color: #fff;
     font-weight: 400;
-    font-family: Lato;
+    font-family: "Open Sans";
 }
 
 @media (max-width: 992px) {
