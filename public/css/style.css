@@ -1769,7 +1769,7 @@ Buttons
 
 }
 
-.btn:active, input[type="submit"]:active, input[type="button"]:active, button.btn:active, .btn-primary:active {
+.btn-primary:active {
     -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) inset;
     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) inset;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) inset;
@@ -1777,7 +1777,7 @@ Buttons
     opacity: 0.78;
 }
 
-.btn:focus, input[type="submit"]:focus, input[type="button"]:focus, button.btn:focus, .btn-primary:focus {
+.btn-primary:focus {
     outline: 0;
     background-color: #279fbb;
 }

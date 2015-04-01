@@ -29,7 +29,7 @@
 #project_edit .tab.launch {
     margin-left: 5px;
     border-radius: 10px;
-    background-color: #279FBB;
+    background-color: #2eaef0;
 }
 
 #project_edit .tab.launch:hover {
@@ -60,7 +60,6 @@
 #project_edit .tabs-content {
     border: 0px;
     margin-top: 20px;
-    margin-bottom: 20px;
     position: relative;
     padding-left: 0;
     padding-right: 0;

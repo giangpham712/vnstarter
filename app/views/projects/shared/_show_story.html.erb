@@ -19,12 +19,12 @@
   </div>
   <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
   <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-    <h3>Phần thưởng</h3>
+    <h3>Phần thưởng</h3>
 
     <div class="rewards">
       <% @project.rewards.each do |reward| %>
           <div class="reward">
-            <h5>Góp <%= number_to_currency(reward.minimum_pledge_amount, precision: 0) %> hoặc nhiều hơn</h5>
+            <h5>Góp <%= number_to_currency(reward.minimum_pledge_amount, precision: 0) %> hoặc nhiều hơn</h5>
             <br/>
 
             <p>

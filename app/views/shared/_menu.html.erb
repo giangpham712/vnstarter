@@ -65,25 +65,20 @@
                     </a>
 
                     <div class="user-dropdown">
-                      <div class="user-options clearfix">
-                        <p class="welcome">
-                          Xin chào <b><%= link_to current_user.name, profile_path %></b>
-                        </p>
-
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-
-                          <a href="javascript:void(0);"><label>Vnstarter của tôi</label></a>
-
-                          <ul class="options">
-                            <li><%= link_to "Thông tin cá nhân", profile_path %></li>
-                            <li><%= link_to "Dự án đã tạo", profile_projects_path %></li>
-                            <li><%= link_to "Đăng xuất", destroy_user_session_path %></li>
-                          </ul>
-                        </div>
+                      <div class="user-menu-header">
+                        <h5><%= current_user.name %></h5>
                       </div>
-                      <div class="user-footer">
-
-                      </div>
+                      <ul class="options">
+                        <li>
+                          <label><%= link_to "Dự án đã tạo", profile_projects_path %></label>
+                        </li>
+                        <li>
+                          <label><%= link_to "Thông tin cá nhân", profile_path %></label>
+                        </li>
+                        <li>
+                          <label><%= link_to "Đăng xuất", destroy_user_session_path %></label>
+                        </li>
+                      </ul>
                     </div>
                   </li>
               <% end %>

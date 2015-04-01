@@ -3,9 +3,10 @@
 
         var current_tab = "#basic";
 
-        $("#edit-tabs a[data-toggle=tab]").on('shown.bs.tab', function (e) {
+        $("#edit_tabs a[data-toggle=tab]").on('shown.bs.tab', function (e) {
             var $tab = $(e.target);
             current_tab = $tab.attr("href");
+
             switch (current_tab) {
                 case "#basic":
                 case "#about_you":
@@ -211,13 +212,26 @@
             sendMessage(form);
         });
 
-        $("#pledge-money li").click(function (e) {
+        $("#pledge_money li").click(function (e) {
             var amount = $(e.target).data("amount");
             var project_id = $("#project_id").val();
             window.location.href = "/projects/" + project_id + "/pledges/new?amount=" + amount;
         });
 
-        $("#add-comment").click(function (event) {
+        $("#delete_project").click(function(e){
+            var project_id = $("#project_id").val();
+
+            var request = $.ajax({
+                url: "/projects/" + project_id,
+                type: "DELETE"
+            });
+
+            request.done(function(result) {
+
+            });
+        })
+
+        $("#add_comment").click(function (e) {
             $('#new_comment').submit();
         });
 
@@ -296,7 +310,7 @@
 
         }, function (result) {
 
-            $("#pledge-money li").click(function (e) {
+            $("#pledge_money li").click(function (e) {
                 var amount = $(e.target).data("amount");
                 var project_id = $("#project_id").val();
                 window.location.href = "/projects/" + project_id + "/pledges/new?amount=" + amount;

@@ -173,7 +173,22 @@ h1, h2, h3, h4, h5, h6 {
 
 .user-menu > li.has-user > a {
     color: #279fbb;
+    cursor: pointer;
     border-right: 1px solid #252C34;
+}
+
+.user-menu > li.has-user > a::before {
+    content: "";
+    display: none;
+    position: absolute;
+    top: 21%;
+    left: 10%;
+    width: 80%;
+    height: 62%;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
 }
 
 .user-menu > li.has-user > a.active {
@@ -185,6 +200,10 @@ h1, h2, h3, h4, h5, h6 {
     background: #252C34;
 }
 
+.user-menu > li.has-user > a.active::before {
+    display: block;
+}
+
 .user-menu > li.has-user > a {
     padding-top: 24px;
     padding-bottom: 24px;
@@ -194,6 +213,12 @@ h1, h2, h3, h4, h5, h6 {
     width: 30px;
     height: 30px;
     margin-right: 5px;
+    position: relative;
+}
+
+.user-menu > li > a.active i {
+    color: #279FBB;
+    position: relative;
 }
 
 .user-menu > li > a i {
@@ -202,38 +227,72 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .user-menu .user-dropdown {
-    width: 500px;
-    background-color: #252C34;
+    width: 280px;
+    background: #fff;
     position: absolute;
     right: 0;
-    box-shadow: -2px 2px 2px rgba(0,0,0,0.05);
     z-index: 1000;
     display: none;
-    border-bottom: 3px solid #2eaef0;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 5px 5px 0 0;
+    top: 64px;
 }
 
-.user-menu .user-dropdown .user-options {
-    padding: 20px;
+.user-menu div.user-menu-header {
+    border-bottom: 1px solid #bfbfbf;
+    padding-left: 15px;
+    height: 70px;
 }
 
-.user-menu .user-dropdown .welcome {
-    padding: 15px;
-    color: #fff;
+.user-menu div.user-menu-header h5 {
+    color: #292929;
+    font-size: 16px;
+    line-height: 1;
+    padding-top: 15px;
+    margin: 0;
+    font-weight: 700;
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-bottom: 4px;
+    padding-right: 20px;
 }
 
-.user-menu .user-dropdown .user-options ul {
+.user-menu .user-dropdown ul.options {
     padding: 0;
     margin: 0;
 }
 
-.user-menu .user-dropdown .user-options label {
-    font-size: 14px;
-    color: #fff;
+.user-menu .user-dropdown ul.options label {
+    background: 0 0;
+    font-size: 1.125rem;
+    color: #292929;
+    cursor: auto;
+    display: block;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 10px;
+    display: block;
+    border-top: none;
+    border-bottom: 1px solid #bfbfbf;
+    margin: 0;
 }
 
-.user-menu .user-dropdown .user-options ul.options li {
-    font-size: 14px;
-    margin: 10px 0;
+.user-menu .user-dropdown ul.options label a {
+    line-height: 1.4;
+    padding: 10px;
+    color: #666;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    height: auto;
+}
+
+.user-menu .user-dropdown ul.options label:hover a {
+    color: #2eaef0;
 }
 
 .content-head {
