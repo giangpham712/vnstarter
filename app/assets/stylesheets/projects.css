@@ -732,25 +732,24 @@ div.modal_dialog_body label {
     width: 400px;
 }
 
-#project_show .project-overview {
-    padding-top: 20px;
+#project_show #show_story {
 }
 
-#project_show .project-overview .video-container,
-#project_show .project-overview .image-container {
-    padding-right: 20px;
+#project_show #show_story .video-container,
+#project_show #show_story .image-container {
+    padding-bottom: 20px;
 }
 
-#project_show .project-overview .image-container img {
+#project_show #show_story .image-container img {
     width: 100%;
 }
 
-#project_show .project-overview .buttons .btn + .btn {
+#project_show #show_story .buttons .btn + .btn {
     margin-left: 10px;
 }
 
 #project_show .side-top {
-    padding: 5px 0 15px 0;
+    padding: 10px 0 15px 0;
     line-height: 10px;
     margin-bottom: 20px;
 }
@@ -777,6 +776,10 @@ div.modal_dialog_body label {
 
 #project_show h3.description {
 
+}
+
+#project_show .creator {
+    padding-bottom: 20px;
 }
 
 #project_show .creator h5 {
@@ -820,7 +823,7 @@ div.modal_dialog_body label {
     }
 
     #project_show h3.description {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     #project_show .creator h5 {
@@ -856,7 +859,7 @@ div.modal_dialog_body label {
 
 #project_show #show-tabs li:not(.active) a:hover {
     background-color: #fff;
-    border-width: 0px;
+    border-color: #fff;
 }
 
 #project_show .project-content {
@@ -894,9 +897,18 @@ div.modal_dialog_body label {
     width: 400px;
 }
 
+#project_show #rewards {
+    padding-top: 20px;
+}
+
+#project_show #rewards h3 {
+    font-size: 30px;
+    font-family: "Open Sans Condensed";
+    font-weight: 700;
+}
+
 #project_show .rewards .reward {
     margin: 20px 0;
-    padding: 10px;
     background-color: #f7fafa;
     border-radius: 5px;
 }
@@ -906,6 +918,13 @@ div.modal_dialog_body label {
     font-family: Helvetica, Arial, Sans-Serif;
 }
 
+@media (max-width: 992px) {
+    #project_show #rewards h3 {
+        font-size: 24px;
+    }
+
+}
+
 #project_show .comments .comment {
     height: 80px;
 }
@@ -913,6 +932,64 @@ div.modal_dialog_body label {
 #project_show .comments .comment img {
     width: 60px;
     height: 60px;
+}
+
+.project-toolbar {
+
+    position: absolute;
+    right: 0;
+    margin: -10px 0 0;
+    z-index: 99;
+    display: inline-block;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    margin: 0;
+
+}
+
+.project-toolbar .edit-project {
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    border-radius: 100% 0 0;
+    opacity: .8;
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 500;
+    text-shadow: 0 1px 1px rgba(0,0,0,.35);
+    padding: 10px;
+    cursor: pointer;
+}
+
+.project-toolbar .edit-project:hover div {
+    background: #33385b;
+    opacity: 1;
+}
+
+.project-toolbar .edit-project div {
+    position: relative;
+    line-height: 1.2rem;
+    -webkit-transition: all,.3s,ease-in-out;
+    -moz-transition: all,.3s,ease-in-out;
+    transition: all,.3s,ease-in-out;
+    background: #252C34;
+    border-radius: 30px;
+    padding: 12px 20px 13px 20px;
+    opacity: 0.8;
+}
+
+.project-toolbar .edit-project a {
+    color: #fff;
+}
+
+.project-toolbar .edit-project div i {
+    margin-right: 10px;
+    vertical-align: middle;
+    color: #fff;
 }
 
 #send-message .alert {

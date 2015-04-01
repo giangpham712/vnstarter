@@ -49,7 +49,7 @@ h1, h2, h3, h4, h5, h6 {
 #header .main-bar {
     min-height: 80px;
     background-color: #252C34;
-    box-shadow: 0 3px 3px -3px rgba(0,0,0,0.2);
+    box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.2);
 }
 
 #header .main-bar .logo {
@@ -107,27 +107,31 @@ h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
 }
 
+#header .social li:hover, footer .social li:hover {
+    background: #4C66A4;
+}
+
 #header .top-bar .social li a, footer .social li a {
     color: #fff;
 }
 
 /*** Default Menu Style ***/
 .menu > ul {
-    margin:0;
-    padding:0;
-    list-style:none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .menu > ul > li {
-    position:relative
+    position: relative
 }
 
 .menu > ul > li {
-    float:left;
+    float: left;
 }
 
 .menu > ul > li:hover > ul {
-    display:block;
+    display: block;
 }
 
 .menu > ul > li > a {
@@ -145,29 +149,30 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .menu > ul a {
-    text-decoration:none;
+    text-decoration: none;
 }
+
 .menu > ul > li > a {
-    color:#fff;
+    color: #fff;
     font-family: "Open Sans", 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
     font-weight: 700;
     font-size: 14px;
     line-height: 18px;
-    overflow:hidden;
-    border-bottom:3px solid transparent;
-}
-
-.menu > ul > li >a:hover {
-    color:#fff;
+    overflow: hidden;
+    border-bottom: 3px solid transparent;
 }
 
 .menu > ul > li > a:hover {
-    color:#fff;
+    color: #fff;
+}
+
+.menu > ul > li > a:hover {
+    color: #fff;
 }
 
 .menu > ul > li > a:hover,
 .menu > ul > li:hover > a {
-    background-color:#323B44;
+    background-color: #323B44;
     border-bottom: 3px solid #2eaef0;
 }
 
@@ -306,6 +311,11 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 10px;
 }
 
+.content-head h6 {
+    font-size: 14px;
+    line-height: 20px;
+}
+
 .bootstrap-datetimepicker-widget table td {
     height: 30px;
     line-height: 30px;
@@ -347,18 +357,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2.section-title {
-  margin-bottom: 40px;
+    margin-bottom: 40px;
+    font-family: "Open Sans Condensed";
+    font-weight: 700;
 }
 
 .project-card-list > h2 {
-
+    font-family: "Open Sans Condensed";
+    font-weight: 700;
 }
 
 .project-card-list .project {
     background-color: #fff;
     border-radius: 5px;
 
-    transition:all 0.5s;
+    transition: all 0.5s;
 }
 
 .project-card-list .project:hover {
@@ -382,7 +395,7 @@ h2.section-title {
     position: absolute;
     padding: 0 20px;
     padding-top: 70px;
-    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #fff 26%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #fff 26%);
     border-radius: 0 0 6px 6px;
     left: 0;
     bottom: 0;
@@ -399,6 +412,10 @@ h2.section-title {
 .project-card-list .project .project-stats li {
     display: inline-block;
     margin-right: 20px;
+}
+
+.project-card-list .col-md-3 .project .project-stats li {
+    margin-right: 10px;
 }
 
 .project-card-list .project .project-stats-value {
@@ -445,6 +462,180 @@ h2.section-title {
     color: #fff;
 }
 
+/****************************
+Buttons
+****************************/
+
+.btn, input[type="submit"], input[type="button"], button.btn {
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 13px;
+    position: relative;
+    padding: 0px 11px;
+    height: 33px;
+    line-height: 33px;
+    border: none;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: background 0.2s, opacity 0.2s;
+    -moz-transition: background 0.2s, opacity 0.2s;
+    -o-transition: background 0.2s, opacity 0.2s;
+    transition: background 0.2s, opacity 0.2s;
+}
+
+.btn-primary {
+    background-color: #2eaef0;
+    color: white;
+}
+
+.btn:hover, input[type="submit"]:hover, input[type="button"]:hover, button.btn:hover, .btn-primary:hover {
+    text-decoration: none !important;
+    opacity: 0.78;
+
+}
+
+.btn-primary:active {
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) inset;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) inset;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) inset;
+    background-color: #279fbb;
+    opacity: 0.78;
+}
+
+.btn-primary:focus {
+    outline: 0;
+    background-color: #279fbb;
+}
+
+.btn i, input[type="submit"] i, input[type="button"] i, button.btn i, .btn-primary i {
+    margin: 0 10px 0 0;
+}
+
+button.btn.btn-flat, .btn.btn-flat, .btn-flat {
+    background-color: #279fbb;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+button.btn.btn-flat:hover, button.btn.btn-flat:active, .btn.btn-flat:hover, .btn.btn-flat:active, .btn-flat:hover, .btn-flat:active {
+    background-color: #3b3b3b;
+    background-color: #3b3b3b;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+button.btn.btn-flat:focus, .btn.btn-flat:focus, .btn-flat:focus {
+    outline: 0;
+    background-color: #3b3b3b;
+}
+
+button:focus {
+    outline: 0;
+}
+
+button.btn-sm, .btn-sm {
+    padding: 0 15px;
+    height: 31px;
+    line-height: 28px;
+}
+
+button.btn-lg, .btn-lg {
+    padding: 0 30px;
+    height: 49px;
+    line-height: 49px;
+}
+
+button.btn.btn-outlined, .btn.btn-outlined {
+    background-color: transparent;
+    color: #000 !important;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid #000;
+}
+
+button.btn.btn-outlined:hover, button.btn.btn-outlined:active, button.btn.btn-outlined:focus, .btn.btn-outlined:hover, .btn.btn-outlined:active, .btn.btn-outlined:focus {
+    text-shadow: none;
+    background-color: #fff;
+    color: #4b4b4b !important;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    opacity: 1;
+}
+
+button.btn.btn-default, .btn.btn-default {
+    background-color: #efefef;
+    border-color: #b5b5b5;
+    color: #5b5b5b !important;
+    text-shadow: white 0 1px 0;
+}
+
+button.btn.btn-default:hover, button.btn.btn-default:active, button.btn.btn-default:focus, .btn.btn-default:hover, .btn.btn-default:active, .btn.btn-default:focus {
+    color: #5b5b5b !important;
+    background-color: #f4f4f4;
+    opacity: 1;
+}
+
+.btn.btn-red {
+    background-color: #DD0000;
+    border-color: #DD0000;
+}
+
+.btn.btn-red:hover, .btn.btn-red:active, .btn.btn-red:focus {
+    background-color: #F33C3C;
+    opacity: 1;
+}
+
+.btn.btn-green {
+    background-color: #4aa215;
+    border-color: #3d791a;
+    color: #fff;
+}
+
+.btn.btn-green:hover, .btn.btn-green:active, .btn.btn-green:focus {
+    background-color: #5ebb27;
+    opacity: 1;
+}
+
+.btn.btn-blue {
+    background-color: #0a79a2;
+    border-color: #0f5069;
+}
+
+.btn.btn-blue:hover, .btn.btn-blue:active, .btn.btn-blue:focus {
+    background-color: #1f9ac7;
+    opacity: 1;
+}
+
+.btn.btn-yellow {
+    background-color: #d1ad1f;
+    border-color: #756318;
+}
+
+.btn.btn-yellow:hover, .btn.btn-yellow:active, .btn.btn-yellow:focus {
+    background-color: #f7ce2a;
+    opacity: 1;
+}
+
+
+button.btn-lg, .btn-lg {
+    padding: 0 30px;
+    height: 49px;
+    line-height: 49px;
+}
+
+button.btn-x-lg, .btn-x-lg {
+    font-size: 18px;
+    height: 54px;
+    line-height: 54px;
+    padding: 0 40px;
+}
+
 .spinner {
     border-top-color: #2eaef0;
     border: 2px solid #eeeeee;
@@ -460,7 +651,6 @@ h2.section-title {
 
 footer {
     padding: 40px 0;
-    height: 400px;
 }
 
 /* Utilities classes */
@@ -478,4 +668,11 @@ footer {
 .display-table-cell {
     display: table-cell;
     vertical-align: middle;
+}
+
+.centered {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }

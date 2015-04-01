@@ -4,103 +4,13 @@
   <div class="body-wrapper">
     <div class="content-head text-center">
       <div class="container">
-      <%= hidden_field_tag :project_id, @project.id %>
-      <%= hidden_field_tag :slug, @project.slug %>
-      <h2><%= @project.title %></h2>
-      <h6>
-        thực hiện bởi <a href="javascript:void(0);"><b><%= @project.user.name %></b></a>
-      </h6>
+        <%= hidden_field_tag :project_id, @project.id %>
+        <%= hidden_field_tag :slug, @project.slug %>
+        <h2><%= @project.title %></h2>
+        <h6>
+          thực hiện bởi <a href="javascript:void(0);"><b><%= @project.user.name %></b></a>
+        </h6>
       </div>
-    </div>
-    <div class="project-overview alg-bg">
-      <div class="container">
-        <div>
-          <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-            <div class="row">
-              <% if @project.has_video? %>
-                  <div class="video-container">
-                    <iframe src="https://player.vimeo.com/video/59056788?title=0&byline=0&portrait=0&badge=0" width="100%" height="530" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                  </div>
-              <% else %>
-                  <div class="image-container">
-                    <%= image_tag @project.image.url(:large) %>
-                  </div>
-              <% end %>
-
-            </div>
-            <br/>
-          </div>
-          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-            <div class="side-top">
-              <h1><%= @total_pledgers %></h1>
-
-              <h3 class='backer'>người tham gia góp vốn</h3>
-            </div>
-
-            <div class="side-top">
-              <h1><%= number_to_currency(@total_pledge_amount, precision: 0) %></h1>
-
-              <h3>
-                trên mục tiêu <%= number_to_currency(@project.funding_goal, precision: 0) %> đã được góp
-              </h3>
-            </div>
-            <div class="side-top">
-              <h1> <%= (@project.deadline - @project.launched_at).to_i / 1.day %>  </h1>
-
-              <h3> ngày còn lại </h3>
-            </div>
-
-            <div class="side-top">
-              <!--
-                <a class="btn btn-lg btn-blue" data-toggle="modal" href='#view-story'>Câu chuyện</a>
-                -->
-              <% if !(current_user && @project.creator_id == current_user.id) %>
-                  <button class="btn btn-lg btn-primary" data-toggle="modal" href='#pledge_money'>Đóng góp</button>
-              <% else %>
-
-              <% end %>
-            </div>
-
-            <div class="side-top">
-              <p>
-                Dự án được khởi động lúc <%= @project.launched_at.strftime("%I:%M ngày %d/%m/%Y") %>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div>
-          <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-            <div class="row">
-              <h3 class="description"><%= @project.short_description %></h3>
-            </div>
-          </div>
-          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-            <div class="row">
-              <div class="creator">
-                <div class="col-xs-7 col-sm-7 col-md-8 col-lg-8">
-                  <a class="javascript:void(0);" href="">
-                    <h5>
-                      <%= @project.user.name %>
-                    </h5>
-                  </a>
-                  <p>
-                    <!--
-                      <a href="javascript:void(0);" class="btn-link">Xem thông tin</a>
-                      -->
-                    <% if !(current_user && @project.creator_id == current_user.id) %>
-                        <a class="btn-link" data-toggle="modal" href='#send-message'>Gửi tin nhắn</a>
-                    <% end %>
-                  </p>
-                </div>
-                <div class="col-xs-5 col-sm-5 col-md-4 col-lg-4">
-                  <%= image_tag @project.user.image.url(:small), class: "circle avatar-small", height: "80" %>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <br/>
     </div>
     <div class="project-nav">
       <div class="container">
@@ -117,10 +27,12 @@
         </ul>
       </div>
     </div>
+
     <div class="project-content">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 col-sm-12">
+          <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+
             <div role="tabpanel">
               <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="home">
@@ -132,11 +44,92 @@
               </div>
             </div>
           </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="project-stats">
+              <div class="side-top">
+                <h1><%= @total_pledgers %></h1>
+
+                <h3 class='backer'>người tham gia góp vốn</h3>
+              </div>
+              <div class="side-top">
+                <h1><%= number_to_currency(@total_pledge_amount, precision: 0) %></h1>
+
+                <h3>
+                  trên mục tiêu <%= number_to_currency(@project.funding_goal, precision: 0) %> đã được góp
+                </h3>
+              </div>
+              <div class="side-top">
+                <h1> <%= (@project.deadline - @project.launched_at).to_i / 1.day %>  </h1>
+
+                <h3> ngày còn lại </h3>
+              </div>
+              <% if !(current_user && @project.creator_id == current_user.id) %>
+                  <div class="side-top">
+                    <button class="btn btn-x-lg btn-primary" data-toggle="modal" href='#pledge_money'>Góp vốn</button>
+                  </div>
+              <% end %>
+              <div class="side-top">
+                <p>
+                  Dự án được khởi động lúc <%= @project.launched_at.strftime("%I:%M ngày %d/%m/%Y") %>
+                </p>
+              </div>
+              <div class="creator">
+                <div class="row">
+                  <div class="col-xs-7 col-sm-7 col-md-8 col-lg-8">
+                    <a class="javascript:void(0);" href="">
+                      <h5>
+                        <%= @project.user.name %>
+                      </h5>
+                    </a>
+
+                    <p>
+                      <!--
+                        <a href="javascript:void(0);" class="btn-link">Xem thông tin</a>
+                        -->
+                      <% if !(current_user && @project.creator_id == current_user.id) %>
+                          <a class="btn-link" data-toggle="modal" href='#send-message'>Gửi tin nhắn</a>
+                      <% end %>
+                    </p>
+                  </div>
+                  <div class="col-xs-5 col-sm-5 col-md-4 col-lg-4">
+                    <%= image_tag @project.user.image.url(:small), class: "circle avatar-small", height: "80" %>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="rewards">
+              <h3>Phần thưởng</h3>
+
+              <div class="rewards">
+                <% @project.rewards.each do |reward| %>
+                    <div class="reward">
+                      <h5>Góp <%= number_to_currency(reward.minimum_pledge_amount, precision: 0) %> hoặc nhiều hơn</h5>
+                      <br/>
+
+                      <p>
+                        <%= reward.description %>
+                      </p>
+                    </div>
+                <% end %>
+              </div>
+            </div>
+
+
+          </div>
         </div>
       </div>
 
     </div>
   </div>
+  <% if (current_user && @project.creator_id == current_user.id) %>
+      <div class="project-toolbar">
+        <div class="edit-project">
+          <%= link_to edit_project_path(@project.id) do %>
+              <div><i class="icon-pen"></i>Chỉnh sửa dự án</div>
+          <% end %>
+        </div>
+      </div>
+  <% end %>
 </div>
 <%= render "projects/shared/modal_pledge_money" %>
 <%= render "projects/shared/modal_send_message" %>

@@ -10,43 +10,41 @@ form .field_with_errors input.form-control {
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
 }
 
-.profile-overview {
-    border-bottom: 1px solid #d9d9de;
+.profile-header {
+    padding: 40px;
 }
 
-#profile_show #profile_avatar {
-    padding: 20px 10px;
+.profile-header .profile-user-info {
+    background: #4e5b6c;
+    color: #fff;
+    padding: 40px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.25);
 }
 
-#profile_show #profile_avatar img {
-    width: 100%;
-    border-radius: 10px;
+.profile-user-info .image-container {
+    padding: 10px;
+    background-color: #fff;
+    margin: 10px 10px 0;
 }
 
-#profile_show #profile_bio {
-    padding: 20px 10px;
+.profile-user-info .image-container img {
+
 }
 
-#profile_show #profile_bio h2 {
-    font-weight: bold;
-}
+.profile-header .profile-user-info h1 {
+    line-height: 1em;
+    margin: .4em 0 .1em;
+    margin-top: 5px;
+    margin-bottom: 0;
+    margin-right: 10px;
+    color: #fff;
+    font-family: "Open Sans Condensed", "Helvetica Neue";
+    font-size: 75px;
+    font-weight: 700;
+    letter-spacing: -.01em;
+    text-transform: uppercase;
+    width: 600px;
 
-#profile_show #profile_bio p {
-    font-size: 16px;
-    padding-bottom: 10px;
-}
-
-#profile_show #profile_bio p span {
-    display: inline-block;
-}
-
-#profile_show #profile_bio p span.separator {
-    padding: 0 5px;
-}
-
-#profile_show #profile_bio p a {
-    font-size: 14px;
-    color: #279fbb;
 }
 
 @media (max-width: 992px) {
