@@ -9,7 +9,6 @@
   <%= stylesheet_link_tag 'application', media: 'all' %>
 
   <link rel="stylesheet" href="/css/axfont.css">
-  <link rel="stylesheet" href="/css/prettyPhoto.css">
   <link rel="stylesheet" href="/css/animate.css">
 
   <link href='/css/style.css' rel='stylesheet' type='text/css'>
@@ -28,8 +27,6 @@
 <body id="<%= yield(:body_id) %>" <%= yield(:body_attributes) %> >
 <div id="wrapper">
   <%= render "shared/menu" %>
-  <!-- //Header// -->
-
 
   <%= yield %>
 
@@ -50,7 +47,6 @@
 <script src="/js/activeaxon_menu.js" type="text/javascript"></script>
 <script src="/js/animationEnigne.js" type="text/javascript"></script>
 <script src="/js/ie-fixes.js" type="text/javascript"></script>
-<script src="/js/jquery.infinitescroll.js" type="text/javascript"></script>
 <script src="/js/jQuery.XDomainRequest.js" type="text/javascript"></script>
 <script src="/js/kanzi.js" type="text/javascript"></script>
 <script src="/js/retina.js" type="text/javascript"></script>

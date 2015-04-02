@@ -16,13 +16,19 @@
       <div class="container">
         <ul id="show-tabs" class="nav nav-tabs container clearfix" data-tabs="tabs" role="tablist">
           <li role="presentation" class="active">
-            <a href="#home" aria-controls="home" class='project-tab' role="tab" data-toggle="tab">
+            <a href="#story" aria-controls="story" class='project-tab' role="tab" data-toggle="tab">
               Câu chuyện
             </a>
           </li>
           <li role="presentation">
-            <a href="#comments" aria-controls="comment" class='project-tab' role="tab" data-toggle="tab">
-              Bình luận (<%= @project.comments.count %>)</a>
+            <a href="#comments" aria-controls="comments" class='project-tab' role="tab" data-toggle="tab">
+              Bình luận (<%= @project.comments.count %>)
+            </a>
+          </li>
+          <li role="presentation">
+            <a href="#pledges" aria-controls="pledges" class='project-tab' role="tab" data-toggle="tab">
+              Đóng góp (<%= @project.pledges.count %>)
+            </a>
           </li>
         </ul>
       </div>
@@ -35,11 +41,14 @@
 
             <div role="tabpanel">
               <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="home">
+                <div role="tabpanel" class="tab-pane active" id="story">
                   <%= render "projects/shared/show_story" %>
                 </div>
                 <div role="tabpanel" class="tab-pane" id="comments">
                   <%= render "projects/shared/show_comments" %>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="pledges">
+                  <%= render "projects/shared/show_pledges" %>
                 </div>
               </div>
             </div>
@@ -113,12 +122,9 @@
                 <% end %>
               </div>
             </div>
-
-
           </div>
         </div>
       </div>
-
     </div>
   </div>
   <% if (current_user && @project.creator_id == current_user.id) %>

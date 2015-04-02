@@ -453,8 +453,104 @@ h2.section-title {
     }
 
     .project-card-list .project .project-stats li {
-        margin-right: 8px;
+        margin-right: 6px;
     }
+}
+
+/* Comments */
+.comments,
+.pledges {
+    margin: 0 0 40px 0;
+    padding: 10px;
+}
+
+.comments .comment,
+.pledges .pledge {
+    height: 90px;
+}
+
+.comments .user-avatar,
+.pledges .user-avatar {
+    float: left;
+    width: 70px;
+}
+
+.comments .comment-details,
+.pledges .pledge-details {
+    padding-left: 90px;
+}
+
+.comments .comment-content,
+.pledges .pledge-content {
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.comments .comment-date,
+.pledges .pledge-date {
+    font-size: 10px;
+    color: #979797;
+    font-style: italic;
+    font-weight: normal;
+}
+
+.comments .user-name,
+.comments .comment-date,
+.pledges .user-name,
+.pledges .pledge-date {
+    font-weight: bold;
+    display: block;
+
+}
+
+.comments .user-avatar img,
+.pledges .user-avatar img {
+    border: 1px solid #e2e2e2;
+    width: 70px;
+    height: 70px;
+}
+
+.comments .comment-body {
+    margin-top: 5px;
+}
+
+.pledges .pledge-details {
+    padding-top: 10px;
+}
+
+.pledges .pledge-details > div {
+    display: inline-block;
+}
+
+.pledges .pledge-amount {
+    display: inline-block;
+    float: right;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.comments .comments-list {
+    list-style: none;
+    padding: 0;
+}
+
+.comment .comment-reply {
+    position: absolute;
+    right: 0;
+    top: 0px;
+    font-weight: normal;
+    font-size: 11px;
+}
+
+/* Apply on 2nd level comments list */
+.comments-list .children {
+    padding-left: 45px;
+    margin: 20px 0 0px 0;
+}
+
+.comments-list .comment {
+    position: relative;
+    margin: 0 0 20px 0;
 }
 
 .body-wrapper a.btn,

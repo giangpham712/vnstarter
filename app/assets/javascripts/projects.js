@@ -248,11 +248,12 @@
                 success: function (data) {
                     var html = "<li class='comment'>";
                     html += "<div class='comment-content'>";
-                    html += "<div class='comment-author-avatar'>";
+                    html += "<div class='user-avatar'>";
                     html += "<img src='" + user_image_url + "' alt='' class='circle avatar-small'/>";
                     html += "</div>";
                     html += "<div class='comment-details'>";
-                    html += "<div class='comment-author-name'><span>" + user_name + "</span><span class='comment-date'>" + data.comment.created_at + "</span></div>";
+                    html += "<div><span class='user-name'>" + user_name + "</span>";
+                    html += "<span class='comment-date'>cách đây vài giây</span></div>";
                     html += "<div class='comment-body'>" + data.comment.body + "</div></div></div></li>";
 
                     $('.comments').append($(html));

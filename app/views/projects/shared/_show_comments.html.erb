@@ -3,15 +3,14 @@
     <% @project.comments.each do |comment| %>
         <li class="comment">
           <div class="comment-content">
-            <div class="comment-author-avatar">
+            <div class="user-avatar">
              <%= image_tag (comment.user.image.url(:small)), class: "circle", height: "80" %>
             </div>
 
             <div class="comment-details">
-              <div class="comment-author-name">
-                <span><%= comment.user.name %></span>
-                <span class="comment-date"><%= comment.created_at %></span>
-
+              <div>
+                <span class="user-name"><%= comment.user.name %></span>
+                <span class="comment-date">cách đây <%= time_ago_in_words(comment.created_at) %></span>
               </div>
               <div class="comment-body">
                 <%= comment.body %>

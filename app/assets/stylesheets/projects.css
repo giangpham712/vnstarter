@@ -925,15 +925,6 @@ div.modal_dialog_body label {
 
 }
 
-#project_show .comments .comment {
-    height: 80px;
-}
-
-#project_show .comments .comment img {
-    width: 60px;
-    height: 60px;
-}
-
 .project-toolbar {
 
     position: absolute;

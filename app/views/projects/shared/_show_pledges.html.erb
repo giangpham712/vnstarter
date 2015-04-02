@@ -1,0 +1,23 @@
+<div id="show_pledges">
+  <ul class="pledges">
+    <% @project.pledges.each do |pledge| %>
+        <li class="pledge">
+          <div class="pledge-content">
+            <div class="user-avatar">
+              <%= image_tag (pledge.user.image.url(:small)), class: "circle", height: "80" %>
+            </div>
+
+            <div class="pledge-details">
+              <div>
+                <span class="user-name"><%= pledge.user.name %></span>
+                <span class="pledge-date">cách đây <%= time_ago_in_words(pledge.created_at) %></span>
+              </div>
+              <div class="pledge-amount">
+                <%= number_to_currency(pledge.pledge_amount) %>
+              </div>
+            </div>
+          </div>
+        </li>
+    <% end %>
+  </ul>
+</div>
