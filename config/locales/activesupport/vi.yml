@@ -55,7 +55,7 @@ vi:
       format:
         # Where is the currency sign? %u is the currency unit, %n the number (default: $5.00)
         format: "%n %u"
-        unit: "VNĐ"
+        unit: "vnđ"
         # These five are to override number.format and are optional
         separator: ","
         delimiter: "."
