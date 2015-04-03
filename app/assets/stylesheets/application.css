@@ -745,8 +745,16 @@ button.btn-x-lg, .btn-x-lg {
     -webkit-animation: spin 1s linear infinite;
 }
 
-footer {
-    padding: 40px 0;
+footer .footer-top {
+    padding: 50px 0;
+    background: #252C34;
+}
+
+footer .footer-bottom {
+    background: #272727;
+    color: #888;
+    line-height: 38px;
+    padding: 15px;
 }
 
 /* Utilities classes */

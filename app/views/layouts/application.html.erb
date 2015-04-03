@@ -3,7 +3,7 @@
 <head>
   <title><%= yield(:page_title) %></title>
 
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -40,7 +40,29 @@
 
   </div>
 
-  <footer></footer>
+  <footer>
+    <div class="footer-top">
+      <div class="container">
+
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6 "> © Copyright 2015 by
+            <a style="cursor: pointer;">VnStarter</a>. All Rights Reserved.
+          </div>
+          <div class="follow-us pull-right">
+            <ul class="social pull-left">
+              <li class="facebook"><a style="cursor: pointer;"><i class="fa fa-facebook"></i></a></li>
+              <li class="linkedin"><a style="cursor: pointer;"><i class="fa fa-linkedin"></i></a></li>
+              <li class="rss"><a style="cursor: pointer;"><i class="fa fa-rss"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 </div>
 <%= javascript_include_tag 'application' %>
 

@@ -752,34 +752,76 @@ div.modal_dialog_body label {
     padding: 10px 0 15px 0;
     line-height: 10px;
     margin-bottom: 20px;
+
+}
+
+#project_show .project-stats {
+
 }
 
 #project_show .side-top h1 {
     font-weight: bold;
     font-size: 48px;
     line-height: 35px;
-    color: black;
     margin-bottom: 15px;
+    color: #000;
 }
 
 #project_show .side-top h3 {
     font-weight: bold;
-    color: black;
     font-size: 14px;
     line-height: 20px;
     margin-bottom: 0;
+    color: #000;
 }
 
 #project_show .side-top p {
     font-size: 13px;
+    color: #000;
+}
+
+#project_show .unsuccessful .project-stats {
+    opacity: 0.4;
+}
+
+#project_show .unsuccessful .project-stats .project-dates {
+    display: none;
+}
+
+#project_show .funding-status {
+    text-align: left;
+    margin-bottom: 60px;
+    padding: 10px;
+
+}
+
+#project_show .unsuccessful .funding-status {
+    border-left: 3px solid #d9d9de;
+}
+
+#project_show .funding-status h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 36px;
+    margin-bottom: 10px;
+    font-family: "Open Sans Condensed";
+}
+
+@media (max-width: 992px) {
+    #project_show .funding-status h2 {
+        font-size: 20px;
+    }
 }
 
 #project_show h3.description {
-
+    padding-bottom: 50px;
+    border-bottom: 1px solid #d9d9de;
 }
 
 #project_show .creator {
-    padding-bottom: 20px;
+    border-top: 1px solid #d9d9de;
+    padding: 30px 0;
 }
 
 #project_show .creator h5 {
@@ -838,10 +880,17 @@ div.modal_dialog_body label {
 
 #project_show .project-content {
     padding: 40px 0;
+    min-height: 800px;
 }
 
 #project_show #show-tabs li a {
     border-radius: 0px;
+}
+
+@media (max-width: 992px) {
+    #project_show #show-tabs li a {
+        display: block;
+    }
 }
 
 #project_show #show-tabs {
@@ -862,12 +911,8 @@ div.modal_dialog_body label {
     border-color: #fff;
 }
 
-#project_show .project-content {
-    min-height: 400px;
-}
-
 #project_show .story-posts {
-    padding: 5px 0 20px 0;
+    padding: 50px 0 20px 0;
 }
 
 #project_show .story-posts .post {
@@ -879,7 +924,8 @@ div.modal_dialog_body label {
 
 #project_show .story-posts .post h2 {
     padding-bottom: 15px;
-
+    font-family: "Open Sans Condensed";
+    font-weight: 700;
 }
 
 #project_show .story-posts .post p {

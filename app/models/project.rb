@@ -34,8 +34,21 @@ class Project < ActiveRecord::Base
   has_many :posts
   has_many :rewards
 
+
+  def unsuccessful?
+    ended? && total_pledge_amount < funding_goal
+  end
+
+  def ended?
+    launched? && deadline <= Time.zone.now
+  end
+
+  def total_pledge_amount
+    pledges.sum(:pledge_amount)
+  end
+
   def remaining_days
-    (deadline - launched_at).to_i
+    [(deadline - Time.zone.now).to_i / 1.day, 0].max
   end
 
   def has_video?

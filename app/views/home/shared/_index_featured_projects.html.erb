@@ -55,7 +55,7 @@
                       </li>
                       <li>
                         <div class="project-stats-value">
-                          <%= (project.deadline - project.launched_at).to_i / 1.day %> ngày
+                          <%= (project.deadline - Time.zone.now).to_i / 1.day %> ngày
                         </div>
                         <div class="project-stats-label">
                           còn lại

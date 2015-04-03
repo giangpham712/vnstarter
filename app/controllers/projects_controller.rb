@@ -3,7 +3,6 @@ class ProjectsController < ApplicationController
   skip_before_filter :verify_authenticity_token, :only => [:upload_image]
 
 
-
   def index
     @projects = Project.where(launched_at: nil, deleted_at: nil, stopped_at: nil)
 
@@ -29,10 +28,7 @@ class ProjectsController < ApplicationController
       redirect_to root_path
 
     else
-      pledges = @project.pledges
-
-      @total_pledgers = pledges.count(:pledger_id, :distinct => true)
-      @total_pledge_amount = pledges.sum(:pledge_amount)
+      @pledges = @project.pledges
 
       render 'show'
     end
@@ -128,7 +124,7 @@ class ProjectsController < ApplicationController
     render json: {:success => false} if project.launched?
     render json: {:success => false} if project.stopped?
 
-    launched_at = Time.now
+    launched_at = Time.zone.now
     deadline = nil
     duration = nil
 
@@ -142,7 +138,7 @@ class ProjectsController < ApplicationController
 
     if project.update_attributes(
         :launched => true,
-        :launched_at => Time.now.utc,
+        :launched_at => launched_at,
         :deadline => deadline,
         :duration => duration)
       render json: {:success => true}
@@ -160,7 +156,7 @@ class ProjectsController < ApplicationController
     render json: {:success => false} if !project.launched?
     render json: {:success => false} if project.stopped?
 
-    if project.update_attributes(:stopped_at => Time.now.utc)
+    if project.update_attributes(:stopped_at => Time.zone.now)
       render json: {:success => true}
     else
       render json: {:success => false, :errors => project.errors}
