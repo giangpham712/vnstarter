@@ -529,58 +529,8 @@
     border-color: #d9d9de;
 }
 
-#project_edit .tools {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    height: 80px;
-    -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
-    -moz-box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
-    -ms-box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
-    -o-box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
-    box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
-    margin-bottom: -100px;
-    width: 100%;
-    background-color: rgba(255, 255, 255, .75);
-    z-index: 1000;
-}
-
-#project_edit .tools.visible {
-    margin-bottom: 0
-}
-
-#project_edit .tools .container {
-    position: relative;
-    padding-top: 20px;
-    padding-bottom: 20px
-}
-
-#project_edit .tools .message {
-    width: 500px;
-    text-align: center;
-    margin-bottom: 0;
-}
-
-#project_edit .tools-panels {
-    list-style: none;
-    margin-bottom: 0;
-    position: absolute;
-    right: 0;
-    top: 24px;
-}
-
-#project_edit .tools-panels li {
-    list-style-image: none;
-    list-style-type: none;
-    margin-left: 0
-}
-
-#project_edit .tools-panels .form-tools div  {
-    display: inline-block;
-}
-
-#project_edit .tools-panels .form-tools div a.btn {
-    margin: 0 10px 4px 10px;
+#project_edit form .buttons-container {
+    padding: 30px;
 }
 
 div.modal_dialog {
@@ -957,6 +907,7 @@ div.modal_dialog_body label {
     margin: 20px 0;
     background-color: #f7fafa;
     border-radius: 5px;
+    padding: 20px;
 }
 
 #project_show .rewards .reward h5 {

@@ -75,6 +75,7 @@ class ProjectsController < ApplicationController
 
       if @project.deadline == nil
         @project.deadline = Time.zone.now
+        @project.duration = @project.duration || 1
         @project.duration_type = "duration"
       else
         @project.duration = 0

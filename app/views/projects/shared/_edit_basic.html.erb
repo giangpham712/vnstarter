@@ -100,7 +100,7 @@
                     <label for="duration_duration">Tổng thời gian (ngày)</label>
                   </span>
                   <span class="value">
-                    <%= f.text_field :duration, class: 'form-control' %>
+                    <%= f.text_field :duration, class: 'form-control duration' %>
                   </span>
                     </li>
                     <li class="option <%= "selected" if @project.duration_type == "deadline" %>">
@@ -132,9 +132,12 @@
               <% else %>
                   <strong><%= number_to_currency(@project.funding_goal, precision: 0) %></strong>
               <% end %>
-
             </div>
           </div>
+          <div class="buttons-container text-right">
+              <button type="submit" class="btn btn-green">Lưu thay đổi</button>
+          </div>
+
 
         </div>
       </div>

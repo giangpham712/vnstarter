@@ -18,44 +18,6 @@
             }
         })
 
-        $("#save").click(function () {
-            switch (current_tab) {
-                case "#basic":
-                case "#about_you":
-                    $("#saving-layer").show();
-                    submitFormAjax($(current_tab + " form")[0],
-                        function (result) {
-                            console.log(result);
-                            $("#saving-layer").hide();
-                            if (result.success)
-                                displaySuccessMessage();
-                            else
-                                displayErrorMessage(result.errors);
-                        },
-                        function (result) {
-                            console.log(result);
-                            $("#saving-layer").hide();
-                            displayErrorMessage();
-                        }
-                    );
-                    break;
-                default:
-
-                    break;
-            }
-        });
-
-        $("#discard-changes").click(function () {
-            switch (current_tab) {
-                case "#basic":
-                case "#about_you":
-                    $(current_tab + " form")[0].reset();
-                    break;
-                default:
-                    break;
-            }
-        });
-
         $("#project_edit .launch").click(function () {
 
             var project_id = $("#project_id").val();
@@ -174,13 +136,23 @@
             $input.trigger("keyup");
         });
 
-        $(".currency").autoNumeric('init', {
+
+        $("input.duration").autoNumeric('init', {
+            aSep: ".",
+            aDec: ",",
+            mDec: 0,
+            lZero: "deny",
+            vMin: "1",
+            vMax: "90"
+        })
+
+        $("input.currency").autoNumeric('init', {
             aSep: ".",
             aDec: ",",
             mDec: 0,
             lZero: "deny",
             pSign: "s",
-            aSign: " đồng",
+            aSign: " vnđ",
             vMin: "1000000",
             vMax: "1000000000"
         });
@@ -188,6 +160,20 @@
         $(".modal").on("hide.bs.modal", function () {
             $(this).find("form").trigger('reset')
             $(this).find(".alert").hide();
+        });
+
+        $("#basic form").submit(function(e) {
+            e.preventDefault();
+            var form = this;
+            $("#saving-layer").show();
+            saveInfo(form);
+        });
+
+        $("#about_you form").submit(function(e) {
+            e.preventDefault();
+            var form = this;
+            $("#saving-layer").show();
+            saveInfo(form);
         });
 
         $("#add-reward form").submit(function (e) {
@@ -267,8 +253,22 @@
 
     });
 
-    function addComment(form) {
+    function saveInfo(form) {
+        submitFormAjax(form,
+            function (result) {
 
+                $("#saving-layer").hide();
+                if (result.success)
+                    displaySuccessMessage();
+                else
+                    displayErrorMessage(result.errors);
+            },
+            function (result) {
+
+                $("#saving-layer").hide();
+                displayErrorMessage();
+            }
+        );
     }
 
     function addReward(form) {

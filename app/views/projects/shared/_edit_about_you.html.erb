@@ -82,10 +82,13 @@
             </div>
 
             <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-              <%= f.text_field :website, class: 'form-control' %>
+              <%= f.text_field :website, value: current_user.website, class: 'form-control' %>
             </div>
           </div>
 
+          <div class="buttons-container text-right">
+            <button type="submit" class="btn btn-green">Lưu thay đổi</button>
+          </div>
 
         </div>
 

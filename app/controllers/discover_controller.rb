@@ -8,7 +8,9 @@ class DiscoverController < ApplicationController
 
   def category_projects
     @category = Category.friendly.find(params[:id])
-    @projects = @category.projects.where(deleted_at: nil, stopped_at: nil).where().not(launched_at: nil)
+    @projects = @category.projects.where(deleted_at: nil, stopped_at: nil)
+                    .where().not(launched_at: nil)
+                    .where("deadline > :now", { now: Time.zone.now })
   end
 	
 end

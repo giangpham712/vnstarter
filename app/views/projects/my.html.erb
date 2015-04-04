@@ -32,7 +32,7 @@
                           <div class="links display-table-cell">
                             <%= link_to "Chỉnh sửa", edit_project_path(project.id) %>
                             <% if project.launched? %>
-                                <%= link_to "Theo dõi", manage_project_path(project.id) %>
+                                <%= link_to "Theo dõi", project_path(project) %>
                             <% end %>
                           </div>
                         </div>
