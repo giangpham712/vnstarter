@@ -10,45 +10,31 @@ form .field_with_errors input.form-control {
     box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
 }
 
-.profile-header {
-    padding: 40px;
-}
-
-.profile-header .profile-user-info {
-    background: #4e5b6c;
-    color: #fff;
-    padding: 40px;
-    box-shadow: 0 1px 4px rgba(0,0,0,.25);
-}
-
-.profile-user-info .image-container {
+#profile_overview .profile-avatar {
     padding: 10px;
-    background-color: #fff;
-    margin: 10px 10px 0;
 }
 
-.profile-user-info .image-container img {
-
+#profile_overview .profile-avatar img {
+    width: 100%;
 }
 
-.profile-header .profile-user-info h1 {
-    line-height: 1em;
-    margin: .4em 0 .1em;
-    margin-top: 5px;
-    margin-bottom: 0;
-    margin-right: 10px;
-    color: #fff;
-    font-family: "Open Sans Condensed", "Helvetica Neue";
-    font-size: 75px;
+#profile_overview .profile-user-info h2 {
     font-weight: 700;
-    letter-spacing: -.01em;
-    text-transform: uppercase;
-    width: 600px;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+#profile_overview .profile-user-info a.location {
 
 }
 
-@media (max-width: 992px) {
-    #profile_show #profile_bio p {
-        font-size: 14px;
-    }
+#profile_overview .profile-user-info a.location i {
+    vertical-align: middle;
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+#profile_overview .profile-user-info p {
+    margin: 20px 0;
+    font-size: 16px;
 }

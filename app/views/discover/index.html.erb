@@ -67,7 +67,11 @@
                            data-speed="1s"
                            data-delay="0.4s">
                         <div>
-                          <h3><a href=""><%= @projects.first.title %></a></h3>
+                          <h3>
+                            <%= link_to project_path(@projects.first) do %>
+                                <%= @projects.first.title %>
+                            <% end %>
+                          </h3>
                           <h6>thực hiện bởi <b><%= @projects.first.user.name %></b></h6>
 
                           <p class=""><%= @projects.first.short_description %></p>
