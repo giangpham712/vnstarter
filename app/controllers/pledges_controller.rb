@@ -4,6 +4,11 @@ class PledgesController < ApplicationController
 
   def new
     @project = Project.find(params[:project_id])
+
+    if @project.creator_id == current_user.id
+      redirect_to project_path(@project)
+    end
+
     @pledge = @project.pledges.new
     @pledge.pledge_amount = params[:amount]
   end

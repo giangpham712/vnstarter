@@ -32,6 +32,7 @@ form .field_with_errors input.form-control {
     vertical-align: middle;
     font-size: 16px;
     margin-right: 5px;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
 }
 
 #profile_overview .profile-user-info p {
