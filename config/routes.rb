@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   get 'profile', to: 'users#show'
   get 'profile/edit', to: 'users#edit'
-  get 'profile/:id', to: 'users#show'
+  get 'profile/:id', to: 'users#show', as: 'user_profile'
   put 'profile', to: 'users#update_profile'
 
   resources :messages do

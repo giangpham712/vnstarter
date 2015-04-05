@@ -22,40 +22,37 @@
     </div>
     <div class="content-main">
       <div class="container">
-        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
-          <div class="row">
-            <ul class="projects">
-              <% @projects.each do |project| %>
-                  <li class="project clearfix">
-                    <div class="display-table">
-                      <div class="image display-table-cell">
-                        <%= image_tag project.image.url(:tiny) %>
-                      </div>
-                      <div class="display-table-cell">
-                        <div class="display-table">
-                          <div class="title display-table-cell">
-                            <%= label_tag project.title %>
 
-                            <% if project.launched? %>
-                                <p class="text-success">Dự án đã được khởi động lúc <%= project.launched_at.strftime("%H:%M ngày %d/%m/%Y") %></p>
-                            <% end %>
-
-                          </div>
-                          <div class="links display-table-cell">
-                            <%= link_to "Chỉnh sửa", edit_project_path(project.id) %>
-                            <% if project.launched? %>
-                                <%= link_to "Theo dõi", project_path(project) %>
-                            <% end %>
-                          </div>
-                        </div>
-                      </div>
+        <ul class="projects">
+          <% @projects.each do |project| %>
+              <li class="project clearfix">
+                  <a href="" class="project-image pull-left">
+                    <%= image_tag project.image.url(:small) %>
+                  </a>
+                <div class="project-content">
+                  <div class="actions">
+                    <div class="btn-group" role="group">
+                      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        Quản lý <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" role="menu" id="pledge_money">
+                        <li><%= link_to "Chỉnh sửa", edit_project_path(project.id) %></li>
+                        <li><%= link_to "Theo dõi", project_path(project) %></li>
+                      </ul>
                     </div>
-                  </li>
-              <% end %>
-            </ul>
-          </div>
-        </div>
+                  </div>
+                  <h3>
+                    <%= project.title %>
+                  </h3>
+                  <h5>
+                    thực hiện bởi <%= link_to project.user.name, user_profile_path(project.user) %>
+                  </h5>
+                </div>
+              </li>
+          <% end %>
+        </ul>
       </div>
+
     </div>
   </div>
 </div>

@@ -46,6 +46,12 @@ h1, h2, h3, h4, h5, h6 {
     color: #4b4b4b;
 }
 
+@media (min-width: 1200px) {
+    .container {
+        width: 990px;
+    }
+}
+
 #header .main-bar {
     min-height: 80px;
     background-color: #252C34;

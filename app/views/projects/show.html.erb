@@ -74,9 +74,13 @@
               </div>
             </div>
 
-            <button id="btn_pledge" class="btn btn-x-lg btn-primary" data-toggle="modal" href='#pledge_money'>Góp vốn
-            </button>
+            <% if !@project.ended? %>
 
+                <button id="btn_pledge" class="btn btn-x-lg btn-primary" data-toggle="modal" href='#pledge_money'>Góp
+                  vốn
+                </button>
+
+            <% end %>
             <div class="project-dates">
               <p>
                 Dự án được khởi động lúc <%= @project.launched_at.strftime("%H:%M ngày %d/%m/%Y") %>
