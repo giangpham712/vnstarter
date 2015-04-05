@@ -718,18 +718,67 @@ button.btn.btn-default:hover, button.btn.btn-default:active, button.btn.btn-defa
     opacity: 1;
 }
 
+.btn.btn-grey {
+    color: #767676;
+    outline: 0;
+    white-space: nowrap;
+    word-wrap: normal;
+    cursor: pointer;
+    background-color: #fff;
+    text-shadow: none;
+}
 
-button.btn-lg, .btn-lg {
+.btn.btn-lg {
     padding: 0 30px;
     height: 49px;
     line-height: 49px;
 }
 
-button.btn-x-lg, .btn-x-lg {
+.btn.btn-x-lg {
     font-size: 18px;
-    height: 54px;
-    line-height: 54px;
+    height: 60px;
+    line-height: 60px;
     padding: 0 40px;
+}
+
+.btn.btn-special {
+    padding: 15px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    outline: none;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    border-radius: 4px;
+}
+
+@media (max-width: 992px) {
+    .btn.btn-x-lg {
+        height: 50px;
+        line-height: 50px;
+    }
+}
+
+.page-mask {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: #fff;
+    top: 0px;
+    left: 0px;
+    z-index: 99999;
+}
+
+.page-loader {
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    line-height: 44px;
+    margin: 23% auto 0 auto;
+    font-size: 12px;
 }
 
 .spinner {
@@ -743,6 +792,29 @@ button.btn-x-lg, .btn-x-lg {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     -webkit-animation: spin 1s linear infinite;
+
+    width: 40px;
+    height: 40px;
+    position: relative;
+    margin: 100px auto;
+}
+
+.double-bounce1, .double-bounce2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(39, 159, 187, 0.5);
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-animation: bounce 2.0s infinite ease-in-out;
+    animation: bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
 }
 
 footer .footer-top {
@@ -760,7 +832,7 @@ footer .footer-bottom {
 /* Utilities classes */
 
 .alt-bg {
-    background: #f7fafa;
+    background: #F1F2F7;
 }
 
 .display-table {

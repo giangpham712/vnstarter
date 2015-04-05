@@ -687,11 +687,26 @@ div.modal_dialog_body label {
 
 #project_show #show_story .video-container,
 #project_show #show_story .image-container {
-    padding-bottom: 20px;
+    width: 750px;
+    height: 560px;
 }
 
 #project_show #show_story .image-container img {
-    width: 100%;
+    width: 750px;
+    height: 560px;
+}
+
+@media (max-width: 992px) {
+    #project_show #show_story .video-container,
+    #project_show #show_story .image-container {
+        width: auto;
+        height: auto;
+    }
+
+    #project_show #show_story .image-container img {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 #project_show #show_story .buttons .btn + .btn {
@@ -699,14 +714,12 @@ div.modal_dialog_body label {
 }
 
 #project_show .side-top {
-    padding: 10px 0 15px 0;
+    padding: 20px 0 20px 0;
     line-height: 10px;
-    margin-bottom: 20px;
-
 }
 
 #project_show .project-stats {
-
+    padding-bottom: 20px;
 }
 
 #project_show .side-top h1 {
@@ -726,15 +739,30 @@ div.modal_dialog_body label {
 }
 
 #project_show .side-top p {
-    font-size: 13px;
-    color: #000;
+    font-size: 14px;
+    color: #767676;
+    font-family: "Open Sans";
+    line-height: 24px;
+}
+
+#project_show #btn_pledge {
+    margin: 20px 0;
+}
+
+#project_show .project-dates {
+    height: 50px;
+    margin: 45px 0 20px 0;
+}
+
+#project_show .project-dates p {
+    font-family: "Open Sans";
 }
 
 #project_show .unsuccessful .project-stats {
     opacity: 0.4;
 }
 
-#project_show .unsuccessful .project-stats .project-dates {
+#project_show .unsuccessful .project-dates {
     display: none;
 }
 
@@ -765,7 +793,9 @@ div.modal_dialog_body label {
 }
 
 #project_show h3.description {
-    padding-bottom: 50px;
+    margin: 40px 0;
+    height: 120px;
+    font-size: 20px;
     border-bottom: 1px solid #d9d9de;
 }
 
@@ -797,12 +827,12 @@ div.modal_dialog_body label {
     #project_show .side-top {
         padding: 5px 0 10px 0;
         line-height: 10px;
-        margin-bottom: 10px;
     }
 
     #project_show .side-top h1 {
         font-size: 28px;
-        line-height: 24px;
+        line-height: 28px;
+        margin-bottom: 5px;
     }
 
     #project_show .side-top h3 {
@@ -814,8 +844,26 @@ div.modal_dialog_body label {
         font-size: 12px;
     }
 
+    #project_show .project-stats {
+        padding-bottom: 0;
+    }
+
+    #project_show #btn_pledge {
+        margin: 10px 0;
+    }
+
+    #project_show .project-dates {
+        height: auto;
+        margin: 10px 0 10px 0;
+    }
+
+    #project_show .project-dates p {
+        font-size: 12px;
+    }
+
     #project_show h3.description {
-        font-size: 18px;
+        margin: 20px 0;
+        font-size: 14px;
     }
 
     #project_show .creator h5 {
@@ -825,6 +873,7 @@ div.modal_dialog_body label {
 
     #project_show .creator a {
         font-size: 12px;
+        display: block;
     }
 }
 

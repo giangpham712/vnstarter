@@ -39,7 +39,6 @@ $(window).load(function () {
 
 
 function hideLoading() {
-    $('.loading-container').remove();
-    $('.hide-until-loading').removeClass('hide-until-loading');
+       $('.hide-until-loading').removeClass('hide-until-loading');
 }
 
