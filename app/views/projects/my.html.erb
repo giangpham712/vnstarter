@@ -2,11 +2,23 @@
 <% body_id "projects_my" %>
 <div class="content-wrapper">
   <div class="body-wrapper">
-    <div class="content-head">
-      <h2 class="text-center">Dự án đã tạo</h2>
-      <h6 class="text-center">
-        Nơi bạn quản lý những dự án do mình tạo
-      </h6>
+    <div class="content-head text-center">
+      <div class="container">
+        <h2 class="text-left"><%= current_user.name %></h2>
+        <h6>&nbsp;</h6>
+      </div>
+    </div>
+    <div class="content-nav">
+      <div class="container">
+        <ul class="nav nav-tabs">
+          <li>
+            <a href="/profile/">Thông tin cá nhân</a>
+          </li>
+          <li class="active">
+            <%= link_to "Dự án đã tạo", profile_projects_path %>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="content-main">
       <div class="container">
