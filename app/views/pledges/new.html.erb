@@ -11,68 +11,63 @@
         </h6>
       </div>
     </div>
-    <div class="project-content">
+    <div class="main-content">
       <div class="container">
         <div class="row">
           <div class="col-md-12 col-sm-12">
             <div class="main clearfix">
-              <div class="col-md-8 col-sm-8">
-                <%= form_for([@project, @pledge]) do |f| %>
+              <%= form_for([@project, @pledge]) do |f| %>
 
-                    <%= f.hidden_field :pledge_amount %>
-                    <input type="hidden" name="slug" id="slug" value="<%= @project.slug %>"/>
+                  <%= f.hidden_field :pledge_amount %>
+                  <input type="hidden" name="slug" id="slug" value="<%= @project.slug %>"/>
 
-                    <h2>Xin cám ơn!</h2>
+                  <h2>Xin cám ơn!</h2>
 
-                    <p>
-                      Bạn đã lựa chọn góp cho dự án <b><%= @project.title %></b> số tiền
+                  <p>
+                    Bạn đã lựa chọn góp cho dự án <b><%= @project.title %></b> số tiền
 
-                      <span class="pledge_amount"><%= number_to_currency(@pledge.pledge_amount, precision: 0) %></span>
-                    </p>
-                    <% if (!@project.rewards.where("minimum_pledge_amount <= ? ", @pledge.pledge_amount).empty?) %>
-                        <p>
-                          Với mức đóng góp này, bạn có thể lựa chọn một trong những phần thưởng dưới đây:
-                        </p>
+                    <span class="pledge_amount"><%= number_to_currency(@pledge.pledge_amount, precision: 0) %></span>
+                  </p>
+                  <% if (!@project.rewards.where("minimum_pledge_amount <= ? ", @pledge.pledge_amount).empty?) %>
+                      <p>
+                        Với mức đóng góp này, bạn có thể lựa chọn một trong những phần thưởng dưới đây:
+                      </p>
 
-                        <ul class="rewards">
-                          <a href="javascript:void(0);" class="reward">
-                            <label for="reward-0">
-                              <input type="radio" checked id="reward-0" value="" name="[pledge]reward_id">
-                              <strong>Không nhận</strong>
-                            </label>
-                            <label for="reward-0">
+                      <ul class="rewards">
+                        <a href="javascript:void(0);" class="reward">
+                          <label for="reward-0">
+                            <input type="radio" checked id="reward-0" value="" name="[pledge]reward_id">
+                            <strong>Không nhận</strong>
+                          </label>
+                          <label for="reward-0">
                                   <span>
                                     Tôi chỉ muốn đóng góp cho dự án
                                   </span>
-                            </label>
-                          </a>
-                          <% @project.rewards.where("minimum_pledge_amount <= ? ", @pledge.pledge_amount).each do |reward| %>
-                              <a href="javascript:void(0);" class="reward">
-                                <label for="reward-<%= reward.id %>">
-                                  <input type="radio" id="reward-<%= reward.id %>" value="<%= reward.id %>" name="[pledge]reward_id">
-                                  <strong><%= number_to_currency(reward.minimum_pledge_amount, precision: 0) %></strong>
-                                  trở lên
-                                </label>
-                                <label for="reward-<%= reward.id %>">
+                          </label>
+                        </a>
+                        <% @project.rewards.where("minimum_pledge_amount <= ? ", @pledge.pledge_amount).each do |reward| %>
+                            <a href="javascript:void(0);" class="reward">
+                              <label for="reward-<%= reward.id %>">
+                                <input type="radio" id="reward-<%= reward.id %>" value="<%= reward.id %>" name="[pledge]reward_id">
+                                <strong><%= number_to_currency(reward.minimum_pledge_amount, precision: 0) %></strong>
+                                trở lên
+                              </label>
+                              <label for="reward-<%= reward.id %>">
                                   <span>
                                     <%= reward.description %>
                                   </span>
-                                </label>
-                              </a>
-                          <% end %>
-                        </ul>
-                    <% end %>
-                    <div class="buttons" role="group">
-                      <%= link_to 'Hủy', :back, class: 'btn btn-default' %>
-                      <button type="submit" class="btn btn-primary">
-                        Tôi đồng ý
-                      </button>
-                    </div>
-                <% end %>
-              </div>
-              <div class="col-md-4 col-sm-4">
-
-              </div>
+                              </label>
+                            </a>
+                        <% end %>
+                      </ul>
+                  <% end %>
+                  <div class="buttons" role="group">
+                    <%= link_to 'Hủy', :back, class: 'btn btn-default' %>
+                    <button type="submit" class="btn btn-primary">
+                      Tôi đồng ý
+                    </button>
+                  </div>
+              <% end %>
             </div>
           </div>
 

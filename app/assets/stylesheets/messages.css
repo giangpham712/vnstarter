@@ -1,0 +1,46 @@
+#messages_my .messages {
+    padding: 0;
+}
+
+#messages_my .messages .message {
+    border: 1px solid #d9d9de;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+#messages_my .messages .message-content {
+    border-radius: 2px;
+    overflow: hidden;
+    height: 70px;
+}
+
+#messages_my .messages .user-avatar {
+    float: left;
+    width: 70px;
+    height: 70px;
+}
+
+#messages_my .messages .user-avatar img {
+    width: 70px;
+    height: 70px;
+}
+
+#messages_my .messages .message-details {
+    padding-left: 90px;
+}
+
+#messages_my .messages .user-name {
+    font-weight: bold;
+}
+
+#messages_my .messages .comment-date {
+    font-size: 12px;
+    color: #979797;
+    font-style: italic;
+    font-weight: normal;
+}
+
+#messages_my .messages .message-body {
+    padding: 10px 0;
+}

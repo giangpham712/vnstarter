@@ -13,21 +13,21 @@
         </h6>
       </div>
     </div>
-    <div class="project-nav">
+    <div class="content-nav">
       <div class="container">
-        <ul id="show-tabs" class="nav nav-tabs container clearfix" data-tabs="tabs" role="tablist">
+        <ul class="nav nav-tabs" data-tabs="tabs">
           <li role="presentation" class="active">
-            <a href="#story" aria-controls="story" class='project-tab' role="tab" data-toggle="tab">
+            <a href="#story" aria-controls="story" role="tab" data-toggle="tab">
               Câu chuyện
             </a>
           </li>
           <li role="presentation">
-            <a href="#comments" aria-controls="comments" class='project-tab' role="tab" data-toggle="tab">
+            <a href="#comments" aria-controls="comments" role="tab" data-toggle="tab">
               Bình luận (<%= @project.comments.count %>)
             </a>
           </li>
           <li role="presentation">
-            <a href="#pledges" aria-controls="pledges" class='project-tab' role="tab" data-toggle="tab">
+            <a href="#pledges" aria-controls="pledges" role="tab" data-toggle="tab">
               Đóng góp (<%= @pledges.count %>)
             </a>
           </li>
@@ -35,24 +35,23 @@
       </div>
     </div>
 
-    <div class="project-content <%= "unsuccessful" if @project.unsuccessful? %>">
+    <div class="content-main <%= "unsuccessful" if @project.unsuccessful? %>">
       <div class="container">
         <div class="row">
           <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
 
-            <div role="tabpanel">
-              <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="story">
-                  <%= render "projects/shared/show_story" %>
-                </div>
-                <div role="tabpanel" class="tab-pane" id="comments">
-                  <%= render "projects/shared/show_comments" %>
-                </div>
-                <div role="tabpanel" class="tab-pane" id="pledges">
-                  <%= render "projects/shared/show_pledges" %>
-                </div>
+            <div class="tab-content">
+              <div class="tab-pane active" id="story">
+                <%= render "projects/shared/show_story" %>
+              </div>
+              <div class="tab-pane" id="comments">
+                <%= render "projects/shared/show_comments" %>
+              </div>
+              <div class="tab-pane" id="pledges">
+                <%= render "projects/shared/show_pledges" %>
               </div>
             </div>
+
           </div>
           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class="project-stats">
@@ -77,7 +76,9 @@
 
             <% if !(current_user && @project.creator_id == current_user.id) && !@project.ended? %>
 
-                  <button id="btn_pledge" class="btn btn-x-lg btn-primary" data-toggle="modal" href='#pledge_money'>Góp vốn</button>
+                <button id="btn_pledge" class="btn btn-x-lg btn-primary" data-toggle="modal" href='#pledge_money'>Góp
+                  vốn
+                </button>
 
             <% end %>
             <div class="project-dates">

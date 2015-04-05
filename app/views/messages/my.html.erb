@@ -1,0 +1,43 @@
+<% page_title "Tin nhắn" %>
+<% body_id "messages_my" %>
+<div class="content-wrapper">
+  <div class="body-wrapper">
+    <div class="content-head text-center">
+      <div class="container">
+        <h2>Tin nhắn</h2>
+        <h6>&nbsp;</h6>
+      </div>
+    </div>
+    <div class="content-nav">
+      <div class="container">
+        <ul class="nav nav-tabs" data-tabs="tabs" role="tablist">
+          <li role="presentation" class="active">
+            <a href="#inbox" aria-controls="story" role="tab" data-toggle="tab">
+              Tin nhắn đến
+            </a>
+          </li>
+          <li role="presentation">
+            <a href="#sent" aria-controls="comments" role="tab" data-toggle="tab">
+              Tin nhắn đi
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="content-main">
+      <div class="container">
+
+        <div class="tab-content">
+          <div class="tab-pane active" id="inbox">
+            <%= render "messages/shared/my_inbox" %>
+          </div>
+          <div class="tab-pane" id="sent">
+            <%= render "messages/shared/my_sent" %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

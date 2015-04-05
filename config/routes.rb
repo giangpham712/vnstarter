@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
 
   get 'profile/projects', to: 'projects#my'
+  get 'profile/messages', to: 'messages#my'
 
   post 'profile/avatar', to: 'users#upload_image'
 
