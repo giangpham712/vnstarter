@@ -21,24 +21,3 @@ jQuery(document).ready(function ($) {
 
 });
 
-
-/* Portfolio */
-
-var loaded = false, timeout = 20000;//loaded flag for timeout
-setTimeout(function () {
-    if (!loaded) {
-        hideLoading();
-    }
-}, timeout);
-
-$(window).load(function () {
-    loaded = true;
-
-    hideLoading();
-});
-
-
-function hideLoading() {
-       $('.hide-until-loading').removeClass('hide-until-loading');
-}
-

@@ -280,17 +280,17 @@
                 var counter = $("#rewards .rewards").find(".reward").length;
 
                 var amount = accounting.formatMoney(result.reward.minimum_pledge_amount, {
-                    symbol: "đồng",
+                    symbol: "vnđ",
                     format: "%v %s",
                     thousand: ".",
                     precision: 0
                 });
 
                 var html = "<div class='form-element'><div class='reward' data-reward-id='" + result.reward.id + "'>";
-                html += "<div class='col-xs-4 col-sm-4 col-md-4 col-lg-4'>" + "Phần thưởng " + (counter + 1) + "</div>";
+                html += "<div class='col-xs-4 col-sm-4 col-md-4 col-lg-4'>" + "Phần thưởng " + (counter + 1) + "</div>";
                 html += "<div class='col-xs-8 col-sm-8 col-md-8 col-lg-8'>";
                 html += "<a class='btn btn-danger pull-right delete'><i class='fa fa-times'></i></a>";
-                html += "<h3>Góp <b>" + amount + "</b> hoặc nhiều hơn</h3>";
+                html += "<h3>Góp <b>" + amount + "</b> trở lên</h3>";
                 html += "<p>" + result.reward.description + "</p>";
                 html += "</div></div></div>";
 

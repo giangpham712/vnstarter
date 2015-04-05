@@ -943,7 +943,7 @@ div.modal_dialog_body label {
 }
 
 #project_show #rewards {
-    padding-top: 20px;
+    padding-top: 40px;
 }
 
 #project_show #rewards h3 {
@@ -954,7 +954,7 @@ div.modal_dialog_body label {
 
 #project_show .rewards .reward {
     margin: 20px 0;
-    background-color: #f7fafa;
+    background-color: #F1F2F7;
     border-radius: 5px;
     padding: 20px;
 }
@@ -969,6 +969,10 @@ div.modal_dialog_body label {
         font-size: 24px;
     }
 
+    #project_show .rewards .reward h5 {
+        font-size: 14px;
+        line-height: 16px;
+    }
 }
 
 .project-toolbar {
