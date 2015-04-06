@@ -6,7 +6,7 @@ vi:
   project:
     edit:
         basic:
-          project_image: "Ảnh đại diện"
+          project_image: "Ảnh dự án"
           choose_image_from_your_computer: "Chọn ảnh từ máy tính của bạn"
           support_image_file_formats: "Hố trợ định dạng JPEG, PNG, GIF hoặc BMP. Kích thước tối đa 5MB"
           project_title: "Tên dự án"
@@ -14,7 +14,7 @@ vi:
           category: "Lĩnh vực"
           location: "Địa điểm"
           duration: "Thời hạn"
-          funding_goal: "Mục tiêu"
+          funding_goal: "Mục tiêu huy động vốn"
         story:
           choose_video_from_your_computer: "Chọn file video từ máy tính của bạn"
           support_video_file_formats: "Hố trợ định dạng MP4. Kích thước tối đa 20MB"

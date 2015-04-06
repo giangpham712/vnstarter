@@ -1,27 +1,28 @@
-<div class="row">
-  <div class="col-xs-9 col-sm-9 col-md-8 col-lg-8">
+<div>
+  <div class="section-guide">
+    <h2>Phần thưởng</h2>
+    <p>
+      Khi tham gia đóng góp cho dự án, sẽ tuyệt vời hơn nếu người góp vốn nhận lại được một điều gì đó. Bạn có thể tri ân họ bằng những phần thưởng, những món quà. Hãy thể hiện sự sáng tạo của bạn
+    </p>
+  </div>
 
+  <%= button_tag "Tạo phần thưởng", class: 'btn btn-lg btn-info add_reward', data: {toggle: "modal", target: "#add-reward"} %>
+  <div class="row">
     <div class="rewards">
+
       <% @project.rewards.each_with_index do |reward, index| %>
-          <div class='form-element'>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <div class="reward" data-reward-id="<%= reward.id %>">
-              <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-                Phần thưởng <%= (index + 1) %>
-              </div>
-              <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                <a class="btn btn-danger pull-right delete"><i class="fa fa-times"></i></a>
-                <h3>
-                  Góp <b><%= number_to_currency(reward.minimum_pledge_amount, precision: 0) %></b> trở lên
-                </h3>
-                <p><%= reward.description %></p>
-              </div>
+              <a class="btn btn-danger pull-right delete"><i class="fa fa-times"></i></a>
+
+              <h3><b><%= number_to_currency(reward.minimum_pledge_amount, precision: 0) %></b></h3>
+
+              <p><%= reward.description %></p>
             </div>
           </div>
       <% end %>
     </div>
-
-    <%= button_tag "Thêm phần thưởng", class: 'btn btn-info add_reward', data: {toggle: "modal", target: "#add-reward"} %>
-
   </div>
+
 </div>
 

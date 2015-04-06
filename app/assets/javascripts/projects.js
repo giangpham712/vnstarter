@@ -18,7 +18,7 @@
             }
         })
 
-        $("#project_edit .launch").click(function () {
+        $("#launch_project").click(function () {
 
             var project_id = $("#project_id").val();
             $("#saving-layer").show();
@@ -50,7 +50,7 @@
             });
         });
 
-        $(".attachment_upload").each(function (i, o) {
+        $(".attachment-upload").each(function (i, o) {
             var $ele = $(o).find("input.fileupload");
             var upload_url = $ele.data("upload-url");
 
@@ -286,13 +286,12 @@
                     precision: 0
                 });
 
-                var html = "<div class='form-element'><div class='reward' data-reward-id='" + result.reward.id + "'>";
-                html += "<div class='col-xs-4 col-sm-4 col-md-4 col-lg-4'>" + "Phần thưởng " + (counter + 1) + "</div>";
-                html += "<div class='col-xs-8 col-sm-8 col-md-8 col-lg-8'>";
+                var html = "<div class='col-xs-6 col-sm-6 col-md-6 col-lg-6'>";
+                html += "<div class='reward' data-reward-id='" + result.reward.id + "'>";
                 html += "<a class='btn btn-danger pull-right delete'><i class='fa fa-times'></i></a>";
-                html += "<h3>Góp <b>" + amount + "</b> trở lên</h3>";
+                html += "<h3><b>" + amount + "</b></h3>";
                 html += "<p>" + result.reward.description + "</p>";
-                html += "</div></div></div>";
+                html += "</div></div>";
 
                 var $reward = $(html);
 

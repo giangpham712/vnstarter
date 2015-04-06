@@ -1,100 +1,113 @@
-<%= form_for :project, url: project_path(@project.id), method: :put do |f| %>
-    <div class="row">
-      <div class="col-xs-9 col-sm-9 col-md-8 col-lg-8">
+<div>
+  <div class="section-guide">
+    <h2>Thông tin cơ bản</h2>
 
-        <div class="row">
-          <div class='form-element'>
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-              <%= f.label t('project.edit.basic.project_image') %>
+    <p>
+      Hãy tạo những ấn tượng đầu tiên. Giới thiệu về mục tiêu của dự án, điều gì làm dự án của bạn nổi bật và khiến cho mọi người muốn tìm hiểu nhiều hơn.
+    </p>
+  </div>
+
+  <%= form_for :project, url: project_path(@project.id), method: :put do |f| %>
+
+      <div class='form-element'>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <%= f.label t('project.edit.basic.project_image') %><br/>
+
+        </div>
+
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+          <div class="attachment-upload
+            <% if @project.image.exists? %>has_file
+            <% end %>">
+            <div class="error">
+              <div class="message"></div>
             </div>
+            <div class="success text-center">
+              <% if @project.image.exists? %>
+                  <%= image_tag @project.image.url(:large) %>
+              <% end %>
+            </div>
+            <div class="upload">
+              <%= f.file_field :image, autofocus: false, class: 'fileupload', 'data-upload-url' => '/projects/' + @project.id.to_s + '/upload_image' %>
+              <strong class="text-center">
+                <%= t("project.edit.basic.choose_image_from_your_computer") %>
+                <span class="has_file_hide">This is the main image associated with your project. Make it count!</span>
+                <span><%= t("project.edit.basic.support_image_file_formats") %></span>
+              </strong>
 
-            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-              <div class="attachment_upload
-                <% if @project.image.exists? %>has_file
-                <% end %>">
-                <div class="error">
-                  <div class="message"></div>
-                </div>
-                <div class="success text-center">
-                  <% if @project.image.exists? %>
-                      <%= image_tag @project.image.url(:large) %>
-                  <% end %>
-                </div>
-                <div class="upload">
-                  <%= f.file_field :image, autofocus: false, class: 'fileupload', 'data-upload-url' => '/projects/' + @project.id.to_s + '/upload_image' %>
-                  <strong class="text-center">
-                    <%= t("project.edit.basic.choose_image_from_your_computer") %>
-                    <span class="has_file_hide">This is the main image associated with your project. Make it count!</span>
-                    <span><%= t("project.edit.basic.support_image_file_formats") %></span>
-                  </strong>
-
-                  <div class="progress">
-                    <div class="inner">
-                      <div class="bar">
-                        <div class="percentage"></div>
-                      </div>
-                    </div>
+              <div class="progress">
+                <div class="inner">
+                  <div class="bar">
+                    <div class="percentage"></div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          <p class="help">
+            Chọn một bức ảnh đẹp và có độ phân giải cao làm ảnh đại diện cho dự án của bạn
+          </p>
+        </div>
+      </div>
 
-          <div class='form-element'>
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-              <%= f.label t('project.edit.basic.project_title') %><br/>
-            </div>
+      <div class='form-element'>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <%= f.label t('project.edit.basic.project_title') %><br/>
 
-            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-              <%= f.text_field :title, class: 'form-control' %>
+        </div>
 
-            </div>
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+          <%= f.text_field :title, class: 'form-control' %>
+          <p class="help">
+            Tên dự án của bạn cần đơn giản, đặc trưng và dễ nhớ
+          </p>
+        </div>
+      </div>
+
+      <div class='form-element'>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <%= f.label t('project.edit.basic.short_description') %>
+        </div>
+
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+          <div class="limit-characters">
+            <%= f.text_area :short_description, class: 'form-control', :maxlength => "200", :rows => "4" %>
+            <p></p>
           </div>
+        </div>
+      </div>
 
-          <div class='form-element'>
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-              <%= f.label t('project.edit.basic.short_description') %>
-            </div>
+      <div class='form-element'>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <%= f.label t('project.edit.basic.category') %>
+        </div>
 
-            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-              <div class="limit-characters">
-                <%= f.text_area :short_description, class: 'form-control', :maxlength => "225", :rows => "4" %>
-                <p></p>
-              </div>
-            </div>
-          </div>
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+          <%= f.select :category_id, options_for_select(@categories.map { |c| [c.name, c.id] }, @project.category_id), {:include_blank => false}, {class: 'form-control'} %>
 
-          <div class='form-element'>
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-              <%= f.label t('project.edit.basic.category') %>
-            </div>
+        </div>
+      </div>
 
-            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-              <%= f.select :category_id, options_for_select(@categories.map { |c| [c.name, c.id] }, @project.category_id), {:include_blank => false}, {class: 'form-control'} %>
+      <div class='form-element'>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <%= f.label t('project.edit.basic.location') %>
+        </div>
 
-            </div>
-          </div>
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+          <%= f.select :location, options_for_select(@cities.map { |city| city.name }, @project.location), {:include_blank => false}, {class: 'form-control'} %>
 
-          <div class='form-element'>
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-              <%= f.label t('project.edit.basic.location') %>
-            </div>
+        </div>
+      </div>
 
-            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-              <%= f.select :location, options_for_select(@cities.map { |city| city.name }, @project.location), {:include_blank => false}, {class: 'form-control'} %>
+      <div class='form-element'>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <%= f.label t('project.edit.basic.duration') %>
+        </div>
 
-            </div>
-          </div>
-
-          <div class='form-element'>
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-              <%= f.label t('project.edit.basic.duration') %>
-            </div>
-
-            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-              <% if @project.initiating? %>
-                  <ul class="options">
-                    <li class="option <%= "selected" if @project.duration_type == "duration" %>">
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+          <% if @project.initiating? %>
+              <ul class="options">
+                <li class="option <%= "selected" if @project.duration_type == "duration" %>">
                   <span class="select">
                     <%= f.radio_button :duration_type, "duration", id: "duration_duration" %>
                     <label for="duration_duration">Tổng thời gian (ngày)</label>
@@ -102,8 +115,8 @@
                   <span class="value">
                     <%= f.text_field :duration, class: 'form-control duration' %>
                   </span>
-                    </li>
-                    <li class="option <%= "selected" if @project.duration_type == "deadline" %>">
+                </li>
+                <li class="option <%= "selected" if @project.duration_type == "deadline" %>">
                   <span class="select">
                     <%= f.radio_button :duration_type, "deadline", id: "duration_deadline" %>
                     <label for="duration_deadline">Ngày kết thúc</label>
@@ -112,36 +125,42 @@
                     <%= f.text_field :deadline, class: 'form-control', value: @project.deadline.strftime("%d-%m-%Y %H:%M"), id: 'deadline' %>
                     <div class="datetimepicker" data-target="#deadline"></div>
                   </span>
-                    </li>
-                  </ul>
-              <% else %>
-                  <strong>
-                    Kết thúc vào <b></b>. Tổng thời gian gây vốn là <b><%= @project.duration %></b> ngày
-                  </strong>
-              <% end %>
-            </div>
-          </div>
-          <div class='form-element'>
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-              <%= f.label t('project.edit.basic.funding_goal') %>
-            </div>
-
-            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-              <% if @project.initiating? %>
-                  <%= f.text_field :funding_goal, class: 'form-control currency' %>
-              <% else %>
-                  <strong><%= number_to_currency(@project.funding_goal, precision: 0) %></strong>
-              <% end %>
-            </div>
-          </div>
-          <div class="buttons-container text-right">
-              <button type="submit" class="btn btn-green">Lưu thay đổi</button>
-          </div>
-
-
+                </li>
+              </ul>
+          <% else %>
+              <strong>
+                Kết thúc vào <b></b>. Tổng thời gian gây vốn là <b><%= @project.duration %></b> ngày
+              </strong>
+          <% end %>
         </div>
       </div>
+      <div class='form-element'>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <%= f.label t('project.edit.basic.funding_goal') %><br/>
 
-    </div>
-<% end %>
+        </div>
 
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+          <% if @project.initiating? %>
+              <%= f.text_field :funding_goal, class: 'form-control currency' %>
+          <% else %>
+              <strong><%= number_to_currency(@project.funding_goal, precision: 0) %></strong>
+          <% end %>
+          <p class="help">
+            Mục tiêu huy động vốn là con số tối thiểu cần để bạn có thể hoàn thành dự án của mình. Nên nhớ việc huy động
+            vốn chỉ có thể thành công nếu
+            đạt được mục tiêu này, bạn hoàn toàn có nhận được nhiều hơn con số này như không thể ít hơn.
+          </p>
+
+          <p class="help">
+            Một khi dự án của bạn đã được khởi động, bạn không thể thay đổi mục tiêu huy động vốn.
+          </p>
+        </div>
+      </div>
+      <div class="buttons-container text-right">
+        <button type="submit" class="btn btn-green">Lưu thay đổi</button>
+      </div>
+
+  <% end %>
+
+</div>

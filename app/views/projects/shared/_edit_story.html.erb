@@ -1,67 +1,35 @@
-<div class="row">
-  <div class="col-xs-9 col-sm-9 col-md-8 col-lg-8">
-    <div class="row">
-      <div class='form-element hidden'>
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-          <label>Video</label>
-        </div>
-        <div>
-          <div class="attachment_upload">
-            <div class="error">
-              <div class="message"></div>
-            </div>
-            <div class="success text-center">
+<div>
+  <div class="section-guide">
+    <h2>Câu chuyện</h2>
+    <p>
+      Kể cho mọi người câu chuyện đằng sau dự án của bạn, những điều thôi thúc bạn thực hiện dự án này, những khó khăn và thách thức bạn gặp phải.
+    </p>
+  </div>
 
-            </div>
-            <div class="upload">
-              <%= file_field_tag :image, autofocus: false, class: 'fileupload', 'data-upload-url' => '/projects/' + @project.id.to_s + '/upload_video' %>
-              <strong class="text-center">
-                <%= t("project.edit.story.choose_video_from_your_computer") %>
-                <span><%= t("project.edit.story.support_video_file_formats") %></span>
-              </strong>
+  <%= button_tag "Thêm câu chuyện", class: 'btn btn-lg btn-info add_story', data: {toggle: "modal", target: "#add-story-post"} %>
 
-              <div class="progress">
-                <div class="inner">
-                  <div class="bar">
-                    <div class="percentage"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+  <div class="story-posts">
+    <% @project.posts.each do |post| %>
+        <div class="post" data-post-id="<%= post.id %>">
+
+          <a class="btn btn-danger pull-right delete"><i class="fa fa-times"></i></a>
+
+          <h3><%= post.title %></h3>
+
+          <div class="image-container">
+            <% if post.image.exists? %>
+                <img src="<%= post.image.url(:medium) %>" title="<%= post.title %>"/>
+                <br/>
+                <br/>
+            <% end %>
+
           </div>
+          <p><%= post.body %></p>
         </div>
-      </div>
-
-      <div class='form-element'>
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-          <label>Story</label>
-        </div>
-        <div class="story-posts">
-          <% @project.posts.each do |post| %>
-              <div class="post" data-post-id="<%= post.id %>">
-
-                <a class="btn btn-primary pull-right edit hidden"><i class="fa fa-pencil"></i></a>
-                <a class="btn btn-danger pull-right delete"><i class="fa fa-times"></i></a>
-
-                <h3><%= post.title %></h3>
-
-                <div class="image-container">
-                  <% if post.image.exists? %>
-                      <img src="<%= post.image.url(:medium) %>" title="<%= post.title %>"/>
-                      <br/>
-                      <br/>
-                  <% end %>
-
-                </div>
-                <p><%= post.body %></p>
-              </div>
-          <% end %>
-
-        </div>
-        <%= button_tag "Thêm câu chuyện", class: 'btn btn-info add_story', data: {toggle: "modal", target: "#add-story-post"} %>
-      </div>
-    </div>
+    <% end %>
 
   </div>
+
+
 </div>
 

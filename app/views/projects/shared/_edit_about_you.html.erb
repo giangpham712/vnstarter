@@ -1,98 +1,102 @@
+
+<div class="section-guide">
+  <h2>Thông tin cá nhân</h2>
+
+  <p>
+    Một trong những mục tiêu quan trọng của bất kỳ người huy động vốn nào là giành được niềm tin từ những khác. Hãy kể cho mọi người biết bạn là ai.
+  </p>
+  <p>
+    Chúng tôi khuyến khích bạn liên kết tài khoàn VnStarter với tài khoản trên các mạng xã hội. Đó là cách nhanh nhất để người khác có thể tìm hiểu về bạn
+  </p>
+</div>
+
 <%= form_for :user, url: '/profile', method: :put do |f| %>
-    <div class="row">
-      <div class="col-xs-9 col-sm-9 col-md-8 col-lg-8">
-
-        <div class="row">
-          <div class='form-element'>
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-              <label>Ảnh cá nhân</label>
-            </div>
-
-            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-              <div class="attachment_upload profile-photo
-                <% if current_user.image.exists? %>has_file
-                <% end %>">
-                <div class="error">
-                  <div class="message"></div>
-                </div>
-                <div class="success text-center table-cell">
-                  <% if current_user.image.exists? %>
-                      <div class="image-clip">
-                        <%= image_tag current_user.image.url(:small) %>
-                      </div>
-                  <% end %>
-                </div>
-                <div class="upload">
-                  <%= file_field_tag :image, autofocus: false, class: 'fileupload', 'data-upload-url' => '/profile/avatar' %>
-                  <strong class="text-center">
-                    <%= t("project.edit.basic.choose_image_from_your_computer") %>
-                    <span class="has_file_hide">This is the main image associated with your project. Make it count!</span>
-                    <span><%= t("project.edit.basic.support_image_file_formats") %></span>
-                  </strong>
-
-                  <div class="progress">
-                    <div class="inner">
-                      <div class="bar">
-                        <div class="percentage"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class='form-element'>
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-              <label>Họ và tên</label>
-            </div>
-
-            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-              <%= f.text_field :name, value: current_user.name, class: 'form-control' %>
-            </div>
-          </div>
-
-          <div class='form-element'>
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-              <label>Đôi điều về bản thân</label>
-            </div>
-
-            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-              <div class="limit-characters">
-                <%= f.text_area :biology, value: current_user.biology, maxlength: 225, class: 'form-control', :rows => "4" %>
-                <p></p>
-              </div>
-            </div>
-          </div>
-
-          <div class='form-element'>
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-              <%= f.label "Địa chỉ" %>
-            </div>
-
-            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-              <%= f.select :location, options_for_select(@cities.map { |city| city.name }, current_user.location), {:include_blank => true}, {class: 'form-control'} %>
-
-            </div>
-          </div>
-
-          <div class='form-element'>
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-              <label>Website</label>
-            </div>
-
-            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-              <%= f.text_field :website, value: current_user.website, class: 'form-control' %>
-            </div>
-          </div>
-
-          <div class="buttons-container text-right">
-            <button type="submit" class="btn btn-green">Lưu thay đổi</button>
-          </div>
-
-        </div>
-
+    <div class='form-element'>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <label>Ảnh cá nhân</label>
       </div>
 
+      <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+        <div class="attachment-upload profile-photo
+                <% if current_user.image.exists? %>has_file
+                <% end %>">
+          <div class="error">
+            <div class="message"></div>
+          </div>
+          <div class="success text-center table-cell">
+            <% if current_user.image.exists? %>
+                <div class="image-clip">
+                  <%= image_tag current_user.image.url(:small) %>
+                </div>
+            <% end %>
+          </div>
+          <div class="upload">
+            <%= file_field_tag :image, autofocus: false, class: 'fileupload', 'data-upload-url' => '/profile/avatar' %>
+            <strong class="text-center">
+              <%= t("project.edit.basic.choose_image_from_your_computer") %>
+              <span class="has_file_hide">This is the main image associated with your project. Make it count!</span>
+              <span><%= t("project.edit.basic.support_image_file_formats") %></span>
+            </strong>
+
+            <div class="progress">
+              <div class="inner">
+                <div class="bar">
+                  <div class="percentage"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <div class='form-element'>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <label>Họ và tên</label>
+      </div>
+
+      <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+        <%= f.text_field :name, value: current_user.name, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class='form-element'>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <label>Đôi điều về bản thân</label>
+      </div>
+
+      <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+        <div class="limit-characters">
+          <%= f.text_area :biology, value: current_user.biology, maxlength: 225, class: 'form-control', :rows => "4" %>
+          <p></p>
+        </div>
+      </div>
+    </div>
+
+    <div class='form-element'>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <%= f.label "Địa chỉ" %>
+      </div>
+
+      <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+        <%= f.select :location, options_for_select(@cities.map { |city| city.name }, current_user.location), {:include_blank => true}, {class: 'form-control'} %>
+
+      </div>
+    </div>
+
+    <div class='form-element'>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <label>Website</label>
+      </div>
+
+      <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+        <%= f.text_field :website, value: current_user.website, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="buttons-container text-right">
+      <button type="submit" class="btn btn-green">Lưu thay đổi</button>
+    </div>
+
+
 <% end %>
