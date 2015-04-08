@@ -107,7 +107,7 @@
                     </h5>
                   </a>
 
-                  <p>
+                  <p class="links">
                     <a href="javascript:void(0);" class="btn-link">Xem thông tin</a>
                     <% if !(current_user && @project.creator_id == current_user.id) %>
                         <a class="btn-link" data-toggle="modal" href='#send-message'>Gửi tin nhắn</a>
@@ -125,9 +125,7 @@
               <div class="rewards">
                 <% @project.rewards.each do |reward| %>
                     <div class="reward">
-                      <h5>Góp <%= number_to_currency(reward.minimum_pledge_amount, precision: 0) %> trở lên</h5>
-                      <br/>
-
+                      <h3><b><%= number_to_currency(reward.minimum_pledge_amount) %></b></h3>
                       <p>
                         <%= reward.description %>
                       </p>

@@ -416,6 +416,10 @@ h2.section-title {
     padding: 0;
 }
 
+.project-card-list .project .project-info p {
+    font-size: 13px;
+}
+
 .project-card-list .project .project-status {
     position: absolute;
     padding: 0 20px;
@@ -483,21 +487,23 @@ h2.section-title {
 }
 
 /* Navigation tabs */
-.nav-tabs li a {
-    border-radius: 0px;
-}
 
 .nav-tabs {
     border-bottom: none;
 }
 
+.nav-tabs li a {
+    border-radius: 0px;
+    font-size: 14px;
+}
+
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
-    color: #555;
+    color: #279fbb;
     cursor: default;
     background-color: #fff;
-    border-bottom: 3px solid #279fbb;
+    border-bottom: 4px solid #279fbb;
 }
 
 .nav-tabs li:not(.active) a:hover {
@@ -821,11 +827,59 @@ button.btn.btn-default:hover, button.btn.btn-default:active, button.btn.btn-defa
     border-radius: 4px;
 }
 
+.white-split-button button,
+.white-split-button button:hover,
+.white-split-button button:active,
+.white-split-button button:focus {
+    background: #fff;
+    border: 1px solid #dddddd;
+    color: #6a6a6a;
+    text-align: left;
+    text-transform: none;
+    opacity: 1;
+    height: 35px;
+}
+
+.white-split-button.btn-group.open .dropdown-toggle {
+    box-shadow: none;
+}
+
+.white-split-button span.fa {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    margin-top: -5px;
+}
+
 @media (max-width: 992px) {
     .btn.btn-x-lg {
         height: 50px;
         line-height: 50px;
     }
+}
+
+/* Annotation pill */
+
+.annotation-pill {
+    color: #ffffff;
+    background-color: #6a6a6a;
+    font-family: "Open Sans", "Helvetica", "sans-serif";
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 18px;
+    line-height: 12px;
+    text-transform: uppercase;
+    border-radius: 15px;
+    display: inline-block;
+    padding: 5px 20px;
+}
+
+.annotation-pill.pill-happy {
+    background-color: #0eb4b6;
+}
+
+.annotation-pill.pill-draft {
+    background-color: #6a6a6a;
 }
 
 .alert {

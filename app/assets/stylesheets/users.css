@@ -1,6 +1,9 @@
 #sign_in form .errors,
 #sign_up form .errors {
     padding: 10px 5px;
+}
+
+#sign_up form .errors {
     list-style-type: disc;
 }
 

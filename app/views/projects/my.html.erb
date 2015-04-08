@@ -31,9 +31,9 @@
                   </a>
                 <div class="project-content">
                   <div class="actions">
-                    <div class="btn-group" role="group">
-                      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                        Quản lý <span class="caret"></span>
+                    <div class="btn-group white-split-button" role="group">
+                      <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        Quản lý <span class="fa fa-angle-down"></span>
                       </button>
                       <ul class="dropdown-menu" role="menu" id="pledge_money">
                         <li><%= link_to "Chỉnh sửa", edit_project_path(project.id) %></li>
@@ -42,7 +42,13 @@
                     </div>
                   </div>
                   <h3>
-                    <%= project.title %>
+                    <%= link_to project.title, project_path(project) %>
+
+                    <% if project.initiating? %>
+                        <span class="annotation-pill pill-draft">Khởi tạo</span>
+                    <% elsif project.funding? %>
+                        <span class="annotation-pill pill-happy">Đã khởi động</span>
+                    <% end %>
                   </h3>
                   <h5>
                     thực hiện bởi <%= link_to project.user.name, user_profile_path(project.user) %>

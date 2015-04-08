@@ -10,6 +10,8 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require angular
+//= require angular-resource
 //= require jquery
 //= require jquery_ujs
 //= require jquery-fileupload/basic
@@ -20,7 +22,8 @@
 //= require bootstrap3-datetimepicker
 //= require accountingjs/accounting
 //= require autoNumeric
-//= require_tree .
+//= require_directory .
+//= require_tree ./angular
 
 (function ($) {
 

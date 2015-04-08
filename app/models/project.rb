@@ -40,7 +40,11 @@ class Project < ActiveRecord::Base
   end
 
   def ended?
-    launched? && deadline <= Time.zone.now
+    launched? && !stopped? && deadline <= Time.zone.now
+  end
+
+  def funding?
+    launched? && !stopped? && deadline > Time.zone.now
   end
 
   def total_pledge_amount
