@@ -1,30 +1,32 @@
-<div id="show_story">
+<% cache(cache_key_for_project(@project)) do %>
+    <div id="show_story">
 
-  <% if @project.has_video? %>
-      <div class="video-container">
-        <iframe src="https://player.vimeo.com/video/59056788?title=0&byline=0&portrait=0&badge=0" width="100%" height="530" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      <% if @project.has_video? %>
+          <div class="video-container">
+            <iframe src="https://player.vimeo.com/video/59056788?title=0&byline=0&portrait=0&badge=0" width="100%" height="530" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          </div>
+      <% else %>
+          <div class="image-container">
+            <%= image_tag @project.image.url(:large) %>
+          </div>
+      <% end %>
+
+      <h3 class="description"><%= @project.short_description %></h3>
+
+      <div class="story-posts">
+        <% @project.posts.each do |post| %>
+            <div class='post'>
+              <h2><%= post.title %></h2>
+              <% if post.image.exists? %>
+                  <div class="image-container text-center">
+                    <img src="<%= post.image.url(:large) %>" title="<%= post.title %>"/>
+                  </div>
+              <% end %>
+              <p>
+                <%= post.body %>
+              </p>
+            </div>
+        <% end %>
       </div>
-  <% else %>
-      <div class="image-container">
-        <%= image_tag @project.image.url(:large) %>
-      </div>
-  <% end %>
-
-  <h3 class="description"><%= @project.short_description %></h3>
-
-  <div class="story-posts">
-    <% @project.posts.each do |post| %>
-        <div class='post'>
-          <h2><%= post.title %></h2>
-          <% if post.image.exists? %>
-              <div class="image-container text-center">
-                <img src="<%= post.image.url(:large) %>" title="<%= post.title %>"/>
-              </div>
-          <% end %>
-          <p>
-            <%= post.body %>
-          </p>
-        </div>
-    <% end %>
-  </div>
-</div>
+    </div>
+<% end %>

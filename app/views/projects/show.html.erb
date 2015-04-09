@@ -120,18 +120,21 @@
               </div>
             </div>
             <div id="rewards">
-              <h3>Phần thưởng</h3>
+              <% cache(cache_key_for_project_rewards(@project)) do %>
+                  <h3>Phần thưởng</h3>
 
-              <div class="rewards">
-                <% @project.rewards.each do |reward| %>
-                    <div class="reward">
-                      <h3><b><%= number_to_currency(reward.minimum_pledge_amount) %></b></h3>
-                      <p>
-                        <%= reward.description %>
-                      </p>
-                    </div>
-                <% end %>
-              </div>
+                  <div class="rewards">
+                    <% @project.rewards.each do |reward| %>
+                        <div class="reward">
+                          <h3><b><%= number_to_currency(reward.minimum_pledge_amount) %></b></h3>
+
+                          <p>
+                            <%= reward.description %>
+                          </p>
+                        </div>
+                    <% end %>
+                  </div>
+              <% end %>
             </div>
           </div>
         </div>
