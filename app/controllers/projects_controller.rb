@@ -161,7 +161,7 @@ class ProjectsController < ApplicationController
 
   private
     def my_project?(project)
-      return project.creator_id == current_user.id
+      return current_user && project.creator_id == current_user.id
     end
 
     def project_params
