@@ -100,6 +100,7 @@
             var posts = function () {
                 return $scope.posts ? $scope.posts : [];
             }();
+            var selectedPost = null;
 
             var postIndexById = function (post) {
                 return _.findIndex(posts, function (obj) {
@@ -122,7 +123,7 @@
             }
 
             $scope.setPost = function (post) {
-                $scope.post = post;
+                $scope.post = angular.copy(post);
                 $("#modal_add_story_post").modal("show");
             }
 
@@ -134,6 +135,7 @@
                         if (post.errors) {
                             $scope.post.errors = post.errors;
                         } else {
+                            posts[postIndexById(post)] = post;
                             if (findPost(post.id).length === 0) {
                                 posts.push(post);
                             }
@@ -148,15 +150,20 @@
                 if (!confirmDelete)
                     return false;
 
-                post.$delete({projectId: $scope.project.id, postId: post.id})
-                    .then(function (res) {
-                        $scope.posts.splice(index, 1)
+                var index = postIndexById(post);
+                if (index >= 0) {
+                    var resource = new Post(_.extend(post, {projectId: $scope.project.id}));
+                    resource.delete().then(function (res) {
+                        posts.splice(index, 1)
                     });
+                }
+                return posts;
             }
 
             var rewards = function () {
                 return $scope.project.rewards ? $scope.project.rewards : [];
             }();
+            var selectedReward = null;
 
             var rewardIndexById = function (reward) {
                 return _.findIndex(rewards, function (obj) {
@@ -179,7 +186,7 @@
             }
 
             $scope.setReward = function (reward) {
-                $scope.reward = reward;
+                $scope.reward = angular.copy(reward);
                 $("#modal_add_reward").modal("show");
             }
 
@@ -191,6 +198,7 @@
                         if (reward.errors) {
                             $scope.reward.errors = reward.errors;
                         } else {
+                            rewards[rewardIndexById(reward)] = reward;
                             if (findReward(reward.id).length === 0) {
                                 rewards.push(reward);
                             }
