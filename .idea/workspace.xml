@@ -5,97 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31fa37c0-7785-44b6-9d12-f7360ecd0370" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/projects/shared/_modal_launch_project.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/angular/directives/attachmentUploadDirective.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/angular/directives/autoNumericDirective.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/cloudinary.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/angular/directives/datetimePickerDirective.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/angular/filters/filters.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/initializers/gce.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/gce.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/angular/directives/limitCharactersDirective.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/angular/services/postService.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/api/posts_controller.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/angular/modules/projectEditorModule.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/angular/controllers/projectsController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/angular/services/rewardService.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/api/rewards_controller.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/angular/services/userService.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/api/users_controller.rb" />
-      <change type="DELETED" beforePath="D:\Projects\kickstarter\app\assets\javascripts\angular\controllers\projects_ctrl.js" afterPath="" />
-      <change type="DELETED" beforePath="D:\Projects\kickstarter\app\controllers\rewards_controller.rb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/assets/bower_components/angular-ui-router/.bower.json" afterPath="$PROJECT_DIR$/lib/assets/bower_components/angular-ui-router/.bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/assets/bower_components/moment/.bower.json" afterPath="$PROJECT_DIR$/lib/assets/bower_components/moment/.bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/assets/bower_components/angular-ui-router/CHANGELOG.md" afterPath="$PROJECT_DIR$/lib/assets/bower_components/angular-ui-router/CHANGELOG.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/assets/bower_components/moment/CHANGELOG.md" afterPath="$PROJECT_DIR$/lib/assets/bower_components/moment/CHANGELOG.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Kickstarter.iml" afterPath="$PROJECT_DIR$/.idea/Kickstarter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/assets/bower_components/angular-ui-router/LICENSE" afterPath="$PROJECT_DIR$/lib/assets/bower_components/angular-ui-router/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/assets/bower_components/moment/Moment.js.nuspec" afterPath="$PROJECT_DIR$/lib/assets/bower_components/moment/Moment.js.nuspec" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/assets/bower_components/angular-ui-router/README.md" afterPath="$PROJECT_DIR$/lib/assets/bower_components/angular-ui-router/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/assets/bower_components/moment/README.md" afterPath="$PROJECT_DIR$/lib/assets/bower_components/moment/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/projects/shared/_edit_about_you.html.erb" afterPath="$PROJECT_DIR$/app/views/projects/shared/_edit_about_you.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/projects/shared/_edit_basic.html.erb" afterPath="$PROJECT_DIR$/app/views/projects/shared/_edit_basic.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/projects/shared/_edit_rewards.html.erb" afterPath="$PROJECT_DIR$/app/views/projects/shared/_edit_rewards.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/projects/shared/_edit_story.html.erb" afterPath="$PROJECT_DIR$/app/views/projects/shared/_edit_story.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/home/shared/_index_featured_projects.html.erb" afterPath="$PROJECT_DIR$/app/views/home/shared/_index_featured_projects.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/shared/_menu.html.erb" afterPath="$PROJECT_DIR$/app/views/shared/_menu.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/projects/shared/_modal_add_reward.html.erb" afterPath="$PROJECT_DIR$/app/views/projects/shared/_modal_add_reward.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/projects/shared/_modal_add_story_post.html.erb" afterPath="$PROJECT_DIR$/app/views/projects/shared/_modal_add_story_post.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/projects/shared/_show_story.html.erb" afterPath="$PROJECT_DIR$/app/views/projects/shared/_show_story.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/assets/bower_components/angular-ui-router/release/angular-ui-router.js" afterPath="$PROJECT_DIR$/lib/assets/bower_components/angular-ui-router/release/angular-ui-router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/assets/bower_components/angular-ui-router/release/angular-ui-router.min.js" afterPath="$PROJECT_DIR$/lib/assets/bower_components/angular-ui-router/release/angular-ui-router.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/app.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/application.rb" afterPath="$PROJECT_DIR$/config/application.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/aws.yml" afterPath="$PROJECT_DIR$/config/aws.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bower.json" afterPath="$PROJECT_DIR$/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/assets/bower_components/angular-ui-router/bower.json" afterPath="$PROJECT_DIR$/lib/assets/bower_components/angular-ui-router/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/assets/bower_components/moment/bower.json" afterPath="$PROJECT_DIR$/lib/assets/bower_components/moment/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/discover/category_projects.html.erb" afterPath="$PROJECT_DIR$/app/views/discover/category_projects.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/assets/bower_components/angular-ui-router/src/common.js" afterPath="$PROJECT_DIR$/lib/assets/bower_components/angular-ui-router/src/common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/assets/bower_components/moment/src/lib/duration/create.js" afterPath="$PROJECT_DIR$/lib/assets/bower_components/moment/src/lib/duration/create.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.yml" afterPath="$PROJECT_DIR$/config/database.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/projects/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/projects/edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/discover/index.html.erb" afterPath="$PROJECT_DIR$/app/views/discover/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/assets/bower_components/moment/min/locales.js" afterPath="$PROJECT_DIR$/lib/assets/bower_components/moment/min/locales.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/assets/bower_components/moment/min/moment-with-locales.js" afterPath="$PROJECT_DIR$/lib/assets/bower_components/moment/min/moment-with-locales.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/assets/bower_components/moment/min/moment-with-locales.min.js" afterPath="$PROJECT_DIR$/lib/assets/bower_components/moment/min/moment-with-locales.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/assets/bower_components/moment/moment.js" afterPath="$PROJECT_DIR$/lib/assets/bower_components/moment/moment.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/assets/bower_components/moment/src/moment.js" afterPath="$PROJECT_DIR$/lib/assets/bower_components/moment/src/moment.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/assets/bower_components/moment/min/moment.min.js" afterPath="$PROJECT_DIR$/lib/assets/bower_components/moment/min/moment.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/assets/bower_components/moment/locale/mr.js" afterPath="$PROJECT_DIR$/lib/assets/bower_components/moment/locale/mr.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/assets/bower_components/moment/src/locale/mr.js" afterPath="$PROJECT_DIR$/lib/assets/bower_components/moment/src/locale/mr.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/projects/my.html.erb" afterPath="$PROJECT_DIR$/app/views/projects/my.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/initializers/paperclip.rb" afterPath="$PROJECT_DIR$/config/initializers/paperclip.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/post.rb" afterPath="$PROJECT_DIR$/app/models/post.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/project.rb" afterPath="$PROJECT_DIR$/app/models/project.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/projects.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/projects.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/projects.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/projects.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/projects_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/projects_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/api/projects_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/api/projects_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/projects_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/projects_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/projects/show.html.erb" afterPath="$PROJECT_DIR$/app/views/projects/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/show.html.erb" afterPath="$PROJECT_DIR$/app/views/users/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/assets/bower_components/moment/src/lib/moment/start-end-of.js" afterPath="$PROJECT_DIR$/lib/assets/bower_components/moment/src/lib/moment/start-end-of.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/assets/bower_components/angular-ui-router/src/state.js" afterPath="$PROJECT_DIR$/lib/assets/bower_components/angular-ui-router/src/state.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/assets/bower_components/angular-ui-router/src/stateDirectives.js" afterPath="$PROJECT_DIR$/lib/assets/bower_components/angular-ui-router/src/stateDirectives.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/assets/bower_components/moment/min/tests.js" afterPath="$PROJECT_DIR$/lib/assets/bower_components/moment/min/tests.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/assets/bower_components/angular-ui-router/src/urlMatcherFactory.js" afterPath="$PROJECT_DIR$/lib/assets/bower_components/angular-ui-router/src/urlMatcherFactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/assets/bower_components/angular-ui-router/src/urlRouter.js" afterPath="$PROJECT_DIR$/lib/assets/bower_components/angular-ui-router/src/urlRouter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/assets/bower_components/angular-ui-router/src/viewDirective.js" afterPath="$PROJECT_DIR$/lib/assets/bower_components/angular-ui-router/src/viewDirective.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/assets/bower_components/angular-ui-router/src/viewScroll.js" afterPath="$PROJECT_DIR$/lib/assets/bower_components/angular-ui-router/src/viewScroll.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\Projects\kickstarter\app\assets\javascripts\angular\services\project.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/angular/services/projectService.js" />
+      <change type="DELETED" beforePath="D:\Projects\kickstarter\app\assets\javascripts\angular\directives\autonumeric.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/uploaders/user_avatar_uploader.rb" afterPath="$PROJECT_DIR$/app/uploaders/user_avatar_uploader.rb" />
     </list>
     <ignored path="kickstarter.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -124,11 +35,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="project_image_uploader.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="project_image_uploader.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/uploaders/project_image_uploader.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="595">
-              <caret line="7" column="57" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.14206128" vertical-offset="51" max-vertical-offset="595">
+              <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="8" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -194,10 +105,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="database.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="database.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/database.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.58536583" vertical-offset="668" max-vertical-offset="1037">
+            <state vertical-scroll-proportion="0.0" vertical-offset="668" max-vertical-offset="1037">
               <caret line="52" column="21" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
               <folding />
             </state>
@@ -244,7 +155,6 @@
         <option value="$PROJECT_DIR$/app/views/shared/_menu.html.erb" />
         <option value="$PROJECT_DIR$/app/uploaders/avatar_uploader.rb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
-        <option value="$PROJECT_DIR$/app/uploaders/user_avatar_uploader.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20150427190653_update_projects_table11.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20150427191219_update_projects_table12.rb" />
         <option value="$PROJECT_DIR$/app/views/projects/shared/_edit_basic.html.erb" />
@@ -266,6 +176,7 @@
         <option value="$PROJECT_DIR$/app/assets/stylesheets/projects.css" />
         <option value="$PROJECT_DIR$/app/views/projects/show.html.erb" />
         <option value="$PROJECT_DIR$/config/database.yml" />
+        <option value="$PROJECT_DIR$/app/uploaders/user_avatar_uploader.rb" />
       </list>
     </option>
   </component>
@@ -280,10 +191,10 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-4" />
-    <option name="y" value="-4" />
-    <option name="width" value="1374" />
-    <option name="height" value="732" />
+    <option name="x" value="1" />
+    <option name="y" value="1" />
+    <option name="width" value="1364" />
+    <option name="height" value="722" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -827,7 +738,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1374" height="732" extended-state="6" />
+    <frame x="1" y="1" width="1364" height="722" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -835,14 +746,14 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.340694" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39905363" sideWeight="0.6573939" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3769716" sideWeight="0.3989751" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38301283" sideWeight="0.39896756" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32334384" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921347" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30087847" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3769716" sideWeight="0.60102487" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30309734" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38301283" sideWeight="0.60103244" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -997,14 +908,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.5384617" vertical-offset="867" max-vertical-offset="1700">
           <caret line="61" column="70" selection-start-line="61" selection-start-column="70" selection-end-line="61" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/uploaders/user_avatar_uploader.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6910569" vertical-offset="0" max-vertical-offset="408">
-          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1275,14 +1178,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/uploaders/project_image_uploader.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="595">
-          <caret line="7" column="57" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/projects/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="2856">
@@ -1293,8 +1188,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/database.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58536583" vertical-offset="668" max-vertical-offset="1037">
+        <state vertical-scroll-proportion="0.0" vertical-offset="668" max-vertical-offset="1037">
           <caret line="52" column="21" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/uploaders/user_avatar_uploader.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33147633" vertical-offset="0" max-vertical-offset="476">
+          <caret line="7" column="68" selection-start-line="7" selection-start-column="68" selection-end-line="7" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/uploaders/project_image_uploader.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14206128" vertical-offset="51" max-vertical-offset="595">
+          <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="8" selection-end-column="5" />
           <folding />
         </state>
       </provider>

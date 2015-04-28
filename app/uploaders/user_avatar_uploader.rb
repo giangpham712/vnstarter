@@ -4,6 +4,10 @@ class UserAvatarUploader < CarrierWave::Uploader::Base
 
   include Cloudinary::CarrierWave
 
+  def default_url(*args)
+    ActionController::Base.helpers.asset_path("/images/no-image-user.png")
+  end
+
   process :convert => 'png'
   process :tags => ['user_avatar']
 
