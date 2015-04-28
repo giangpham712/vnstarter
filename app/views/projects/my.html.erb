@@ -27,7 +27,7 @@
           <% @projects.each do |project| %>
               <li class="project clearfix">
                   <a href="" class="project-image pull-left">
-                    <%= image_tag project.image.url(:small) %>
+                    <%= image_tag project.image_url(:small) %>
                   </a>
                 <div class="project-content">
                   <div class="actions">
@@ -45,7 +45,7 @@
                     <%= link_to project.title, project_path(project) %>
 
                     <% if project.initiating? %>
-                        <span class="annotation-pill pill-draft">Khởi tạo</span>
+                        <span class="annotation-pill pill-draft">Đang khởi tạo</span>
                     <% elsif project.funding? %>
                         <span class="annotation-pill pill-happy">Đã khởi động</span>
                     <% end %>

@@ -24,7 +24,7 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.includes(:user).friendly.find(params[:id])
 
-    if !@project.launched? || @project.stopped? || @project.deleted?
+    if @project.deleted? || (!my_project?(@project) && @project.initiating?)
       redirect_to root_path
 
     else
@@ -66,56 +66,40 @@ class ProjectsController < ApplicationController
 
   #View to edit an existing projects
   def edit
-    @cities = City.all
-    @categories = Category.all
-
-    @project = Project.find(params[:id])
-
-    if @project.initiating?
-
-      if @project.deadline == nil
-        @project.deadline = Time.zone.now
-        @project.duration = @project.duration || 1
-        @project.duration_type = "duration"
-      else
-        @project.duration = 0
-        @project.duration_type = "deadline"
-      end
-
+    @cities = Rails.cache.fetch("cities/all", expires_in: 30.days) do
+        City.all
     end
 
-    if (@project.creator_id != current_user.id)
+    project = Project.find(params[:id])
+
+    if project.deleted? || !my_project?(project)
       redirect_to root_path
     end
 
-  end
-
-  def update
-    project = Project.find(params[:id])
-    params = project.launched ? launched_project_params : project_params
-
-    if project.initiating?
-
-      case params[:duration_type]
-        when "duration"
-          params[:deadline] = nil
-        when "deadline"
-          params[:duration] = 0
-        else
-          params[:deadline] = nil
-          params[:duration] = 0
-      end
-
-      params[:funding_goal] = params[:funding_goal].tr('.', '')
-
-    end
-
-    if project.update(params)
-      render json: {:success => true, :project => project}
+    if project.duration_type == "duration"
+      project.deadline = Time.zone.now
+      project.duration = project.duration || 1
     else
-      render json: {:success => false, :errors => project.errors.full_messages}
+      project.duration = 0
     end
+
+    gon.project = project.as_json.merge(
+        {
+            :image_url => project.image_url(:medium),
+            :deadline => project.deadline.strftime("%d-%m-%Y"),
+            :user => project.user.as_json(:only => [:email, :id, :name, :biology, :location, :website]).merge({:image_url => project.user.avatar_url(:standard)}),
+            :rewards => Rails.cache.fetch("projects/#{project.id}/rewards/all", expires_in: 30.days) do
+              Reward.where("project_id = :project_id", { project_id: project.id }).map { |reward| reward.as_json }
+            end,
+            :posts => Rails.cache.fetch("projects/#{project.id}/posts/all", expires_in: 30.days) do
+              Post.where("project_id = :project_id", { project_id: project.id }).map { |post| post.as_json.merge({:image_url => post.image_url(:medium)}) }
+            end
+        }
+    )
+
+    @project = project
   end
+
 
   def launch_project
 
@@ -165,28 +149,27 @@ class ProjectsController < ApplicationController
 
   end
 
-  def upload_video
-
-  end
-
   def upload_image
     project = Project.find(params[:id])
     puts params[:image]
     if project.update_attributes(:image => params[:project][:image])
-      render json: {:success => true, :image_url => project.image.url(:medium)}
+      render json: {:success => true, :image_url => project.image_url(:medium)}
     else
       render json: {:success => false, :errors => project.errors}
     end
-
   end
 
   private
-  def project_params
-    params.require(:project).permit(:title, :location, :category_id, :short_description, :funding_goal, :duration_type, :duration, :deadline, :image)
-  end
+    def my_project?(project)
+      return project.creator_id == current_user.id
+    end
 
-  def launched_project_params
-    params.require(:project).permit(:title, :location, :category_id, :short_description, :image)
-  end
+    def project_params
+      params.require(:project).permit(:title, :location, :category_id, :short_description, :funding_goal, :duration_type, :duration, :deadline, :image)
+    end
+
+    def launched_project_params
+      params.require(:project).permit(:title, :location, :category_id, :short_description, :image)
+    end
 
 end

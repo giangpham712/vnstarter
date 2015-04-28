@@ -1,4 +1,6 @@
-/**
- * Created by wadey on 4/7/2015.
- */
-window.App = angular.module('VnStarter', ['ngResource'])
+(function () {
+    'use strict';
+
+    window.App = angular.module('VnStarter', ['ngResource', 'ngRoute', 'rails']).value('gon', window.gon)
+
+}());

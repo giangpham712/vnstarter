@@ -114,6 +114,23 @@ Rails.application.routes.draw do
   #   end
 
   namespace :api do
-    resources :projects
+    resources :projects do
+
+      resources :posts do
+
+      end
+
+      resources :rewards do
+
+      end
+    end
+
+    post 'projects/:id' => 'projects#execute'
+
+    resources :users do
+
+    end
+
+
   end
 end

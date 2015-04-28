@@ -30,6 +30,10 @@ textarea {
     background-color: white;
 }
 
+html {
+    overflow-y: scroll;
+}
+
 ul, ol {
     list-style-type: none;
 }
@@ -46,6 +50,49 @@ h1, h2, h3, h4, h5, h6 {
     color: #4b4b4b;
 }
 
+
+
+h1 {
+    line-height: 35px;
+}
+
+h2 {
+    font-size: 24px;
+    line-height: 30px;
+}
+
+h3 {
+    font-size: 22px;
+    line-height: 26px;
+}
+
+h4 {
+    font-size: 18px;
+    line-height: 22px;
+}
+
+h5 {
+    font-size: 16px;
+    line-height: 22px;
+}
+
+h6 {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:focus {
+    outline: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
 p {
     font-size: 14px;
     line-height: 20px;
@@ -56,6 +103,10 @@ p {
         font-size: 13px;
         line-height: 18px;
     }
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
 }
 
 @media (min-width: 1200px) {
@@ -339,6 +390,10 @@ p {
 .content-head h6 {
     font-size: 14px;
     line-height: 20px;
+}
+
+.bootstrap-datetimepicker-widget {
+    background-color: #fff;
 }
 
 .bootstrap-datetimepicker-widget table td {
@@ -641,8 +696,8 @@ Buttons
     font-size: 14px;
     position: relative;
     padding: 0px 11px;
-    height: 33px;
-    line-height: 33px;
+    height: 35px;
+    line-height: 35px;
     border: none;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
@@ -670,6 +725,10 @@ Buttons
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) inset;
     background-color: #279fbb;
     opacity: 0.78;
+}
+
+.btn-primary:hover {
+    background-color: #2eaef0;
 }
 
 .btn-primary:focus {
@@ -791,26 +850,21 @@ button.btn.btn-default:hover, button.btn.btn-default:active, button.btn.btn-defa
 }
 
 .btn.btn-grey {
-    color: #767676;
-    outline: 0;
-    white-space: nowrap;
-    word-wrap: normal;
-    cursor: pointer;
-    background-color: #fff;
-    text-shadow: none;
+    border-color: #6a6a6a;
+    background-color: #6a6a6a;
 }
 
 .btn.btn-lg {
     padding: 0 30px;
-    height: 49px;
-    line-height: 49px;
+    height: 45px;
+    line-height: 45px;
 }
 
 .btn.btn-x-lg {
-    font-size: 18px;
-    height: 60px;
-    line-height: 60px;
-    padding: 0 40px;
+    font-size: 16px;
+    height: 55px;
+    line-height: 55px;
+    padding: 0 35px;
 }
 
 .btn.btn-special {
@@ -856,6 +910,24 @@ button.btn.btn-default:hover, button.btn.btn-default:active, button.btn.btn-defa
         height: 50px;
         line-height: 50px;
     }
+}
+
+
+/* Modal */
+
+.modal-content {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+    border: 1px solid #999;
+}
+
+.modal-header {
+    border-bottom-width: 0;
+}
+
+.modal-footer {
+    border-top-width: 0;
 }
 
 /* Annotation pill */

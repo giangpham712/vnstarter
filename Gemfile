@@ -10,10 +10,6 @@ gem 'jquery-rails'
 
 gem 'bower-rails'
 
-gem 'angular-rails-templates'
-
-gem 'jquery-fileupload-rails'
-
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -37,9 +33,11 @@ gem 'fog'
 
 gem "mini_magick"
 
-gem 'carrierwave'
+gem 'cloudinary'
 
 gem 'paperclip'
+
+gem 'carrierwave'
 
 gem 'aws-sdk-v1'
 
@@ -50,6 +48,12 @@ gem 'thin'
 gem 'dynamic_form'
 
 gem "font-awesome-rails"
+
+gem 'jquery-fileupload-rails'
+
+gem "gon"
+
+gem "responders"
 
 # Use Unicorn as the app server
 # gem 'unicorn'

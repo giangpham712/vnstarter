@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150328225738) do
+ActiveRecord::Schema.define(version: 20150427204734) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",       limit: 255, null: false
@@ -72,40 +72,35 @@ ActiveRecord::Schema.define(version: 20150328225738) do
   add_index "pledges", ["reward_id"], name: "index_pledges_on_reward_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
-    t.string   "title",              limit: 255
-    t.text     "body",               limit: 4294967295
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
-    t.integer  "project_id",         limit: 4
-    t.string   "image_file_name",    limit: 255
-    t.string   "image_content_type", limit: 255
-    t.integer  "image_file_size",    limit: 4
-    t.datetime "image_updated_at"
+    t.string   "title",      limit: 255
+    t.text     "body",       limit: 4294967295
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.integer  "project_id", limit: 4
+    t.string   "image",      limit: 255
   end
 
   add_index "posts", ["project_id"], name: "index_posts_on_project_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
-    t.string   "title",              limit: 100
-    t.string   "short_description",  limit: 255
-    t.datetime "created_at",                                     null: false
-    t.datetime "updated_at",                                     null: false
-    t.string   "location",           limit: 255
-    t.float    "funding_goal",       limit: 24
-    t.integer  "duration",           limit: 4
+    t.string   "title",             limit: 100
+    t.string   "short_description", limit: 255
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
+    t.string   "location",          limit: 255
+    t.float    "funding_goal",      limit: 24
+    t.integer  "duration",          limit: 4
     t.datetime "deadline"
-    t.integer  "creator_id",         limit: 4
-    t.string   "slug",               limit: 255
-    t.string   "image_file_name",    limit: 255
-    t.string   "image_content_type", limit: 255
-    t.integer  "image_file_size",    limit: 4
-    t.datetime "image_updated_at"
-    t.boolean  "launched",           limit: 1,   default: false
-    t.integer  "funding_status",     limit: 4,   default: 1
-    t.integer  "category_id",        limit: 4
+    t.integer  "creator_id",        limit: 4
+    t.string   "slug",              limit: 255
+    t.boolean  "launched",          limit: 1,   default: false
+    t.integer  "funding_status",    limit: 4,   default: 1
+    t.integer  "category_id",       limit: 4
     t.datetime "launched_at"
     t.datetime "deleted_at"
     t.datetime "stopped_at"
+    t.integer  "duration_type",     limit: 4,   default: 0
+    t.string   "image",             limit: 255
   end
 
   add_index "projects", ["category_id"], name: "index_projects_on_category_id", using: :btree
@@ -173,6 +168,7 @@ ActiveRecord::Schema.define(version: 20150328225738) do
     t.datetime "image_updated_at"
     t.text     "biology",                limit: 65535
     t.string   "location",               limit: 255
+    t.string   "avatar",                 limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

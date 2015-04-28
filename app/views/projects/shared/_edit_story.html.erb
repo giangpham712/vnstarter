@@ -6,28 +6,19 @@
     </p>
   </div>
 
-  <%= button_tag "Thêm câu chuyện", class: 'btn btn-lg btn-info add_story', data: {toggle: "modal", target: "#add-story-post"} %>
-
+  <button type="button" ng-click="showCreatePost()" class="btn btn-lg btn-info" toggle="modal">Tạo câu chuyện</button>
   <div class="story-posts">
-    <% @project.posts.each do |post| %>
-        <div class="post" data-post-id="<%= post.id %>">
+    <div ng-repeat="post in posts" class="post">
 
-          <a class="btn btn-danger pull-right delete"><i class="fa fa-times"></i></a>
+      <a href="javascript:void(0);" ng-click="deletePost(post, $index)" class="btn btn-danger pull-right"><i class="fa fa-times"></i></a>
+      <a class="btn btn-info pull-right" ng-click="setPost(post, $index)"><i class="fa fa-pencil"></i></a>
+      <h3 ng-bind="post.title"></h3>
 
-          <h3><%= post.title %></h3>
-
-          <div class="image-container">
-            <% if post.image.exists? %>
-                <img src="<%= post.image.url(:medium) %>" title="<%= post.title %>"/>
-                <br/>
-                <br/>
-            <% end %>
-
-          </div>
-          <p><%= post.body %></p>
-        </div>
-    <% end %>
-
+      <div class="image-container">
+        <img ng-src="{{post.imageUrl}}" ng-title="{{post.title}}" />
+      </div>
+      <p ng-bind="post.body"></p>
+    </div>
   </div>
 
 

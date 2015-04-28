@@ -16,8 +16,8 @@ class UsersController < ApplicationController
   def upload_image
     user = current_user
 
-    if user.update_attributes(:image => params[:image])
-      render json: { :success => true, :image_url => user.image.url(:small) }
+    if user.update_attributes(:avatar => params[:avatar])
+      render json: { :success => true, :image_url => user.avatar_url }
     else
       render json: { :success => false, :errors => user.errors }
     end

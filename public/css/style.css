@@ -5,60 +5,7 @@ Global CSS classes used for all theme.
 ****************************/
 /* Global Responsive */
 
-html {
-    overflow-y: scroll;
-}
 
-h1 {
-    line-height: 35px;
-}
-
-h2 {
-    font-size: 24px;
-    line-height: 30px;
-}
-
-h3 {
-    font-size: 22px;
-    line-height: 26px;
-}
-
-h4 {
-    font-size: 18px;
-    line-height: 22px;
-}
-
-h5 {
-    font-size: 16px;
-    line-height: 22px;
-}
-
-h6 {
-    font-size: 14px;
-    line-height: 20px;
-}
-
-a {
-    text-decoration: none;
-}
-
-a:focus {
-    outline: none;
-}
-
-a:hover {
-    text-decoration: none;
-}
-
-::selection {
-    background-color: #279fbb;
-    color: #fff;
-}
-
-::-moz-selection {
-    background-color: #279fbb;
-    color: #fff;
-}
 
 .centered {
     float: none;
@@ -66,8 +13,6 @@ a:hover {
     margin-right: auto;
     display: block;
 }
-
-
 
 @-webkit-keyframes bounce {
     0%, 100% {
@@ -1542,54 +1487,6 @@ Pagination
 }
 
 /****************************
-Tables
-****************************/
-table.table, table {
-    width: 100%;
-    text-align: left;
-    background-color: transparent;
-}
-
-table.table thead tr {
-    border-right: 0;
-    background-color: #279fbb;
-    color: #fff;
-    text-align: left;
-    padding: 10px 15px;
-    vertical-align: top;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.table td, .table th {
-    padding: 8px;
-    border: 1px solid #D8D8D8;
-}
-
-.table tbody tr:hover {
-    background: #fafafa;
-}
-
-table.hover thead th {
-    background-color: #fff;
-    color: #666;
-    border: none;
-}
-
-table.hover thead tr {
-    background-color: #fff;
-}
-
-table.hover td, table.hover th {
-    border: none;
-    border-bottom: 1px solid #e8e8e8;
-}
-
-table.hover tbody tr:nth-child(odd) {
-    background-color: #fafafa;
-}
-
-/****************************
 Tabs
 ****************************/
 
@@ -1609,7 +1506,6 @@ Tabs
     color: #666666;
     line-height: 20px;
     overflow: hidden;
-    visibility: visible !important;
 }
 
 .tab-container .tabs-content > div {

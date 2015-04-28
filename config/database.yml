@@ -49,7 +49,7 @@ test:
 #
 production:
   <<: *default
-  host: aws-wadey-mysql.cejvaqnrk4at.ap-southeast-1.rds.amazonaws.com
-  database: kickstarter_production
+  host: 127.0.0.1
+  database: vnstarter_production
   username: wadey
   password: password

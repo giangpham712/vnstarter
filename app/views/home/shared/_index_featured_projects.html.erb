@@ -11,7 +11,7 @@
               <div class="feature project animated project-block" data-animtype="fadeInUp" data-animrepeat="0" data-animspeed="1s" data-animdelay="0.4s">
                 <%= link_to(project) do %>
                     <div class="feature-image img-overlay">
-                      <%= image_tag project.image.url(:small) %>
+                      <%= image_tag project.image_url(:small) %>
                     </div>
                 <% end %>
                 <div class="feature-content">

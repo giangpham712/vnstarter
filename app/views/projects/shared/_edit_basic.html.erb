@@ -16,16 +16,12 @@
         </div>
 
         <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-          <div class="attachment-upload
-            <% if @project.image.exists? %>has_file
-            <% end %>">
+          <div class="attachment-upload" ng-class="{ 'has-file': project.imageUrl != '' }">
             <div class="error">
               <div class="message"></div>
             </div>
             <div class="success text-center">
-              <% if @project.image.exists? %>
-                  <%= image_tag @project.image.url(:large) %>
-              <% end %>
+                <img ng-src="{{project.imageUrl}}" ng-title="{{project.title}}" />
             </div>
             <div class="upload">
               <%= f.file_field :image, autofocus: false, class: 'fileupload', 'data-upload-url' => '/projects/' + @project.id.to_s + '/upload_image' %>
@@ -57,7 +53,7 @@
         </div>
 
         <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-          <%= f.text_field :title, class: 'form-control' %>
+          <input type="text" name="title" ng-model="project.title" class="form-control" />
           <p class="help">
             Tên dự án của bạn cần đơn giản, đặc trưng và dễ nhớ
           </p>
@@ -71,8 +67,8 @@
 
         <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
           <div class="limit-characters">
-            <%= f.text_area :short_description, class: 'form-control', :maxlength => "200", :rows => "4" %>
-            <p></p>
+            <textarea ng-model="project.shortDescription" ng-trim="false" class="form-control" maxlength="{{shortDescriptionMaxLength}}" rows="5"></textarea>
+            <p ng-bind="shortDescriptionMaxLength - project.shortDescription.length + '/' + shortDescriptionMaxLength"></p>
           </div>
         </div>
       </div>
@@ -83,7 +79,9 @@
         </div>
 
         <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-          <%= f.select :category_id, options_for_select(@categories.map { |c| [c.name, c.id] }, @project.category_id), {:include_blank => false}, {class: 'form-control'} %>
+          <select ng-model="project.categoryId" class="form-control">
+            <option ng-repeat="category in categories" value="{{category.id}}" ng-bind="'{{category.name}}'" ng-selected="project.categoryId == category.id"></option>
+          </select>
 
         </div>
       </div>
@@ -94,8 +92,9 @@
         </div>
 
         <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-          <%= f.select :location, options_for_select(@cities.map { |city| city.name }, @project.location), {:include_blank => false}, {class: 'form-control'} %>
-
+          <select name="location" ng-model="project.location" class="form-control">
+            <option ng-repeat="city in cities" value="{{city}}" ng-bind="'{{city}}'" ng-selected="project.location == city"></option>
+          </select>
         </div>
       </div>
 
@@ -107,23 +106,22 @@
         <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
           <% if @project.initiating? %>
               <ul class="options">
-                <li class="option <%= "selected" if @project.duration_type == "duration" %>">
+                <li class="option" ng-class="{ selected: project.durationType == 'duration' }">
                   <span class="select">
-                    <%= f.radio_button :duration_type, "duration", id: "duration_duration" %>
+                    <input type="radio" ng-model="project.durationType" id="duration_duration" value="duration" />
                     <label for="duration_duration">Tổng thời gian (ngày)</label>
                   </span>
                   <span class="value">
-                    <%= f.text_field :duration, class: 'form-control duration' %>
+                    <input type="text" name="duration" ng-model="project.duration" ng-auto-numeric="days" class="form-control" />
                   </span>
                 </li>
-                <li class="option <%= "selected" if @project.duration_type == "deadline" %>">
+                <li class="option" ng-class="{ selected: project.durationType == 'deadline' }">
                   <span class="select">
-                    <%= f.radio_button :duration_type, "deadline", id: "duration_deadline" %>
+                    <input type="radio" ng-model="project.durationType" id="duration_deadline" value="deadline" />
                     <label for="duration_deadline">Ngày kết thúc</label>
                   </span>
                   <span class="value">
-                    <%= f.text_field :deadline, class: 'form-control', value: @project.deadline.strftime("%d-%m-%Y %H:%M"), id: 'deadline' %>
-                    <div class="datetimepicker" data-target="#deadline"></div>
+                    <ng-datetime-picker ng-model="project.deadline" language="en" date-format="DD-MM-YYYY" />
                   </span>
                 </li>
               </ul>
@@ -142,9 +140,9 @@
 
         <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
           <% if @project.initiating? %>
-              <%= f.text_field :funding_goal, class: 'form-control currency' %>
+              <input type="text" ng-model="project.fundingGoal" ng-auto-numeric="currency" class="form-control" />
           <% else %>
-              <strong><%= number_to_currency(@project.funding_goal, precision: 0) %></strong>
+              <strong ng-bind="project.fundingGoal | money"></strong>
           <% end %>
           <p class="help">
             Mục tiêu huy động vốn là con số tối thiểu cần để bạn có thể hoàn thành dự án của mình. Nên nhớ việc huy động
@@ -158,7 +156,7 @@
         </div>
       </div>
       <div class="buttons-container text-right">
-        <button type="submit" class="btn btn-green">Lưu thay đổi</button>
+        <button type="button" class="btn btn-green" ng-click="saveProject()">Lưu thay đổi</button>
       </div>
 
   <% end %>

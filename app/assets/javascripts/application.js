@@ -10,14 +10,20 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require angular
-//= require angular-resource
+
 //= require jquery
 //= require jquery_ujs
-//= require jquery-fileupload/basic
+//= require angular
+//= require angular-resource
+//= require angular-route
+//= require angularjs-rails-resource
+//= require jquery-fileupload/angularjs
 //= require jquery.scrollTo/jquery.scrollTo
 //= require jquery.localScroll/jquery.localScroll
-//= require moment/min/moment-with-locales
+//= require underscore
+//= require moment
+//= require moment-timezone
+//= require moment/locale/vi
 //= require bootstrap
 //= require bootstrap3-datetimepicker
 //= require accountingjs/accounting

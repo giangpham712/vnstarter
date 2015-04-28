@@ -57,11 +57,10 @@
               <% else %>
                   <li class="has-user">
                     <%= hidden_field_tag :user_name, current_user.name %>
-                    <%= hidden_field_tag :user_image_url, current_user.image.url %>
+                    <%= hidden_field_tag :user_image_url, "/images/no-image-user.png" %>
                     <a>
-                      <%= image_tag current_user.image.url(:small), class: "circle" %>
-                      <span class="sf-sub-indicator">
-                           <i class="fa fa-angle-down "></i>
+                      <%= image_tag current_user.avatar_url(:thumbnail), class: "circle" %>
+                      <span class="sf-sub-indicator"><i class="fa fa-angle-down "></i>
                     </span>
                     </a>
 

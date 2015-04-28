@@ -1,0 +1,18 @@
+defaults: &defaults
+  provider: Google
+  google_storage_access_key_id: "GOOGERGNW3U62BJXXSZZ"
+  google_storage_secret_access_key: "fO8jSZIbgPcuqNOt06k1CpffPooV3KOik5YnQ4fV"
+
+development:
+  <<: *defaults
+  bucket_name: "kickstarter-dev"
+
+
+test:
+  <<: *defaults
+  bucket_name: "kickstarter-dev"
+
+
+production:
+  <<: *defaults
+  bucket_name: "kickstarter-dev"

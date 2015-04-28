@@ -1,16 +1,8 @@
 class User < ActiveRecord::Base
 
-  has_attached_file :image, :default_url => "/images/no-image-user.png", :styles => {
-                              :small => "150x150#",
-                              :medium => "350x350#",
-                              :large => "750x750#"
-                          }
+  mount_uploader :avatar, UserAvatarUploader
 
   validates_presence_of :name
-  validates_attachment_content_type :image,
-                                    :content_type => /^image\/(png|gif|jpeg|jpg|bmp)/,
-                                    :size => { :less_than => 5.megabytes },
-                                    :message => "Only PNG, GIF, JPEG and BMP formats are supported"
 
   validates_length_of :biology, maximum: 225
 

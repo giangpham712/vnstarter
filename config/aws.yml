@@ -10,7 +10,7 @@ development:
 
 test:
   <<: *defaults
-  bucket: "myapp-test"
+  bucket: "kickstarter-test"
 
 
 production:

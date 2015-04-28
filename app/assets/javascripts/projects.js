@@ -1,3 +1,5 @@
+var vst = vst | {};
+
 (function ($) {
     $(function () {
 
@@ -37,16 +39,6 @@
 
             request.fail(function (result) {
                 console.log(result);
-            });
-        });
-
-        $("#project_edit .options .option").each(function (i, o) {
-            $(o).find("input").click(function () {
-                $("#project_edit .options .option").removeClass("selected");
-                $("#project_edit .options input[type=text]").prop('disabled', true);
-
-                $(o).addClass("selected");
-                $(o).find("input[type=text]").prop('disabled', false);
             });
         });
 
@@ -103,40 +95,6 @@
             });
         });
 
-        $(".datetimepicker").each(function (i, o) {
-
-            var $target = $($(this).data("target"));
-            var defaultDate = $target.val();
-
-            var picker = $(o).datetimepicker({
-                inline: true,
-                locale: "vi",
-                format: "DD-MM-YYYY HH:mm"
-            });
-
-            picker.data("DateTimePicker").date(defaultDate);
-
-            picker.on("dp.change", function (e) {
-                $target.val(e.date.format("DD-MM-YYYY HH:mm"));
-            });
-
-        });
-
-        $(".limit-characters").each(function(i, e) {
-            var $input = $(e).find("textarea");
-            var $label = $(e).find("p");
-
-            var max_characters = $input.prop("maxlength");
-
-            $input.keyup(function() {
-                var character_count = $input.val().length;
-                $label.text((max_characters - character_count) + "/" + max_characters);
-            })
-
-            $input.trigger("keyup");
-        });
-
-
         $("input.duration").autoNumeric('init', {
             aSep: ".",
             aDec: ",",
@@ -146,51 +104,9 @@
             vMax: "90"
         })
 
-        $("input.currency").autoNumeric('init', {
-            aSep: ".",
-            aDec: ",",
-            mDec: 0,
-            lZero: "deny",
-            pSign: "s",
-            aSign: " vnđ",
-            vMin: "1000000",
-            vMax: "1000000000"
-        });
-
         $(".modal").on("hide.bs.modal", function () {
             $(this).find("form").trigger('reset')
-            $(this).find(".alert").hide();
         });
-
-        $("#basic form").submit(function(e) {
-            e.preventDefault();
-            var form = this;
-            $("#saving-layer").show();
-            saveInfo(form);
-        });
-
-        $("#about_you form").submit(function(e) {
-            e.preventDefault();
-            var form = this;
-            $("#saving-layer").show();
-            saveInfo(form);
-        });
-
-        $("#add-reward form").submit(function (e) {
-            e.preventDefault();
-            var form = this;
-            addReward(form);
-        });
-
-        $("#add-story-post form").submit(function (e) {
-            e.preventDefault();
-            var form = this;
-            addStoryPost(form);
-        });
-
-        $("#story .story-posts .post .delete").click(deleteStoryPost);
-
-        $("#rewards .rewards .reward .delete").click(deleteReward);
 
         $("#send-message form").submit(function (e) {
             e.preventDefault();
@@ -203,19 +119,6 @@
             var project_id = $("#project_id").val();
             window.location.href = "/projects/" + project_id + "/pledges/new?amount=" + amount;
         });
-
-        $("#delete_project").click(function(e){
-            var project_id = $("#project_id").val();
-
-            var request = $.ajax({
-                url: "/projects/" + project_id,
-                type: "DELETE"
-            });
-
-            request.done(function(result) {
-
-            });
-        })
 
         $("#add_comment").click(function (e) {
             $('#new_comment').submit();
@@ -252,194 +155,6 @@
         });
 
     });
-
-    function saveInfo(form) {
-        submitFormAjax(form,
-            function (result) {
-
-                $("#saving-layer").hide();
-                if (result.success)
-                    displaySuccessMessage();
-                else
-                    displayErrorMessage(result.errors);
-            },
-            function (result) {
-
-                $("#saving-layer").hide();
-                displayErrorMessage();
-            }
-        );
-    }
-
-    function addReward(form) {
-
-        submitFormAjax(form, function (result) {
-            if (result.success) {
-                $(form).find(".errors").hide();
-
-                var counter = $("#rewards .rewards").find(".reward").length;
-
-                var amount = accounting.formatMoney(result.reward.minimum_pledge_amount, {
-                    symbol: "vnđ",
-                    format: "%v %s",
-                    thousand: ".",
-                    precision: 0
-                });
-
-                var html = "<div class='col-xs-6 col-sm-6 col-md-6 col-lg-6'>";
-                html += "<div class='reward' data-reward-id='" + result.reward.id + "'>";
-                html += "<a class='btn btn-danger pull-right delete'><i class='fa fa-times'></i></a>";
-                html += "<h3><b>" + amount + "</b></h3>";
-                html += "<p>" + result.reward.description + "</p>";
-                html += "</div></div>";
-
-                var $reward = $(html);
-
-                $reward.appendTo($("#rewards .rewards"));
-                $reward.find(".delete").click(deleteReward);
-                $("#add-reward").modal('hide');
-
-            } else {
-                $(form).find(".errors").show();
-                var $errors_list = $(form).find(".errors ul");
-                $errors_list.html("");
-                $.each(result.errors, function (i, e) {
-                    $("<li>" + e + "</li>").appendTo($errors_list);
-                });
-            }
-
-        }, function (result) {
-
-            $("#pledge_money li").click(function (e) {
-                var amount = $(e.target).data("amount");
-                var project_id = $("#project_id").val();
-                window.location.href = "/projects/" + project_id + "/pledges/new?amount=" + amount;
-            });
-
-        });
-
-
-    }
-
-    function displaySuccessMessage(message) {
-        var $message = $("#message_container .alert-success");
-        $message.show();
-        setTimeout(function() {
-            $message.hide();
-        }, 5000);
-        $("#go_top").trigger('click');
-    }
-
-    function displayErrorMessage(errors) {
-        var $message = $("#message_container .alert-danger");
-        if (errors) {
-            $message.find("ul").html("");
-            $.each(errors, function(i, e) {
-                $message.find("ul").append($("<li>" + e + "</li>"));
-            });
-        }
-        $message.show();
-        setTimeout(function() {
-            $message.hide();
-        }, 5000);
-        $("#go_top").trigger('click');
-    }
-
-    function deleteReward(e) {
-
-        var sure = confirm("Bạn có chắc chắn muốn xóa phần thưởng này?");
-
-        if (!sure) {
-            return false;
-        }
-
-        var $reward = $(this).parent().parent();
-        var project_id = $("#project_id").val();
-        var reward_id = $reward.data("reward-id");
-
-        $reward.addClass("deleting");
-
-        var request = $.ajax({
-            url: "/projects/" + project_id + "/rewards/" + reward_id,
-            type: "DELETE"
-        });
-
-        request.done(function (result) {
-            if (result.success) {
-                $reward.parent().remove();
-            } else {
-                $reward.removeClass("deleting");
-            }
-        });
-    }
-
-    function deleteStoryPost(e) {
-
-        var sure = confirm("Bạn có chắc chắn muốn xóa câu chuyện này?");
-
-        if (!sure) {
-            return false;
-        }
-
-        var $post = $(this).parent();
-        var project_id = $("#project_id").val();
-        var post_id = $post.data("post-id");
-
-        $post.addClass("deleting");
-
-        var request = $.ajax({
-            url: "/projects/" + project_id + "/posts/" + post_id,
-            type: "DELETE"
-        });
-
-        request.done(function (result) {
-            if (result.success) {
-                $post.remove();
-            } else {
-                $post.removeClass("deleting");
-            }
-        });
-    }
-
-    function addStoryPost(form) {
-
-        $("#add-story-post").addClass("processing");
-        $("#add-story-post button").prop("disabled", true);
-        submitFormAjax(form,
-            function (result) {
-                if (result.success) {
-                    $(form).find(".errors").hide();
-
-                    var html = "<div class='post' data-post-id='" + result.post.id + "'>";
-                    html += "<a class='btn btn-primary pull-right edit hidden'><i class='fa fa-pencil'></i></a>";
-                    html += "<a class='btn btn-danger pull-right delete'><i class='fa fa-times'></i></a>";
-                    html += "<h3>" + result.post.title + "</h3>";
-                    html += "<div class='image-container'><img src ='" + result.image_url + "' title='" + result.post.title + "' /></div>";
-                    html += "<p>" + result.post.body + "</p>";
-                    html += "</div>";
-
-                    var $post = $(html);
-
-                    $post.appendTo($("#story .story-posts"));
-                    $post.find(".delete").click(deleteStoryPost);
-
-                    $("#add-story-post").modal('hide');
-                } else {
-                    $(form).find(".errors").show();
-                    var $errors_list = $(form).find(".errors ul");
-                    $errors_list.html("");
-                    $.each(result.errors, function (i, e) {
-                        $("<li>" + e + "</li>").appendTo($errors_list);
-                    });
-                }
-                $("#add-story-post").removeClass("processing");
-                $("#add-story-post button").prop("disabled", false);
-            },
-            function (result) {
-                console.log(result);
-            }
-        )
-    }
 
     function sendMessage(form) {
         submitFormAjax(form, function (result) {

@@ -7,6 +7,12 @@
       <div class="container">
         <%= hidden_field_tag :project_id, @project.id %>
         <%= hidden_field_tag :slug, @project.slug %>
+        <% if @project.initiating? %>
+            <p class="project-warning">
+              <span class="annotation-pill pill-draft">Đang khởi tạo</span>
+              Dự án vẫn chưa được khởi động. Những người dùng khác sẽ không thể xem được trang này.
+            </p>
+        <% end %>
         <h2><%= @project.title %></h2>
         <h6>
           thực hiện bởi <a href="javascript:void(0);"><b><%= @project.user.name %></b></a>
@@ -74,19 +80,19 @@
               </div>
             </div>
 
-            <% if !@project.ended? %>
+            <% if @project.launched? && !@project.ended? %>
 
                 <button id="btn_pledge" class="btn btn-x-lg btn-primary" data-toggle="modal" href='#pledge_money'>Góp
                   vốn
                 </button>
 
+                <div class="project-dates">
+                  <p>
+                    Dự án được khởi động lúc <%= @project.launched_at.strftime("%H:%M ngày %d/%m/%Y") %>
+                    và sẽ kết thúc vào lúc <%= @project.deadline.strftime("%H:%M ngày %d/%m/%Y") %>
+                  </p>
+                </div>
             <% end %>
-            <div class="project-dates">
-              <p>
-                Dự án được khởi động lúc <%= @project.launched_at.strftime("%H:%M ngày %d/%m/%Y") %>
-                và sẽ kết thúc vào lúc <%= @project.deadline.strftime("%H:%M ngày %d/%m/%Y") %>
-              </p>
-            </div>
 
             <% if (@project.ended?) %>
                 <div class="funding-status">
@@ -115,7 +121,7 @@
                   </p>
                 </div>
                 <div class="col-xs-5 col-sm-5 col-md-4 col-lg-4">
-                  <%= image_tag @project.user.image.url(:small), class: "circle avatar-small", height: "80" %>
+                  <%= image_tag @project.user.avatar_url(:standard), class: "circle avatar-small", height: "80" %>
                 </div>
               </div>
             </div>

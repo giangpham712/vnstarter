@@ -1,0 +1,27 @@
+<div class="modal" id='modal_launch_project' data-remodal-id="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h2 class="modal-title">Sẵn sàng huy động vốn!</h2>
+      </div>
+      <div class="modal-body clearfix">
+        <p>
+            Hãy xác nhận những thông tin sau - bạn sẽ không thể thay đổi những thông tin này sau khi đã khởi động dự án
+        </p>
+        <ul class="launch-info">
+          <li><h4>Mục tiêu huy động vốn</h4><span ng-bind="project.fundingGoal | money"></span></li>
+          <li><h4>Thời hạn</h4><span ng-bind-html="projectDeadlineDescription"></span></li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+        <button type="button" ng-click="savePost()" class="btn btn-primary">Khởi động dự án</button>
+        <img src="/assets/assets/loader.gif" class="loader"/>
+      </div>
+
+    </div>
+  </div>
+</div>

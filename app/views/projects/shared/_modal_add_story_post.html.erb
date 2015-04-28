@@ -1,45 +1,46 @@
-<div class="modal fade" id='add-story-post' data-remodal-id="modal">
+<div class="modal" id='modal_add_story_post' data-remodal-id="modal">
   <div class="modal-dialog">
     <div class="modal-content">
-      <%= form_for [@project, @project.posts.build], url: project_posts_path(@project.id) , :html => { :multipart => true }, method: :post do |f| %>
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <h3 class="modal-title">Thêm câu chuyện của bạn</h3>
-          </div>
-          <div class="modal-body clearfix">
-            <div class="errors alert alert-danger alert-dismissible" style="display: none;" role="alert">
-                Có lỗi xảy ra khi lưu:
-                <ul></ul>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-              <span>Ảnh</span>
-            </div>
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-              <%= f.file_field :image, class: 'file-button' %>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-              <span>Tiêu đề</span>
-            </div>
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-              <%= f.text_field :title, class: 'form-control', :rows => "4" %>
-              <br>
-            </div>
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-              <span>Nội dung</span>
-            </div>
-            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-              <%= f.text_area :body, class: 'form-control', :rows => "4" %>
-            </div>
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h3 class="modal-title">Thêm câu chuyện của bạn</h3>
+      </div>
+      <div class="modal-body clearfix">
+        <div ng-show="post.errors.length > 0" ng-cloak class="errors alert alert-danger alert-dismissible" role="alert">
+          Có lỗi xảy ra khi lưu:
+          <ul>
+            <li ng-repeat="error in post.errors" ng-bind="error"></li>
+          </ul>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <span>Ảnh</span>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+          <input type="file" class="file-button"/>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <span>Tiêu đề</span>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+          <input type="text" ng-model="post.title" class="form-control" rows="4"/>
+          <br>
+        </div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <span>Nội dung</span>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+          <textarea ng-model="post.body" class="form-control" rows="4"></textarea>
+        </div>
 
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
-            <button type="submit" class="btn btn-primary submit">Thêm</button>
-            <img src="/assets/assets/loader.gif" class="loader" />
-          </div>
-      <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+        <button type="button" ng-click="savePost()" class="btn btn-primary">Lưu</button>
+        <img src="/assets/assets/loader.gif" class="loader"/>
+      </div>
+
     </div>
   </div>
 </div>
