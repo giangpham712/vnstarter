@@ -23,9 +23,9 @@
             $scope.project = new Project(cleanedProjectGon);
 
             $scope.creator = gon.currentUser;
-            $scope.rewards = gon.project.rewards;
+            $scope.rewards = $scope.project.rewards;
 
-            $scope.posts = gon.project.posts
+            $scope.posts = $scope.project.posts
 
             $scope.successMessage = null;
 
@@ -98,7 +98,7 @@
             }
 
             var posts = function () {
-                return $scope.project.posts ? $scope.project.posts : [];
+                return $scope.posts ? $scope.posts : [];
             }();
 
             var postIndexById = function (post) {
