@@ -1,18 +1,18 @@
-<% cache(cache_key_for_project_posts(@project)) do %>
-    <div id="show_story">
+<div id="show_story">
 
-      <% if @project.has_video? %>
-          <div class="video-container">
-            <iframe src="https://player.vimeo.com/video/59056788?title=0&byline=0&portrait=0&badge=0" width="100%" height="530" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-          </div>
-      <% else %>
-          <div class="image-container">
-            <%= image_tag @project.image_url(:large) %>
-          </div>
-      <% end %>
+  <% if @project.has_video? %>
+      <div class="video-container">
+        <iframe src="https://player.vimeo.com/video/59056788?title=0&byline=0&portrait=0&badge=0" width="100%" height="530" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
+  <% else %>
+      <div class="image-container">
+        <%= image_tag @project.image_url(:large) %>
+      </div>
+  <% end %>
 
-      <h3 class="description"><%= @project.short_description %></h3>
+  <h3 class="description"><%= @project.short_description %></h3>
 
+  <% cache(cache_key_for_project_posts(@project)) do %>
       <div class="story-posts">
         <% @project.posts.each do |post| %>
             <div class='post'>
@@ -27,5 +27,5 @@
             </div>
         <% end %>
       </div>
-    </div>
-<% end %>
+  <% end %>
+</div>
