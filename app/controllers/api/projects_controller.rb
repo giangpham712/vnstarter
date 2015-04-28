@@ -92,7 +92,7 @@ class Api::ProjectsController < ApplicationController
 
   def project_user_params
     json_params = ActionController::Parameters.new(JSON.parse(request.body.read))
-    json_params.require(:project).permit(:user => [:name, :biology])
+    json_params.require(:project).permit(:user => [:name, :biology, :location, :website])
   end
 
   def launched_project_params
