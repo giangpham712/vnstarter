@@ -12,7 +12,7 @@
 
   <h3 class="description"><%= @project.short_description %></h3>
 
-  <% cache(cache_key_for_project_posts(@project)) do %>
+  <% cache(cache_key_for_project_posts(@project), skip_digest: true) do %>
       <div class="story-posts">
         <% @project.posts.each do |post| %>
             <div class='post'>
