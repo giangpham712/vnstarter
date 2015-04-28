@@ -11,6 +11,7 @@ class Api::PostsController < ApplicationController
     if post.save
       project_id = params[:project_id]
       Rails.cache.delete("projects/#{project_id}/posts/all")
+      Rails.cache.delete(fragment_cache_key("projects/#{project_id}/posts/all"))
       render json: { :post => post }
     else
       render json: { :post => post.as_json.merge({ :errors => post.errors.full_messages }) }, :status => 200
@@ -25,6 +26,7 @@ class Api::PostsController < ApplicationController
     if post.save
       project_id = params[:project_id]
       Rails.cache.delete("projects/#{project_id}/posts/all")
+      Rails.cache.delete(fragment_cache_key("projects/#{project_id}/posts/all"))
       render json: { :post => post.as_json }
     else
       render json: { :post => post.as_json.merge({ :errors => post.errors.full_messages }) }, :status => 200
@@ -38,6 +40,7 @@ class Api::PostsController < ApplicationController
     if post.destroy
       project_id = params[:project_id]
       Rails.cache.delete("projects/#{project_id}/posts/all")
+      Rails.cache.delete(fragment_cache_key("projects/#{project_id}/posts/all"))
       head :no_content
     else
       render json: { :errors => post.errors.full_messages }
