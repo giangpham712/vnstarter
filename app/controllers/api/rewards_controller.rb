@@ -11,7 +11,7 @@ class Api::RewardsController < ApplicationController
     if reward.save
       project_id = params[:project_id]
       Rails.cache.delete("projects/#{project_id}/rewards/all")
-      expire_fragment("projects/#{project_id}/rewards/all")
+      Rails.cache.delete(fragment_cache_key("projects/#{project_id}/rewards/all"))
       render json: { :reward => reward }
     else
       render json: { :reward => reward.as_json.merge({ :errors => reward.errors.full_messages }) }, :status => 200
@@ -26,7 +26,7 @@ class Api::RewardsController < ApplicationController
     if reward.save
       project_id = params[:project_id]
       Rails.cache.delete("projects/#{project_id}/rewards/all")
-      expire_fragment("projects/#{project_id}/rewards/all")
+      Rails.cache.delete(fragment_cache_key("projects/#{project_id}/rewards/all"))
       render json: { :reward => reward.as_json }
     else
       render json: { :reward => reward.as_json.merge({ :errors => reward.errors.full_messages }) }, :status => 200
@@ -40,6 +40,7 @@ class Api::RewardsController < ApplicationController
     if reward.destroy
       project_id = params[:project_id]
       Rails.cache.delete("projects/#{project_id}/rewards/all")
+      Rails.cache.delete(fragment_cache_key("projects/#{project_id}/rewards/all"))
       head :no_content
     else
       render json: { :errors => reward.errors.full_messages }
