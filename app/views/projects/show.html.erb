@@ -126,7 +126,7 @@
               </div>
             </div>
             <div id="rewards">
-              <% cache(cache_key_for_project_rewards(@project)) do %>
+              <% cache(cache_key_for_project_rewards(@project), skip_digest: true) do %>
                   <h3>Phần thưởng</h3>
 
                   <div class="rewards">
