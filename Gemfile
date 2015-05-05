@@ -49,7 +49,7 @@ gem 'dynamic_form'
 
 gem "font-awesome-rails"
 
-gem 'jquery-fileupload-rails'
+gem "angular-rails-templates"
 
 gem "gon"
 

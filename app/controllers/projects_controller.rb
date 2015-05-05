@@ -86,8 +86,13 @@ class ProjectsController < ApplicationController
     gon.project = project.as_json.merge(
         {
             :image_url => project.image_url(:medium),
+            :project_image_upload_url => avatar_api_project_path(project.id),
             :deadline => project.deadline.strftime("%d-%m-%Y"),
-            :user => project.user.as_json(:only => [:email, :id, :name, :biology, :location, :website]).merge({:image_url => project.user.avatar_url(:standard)}),
+            :user => project.user.as_json(:only => [:email, :id, :name, :biology, :location, :website]).merge(
+                {
+                    :image_url => project.user.avatar_url(:standard),
+                    :user_avatar_upload_url => "/profile/avatar"
+                }),
             :rewards => Rails.cache.fetch("projects/#{project.id}/rewards/all", expires_in: 30.days) do
               Reward.where("project_id = :project_id", { project_id: project.id }).map { |reward| reward.as_json }
             end,
@@ -98,39 +103,6 @@ class ProjectsController < ApplicationController
     )
 
     @project = project
-  end
-
-
-  def launch_project
-
-    project = Project.find(params[:id])
-
-    render json: {:success => false} if project.deleted?
-    render json: {:success => false} if project.launched?
-    render json: {:success => false} if project.stopped?
-
-    launched_at = Time.zone.now
-    deadline = nil
-    duration = nil
-
-    if project.deadline == nil
-      duration = project.duration
-      deadline = launched_at + duration.days
-    else
-      deadline = project.deadline
-      duration = (deadline - launched_at).to_i / 1.day
-    end
-
-    if project.update_attributes(
-        :launched => true,
-        :launched_at => launched_at,
-        :deadline => deadline,
-        :duration => duration)
-      render json: {:success => true}
-    else
-      render json: {:success => false, :errors => project.errors}
-    end
-
   end
 
   def stop_project
@@ -149,27 +121,17 @@ class ProjectsController < ApplicationController
 
   end
 
-  def upload_image
-    project = Project.find(params[:id])
-    puts params[:image]
-    if project.update_attributes(:image => params[:project][:image])
-      render json: {:success => true, :image_url => project.image_url(:medium)}
-    else
-      render json: {:success => false, :errors => project.errors}
-    end
-  end
-
   private
     def my_project?(project)
       return current_user && project.creator_id == current_user.id
     end
 
     def project_params
-      params.require(:project).permit(:title, :location, :category_id, :short_description, :funding_goal, :duration_type, :duration, :deadline, :image)
+      params.require(:project).permit(:title, :location, :category_id, :short_description, :funding_goal, :duration_type, :duration, :deadline)
     end
 
     def launched_project_params
-      params.require(:project).permit(:title, :location, :category_id, :short_description, :image)
+      params.require(:project).permit(:title, :location, :category_id, :short_description)
     end
 
 end

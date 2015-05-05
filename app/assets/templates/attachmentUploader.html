@@ -1,0 +1,24 @@
+<div class="attachment-upload {{elementCssClass}}" ng-class="{ uploading: uploading, 'has-file': defaultImageUrl != '' }">
+    <div class="error">
+        <div class="message"></div>
+    </div>
+    <div class="success text-center">
+        <img data-ng-src="{{defaultImageUrl}}"/>
+    </div>
+    <div class="upload">
+        <input type="file" autofocus="false" class="fileupload"/>
+        <strong class="text-center">
+            Chọn ảnh từ máy tính của bạn
+            <span class="has_file_hide">This is the main image associated with your project. Make it count!</span>
+            <span>Hỗ trợ định dạng JPEG, PNG, GIF hoặc BMP. Kích thước tối đa 5MB</span>
+        </strong>
+
+        <div class="progress" ng-class="{ finished: progress == 100 }">
+            <div class="inner">
+                <div class="bar" data-ng-style="{width: progress + '%'}">
+                    <div class="percentage">{{uploadStatus}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

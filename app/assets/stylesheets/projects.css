@@ -297,7 +297,7 @@
 
 .upload .progress .inner .percentage, .attachment-upload .upload .progress .inner .percentage {
     font-size: 30px;
-    line-height: 68px
+
 }
 
 .profile-photo .success, .attachment-upload.profile-photo .success {
@@ -608,8 +608,7 @@
 }
 
 
-#project_edit .rewards .reward,
-#project_show .rewards .reward {
+#project_edit .rewards .reward {
     height: 300px;
 }
 
@@ -847,6 +846,7 @@
 }
 
 #project_show .creator h5 {
+    font-size: 15px;
     font-weight: bold;
     color: #000;
     font-family: Helvetica, Arial, Sans-Serif;
@@ -948,6 +948,7 @@
 
 #project_show .story-posts .post h2 {
     padding-bottom: 15px;
+    font-size: 28px;
     font-family: "Open Sans Condensed";
     font-weight: 700;
 }
@@ -972,15 +973,18 @@
 }
 
 #project_show #rewards > h3 {
-    font-size: 30px;
+    font-size: 24px;
+    line-height: 30px;
     font-family: "Open Sans Condensed";
     font-weight: 700;
+    border-bottom: 1px solid #dddddd;
 }
 
 #project_show .rewards .reward {
     margin: 20px 0;
     background-color: #F1F2F7;
     padding: 20px;
+    height: 250px;
 }
 
 @media (max-width: 992px) {

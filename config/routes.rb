@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'profile/projects', to: 'projects#my'
   get 'profile/messages', to: 'messages#my'
 
-  post 'profile/avatar', to: 'users#upload_image'
+  post 'profile/avatar', to: 'api/users#upload_avatar'
 
   get 'profile', to: 'users#show'
   get 'profile/edit', to: 'users#edit'
@@ -52,10 +52,7 @@ Rails.application.routes.draw do
     end
 
     member do
-      get :manage, to: 'projects#manage', as: 'manage'
-      post :launch_project
-      post :stop_project
-      post :upload_image
+
     end
   end
 
@@ -115,6 +112,10 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :projects do
+
+      member do
+        post :avatar, to: 'projects#upload_avatar', as: 'avatar'
+      end
 
       resources :posts do
 

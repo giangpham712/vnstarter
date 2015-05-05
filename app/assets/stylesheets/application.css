@@ -47,7 +47,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
     margin: 0 0 20px 0;
     font-weight: 500;
-    color: #4b4b4b;
+    color: #2a2a2a;
 }
 
 
@@ -552,6 +552,10 @@ h2.section-title {
     font-size: 14px;
 }
 
+.nav-tabs > li a:focus {
+    background-color: #fff;
+}
+
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
@@ -615,7 +619,7 @@ h2.section-title {
 
 .comments .comment-date,
 .pledges .pledge-date {
-    font-size: 10px;
+    font-size: 12px;
     color: #979797;
     font-style: italic;
     font-weight: normal;
@@ -625,9 +629,13 @@ h2.section-title {
 .comments .comment-date,
 .pledges .user-name,
 .pledges .pledge-date {
-    font-weight: bold;
     display: block;
+}
 
+.comments .user-name,
+.pledges .user-name {
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .comments .user-avatar img,
@@ -639,6 +647,7 @@ h2.section-title {
 
 .comments .comment-body {
     margin-top: 5px;
+    font-size: 14px;
 }
 
 .pledges .pledge-details {

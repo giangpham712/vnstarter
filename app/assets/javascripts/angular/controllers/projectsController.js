@@ -179,7 +179,8 @@
 
             $scope.showCreateReward = function () {
                 var reward = {
-                    limit_quantity: 0
+                    minimumPledgeAmount: 0,
+                    limitQuantity: 0
                 };
 
                 $scope.setReward(reward);

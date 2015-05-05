@@ -22,21 +22,35 @@
     <div class="content-nav">
       <div class="container">
         <ul class="nav nav-tabs" data-tabs="tabs">
+
           <li role="presentation" class="active">
             <a href="#story" aria-controls="story" role="tab" data-toggle="tab">
               Câu chuyện
             </a>
           </li>
-          <li role="presentation">
-            <a href="#comments" aria-controls="comments" role="tab" data-toggle="tab">
-              Bình luận (<%= @project.comments.count %>)
-            </a>
-          </li>
-          <li role="presentation">
-            <a href="#pledges" aria-controls="pledges" role="tab" data-toggle="tab">
-              Đóng góp (<%= @pledges.count %>)
-            </a>
-          </li>
+          <% if !@project.initiating? %>
+              <li role="presentation">
+                <a href="#comments" aria-controls="comments" role="tab" data-toggle="tab">
+                  Bình luận (<%= @project.comments.count %>)
+                </a>
+              </li>
+              <li role="presentation">
+                <a href="#pledges" aria-controls="pledges" role="tab" data-toggle="tab">
+                  Đóng góp (<%= @pledges.count %>)
+                </a>
+              </li>
+          <% else %>
+              <li role="presentation" class="disabled">
+                <a href="" aria-controls="comments">
+                  Bình luận
+                </a>
+              </li>
+              <li role="presentation" class="disabled">
+                <a href="" aria-controls="pledges">
+                  Đóng góp
+                </a>
+              </li>
+          <% end %>
         </ul>
       </div>
     </div>
@@ -114,12 +128,12 @@
                   </a>
 
                   <p class="links">
-                    <a href="javascript:void(0);" class="btn-link">Xem thông tin</a>
+                    <a href="javascript:void(0);" class="btn-link">Xem hồ sơ</a>
                     <% if !(current_user && @project.creator_id == current_user.id) %>
                         <a class="btn-link" data-toggle="modal" href='#send-message'>Gửi tin nhắn</a>
                     <% end %>
                   </p>
-                </div>
+                </divơ
                 <div class="col-xs-5 col-sm-5 col-md-4 col-lg-4">
                   <%= image_tag @project.user.avatar_url(:standard), class: "circle avatar-small", height: "80" %>
                 </div>

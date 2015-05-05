@@ -1,4 +1,4 @@
-<div>
+    <div>
   <div class="section-guide">
     <h2>Thông tin cá nhân</h2>
 
@@ -20,30 +20,12 @@
         </div>
 
         <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-          <div class="attachment-upload profile-photo" ng-class="{ 'has-file' : project.user.imageUrl != '' }">
-            <div class="error">
-              <div class="message"></div>
-            </div>
-            <div class="success text-center table-cell">
-              <img ng-src="{{project.user.imageUrl}}" ng-title="{{project.user.name}}" />
-            </div>
-            <div class="upload">
-              <%= file_field_tag :avatar, autofocus: false, class: 'fileupload', 'data-upload-url' => '/profile/avatar' %>
-              <strong class="text-center">
-                <%= t("project.edit.basic.choose_image_from_your_computer") %>
-                <span class="has_file_hide">This is the main image associated with your project. Make it count!</span>
-                <span><%= t("project.edit.basic.support_image_file_formats") %></span>
-              </strong>
-
-              <div class="progress">
-                <div class="inner">
-                  <div class="bar">
-                    <div class="percentage"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <ng-attachment-uploader
+          auto-upload="true"
+          name="user[avatar]"
+          element-css-class="profile-photo"
+          upload-url="{{project.user.userAvatarUploadUrl}}"
+          default-image-url="project.user.imageUrl"></ng-attachment-uploader>
         </div>
       </div>
 

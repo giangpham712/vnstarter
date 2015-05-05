@@ -1,8 +1,9 @@
 class Api::ProjectsController < ApplicationController
 
-  skip_before_filter :verify_authenticity_token, :only => [:update, :execute]
+  skip_before_filter :verify_authenticity_token, :only => [:update, :execute, :upload_avatar]
 
-  respond_to :json
+  respond_to :json, :except => [:upload_avatar]
+  respond_to :html, :only => [:upload_avatar]
 
   def index
     projects = Project.all
@@ -43,9 +44,19 @@ class Api::ProjectsController < ApplicationController
       when "launch"
         launch_project(project)
       when "stop"
-
+        stop_project(project)
       else
 
+    end
+  end
+
+  def upload_avatar
+    project = Project.find(params[:id])
+    
+    if project.update_attributes(:image => params[:project][:image])
+      render json: { :image_url => project.image_url(:medium) }
+    else
+      render json: { :errors => project.errors }
     end
   end
 
@@ -80,7 +91,9 @@ class Api::ProjectsController < ApplicationController
     else
       render json: { :project => project.as_json.merge({:errors => project.errors}) }
     end
+  end
 
+  def stop_project(project)
 
   end
 

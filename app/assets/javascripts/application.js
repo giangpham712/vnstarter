@@ -17,7 +17,7 @@
 //= require angular-resource
 //= require angular-route
 //= require angularjs-rails-resource
-//= require jquery-fileupload/angularjs
+//= require angular-rails-templates
 //= require jquery.scrollTo/jquery.scrollTo
 //= require jquery.localScroll/jquery.localScroll
 //= require underscore
@@ -30,6 +30,7 @@
 //= require autoNumeric
 //= require_directory .
 //= require_tree ./angular
+//= require_tree ../templates
 
 (function ($) {
 

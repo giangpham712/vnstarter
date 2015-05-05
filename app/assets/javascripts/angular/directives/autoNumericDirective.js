@@ -13,7 +13,7 @@
             link: function (scope, element, attrs, controller) {
 
                 var updateElement = function (element, newVal) {
-                    element.autoNumeric('set', newVal);
+                    element.autoNumeric('set', newVal || 0);
                     var model = $parse(attrs.ngModel);
                     model.assign(scope, element.autoNumeric('get'));
                 };

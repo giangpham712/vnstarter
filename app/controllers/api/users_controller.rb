@@ -1,6 +1,6 @@
 class Api::UsersController < ApplicationController
 
-  skip_before_filter :verify_authenticity_token, :only => [:update]
+  skip_before_filter :verify_authenticity_token, :only => [:update, :upload_avatar]
 
   def update
 
@@ -17,6 +17,17 @@ class Api::UsersController < ApplicationController
     else
       render json: { :user => user.as_json.merge({ :errors => user.errors.full_messages }) }, :status => 200
     end
+  end
+
+  def upload_avatar
+    user = current_user
+
+    if user.update_attributes(:avatar => params[:user][:avatar])
+      render json: { :image_url => user.avatar_url(:standard) }
+    else
+      render json: { :errors => user.errors }
+    end
+
   end
 
   private
