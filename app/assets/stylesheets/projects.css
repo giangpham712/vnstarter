@@ -328,6 +328,8 @@
 }
 
 .form-element {
+    color: #666666;
+    line-height: 20px;
     margin-bottom: 5px;
 }
 
@@ -626,6 +628,7 @@
 
 #project_edit .story-posts .post > p {
     margin-top: 10px;
+    text-align: justify;
 }
 
 #project_edit .rewards .reward .btn,

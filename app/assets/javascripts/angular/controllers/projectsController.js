@@ -13,8 +13,10 @@
         'Reward',
         function ($scope, $routeParams, $timeout, $sce, $window, gon, Project, User, Post, Reward) {
 
-            $scope.shortDescriptionMaxLength = 200;
-            $scope.biologyMaxLength = 225;
+            $scope.projectShortDescriptionMaxLength = 200;
+            $scope.postBodyMaxLength = 500
+            $scope.rewardDescriptionMaxLength = 200;
+            $scope.userBiologyMaxLength = 225;
 
             $scope.cities = gon.cities;
             $scope.categories = gon.categories;
@@ -100,6 +102,7 @@
             var posts = function () {
                 return $scope.posts ? $scope.posts : [];
             }();
+
             var selectedPost = null;
 
             var postIndexById = function (post) {
