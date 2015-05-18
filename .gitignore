@@ -15,6 +15,8 @@ See https://help.github.com/articles/ignoring-files for more about ignoring file
 
 .idea/workspace.xml
 **/.idea/workspace.xml
+**/.idea/Kickstarter.iml
+**/.idea/runConfigurations/Development_kickstarter.xml
 workspace.xml
 .idea/workspace.xml
 /lib/assets/*
