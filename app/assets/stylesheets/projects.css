@@ -994,6 +994,21 @@
 
 }
 
+#project_show ul.pledge-amounts {
+    margin: 10px 0;
+    padding: 0;
+}
+
+#project_show ul.pledge-amounts li {
+    margin: 5px;
+    display: inline-block;
+}
+
+#project_show ul.pledge-amounts li .btn {
+    width: 150px;
+
+}
+
 div.modal_dialog {
     position: fixed;
     top: 0;

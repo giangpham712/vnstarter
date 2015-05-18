@@ -8,21 +8,12 @@
       <div class="modal-body">
 
         Chọn số tiền bạn muốn đóng góp:
-
-        <div class="btn-group" role="group" aria-label="...">
-          <div class="btn-group" role="group">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-              Mức đóng góp
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" role="menu" id="pledge_money">
-              <li><a href="javascript:void(0)" data-amount="100000"><%= number_to_currency(100000, precision: 0) %></a></li>
-              <li><a href="javascript:void(0)" data-amount="200000"><%= number_to_currency(200000, precision: 0) %></a></li>
-              <li><a href="javascript:void(0)" data-amount="500000"><%= number_to_currency(500000, precision: 0) %></a></li>
-              <li><a href="javascript:void(0)" data-amount="1000000"><%= number_to_currency(1000000, precision: 0) %></a></li>
-            </ul>
-          </div>
-        </div>
+        <ul class="pledge-amounts">
+          <li><a href="javascript:void(0)" class="btn btn-default" data-amount="100000"><%= number_to_currency(100000, precision: 0) %></a></li>
+          <li><a href="javascript:void(0)" class="btn btn-default" data-amount="200000"><%= number_to_currency(200000, precision: 0) %></a></li>
+          <li><a href="javascript:void(0)" class="btn btn-default" data-amount="500000"><%= number_to_currency(500000, precision: 0) %></a></li>
+          <li><a href="javascript:void(0)" class="btn btn-default" data-amount="1000000"><%= number_to_currency(1000000, precision: 0) %></a></li>
+        </ul>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
