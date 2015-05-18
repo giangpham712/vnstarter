@@ -3,17 +3,8 @@
 <% body_attributes "data-spy=scroll data-target=#home_nav" %>
 <div class="body-wrapper">
   <div class="content-wrapper">
-    <div class="slider">
-      <div class="slide lazy slick-slide" style="background-image: url(/images/slider/slider-bg-1.jpg); background-size: cover;" index="1" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
-        <div class="caption">
-          <h2>Mang ước mơ của bạn ra thế giới</h2>
-          <h4>Raise money for over 1.5 million charities including Red Cross, UNICEF, SU2C</h4>
-          <a href="/home/about" class="btn btn-lg btn-default">Tìm hiểu thêm</a>
-          <a href="/projects/new" class="btn btn-lg btn-primary">Huy động vốn ngay</a>
-        </div>
-      </div>
-    </div>
 
+    <%= render "home/shared/slider" %>
     <div>
       <div class="sticky-nav">
         <nav id="home_nav">
