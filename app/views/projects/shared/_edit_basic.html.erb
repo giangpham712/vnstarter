@@ -54,9 +54,8 @@
 
         <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
           <div class="limit-characters">
-            <textarea ng-model="project.shortDescription" ng-trim="false" class="form-control" maxlength="{{shortDescriptionMaxLength}}" rows="5"></textarea>
-
-            <p ng-bind="shortDescriptionMaxLength - project.shortDescription.length + '/' + shortDescriptionMaxLength"></p>
+            <textarea ng-model="project.shortDescription" ng-trim="false" class="form-control" maxlength="{{projectShortDescriptionMaxLength}}" rows="5"></textarea>
+            <p ng-bind="projectShortDescriptionMaxLength - project.shortDescription.length + '/' + projectShortDescriptionMaxLength"></p>
           </div>
         </div>
       </div>

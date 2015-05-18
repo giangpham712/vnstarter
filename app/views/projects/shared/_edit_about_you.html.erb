@@ -46,8 +46,8 @@
 
         <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
           <div class="limit-characters">
-            <textarea ng-model="project.user.biology" ng-trim="false" class="form-control" maxlength="{{biologyMaxLength}}" rows="5"></textarea>
-            <p ng-bind="biologyMaxLength - project.user.biology.length + '/' + biologyMaxLength"></p>
+            <textarea ng-model="project.user.biology" ng-trim="false" class="form-control" maxlength="{{userBiologyMaxLength}}" rows="5"></textarea>
+            <p ng-bind="userBiologyMaxLength - project.user.biology.length + '/' + userBiologyMaxLength"></p>
           </div>
         </div>
       </div>

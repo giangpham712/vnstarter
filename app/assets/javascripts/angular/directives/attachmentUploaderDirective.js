@@ -19,7 +19,7 @@
                 onDone: '&',
                 onError: '&'
             },
-            templateUrl: '/assets/attachmentUploader.html',
+            templateUrl: 'attachmentUploader.html',
             compile: function compile(tElement, tAttrs, transclude) {
                 var fileInput = angular.element(tElement.find('input[type=file]')[0]);
 
