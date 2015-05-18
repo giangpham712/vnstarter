@@ -22,7 +22,7 @@ var vst = vst | {};
             sendMessage(form);
         });
 
-        $("#pledge_money li").click(function (e) {
+        $(".pledge-amounts li").click(function (e) {
             var amount = $(e.target).data("amount");
             var project_id = $("#project_id").val();
             window.location.href = "/projects/" + project_id + "/pledges/new?amount=" + amount;
