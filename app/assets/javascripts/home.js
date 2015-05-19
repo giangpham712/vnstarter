@@ -9,7 +9,7 @@ $(document).ready(function () {
         {
             dottedOverlay:"none",
             delay: 9000,
-            startwidth: 1170,
+            startwidth: 1010,
             startheight: 470,
             hideThumbs:200,
 

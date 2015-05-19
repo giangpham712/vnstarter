@@ -805,7 +805,7 @@ button.btn.btn-outlined:hover, button.btn.btn-outlined:active, button.btn.btn-ou
 }
 
 button.btn.btn-default, .btn.btn-default {
-    background-color: #efefef;
+    background-color: #fff;
     border-color: #b5b5b5;
     color: #5b5b5b !important;
     text-shadow: white 0 1px 0;
