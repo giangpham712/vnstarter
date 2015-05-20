@@ -19,7 +19,14 @@
             <span>Ảnh</span>
           </div>
           <div class="col-xs-8 col-sm-8 col-md-9 col-lg-9">
-            <input type="file" class="file-button"/>
+            <ng-attachment-uploader
+                auto-upload="true"
+                name="post[image]"
+                upload-url=""
+                default-image-url="post.imageUrl"
+                choose-file-button-text="Choose files"
+                upload-file-button-text="Upload files"></ng-attachment-uploader>
+            <br/>
           </div>
         </div>
         <div class="form-element">

@@ -89,7 +89,7 @@
 }
 
 .attachment-upload {
-    width: 425px;
+
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -303,6 +303,7 @@
 .profile-photo .success, .attachment-upload.profile-photo .success {
     float: left;
     width: 80px;
+    margin-right: -3px;
 }
 
 .profile-photo .success img, .attachment-upload.profile-photo .success img {
@@ -331,6 +332,7 @@
     color: #666666;
     line-height: 20px;
     margin-bottom: 5px;
+    overflow-x: hidden;
 }
 
 .form-element ul {

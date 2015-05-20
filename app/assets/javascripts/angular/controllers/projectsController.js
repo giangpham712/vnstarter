@@ -119,7 +119,8 @@
 
             $scope.showCreatePost = function () {
                 var post = {
-                    body: ""
+                    body: "",
+                    imageUrl: ""
                 };
 
                 $scope.setPost(post);
