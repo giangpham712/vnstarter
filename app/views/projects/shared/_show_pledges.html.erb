@@ -4,7 +4,7 @@
         <li class="pledge">
           <div class="pledge-content">
             <div class="user-avatar">
-              <%= image_tag (pledge.avatar_url(:thumbnail)), class: "circle", height: "80" %>
+              <%= image_tag (pledge.user.avatar.url(:thumbnail)), class: "circle", height: "80" %>
             </div>
 
             <div class="pledge-details">
