@@ -12,6 +12,38 @@
 
   <h3 class="description"><%= @project.short_description %></h3>
 
+  <div class="creator">
+    <div class="row">
+      <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+        <%= image_tag @project.user.avatar_url(:standard), class: "circle avatar-small", height: "80" %>
+      </div>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <a class="javascript:void(0);" href="">
+          <h4><%= @project.user.name %></h4>
+          <h5><i class="icon icon-location"></i><%= @project.user.location %>, Việt Nam</h5>
+        </a>
+
+
+      </div>
+      <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+        <span class="category-icon">
+            <i class="<%= @project.category.icon_class %>"></i>
+        </span>
+      </div>
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <h4><%= @project.category.name %></h4>
+        <h5><%= @project.location %></h5>
+        <h5>Việt Nam</h5>
+      </div>
+    </div>
+    <p class="links">
+      <a href="javascript:void(0);" class="btn-link">Xem hồ sơ</a>
+      <% if !(current_user && @project.creator_id == current_user.id) %>
+          <a class="btn-link" data-toggle="modal" href='#send-message'>Gửi tin nhắn</a>
+      <% end %>
+    </p>
+  </div>
+
   <% cache(cache_key_for_project_posts(@project), skip_digest: true) do %>
       <div class="story-posts">
         <% @project.posts.each do |post| %>

@@ -118,27 +118,7 @@
                   <% end %>
                 </div>
             <% end %>
-            <div class="creator">
-              <div class="row">
-                <div class="col-xs-7 col-sm-7 col-md-8 col-lg-8">
-                  <a class="javascript:void(0);" href="">
-                    <h5>
-                      <%= @project.user.name %>
-                    </h5>
-                  </a>
 
-                  <p class="links">
-                    <a href="javascript:void(0);" class="btn-link">Xem hồ sơ</a>
-                    <% if !(current_user && @project.creator_id == current_user.id) %>
-                        <a class="btn-link" data-toggle="modal" href='#send-message'>Gửi tin nhắn</a>
-                    <% end %>
-                  </p>
-                </div>
-                <div class="col-xs-5 col-sm-5 col-md-4 col-lg-4">
-                  <%= image_tag @project.user.avatar_url(:standard), class: "circle avatar-small", height: "80" %>
-                </div>
-              </div>
-            </div>
             <div id="rewards">
               <% cache(cache_key_for_project_rewards(@project), skip_digest: true) do %>
                   <h3>Phần thưởng</h3>

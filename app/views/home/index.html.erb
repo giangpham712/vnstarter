@@ -1,27 +1,10 @@
 <% page_title "Vnstarter" %>
 <% body_id "home" %>
-<% body_attributes "data-spy=scroll data-target=#home_nav" %>
 <div class="body-wrapper">
   <div class="content-wrapper">
 
     <%= render "home/shared/slider" %>
-    <div>
-      <div class="sticky-nav">
-        <nav id="home_nav">
-          <ul class="sub-nav nav">
-            <li class="hidden"><a href="#top"></a></li>
-            <li>
-              <a href="#featured_projects" class="smoothScroll">Dự án nổi bật</a></li>
-            <li>
-              <a href="#why" class="smoothScroll">Vì sao chọn Vnstarter</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div id="top"></div>
-      <%= render "home/shared/index_featured_projects" %>
-      <%= render "home/shared/index_why_vnstarter" %>
-    </div>
+    <%= render "home/shared/index_featured_projects" %>
+    <%= render "home/shared/index_why_vnstarter" %>
   </div>
-
 </div>
-
