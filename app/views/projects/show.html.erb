@@ -74,63 +74,65 @@
 
           </div>
           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-            <div class="project-stats">
-              <div class="side-top">
-                <h1><%= @pledges.count(:pledger_id, :distinct => true) %></h1>
+            <div>
+              <div class="project-stats">
+                <div class="side-top">
+                  <h1><%= @pledges.count(:pledger_id, :distinct => true) %></h1>
 
-                <h3 class='backer'>người tham gia góp vốn</h3>
-              </div>
-              <div class="side-top">
-                <h1><%= number_to_currency(@pledges.sum(:pledge_amount), precision: 0) %></h1>
+                  <h3 class='backer'>người tham gia góp vốn</h3>
+                </div>
+                <div class="side-top">
+                  <h1><%= number_to_currency(@pledges.sum(:pledge_amount), precision: 0) %></h1>
 
-                <h3>
-                  trên mục tiêu <%= number_to_currency(@project.funding_goal, precision: 0) %> đã được góp
-                </h3>
-              </div>
-              <div class="side-top">
-                <h1> <%= @project.remaining_days %>  </h1>
+                  <h3>
+                    trên mục tiêu <%= number_to_currency(@project.funding_goal, precision: 0) %> đã được góp
+                  </h3>
+                </div>
+                <div class="side-top">
+                  <h1> <%= @project.remaining_days %>  </h1>
 
-                <h3> ngày còn lại </h3>
+                  <h3> ngày còn lại </h3>
+                </div>
               </div>
+
+              <% if @project.launched? && !@project.ended? %>
+
+                  <button id="btn_pledge" class="btn btn-x-lg btn-primary" data-toggle="modal" href='#pledge_money'>Góp
+                    vốn
+                  </button>
+
+                  <div class="project-dates">
+                    <p>
+                      Dự án được khởi động lúc <%= @project.launched_at.strftime("%H:%M ngày %d/%m/%Y") %>
+                      và sẽ kết thúc vào lúc <%= @project.deadline.strftime("%H:%M ngày %d/%m/%Y") %>
+                    </p>
+                  </div>
+              <% end %>
+
+              <% if (@project.ended?) %>
+                  <div class="funding-status">
+                    <h2>Thời gian góp vốn đã kết thúc</h2>
+                    <% if (@project.unsuccessful?) %>
+                        <p>Dự án không được huy động vốn thành công.</p>
+                    <% else %>
+                        <p>Dự án được huy động vốn thành công.</p>
+                    <% end %>
+                  </div>
+              <% end %>
             </div>
-
-            <% if @project.launched? && !@project.ended? %>
-
-                <button id="btn_pledge" class="btn btn-x-lg btn-primary" data-toggle="modal" href='#pledge_money'>Góp
-                  vốn
-                </button>
-
-                <div class="project-dates">
-                  <p>
-                    Dự án được khởi động lúc <%= @project.launched_at.strftime("%H:%M ngày %d/%m/%Y") %>
-                    và sẽ kết thúc vào lúc <%= @project.deadline.strftime("%H:%M ngày %d/%m/%Y") %>
-                  </p>
-                </div>
-            <% end %>
-
-            <% if (@project.ended?) %>
-                <div class="funding-status">
-                  <h2>Thời gian góp vốn đã kết thúc</h2>
-                  <% if (@project.unsuccessful?) %>
-                      <p>Dự án không được huy động vốn thành công.</p>
-                  <% else %>
-                      <p>Dự án được huy động vốn thành công.</p>
-                  <% end %>
-                </div>
-            <% end %>
-
             <div id="rewards">
               <% cache(cache_key_for_project_rewards(@project), skip_digest: true) do %>
                   <h3>Phần thưởng</h3>
 
                   <div class="rewards">
                     <% @project.rewards.each do |reward| %>
-                        <div class="reward">
-                          <h3><b><%= number_to_currency(reward.minimum_pledge_amount) %></b></h3>
-
-                          <p>
-                            <%= reward.description %>
-                          </p>
+                        <div class="reward-container">
+                            <div class="reward">
+                              <h3><b><%= number_to_currency(reward.minimum_pledge_amount) %></b></h3>
+                              <p>
+                                <%= reward.description %>
+                              </p>
+                            </div>
                         </div>
                     <% end %>
                   </div>

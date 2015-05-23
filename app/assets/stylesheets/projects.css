@@ -607,7 +607,6 @@
     background: #ffffff;
     border: 1px solid #fff;
     padding: 20px;
-    margin-bottom: 10px;
     position: relative;
 }
 
@@ -669,10 +668,12 @@
     padding: 20px 0;
 }
 
+#project_show .rewards .reward:hover,
 #project_edit .rewards .reward:hover {
     border-color: #a8a8a8;
 }
 
+#project_show .rewards .reward:hover h3,
 #project_edit .rewards .reward:hover h3 {
     color: #279fbb;
 }
@@ -1032,11 +1033,16 @@
     border-bottom: 1px solid #dddddd;
 }
 
-#project_show .rewards .reward {
-    margin: 20px 0;
-    background-color: #F1F2F7;
-    padding: 20px;
+#project_show .rewards .reward-container {
+    margin-bottom: -10px;
+    background-color: #fff;
     height: 250px;
+    border: 10px solid #F1F2F7;
+    height: 100%;
+}
+
+#project_show .rewards .reward {
+    cursor: pointer;
 }
 
 @media (max-width: 992px) {
