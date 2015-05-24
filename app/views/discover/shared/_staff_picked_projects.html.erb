@@ -1,0 +1,64 @@
+<div id="staff_picked_projects">
+  <div class="container">
+    <div class="slider-container">
+      <div class="row">
+        <div class="col-md-10 col-sm-10">
+          <div class="slider-vertical">
+            <div class="project slide">
+              <h2 class="section-title">Dự án của tháng: <%= @projects.first.category.name %></h2>
+
+              <div class="row">
+                <div class="col-md-5 col-sm-5 animated " data-animtype="fadeInLeft"
+                     data-animrepeat="0"
+                     data-speed="1s"
+                     data-delay="0.4s">
+                  <div class="text-center">
+                    <img width="100%" src="<%= @projects.first.image_url(:small) %>" alt="iPhone"/>
+                  </div>
+                </div>
+
+                <div class="col-md-7 col-sm-7 animated" data-animtype="fadeInRight"
+                     data-animrepeat="0"
+                     data-speed="1s"
+                     data-delay="0.4s">
+                  <div>
+                    <h3>
+                      <%= link_to project_path(@projects.first) do %>
+                          <%= @projects.first.title %>
+                      <% end %>
+                    </h3>
+                    <h6>thực hiện bởi <b><%= @projects.first.user.name %></b></h6>
+
+                    <p class=""><%= @projects.first.short_description %></p>
+                    <br/>
+                    <br/>
+
+                    <div class="project-status discover-progress">
+
+                      <div class="progress">
+                        <div class="progress-bar animated" role="progressbar" aria-valuenow="70%"
+                             aria-valuemin="0" aria-valuemax="100"
+                             data-animtype="animate-progress"
+                             data-animrepeat="0">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 col-sm-2">
+          <ul class="slider-nav">
+            <% @categories.each_with_index do |category, index| %>
+                <li data-item-index="<%= index %>"><a href=""><%= category.name %></a></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

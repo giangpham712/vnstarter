@@ -94,8 +94,13 @@
                 resource.launch()
                     .then(function (response) {
                         console.log(response);
-                    }, function (response) {
+                        if (response.errors) {
 
+                        } else {
+                            window.location.reload();
+                        }
+                    }, function (response) {
+                        console.log(response);
                     });
             }
 

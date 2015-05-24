@@ -68,8 +68,6 @@ class Api::ProjectsController < ApplicationController
     end
 
     current_time = Time.zone.now
-    deadline = nil
-    duration = nil
 
     if project.duration_type == "duration"
       duration = project.duration

@@ -6,6 +6,7 @@ class ProjectsController < ApplicationController
   def index
     @projects = Project.where(launched_at: nil, deleted_at: nil, stopped_at: nil)
 
+
   end
 
   def about
@@ -32,6 +33,12 @@ class ProjectsController < ApplicationController
 
       render 'show'
     end
+
+  end
+
+  def share
+
+
 
   end
 
