@@ -1,96 +1,27 @@
-<div id="why">
-  <div class="bg-overlay">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-10 col-lg-10 animated centered why-top" data-animtype="fadeInUp"
-             data-animrepeat="0"
-             data-speed="1s"
-             data-delay="0.4s">
-          <h1 class="text-center">Vì sao bạn nên tham gia VNStarter</h1>
-
-          <p class="text-center">VNStarter là sân chơi kinh doanh đầu tiên tại Việt Nam, góp phần đưa ước mơ của những
-            người trẻ tuổi có cơ hội được tiếp cận cộng đồng, nhà đầu tư</p>
-        </div>
-      </div>
-
-      <div class="space-sep40"></div>
-
-      <div class="row">
-        <div class="col-xs-1 col-sm-1 col-md-2 col-lg-2"></div>
-        <div class="col-xs-5 col-sm-5 col-md-4 col-lg-4">
-          <div class="reason animated"
-               data-animtype="fadeIn"
-               data-animrepeat="0"
-               data-animspeed="1s"
-               data-animdelay="0.2s">
-            <h4>Sự tin tưởng</h4>
-
-            <p class="">
-              Được xây dựng và đảm bảo của hơn 50 CEO nổi tiếng tại Việt Nam
-            </p>
-          </div>
-        </div>
-        <div class="col-xs-5 col-sm-5 col-md-4 col-lg-4">
-          <div class="reason animated"
-               data-animtype="fadeIn"
-               data-animrepeat="0"
-               data-animspeed="1s"
-               data-animdelay="0.2s">
-            <h4>Tính cộng đồng</h4>
-
-            <p>
-              Mang dự án của bạn ra thế giới, mỗi dự án của bạn sẽ có 1 trang riêng trên VNStarter
-            </p>
-          </div>
-        </div>
-        <div class="col-xs-1 col-sm-1 col-md-2 col-lg-2"></div>
-      </div>
-
-      <div class="space-sep40"></div>
-
-      <div class="row">
-        <div class="col-xs-1 col-sm-1 col-md-2 col-lg-2"></div>
-        <div class="col-xs-5 col-sm-5 col-md-4 col-lg-4">
-          <div class="reason animated"
-               data-animtype="fadeIn"
-               data-animrepeat="0"
-               data-animspeed="1s"
-               data-animdelay="0.2s">
-            <h4>Tính tiện dụng</h4>
-
-            <p>
-              Đội ngũ kỹ thuật viên luôn tối ưu hóa website cũng như các phần mềm di động dể mọi người có thể đẽ dàng sử
-              dụng nhất
-            </p>
-
-          </div>
-        </div>
-        <div class="col-xs-5 col-sm-5 col-md-4 col-lg-4">
-          <div class="reason animated"
-               data-animtype="fadeIn"
-               data-animrepeat="0"
-               data-animspeed="1s"
-               data-animdelay="0.2s">
-            <h4>Tính khả thi</h4>
-
-            <p>
-              Cộng đồng mạnh mẽ, dự án của bạn sẽ được huy động vốn nhanh nhất có thể. VNStarter sẽ chỉ cần 3% số tiền
-              dự
-              án của bạn làm kinh phí hoạt động
-            </p>
-
-          </div>
-        </div>
-        <div class="col-xs-1 col-sm-1 col-md-2 col-lg-2"></div>
-      </div>
-
-      <div class="space-sep40"></div>
-
-      <div class="row">
-        <div class="col-xs-5 col-sm-5 col-md-4 col-lg-4 centered text-center">
-          <a href="/projects/new" class="btn btn-lg btn-default">Bắt đầu ngay</a>
-        </div>
-      </div>
-    </div>
+<section id="categories">
+  <div class="container">
+    <h2 class="section-title">
+      Các lĩnh vực
+    </h2>
+    <ul class="categories">
+      <% @categories.each do |category| %>
+        <li class="category">
+                    <i class="<%= category.icon_class %>"></i>
+                    <%= category.name %>
+        </li>
+      <% end %>
+    </ul>
   </div>
-</div>
+
+</section>
+
+
+<section id="why_vnstarter">
+  <div class="container">
+    <h1>Vì sao nên tham gia VnStarter</h1>
+
+    <p>Our model, technology, and team of in-house experts make us the most trusted platform in the crowdfunding
+      industry. We leverage all the tools in our power to amplify campaigns, so you can raise maximum awareness—and
+      funds.</p>
+  </div>
+</section>

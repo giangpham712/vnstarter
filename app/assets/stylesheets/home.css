@@ -51,45 +51,6 @@ a {
     line-height: inherit;
 }
 
-div.sticky-nav {
-    background: rgba(255, 255, 255, .9)
-}
-
-div.sticky-nav ul.sub-nav {
-    margin: 0 auto !important;
-    padding: 20px;
-    text-align: center
-}
-
-div.sticky-nav ul.sub-nav li {
-    margin: 0 2.5rem;
-    float: none;
-    display: inline-block
-}
-
-div.sticky-nav ul.sub-nav li a {
-    text-transform: uppercase;
-    font-family: "Open Sans";
-    padding: 7px 15px;
-    color: #515151;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-div.sticky-nav ul.sub-nav li.active a {
-    border-radius: 3px;
-    background: #279fbb;
-    cursor: default;
-    color: #fff;
-}
-
-@media (max-width: 992px) {
-    div.sticky-nav {
-        visibility: hidden;
-        display: none;
-    }
-}
-
 body#home {
     position: relative;
 }
@@ -98,65 +59,64 @@ body#home {
     padding: 40px 0;
 }
 
-#why {
-
-}
 
 @media (max-width: 992px) {
     #featured_projects {
         padding: 20px 0 20px 0;
     }
-
-    #why {
-        padding: 20px 0 20px 0;
-    }
 }
 
-#why .bg-overlay {
+#categories {
     padding: 40px 0;
-    background: rgba(0, 0, 0, 0.6);
 }
 
-#why h1 {
-    margin-bottom: 40px;
-    color: #fff;
+#categories ul.categories {
+    padding: 0;
+    margin: 0;
 }
 
-#why p {
-    font-size: 15px;
-    color: #fff;
-    font-family: "Open Sans";
+#categories .category {
+    width: 185px;
+    display: inline-block;
+    font-family: Roboto;
+    font-size: 16px;
+    line-height: 36px;
+    cursor: pointer;
 }
 
-#why .reason {
-    margin: 0 10px;
+#categories .category i {
+    color: #ffffff;
+    background-color: #6a6a6a;
+    width: 25px;
+    height: 25px;
+    border-radius: 12.5px;
+    -moz-border-radius: 12.5px;
+    font-size: 14px;
+    line-height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
 }
 
-#why .reason h4 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #fff;
-    font-weight: 400;
+#categories .category:hover {
+    color: #2eaef0;
 }
 
-#why .reason p {
-    color: #fff;
-    font-weight: 400;
-    font-family: "Open Sans";
+#categories .category:hover i {
+    background-color: #2eaef0;
 }
 
-@media (max-width: 992px) {
-    #why .reason h4 {
-        font-size: 18px;
-    }
+#why_vnstarter {
+    padding: 40px 0;
+}
 
-    #why {
-        background: none;
-    }
+#why_vnstarter h1 {
+    text-align: center;
+}
 
-    #why p {
-        font-size: 14px;
-    }
+#why_vnstarter p {
+    margin: 0 100px;
+    text-align: center;
 }
 
 .text {
